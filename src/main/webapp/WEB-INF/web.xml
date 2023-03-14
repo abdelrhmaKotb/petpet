@@ -15,7 +15,7 @@
 	
   <servlet>
 	<servlet-name>RegisterService</servlet-name>
-	<servlet-class>gov.iti.jets.services.RegisterServlet</servlet-class>
+	<servlet-class>gov.iti.jets.controllers.RegisterServlet</servlet-class>
   </servlet>
   <servlet-mapping>
 	<servlet-name>RegisterService</servlet-name>

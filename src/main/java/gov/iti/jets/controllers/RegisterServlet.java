@@ -1,6 +1,7 @@
-package gov.iti.jets.services;
+package gov.iti.jets.controllers;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import com.google.gson.Gson;
@@ -9,6 +10,8 @@ import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
 import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.persistent.dto.UserDTOServiceImpl;
 import gov.iti.jets.persistent.dto.interfaces.UserDTOServiceInt;
+import gov.iti.jets.persistent.entity.User;
+import gov.iti.jets.services.RegisterService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -23,24 +26,23 @@ public class RegisterServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Gson gson = new Gson();
-
+         Gson gson = new Gson();
+        
         String fName =req.getParameter("firstName");
-        System.out.println( "fname " + fName);
-        // String userName = req.getParameter("Username");
-        UserDTO user = new UserDTO(fName, null, null, null, null, null, null, null, null, null, null);
-        userService.create(user);
-        // System.out.println(userName);
-        // userInfo.add(fName);
-        // userInfo.add(userName);
-        // resp.setContentType("application/json");
-        // resp.getWriter().write("data: " + new Gson().toJson(userInfo) + "\n\n");
+        String userName = req.getParameter("username");
+        String phone = req.getParameter("phone");
+        String password = req.getParameter("password");
+        String job = req.getParameter("job");
+        String creditLimit  = req.getParameter("creditLimit");
+        String country  = req.getParameter("country");
+        String street  = req.getParameter("street");
+        String city  = req.getParameter("city");
+        BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
+        UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,null);
 
-        /*
-            intended*
-         *  fromJson to fill UserDTO class 
-         * 
-         */
+        RegisterService service = new RegisterService();
+        service.register(user);
+
     }
 }
 
