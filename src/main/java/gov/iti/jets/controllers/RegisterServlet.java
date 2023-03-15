@@ -39,7 +39,6 @@ public class RegisterServlet extends HttpServlet{
         String city  = req.getParameter("city");
         BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
         UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,null);
-
         RegisterService service = new RegisterService();
         service.register(user);
 
