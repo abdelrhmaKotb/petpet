@@ -78,7 +78,7 @@
 
                                     <li>
                                         <a
-                                            href="/petpet/presentation/views/about-2.jsp">About</a>
+                                            href="/petpet/aboutUs">About</a>
                                     </li>
                                     <li>
                                         <a

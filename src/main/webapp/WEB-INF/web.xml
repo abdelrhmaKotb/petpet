@@ -3,7 +3,26 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
 	version="5.0" metadata-complete="true">
+	<!--Start of JSP mapping-->
+	<servlet>
+		<servlet-name>Home</servlet-name>
+		<jsp-file>/presentation/views/index-5.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>About</servlet-name>
+		<jsp-file>/presentation/views/about-2.jsp</jsp-file>
+	</servlet>
+	<!---->
+	<servlet-mapping>
+		<servlet-name>Home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>About</servlet-name>
+		<url-pattern>/aboutUs</url-pattern>
+	</servlet-mapping>
 
+	<!--end of JSP mapping-->
 <servlet>
 	<servlet-name>AddProduct</servlet-name>
 	<servlet-class>gov.iti.jets.controllers.Admin.AddProductServlet</servlet-class>
