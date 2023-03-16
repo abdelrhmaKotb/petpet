@@ -34,7 +34,7 @@ public class UserDTO {
         this.city = city;
         this.birthday = birthday;
     }
-
+    public UserDTO(){}
     public int getId() {
         return id;
     }
