@@ -15,10 +15,13 @@ public class UserDaoImpl implements UserDao {
     public User create(User user) {
 
         em.getTransaction().begin();
-        em.persist(user);
-        System.out.println("User added");
-        em.getTransaction().commit();
-        return user;
+        if(user.getId() != null) {
+            em.persist(user);
+            System.out.println("User added");
+            em.getTransaction().commit();
+            return user;
+        }
+        return null;
     }
 
 

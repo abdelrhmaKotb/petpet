@@ -1,4 +1,5 @@
-var Firstname, username, password, phone , job , street , city , country ,credit;
+var Firstname, username, password, phone, job, street, city, country, credit , d;
+
 $(document).ready(function () {
 
 
@@ -26,27 +27,53 @@ function checkName() {
     }
 };
 
+function checkBD() {
+     d = $("#register-birth-2").val();
+
+    if (!d){
+        $("#register-birth-2").replaceWith(`
+            <input type="date" class="form-control" id="register-birth-2"
+                                                    name="register-birth" value="${d}">
+        `)
+    }
+
+}
+
 function validateEmail(input) {
     let emailRegex =
-      /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-      if (!emailRegex.test(input)) {
+        /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    if (!emailRegex.test(input)) {
         return false;
     }
     return true;
-  }
+}
 
 function checkUsername() {
-    username = $("#register-email").val()
-    //jsonData = JSON.stringify(InputBody)
-    
-    jsonData = { Username: username }
-    console.log("My json " + jsonData);
-    //$.post("/petpet/register", jsonData, callBack)
+    username = $("#register-username").val()
+
+    let emailJson = {
+        email: username
+    }
+    console.log("My json " + emailJson);
+    $.get("/petpet/register?email="+username,callBack)
 }
 
 function callBack(data) {
-    obj = JSON.parse(data)
+
     console.log("Data " + data);
+    if(data.match("true")){
+        console.log("here")
+        $("#register-username").replaceWith(`
+                <input type="email" class="form-control is-invalid" id="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
+        `)
+    }
+    else {
+        $("#register-username").replaceWith(`
+             
+                <input type="email" class="form-control is-valid" id="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
+        
+        `)
+    }
 }
 
 function checkPassword() {
@@ -123,31 +150,31 @@ function validePhone(mob) {
 //     console.log(res);
 // }
 
-function checkPhone(){
+function checkPhone() {
     phone = $("#register-phone").val();
     // phoneSeq(phone);
-    if(validePhone(phone)){
+    if (validePhone(phone)) {
         $("#register-phone").replaceWith(`
         <input type="tel" class="form-control is-valid" id="register-phone"
         name="register-phone" value="${phone}" onblur="checkPhone()" required="">
         `)
     }
-    else{
+    else {
         $("#register-phone").replaceWith(`
         <input type="tel" class="form-control is-invalid" id="register-phone"
         name="register-phone" value="${phone}" onblur="checkPhone()" required="">
         `)
     }
 }
-function checkJob(){
+function checkJob() {
     job = $("#register-job").val()
-    if(!job){
+    if (!job) {
         $("#register-job").replaceWith(`
         <input type="text" class="form-control is-invalid" id="register-job"
         name="register-job" value="" onblur="checkJob()" required="">
         `)
     }
-    else{
+    else {
         $("#register-job").replaceWith(`
         <input type="text" class="form-control is-valid" id="register-job"
         name="register-job" value=${job} onblur="checkJob()" required="">
@@ -156,15 +183,15 @@ function checkJob(){
 
 }
 
-function checkCredit(){
+function checkCredit() {
     credit = $("#register-credit").val()
-    if(!credit){
+    if (!credit) {
         $("#register-credit").replaceWith(`
         <input type="text" class="form-control is-invalid" id="register-credit"
         name="register-credit" onblur="checkCredit()" required="">
         `)
     }
-    else{
+    else {
         $("#register-credit").replaceWith(`
         <input type="text" class="form-control is-valid" id="register-credit"
         name="register-credit" value=${credit} onblur="checkCredit()" required="">
@@ -174,9 +201,9 @@ function checkCredit(){
 }
 
 
-function checkStreet(){
+function checkStreet() {
     street = $("#register-street").val()
-    if(!street){
+    if (!street) {
         $("#register-street").replaceWith(`
         <input type="tel" class="form-control is-invalid" id="register-street"
         name="register-street" value="" onblur="checkStreet()" required="">
@@ -185,7 +212,7 @@ function checkStreet(){
 
 
 
-    else{
+    else {
         $("#register-street").replaceWith(`
         <input type="tel" class="form-control is-valid" id="register-street"
         name="register-street" value=${street} onblur="checkStreet()" required="">
@@ -193,16 +220,16 @@ function checkStreet(){
     }
 }
 
-function checkCity(){
+function checkCity() {
     city = $("#register-city").val()
-    if(!city){
+    if (!city) {
         $("#register-city").replaceWith(`
         <input type="tel" class="form-control is-invalid" id="register-city"
         name="register-city" value="" onblur="checkCity()" required="">
         `)
     }
 
-    else{
+    else {
         $("#register-city").replaceWith(`
         <input type="tel" class="form-control is-valid" id="register-city"
         name="register-city" value=${city} onblur="checkCity()" required="">
@@ -210,16 +237,16 @@ function checkCity(){
     }
 }
 
-function checkCountry(){
+function checkCountry() {
     country = $("#register-country").val()
-    if(!country){
+    if (!country) {
         $("#register-country").replaceWith(`
         <input type="tel" class="form-control is-invalid" id="register-country"
         name="register-country" value="" onblur="checkCountry()" required="">
         `)
     }
 
-    else{
+    else {
         $("#register-country").replaceWith(`
         <input type="tel" class="form-control is-valid" id="register-country"
         name="register-country" value=${country} onblur="checkCountry()" required="">
@@ -227,36 +254,39 @@ function checkCountry(){
     }
 }
 
-function User(Firstname,username,phone,job,street,city,country,credit){
-    this.Firstname=Firstname;
-    this.username=username;
-    this.phone=phone;
-    this.job=job;
-    this.street=street;
-    this.city=city;
-    this.country=country;
-    this.credit=credit;
 
+function User(Firstname, username, phone, job, street, city, country, credit) {
+    this.Firstname = Firstname;
+    this.username = username;
+    this.phone = phone;
+    this.job = job;
+    this.street = street;
+    this.city = city;
+    this.country = country;
+    this.credit = credit;
 }
 
-function registerUser(){
+
+function registerUser() {
     //var USER = new User(Firstname,username,phone,job,street,city,country,credit);
     //jsonUser = JSON.stringify(USER);
-    jsonUser = {
-        firstName : Firstname,
-        userName : username,
-        phone : phone,
-        job : job,
-        street : street,
-        city : city,
-        country : country,
-        credit : credit,
-        
+    let jsonUser = {
+        firstName: Firstname,
+        userName: username,
+        phone: phone,
+        password: password,
+        job: job,
+        creditLimit: credit,
+        country: country,
+        street: street,
+        city: city,
+        birthday: d
     }
+
     console.log(jsonUser);
-    $.post("/petpet/register", jsonUser, callBackSucess)
+    $.post("/petpet/register",jsonUser, callBackSucess)
 }
 
-function callBackSucess(){
+function callBackSucess() {
     console.log("sent success");
 }

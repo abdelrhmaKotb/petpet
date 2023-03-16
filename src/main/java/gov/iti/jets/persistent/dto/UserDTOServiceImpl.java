@@ -4,7 +4,7 @@ import gov.iti.jets.persistent.dao.UserDaoImpl;
 import gov.iti.jets.persistent.dao.interfaces.UserDao;
 import gov.iti.jets.persistent.dto.interfaces.UserDTOServiceInt;
 import gov.iti.jets.persistent.entity.User;
-import gov.iti.jets.persistent.mappers.UserMapper;
+import gov.iti.jets.services.mapper.UserMapper;
 
 public class UserDTOServiceImpl implements UserDTOServiceInt{
     private final UserMapper userMapper = new UserMapper();

@@ -14,7 +14,7 @@
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/petpet/presentation/assets/images/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/petpet/presentation/assets/images/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/petpet/presentation/assets/images/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/petpet/presentation/assets/images/icons/favicon-32x32.png">
     <link rel="manifest" href="/petpet/presentation/assets/images/icons/site.html">
     <link rel="mask-icon" href="/petpet/presentation/assets/images/icons/safari-pinned-tab.svg" color="#666666">
     <link rel="shortcut icon" href="/petpet/presentation/assets/images/icons/favicon.ico">
@@ -639,7 +639,7 @@
                                             <label for="register-email" class="form-label">Username</label>
                                             <div class="input-group form-outline">
                                               <span class="input-group-text" style="font-size: 2rem;" id="inputGroupPrepend">@</span>
-                                              <input type="email" class="form-control" id="register-email" aria-describedby="inputGroupPrepend" onblur="checkUsername()" required />
+                                              <input type="email" class="form-control" id="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" required />
                                               
                                               <div class="invalid-feedback">Email Already exists</div>
                                             </div>
@@ -681,7 +681,7 @@
                                             <div class="col-sm-6">
                                                 <label for="register-birth-2">Birthday *</label>
                                                 <input type="date" class="form-control" id="register-birth-2"
-                                                    name="register-birth" required="">
+                                                    name="register-birth">
                                     
                                             </div>
 
