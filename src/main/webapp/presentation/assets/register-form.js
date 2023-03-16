@@ -71,7 +71,7 @@ function callBack(data) {
         $("#register-username").replaceWith(`
              
                 <input type="email" class="form-control is-valid" id="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
-        
+                
         `)
     }
 }

@@ -11,7 +11,7 @@ public class RegisterService {
 
     public void register(UserDTO userDTO){
         RepositoryImpl<User,Integer> repository = new RepositoryImpl<>(User.class);
-
+        //validation
         User u = new UserMapper().toEntity(userDTO);
 
         repository.create(u);

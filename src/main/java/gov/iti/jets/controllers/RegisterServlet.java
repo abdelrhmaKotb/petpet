@@ -10,6 +10,7 @@ import java.util.Locale;
 import com.google.gson.Gson;
 import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
 
+import gov.iti.jets.helpers.Validation;
 import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.persistent.dto.UserDTOServiceImpl;
 import gov.iti.jets.persistent.dto.interfaces.UserDTOServiceInt;
@@ -44,7 +45,15 @@ public class RegisterServlet extends HttpServlet{
         LocalDate date = LocalDate.parse(birthday, DateTimeFormatter.ofPattern("d-MMM-yyyy", Locale.US)); //date formater
         UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,date);
         RegisterService service = new RegisterService();
-        service.register(user);
+        if(Validation.isValidName(fName) && Validation.isEmail(userName) && Validation.validCountry(country)
+                && Validation.validPhone(phone)  && Validation.validPassword(password)) {
+            service.register(user);
+            //request dispatcher
+        }
+        else {
+            //resp en fe haga 8alat
+        }
+
     }
 
     @Override
