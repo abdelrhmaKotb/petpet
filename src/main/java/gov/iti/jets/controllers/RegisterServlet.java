@@ -2,7 +2,10 @@ package gov.iti.jets.controllers;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import com.google.gson.Gson;
 import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
@@ -21,15 +24,14 @@ import jakarta.servlet.http.HttpServletResponse;
 // @WebServlet(urlPatterns = {"/register"} , name = "RegisterServlet")
 public class RegisterServlet extends HttpServlet{
 
-    ArrayList<String> userInfo = new ArrayList<>();
-    UserDTOServiceInt userService = new UserDTOServiceImpl();
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
          Gson gson = new Gson();
         
         String fName =req.getParameter("firstName");
-        String userName = req.getParameter("username");
+        String userName = req.getParameter("userName");
         String phone = req.getParameter("phone");
         String password = req.getParameter("password");
         String job = req.getParameter("job");
@@ -37,11 +39,29 @@ public class RegisterServlet extends HttpServlet{
         String country  = req.getParameter("country");
         String street  = req.getParameter("street");
         String city  = req.getParameter("city");
+        String birthday  = req.getParameter("birthday");
         BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
-        UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,null);
+        LocalDate date = LocalDate.parse(birthday, DateTimeFormatter.ofPattern("d-MMM-yyyy", Locale.US)); //date formater
+        UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,date);
         RegisterService service = new RegisterService();
         service.register(user);
+    }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("email");
+        //validate here
+        UserDTO user = new UserDTO(username);
+        RegisterService service = new RegisterService();
+        if(service.isUserExists(user)){
+            System.out.println("Servlet true");
+            resp.getWriter().print("true");
+        }
+        else {
+            System.out.println("Servlet false");
+            resp.getWriter().print("false");
+
+        }
     }
 }
 

@@ -12,4 +12,6 @@ public interface Repository<E, K> {
     E update(E e);
 
     boolean remove(E e);
+
+    boolean findByEmail(E e,String email);
 }

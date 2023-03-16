@@ -18,10 +18,12 @@ public class UserDTO {
     String city;
     LocalDate birthday;
 
-    
-    
+    public UserDTO(String userName) {
+        this.userName = userName;
+    }
+
     public UserDTO(String name, String userName, String phone, String password, String job, BigDecimal creditLimit,
-            String country, String street, String zip, String city, LocalDate birthday) {
+                   String country, String street, String zip, String city, LocalDate birthday) {
         this.firstName = name;
         this.userName = userName;
         this.phone = phone;

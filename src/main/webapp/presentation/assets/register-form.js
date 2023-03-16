@@ -1,4 +1,5 @@
-var Firstname, username, password, phone, job, street, city, country, credit;
+var Firstname, username, password, phone, job, street, city, country, credit , d;
+
 $(document).ready(function () {
 
 
@@ -26,6 +27,18 @@ function checkName() {
     }
 };
 
+function checkBD() {
+     d = $("#register-birth-2").val();
+
+    if (!d){
+        $("#register-birth-2").replaceWith(`
+            <input type="date" class="form-control" id="register-birth-2"
+                                                    name="register-birth" value="${d}">
+        `)
+    }
+
+}
+
 function validateEmail(input) {
     let emailRegex =
         /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -36,17 +49,31 @@ function validateEmail(input) {
 }
 
 function checkUsername() {
-    username = $("#register-email").val()
-    //jsonData = JSON.stringify(InputBody)
+    username = $("#register-username").val()
 
-    jsonData = { Username: username }
-    console.log("My json " + jsonData);
-    //$.post("/petpet/register", jsonData, callBack)
+    let emailJson = {
+        email: username
+    }
+    console.log("My json " + emailJson);
+    $.get("/petpet/register?email="+username,callBack)
 }
 
 function callBack(data) {
-    obj = JSON.parse(data)
+
     console.log("Data " + data);
+    if(data.match("true")){
+        console.log("here")
+        $("#register-username").replaceWith(`
+                <input type="email" class="form-control is-invalid" id="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
+        `)
+    }
+    else {
+        $("#register-username").replaceWith(`
+             
+                <input type="email" class="form-control is-valid" id="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
+        
+        `)
+    }
 }
 
 function checkPassword() {
@@ -252,7 +279,8 @@ function registerUser() {
         creditLimit: credit,
         country: country,
         street: street,
-        city: city,        
+        city: city,
+        birthday: d
     }
 
     console.log(jsonUser);

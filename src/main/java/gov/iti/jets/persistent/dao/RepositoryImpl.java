@@ -4,6 +4,7 @@ import java.util.List;
 
 import gov.iti.jets.persistent.dao.interfaces.Repository;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 
 public class RepositoryImpl<E, K> implements Repository<E, K> {
 
@@ -60,6 +61,19 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
         }
 
         return true;
+    }
+
+    @Override
+    public boolean findByEmail(E e , String username) {
+        _entityManager.getTransaction().begin();
+        Query query = _entityManager.createQuery("select email from User u where email = ?1").setParameter(1,username);
+        List result = query.getResultList();
+        _entityManager.getTransaction().commit();
+
+        if (result.size() == 1){
+            return true;
+        }
+        return false;
     }
 
     @Override
