@@ -95,7 +95,7 @@
   </servlet-mapping>
 <servlet>
 	<servlet-name>loginserv</servlet-name>
-	<servlet-class>gov.iti.jets.services.LoginServlet</servlet-class>
+	<servlet-class>gov.iti.jets.controllers.LoginServlet</servlet-class>
 </servlet>
 <servlet-mapping>
 	<servlet-name>loginserv</servlet-name>
