@@ -82,7 +82,7 @@
                                     </li>
                                     <li>
                                         <a
-                                            href="/petpet/presentation/views/Admin/addProduct.jsp">Contact</a>
+                                            href="/petpet/Add-Product-Page">Contact</a>
                                     </li>
                                     <li><a
                                             href="/petpet/login">Login</a></li>

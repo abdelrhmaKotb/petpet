@@ -1,17 +1,15 @@
 <jsp:directive.include file="header.html" />
         <main class="main">
-        	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+        	<div class="page-header text-center" style="background-image: url('/petpet/presentation/assets/images/page-header-bg.jpg')">
         		<div class="container-fluid">
-        			<h1 class="page-title">Fullwidth No Sidebar<span>Shop</span></h1>
+        			<h1 class="page-title">Shop</h1>
         		</div><!-- End .container-fluid -->
         	</div><!-- End .page-header -->
             <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
                 <div class="container-fluid">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item"><a href="#">No Sidebar</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Fullwidth</li>
+                        <li class="breadcrumb-item"><a href="/petpet/home">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/petpet/shop">Shop</a></li>
                     </ol>
                 </div><!-- End .container-fluid -->
             </nav><!-- End .breadcrumb-nav -->
