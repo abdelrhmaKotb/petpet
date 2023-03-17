@@ -37,7 +37,21 @@
 		<servlet-name>login</servlet-name>
 		<jsp-file>/presentation/views/login.jsp</jsp-file>
 	</servlet>
+
+	<servlet>
+		<servlet-name>adminProducts</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.ProductListServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>adminEditProduct</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.EditProductServlet</servlet-class>
+	</servlet>
 	<!---->
+
+	<servlet-mapping>
+		<servlet-name>adminEditProduct</servlet-name>
+		<url-pattern>/admin/show</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>Home</servlet-name>

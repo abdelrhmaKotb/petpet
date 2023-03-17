@@ -3,11 +3,12 @@ package gov.iti.jets.services;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
 import gov.iti.jets.persistent.dto.ProductDto;
 import gov.iti.jets.persistent.entity.Product;
+import gov.iti.jets.persistent.entity.ProductImage;
 import gov.iti.jets.services.mapper.ProductMapper;
 
 public class AddProductService {
 
-    public Boolean addProduct(ProductDto product) {
+    public Integer addProduct(ProductDto product) {
 
         RepositoryImpl<Product, Integer> repo = new RepositoryImpl<>(Product.class);
 
@@ -15,12 +16,15 @@ public class AddProductService {
 
         System.out.println(p);
 
-        Product result = repo.create(p);
-        if (result != null) {
-            return true;
+        Product result = repo.create(p); 
+
+        if (result == null) {
+            return null;
         }
 
-        return false;
+        int id = result.getId();
+
+        return id;
     }
 
 }
