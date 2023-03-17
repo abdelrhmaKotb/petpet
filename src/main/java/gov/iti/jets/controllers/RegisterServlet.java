@@ -25,40 +25,45 @@ import jakarta.servlet.http.HttpServletResponse;
 // @WebServlet(urlPatterns = {"/register"} , name = "RegisterServlet")
 public class RegisterServlet extends HttpServlet{
 
-
+    String username = null;
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
          Gson gson = new Gson();
         
-        String fName =req.getParameter("firstName");
-        String userName = req.getParameter("userName");
-        String phone = req.getParameter("phone");
-        String password = req.getParameter("password");
-        String job = req.getParameter("job");
-        String creditLimit  = req.getParameter("creditLimit");
-        String country  = req.getParameter("country");
-        String street  = req.getParameter("street");
-        String city  = req.getParameter("city");
-        String birthday  = req.getParameter("birthday");
+        String fName =req.getParameter("register-Name");
+        String userName = req.getParameter("register-username");
+        System.out.println("user email " + userName);
+        //System.out.println("user email " + username);
+        String phone = req.getParameter("register-phone");
+        String password = req.getParameter("register-password-1");
+        String conf_password = req.getParameter("register-password-confirm");
+        String job = req.getParameter("register-job");
+        String creditLimit  = req.getParameter("register-credit");
+        String country  = req.getParameter("register-country");
+        String street  = req.getParameter("register-street");
+        String city  = req.getParameter("register-city");
+        String birthday  = req.getParameter("register-birth");
         BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
-        LocalDate date = LocalDate.parse(birthday, DateTimeFormatter.ofPattern("d-MMM-yyyy", Locale.US)); //date formater
+        LocalDate date = LocalDate.parse(birthday); //date formater
         UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,date);
         RegisterService service = new RegisterService();
-        if(Validation.isValidName(fName) && Validation.isEmail(userName) && Validation.validCountry(country)
-                && Validation.validPhone(phone)  && Validation.validPassword(password)) {
+        if(Validation.isValidName(fName)  && Validation.validCountry(country)
+                && Validation.validPhone(phone)  && Validation.validPassword(password) && Validation.isEmail(userName))
+        {
+            System.out.println("All true");
             service.register(user);
-            //request dispatcher
+            req.getRequestDispatcher("presentation/views/index-5.jsp").forward(req,resp);
         }
         else {
-            //resp en fe haga 8alat
+            resp.sendRedirect("presentation/views/login.jsp");
         }
 
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("email");
+        username = req.getParameter("email");
         //validate here
         UserDTO user = new UserDTO(username);
         RegisterService service = new RegisterService();
