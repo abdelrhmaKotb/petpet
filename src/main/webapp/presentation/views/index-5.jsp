@@ -69,23 +69,23 @@
                                 <ul class="menu sf-arrows">
                                     <li>
                                         <a
-                                            href="/petpet/presentation/views/index-5.jsp">Home</a>
+                                            href="/petpet/home">Home</a>
                                     </li>
                                     <li>
                                         <a
-                                            href="/petpet/presentation/views/category-fullwidth.jsp">Shop</a>
+                                            href="/petpet/shop">Shop</a>
                                     </li>
 
                                     <li>
                                         <a
-                                            href="/petpet/aboutUs">About</a>
+                                            href="/petpet/about">About</a>
                                     </li>
                                     <li>
                                         <a
                                             href="/petpet/presentation/views/Admin/addProduct.jsp">Contact</a>
                                     </li>
                                     <li><a
-                                            href="/petpet/presentation/views/login.jsp">Login</a></li>
+                                            href="/petpet/login">Login</a></li>
                                     <li><a
                                             href="/petpet/presentation/views/coming-soon.jsp">Coming
                                             Soon</a></li>
@@ -113,7 +113,7 @@
                                 </form>
                             </div><!-- End .header-search -->
 
-                            <a href="/petpet/presentation/views/wishlist.jsp"
+                            <a href="/petpet/wishlist"
                                 class="wishlist-link">
                                 <i class="icon-heart-o"></i>
                             </a>
