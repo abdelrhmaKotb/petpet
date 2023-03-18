@@ -71,8 +71,10 @@
 							</aside><!-- End .col-lg-3 -->
 
 						</div><!-- End .row -->
-						<div class="container">
-							<div class="row">
+						<c:if test='${!requestScope.action.equals("/petpet/edit-product")}'>
+							<input type="hidden" name="id" value="${requestScope.product.getId()}">
+							<div class="container">
+								<div class="row">
 								<div class="my-2">
 									<input type="file" class="form-control" id="images" name="images[]"
 										onchange="preview_images();" multiple />
@@ -83,7 +85,12 @@
 						</div>
 						<hr>
 						<div class="row" id="image_preview"></div>
-				</div>
+					</c:if>
+					</div>
+				<c:if test='${requestScope.action.equals("/petpet/edit-product")}'>
+					<input type="hidden" name="id" value="${requestScope.product.getId()}">
+					<input type="hidden" name="images"  value='${String.join(",,",requestScope.product.getImagesUlrs())}'>
+				</c:if>
 				</form>
 			</div><!-- End .container -->
 		</div><!-- End .checkout -->

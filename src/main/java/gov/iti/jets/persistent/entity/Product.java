@@ -20,7 +20,7 @@ public class Product {
     @Column(name = "price", precision = 10)
     private Double price;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH )
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "category_id")
     private Category category;
 
@@ -31,8 +31,7 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST ,orphanRemoval = true)
-
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.MERGE}, orphanRemoval = true)
     List<ProductImage> images = new ArrayList<>();
 
     public List<ProductImage> getImages() {

@@ -25,12 +25,6 @@ public class AddProductServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    // ServletContext servletContext = getServletContext();
-    // String contextPath = servletContext.getRealPath(File.separator);
-    // RequestDispatcher requestDis = request.getRequestDispatcher("/Products");
-
-    // requestDis.forward(request, response);
-
     GetCategoriesService categoriesService = new GetCategoriesService();
     List<CategoryDto> categories = categoriesService.getCategories();
     request.setAttribute("categories", categories);
@@ -77,6 +71,8 @@ public class AddProductServlet extends HttpServlet {
       String filePath = path + dirName + "/" + fileName;
 
       images.add("/presentation/assets/products_images/" + dirName + "/" + fileName);
+
+      part.write(filePath);
     }
     CategoryDto categoryDto = new CategoryDto();
     categoryDto.setId(Integer.parseInt(category));
