@@ -54,6 +54,11 @@
 		<servlet-name>Add-Product-Page</servlet-name>
 		<jsp-file>/presentation/views/Admin/addProduct.jsp</jsp-file>
 	</servlet>
+	<servlet>
+
+		<servlet-name>Add-Category-Page</servlet-name>
+		<jsp-file>/presentation/views/Admin/addCategory.jsp</jsp-file>
+	</servlet>
 	<!---->
 
 	<servlet-mapping>
@@ -93,6 +98,10 @@
 		<servlet-name>Add-Product-Page</servlet-name>
 		<url-pattern>/Add-Product-Page</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Add-Category-Page</servlet-name>
+		<url-pattern>/Add-Category-Page</url-pattern>
+	</servlet-mapping>
 	<!--end
 	of JSP mapping-->
 	<servlet>
@@ -102,6 +111,14 @@
 	<servlet-mapping>
 		<servlet-name>AddProduct</servlet-name>
 		<url-pattern>/add-product</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddCategory</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.AddCategoryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddCategory</servlet-name>
+		<url-pattern>/add-category</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
