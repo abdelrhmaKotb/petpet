@@ -20,12 +20,25 @@ public class ProductListServlet extends HttpServlet{
 
         List<ProductDto> products =  productsService.getProducts();
 
-        RequestDispatcher requestDis = req.getRequestDispatcher("");
+        RequestDispatcher requestDis = req.getRequestDispatcher("Products-List");
 
         req.setAttribute("priductList", products);
 
         requestDis.forward(req, resp);
 
     }
-    
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        GetProductsService productsService =  new  GetProductsService();
+
+        List<ProductDto> products =  productsService.getProducts();
+
+        RequestDispatcher requestDis = req.getRequestDispatcher("Products-List");
+
+        req.setAttribute("priductList", products);
+
+        requestDis.forward(req, resp);
+
+    }
+
 }

@@ -37,7 +37,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
 
     @Override
     public E find(K id) {
-        E ew = _entityManager.find(type, id);
+        E ew = _entityManager.getReference(type, id);
         return ew;
     }
 
@@ -52,6 +52,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
     @Override
     public boolean remove(E e) {
         try {
+
             _entityManager.getTransaction().begin();
             _entityManager.remove(e);
             _entityManager.getTransaction().commit();
