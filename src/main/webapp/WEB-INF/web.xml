@@ -59,6 +59,7 @@
 		<jsp-file>/presentation/views/Admin/productsList.jsp</jsp-file>
 	</servlet>
 
+
 	<!---->
 
 	<servlet-mapping>
@@ -102,6 +103,7 @@
 		<servlet-name>Products-list</servlet-name>
 		<url-pattern>/Products-List</url-pattern>
 	</servlet-mapping>
+
 	<!--end of JSP mapping-->
 
 <servlet>
@@ -157,6 +159,15 @@
 		<servlet-name>DeleteProduct</servlet-name>
 		<url-pattern>/Delete-Product</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>All-Products</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.AllProduct</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>All-Products</servlet-name>
+		<url-pattern>/Shop</url-pattern>
+	</servlet-mapping>
+
 	<!-- Welcome List-->
   <welcome-file-list>
 		<welcome-file>

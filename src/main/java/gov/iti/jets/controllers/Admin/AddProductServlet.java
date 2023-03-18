@@ -1,6 +1,7 @@
 package gov.iti.jets.controllers.Admin;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -77,7 +78,15 @@ public class AddProductServlet extends HttpServlet {
       String filePath = path + dirName + "/" + fileName;
 
       images.add("/presentation/assets/products_images/" + dirName + "/" + fileName);
+      try {
+        part.write(filePath);
+        writer.println("<p>" + fileName + " Uploaded In: " + path + "</p>");
+      } catch (FileNotFoundException fne) {
+        writer.println("<p>Error While Uploading Your File</p>");
+      }
+
     }
+
     CategoryDto categoryDto = new CategoryDto();
     categoryDto.setId(Integer.parseInt(category));
     ProductDto product = new ProductDto(productName, price, categoryDto, qty, description, images);

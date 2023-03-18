@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class AllProduct extends HttpServlet {
+    public class AllProduct extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,7 +21,7 @@ public class AllProduct extends HttpServlet {
 
         RequestDispatcher requestDis = req.getRequestDispatcher("shop");
 
-        req.setAttribute("priductList", products);
+        req.setAttribute("productList", products);
 
         requestDis.forward(req, resp);
 

@@ -32,7 +32,6 @@ public class Product {
     private String description;
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST ,orphanRemoval = true)
-
     List<ProductImage> images = new ArrayList<>();
 
     public List<ProductImage> getImages() {
