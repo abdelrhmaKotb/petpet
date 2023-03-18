@@ -268,7 +268,7 @@
                                         <tr>
                                             <td>${product.getId() }</td>
                                             <td>${product.getName() }</td>
-                                            <td>${product.getCategory().getName() }</td>
+                                            <td>${product.getCategory().getName()}</td>
                                             <td  width="200px" title="${product.getDescription()}">${product.getDescription() }</td>
                                              <td class="text-right">${product.getPrice()}</td>
                                             <td class="text-right">${product.getQuantity()}</td>

@@ -21,11 +21,7 @@ public class DeleteProductServlet extends HttpServlet {
 
         DeleteProductService deleteProductServlet = new DeleteProductService();
         boolean result = deleteProductServlet.deleteProduct(getProductsService.getProductFromContext(productID));
-
-        resp.sendRedirect("/petpet/Products");
-
-
-
+        //DO SOMETHING
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

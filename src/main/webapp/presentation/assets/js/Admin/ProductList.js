@@ -34,6 +34,7 @@ document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListene
                                   'Your Product has been deleted.',
                                   'success'
                                 )
+                                    e.target.closest('tr').remove();
                             },
                             error:function(){alert('error');}
                         }

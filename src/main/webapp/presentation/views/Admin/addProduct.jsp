@@ -1,7 +1,7 @@
 <jsp:directive.include file="header.html" />
 <main class="main">
 	<div class="page-header text-center" style="background-image:
-			url('assets/images/page-header-bg.jpg')">
+			url('/petpet/presentation/assets/images/page-header-bg.jpg')">
 		<div class="container">
 			<h1 class="page-title">Add Product</h1>
 		</div><!-- End .container -->
@@ -58,11 +58,12 @@
 								<h3 class="summary-title">Your Product Images</h3><!-- End .summary-title -->
 
 								<button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
-									<span class="btn-text">Place Order</span>
-									<span class="btn-hover-text">Proceed to Checkout</span>
+									<span class="btn-text">Add Product</span>
+									<span class="btn-hover-text">Add Product</span>
 								</button>
 							</div><!-- End .summary -->
 						</aside><!-- End .col-lg-3 -->
+
 					</div><!-- End .row -->
 					<div class="container">
 						<div class="row">
