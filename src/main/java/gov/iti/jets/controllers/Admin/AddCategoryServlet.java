@@ -16,7 +16,7 @@ public class AddCategoryServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("hala hala");
+       
         List<String> stringList = new Categoryservices().allcategoryname();
         stringList.add("Non");
         resp.setContentType("application/json");
@@ -32,14 +32,14 @@ public class AddCategoryServlet extends HttpServlet {
         String category_name = req.getParameter("category_name");
         String parent = req.getParameter("mySelect");
 
-        System.out.println("selectedValue:  " + parent);
-
-        System.out.println("category_name:  " + category_name);
         if (new Categoryservices().addCategory(category_name, parent) ) {
             RequestDispatcher dispatcher = req.getRequestDispatcher("presentation/views/Admin/addCategory.jsp");
             dispatcher.forward(req, resp);
         } else {
-
+          
+            req.setAttribute("errorMessagecategore","This Category  "+category_name+"  Already Exist Please Add Another Category");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("presentation/views/Admin/addCategory.jsp");
+            dispatcher.forward(req, resp);
         }
 
     }

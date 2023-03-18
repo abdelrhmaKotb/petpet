@@ -43,6 +43,7 @@
 						</div><!-- End .col-lg-9 -->
 
 					</div><!-- End .row -->
+					<div id="errorMessage" style="color: red;" >${errorMessagecategore}</div>
 					<button type="submit">Submit</button>
 					
 				</form>

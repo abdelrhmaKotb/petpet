@@ -34,15 +34,11 @@ public class CategoryDao {
         CriteriaBuilder cb = ef.getCriteriaBuilder();
         CriteriaQuery<Integer> q = cb.createQuery(Integer.class);
         Root<Category> category = q.from(Category.class);
-        System.out.println("CategoryName");
         q.select(category.get("id")).where(cb.equal(category.<String>get("name"), CategoryName));
 
         List<Integer> result = em.createQuery(q).getResultList();
         if (result.isEmpty())
-            return 0;
-
-            System.out.println("marha");
-    
+            return 0;    
         return result.get(0);
     }
     public boolean isCategory(String CategoryName) {
@@ -50,13 +46,11 @@ public class CategoryDao {
         CriteriaBuilder cb = ef.getCriteriaBuilder();
         CriteriaQuery<Integer> q = cb.createQuery(Integer.class);
         Root<Category> category = q.from(Category.class);
-        System.out.println("CategoryName");
 
         q.select(category.get("id")).where(cb.equal(category.<String>get("name"), CategoryName));
         System.out.println(CategoryName);
 
         List<Integer> result = em.createQuery(q).getResultList();
-        System.out.println(CategoryName);
 
         if (result.isEmpty()){
             System.out.println("   0 ");
