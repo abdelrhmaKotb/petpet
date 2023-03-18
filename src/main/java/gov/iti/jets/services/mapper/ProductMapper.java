@@ -40,6 +40,7 @@ public class ProductMapper implements Mapper<Product, ProductDto> {
 
         Product product = new Product();
         images.forEach(e -> imagesUlrs.add(new ProductImage(product, e)));
+        product.setId(pro.getId());
 
         product.setName(pro.getName());
         product.setPrice(pro.getPrice());

@@ -70,10 +70,7 @@
 								<input type="file" class="form-control" id="images" name="images[]"
 									onchange="preview_images();" multiple />
 							</div>
-							<div>
-								<input onclick="upload_files()" type="button" class="btn btn-primary"
-									name='submit_image' value="Upload Multiple Image" />
-								<input onclick="return resetForm();" type="reset" class="btn btn-danger"
+								<input onclick="resetForm();" type="button" class="btn btn-dangers "
 									name='reset_images' value="Reset" />
 							</div>
 						</div>

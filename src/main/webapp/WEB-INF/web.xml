@@ -99,9 +99,10 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Products-list</servlet-name>
-		<url-pattern>/Products</url-pattern>
+		<url-pattern>/Products-List</url-pattern>
 	</servlet-mapping>
 	<!--end of JSP mapping-->
+
 <servlet>
 	<servlet-name>AddProduct</servlet-name>
 	<servlet-class>gov.iti.jets.controllers.Admin.AddProductServlet</servlet-class>
@@ -119,6 +120,7 @@
 	<servlet-name>RegisterService</servlet-name>
 	<url-pattern>/register</url-pattern>
   </servlet-mapping>
+
 <servlet>
 	<servlet-name>loginserv</servlet-name>
 	<servlet-class>gov.iti.jets.controllers.LoginServlet</servlet-class>
@@ -127,6 +129,34 @@
 	<servlet-name>loginserv</servlet-name>
 	<url-pattern>/login_</url-pattern>
 </servlet-mapping>
+
+	<servlet>
+		<servlet-name>Products</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.ProductListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Products</servlet-name>
+		<url-pattern>/Products</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EditeProduct</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.EditProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditeProduct</servlet-name>
+		<url-pattern>/Edit-Product</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteProduct</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.DeleteProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteProduct</servlet-name>
+		<url-pattern>/Delete-Product</url-pattern>
+	</servlet-mapping>
+	<!-- Welcome List-->
   <welcome-file-list>
 		<welcome-file>
 			presentation/views/index-5.jsp

@@ -11,6 +11,7 @@ import java.util.List;
 import gov.iti.jets.persistent.dto.CategoryDto;
 import gov.iti.jets.persistent.dto.ProductDto;
 import gov.iti.jets.services.AddProductService;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -26,8 +27,10 @@ public class AddProductServlet extends HttpServlet {
 
     ServletContext servletContext = getServletContext();
     String contextPath = servletContext.getRealPath(File.separator);
-    PrintWriter out = response.getWriter();
-    out.println("<br/>File system context path (in TestServlet): " + contextPath);
+    RequestDispatcher requestDis = request.getRequestDispatcher("/Products");
+
+    requestDis.forward(request, response);
+
   }
 
   @Override
@@ -66,15 +69,7 @@ public class AddProductServlet extends HttpServlet {
       String filePath = path + dirName + "/" + fileName;
 
       images.add("/presentation/assets/products_images/" + dirName + "/" + fileName);
-
-      try {
-        part.write(filePath);
-        writer.println("<p>" + fileName + " Uploaded In: " + path + "</p>");
-      } catch (FileNotFoundException fne) {
-        writer.println("<p>Error While Uploading Your File</p>");
-      }
     }
-
     CategoryDto categoryDto = new CategoryDto();
     categoryDto.setId(Integer.parseInt(category));
     ProductDto product = new ProductDto(productName, price, categoryDto, qty, description, images);
@@ -82,6 +77,8 @@ public class AddProductServlet extends HttpServlet {
     AddProductService addProductService = new AddProductService();
 
     Integer productId = addProductService.addProduct(product);
+      response.sendRedirect("/petpet/Products");
+
 
   }
 

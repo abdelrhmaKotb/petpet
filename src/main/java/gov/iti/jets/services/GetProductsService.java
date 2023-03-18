@@ -28,5 +28,9 @@ public class GetProductsService {
 
         return new ProductMapper().toDto(repo.find(productID));
     }
+    public Product getProductFromContext(int productID){
+        RepositoryImpl<Product,Integer> repo = new RepositoryImpl<>(Product.class);
 
+        return repo.find(productID);
+    }
 }
