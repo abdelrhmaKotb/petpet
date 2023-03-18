@@ -36,7 +36,9 @@ document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListene
                                 )
                                     e.target.closest('tr').remove();
                             },
-                            error:function(){alert('error');}
+                            error:function(){
+                            alert('error');
+                            }
                         }
                     );
       } else if (

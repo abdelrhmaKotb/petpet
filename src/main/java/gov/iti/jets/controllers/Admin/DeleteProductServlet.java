@@ -18,7 +18,6 @@ public class DeleteProductServlet extends HttpServlet {
         String Msg = "";
         int productID = Integer.parseInt(req.getParameter("id"));
         GetProductsService getProductsService = new GetProductsService();
-
         DeleteProductService deleteProductServlet = new DeleteProductService();
         boolean result = deleteProductServlet.deleteProduct(getProductsService.getProductFromContext(productID));
         //DO SOMETHING

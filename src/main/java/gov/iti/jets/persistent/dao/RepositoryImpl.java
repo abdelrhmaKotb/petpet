@@ -37,7 +37,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
 
     @Override
     public E find(K id) {
-        E ew = _entityManager.getReference(type, id);
+        E ew = _entityManager.find(type, id);
         return ew;
     }
 
