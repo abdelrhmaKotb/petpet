@@ -1,6 +1,7 @@
 package gov.iti.jets.controllers.Admin;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -74,6 +75,7 @@ public class AddProductServlet extends HttpServlet {
 
       part.write(filePath);
     }
+
     CategoryDto categoryDto = new CategoryDto();
     categoryDto.setId(Integer.parseInt(category));
     ProductDto product = new ProductDto(productName, price, categoryDto, qty, description, images);

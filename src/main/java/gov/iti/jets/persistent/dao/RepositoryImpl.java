@@ -42,6 +42,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
     }
 
     @Override
+
     public List<E> findAll() {
 
         List<E> list = (List<E>) _entityManager.createQuery("FROM " + type.getName() + " ").getResultList();
