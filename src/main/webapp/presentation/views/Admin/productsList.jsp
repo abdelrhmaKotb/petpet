@@ -13,6 +13,10 @@
     <meta name="author" content="p-themes">
     <!-- Favicon -->
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
     <link rel="apple-touch-icon" sizes="180x180" href="/petpet/presentation/assets/images/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="32x32"
           href="/petpet/presentation/assets/images/icons/favicon-32x32.png">
@@ -30,6 +34,8 @@
     <link rel="stylesheet" href="/petpet/presentation/assets/css/bootstrap.min.css">
     <!-- Main CSS File -->
     <link rel="stylesheet" href="/petpet/presentation/assets/css/style.css">
+    <link rel="stylesheet" href="/petpet/presentation/assets/css/AdminProductsList.css">
+
 </head>
 
 <body>
@@ -170,3 +176,97 @@
             </div><!-- End .container -->
         </div><!-- End .header-middle -->
     </header><!-- End .header -->
+    <div class="container">
+    	<div class="title">
+    		<h3>Products List</h3>
+    	</div>
+
+            <div class="col-lg-15 col-md-15 ml-auto mr-auto">
+
+                <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Pet Name</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th class="text-right">Price</th>
+                            <th class="text-right">Quantity</th>
+                            <th class="text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="text-center">3</td>
+                            <td>LoLo</td>
+                            <td>Cat</td>
+                            <td>lolo gamila </td>
+                            <td class="text-right">92,144$</td>
+                            <td class="text-right">10</td>
+                            <td class="td-actions text-right">
+                                <button type="button" rel="tooltip" class="btn btn-success btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="icon-edit"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="icon-close"></i>
+                                </button>
+                            </td>
+                        </tr>
+  <tr>
+                            <td class="text-center">3</td>
+                            <td>LoLo</td>
+                            <td>Cat</td>
+                            <td>lolo gamila </td>
+                            <td class="text-right">92,144$</td>
+                            <td class="text-right">10</td>
+                            <td class="td-actions text-right">
+                                <button type="button" rel="tooltip" class="btn btn-success btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="icon-edit"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="icon-close"></i>
+                                </button>
+                            </td>
+                        </tr>
+                          <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td>LoLo</td>
+                                                    <td>Cat</td>
+                                                    <td>lolo gamila </td>
+                                                    <td class="text-right">92,144$</td>
+                                                    <td class="text-right">10</td>
+                                                    <td class="td-actions text-right">
+                                                        <button type="button" rel="tooltip" class="btn btn-success btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                                            <i class="icon-edit"></i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                                            <i class="icon-close"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                  <tr>
+                                                                            <td class="text-center">3</td>
+                                                                            <td>LoLo</td>
+                                                                            <td>Cat</td>
+                                                                            <td>lolo gamila </td>
+                                                                            <td class="text-right">92,144$</td>
+                                                                            <td class="text-right">10</td>
+                                                                            <td class="td-actions text-right">
+                                                                                <button type="button" rel="tooltip" class="btn btn-success btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                                                                    <i class="icon-edit"></i>
+                                                                                </button>
+                                                                                <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                                                                    <i class="icon-close"></i>
+                                                                                </button>
+                                                                            </td>
+                                                                        </tr>
+
+                    </tbody>
+                </table>
+                </div>
+                </div>
+                </div>
+         </div>
+	<%@ include file="footer.html" %>

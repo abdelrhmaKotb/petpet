@@ -41,6 +41,10 @@
 		<servlet-name>Add-Product-Page</servlet-name>
 		<jsp-file>/presentation/views/Admin/addProduct.jsp</jsp-file>
 	</servlet>
+	<servlet>
+		<servlet-name>Products-list</servlet-name>
+		<jsp-file>/presentation/views/Admin/productsList.jsp</jsp-file>
+	</servlet>
 	<!---->
 
 	<servlet-mapping>
@@ -74,6 +78,10 @@
 	<servlet-mapping>
 		<servlet-name>Add-Product-Page</servlet-name>
 		<url-pattern>/Add-Product-Page</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Products-list</servlet-name>
+		<url-pattern>/Products</url-pattern>
 	</servlet-mapping>
 	<!--end of JSP mapping-->
 <servlet>

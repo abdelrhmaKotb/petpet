@@ -263,43 +263,43 @@
                     }'>
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/1.png"
+                            src="/petpet/presentation/assets/images/brands/1.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/2.png"
+                            src="/petpet/presentation/assets/images/brands/2.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/3.png"
+                            src="/petpet/presentation/assets/images/brands/3.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/4.png"
+                            src="/petpet/presentation/assets/images/brands/4.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/5.png"
+                            src="/petpet/presentation/assets/images/brands/5.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/6.png"
+                            src="/petpet/presentation/assets/images/brands/6.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/7.png"
+                            src="/petpet/presentation/assets/images/brands/7.png"
                             alt="Brand Name">
                     </a>
                 </div><!-- End .owl-carousel -->
@@ -311,7 +311,7 @@
                                 <div class="banner banner-border">
                                     <a href="#">
                                         <img
-                                            src="/petpet/presentation/views/assets/images/demos/demo-5/banners/banner-1.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-1.jpg"
                                             alt="Banner">
                                     </a>
 
@@ -331,7 +331,7 @@
                                 <div class="banner banner-border-hover">
                                     <a href="#">
                                         <img
-                                            src="/petpet/presentation/views/assets/images/demos/demo-5/banners/banner-2.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-2.jpg"
                                             alt="Banner">
                                     </a>
 
@@ -350,7 +350,7 @@
                                 <div class="banner banner-border-hover">
                                     <a href="#">
                                         <img
-                                            src="/petpet/presentation/views/assets/images/demos/demo-5/banners/banner-3.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-3.jpg"
                                             alt="Banner">
                                     </a>
 
