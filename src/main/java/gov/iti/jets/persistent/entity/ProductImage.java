@@ -10,13 +10,26 @@ public class ProductImage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "product_id")
     private Product product;
 
     @Lob
     @Column(name = "image_url")
     private String imageUrl;
+
+
+    
+
+    public ProductImage() {
+    }
+
+    
+    public ProductImage(Product product, String imageUrl) {
+        this.product = product;
+        this.imageUrl = imageUrl;
+    }
+
 
     public Integer getId() {
         return id;

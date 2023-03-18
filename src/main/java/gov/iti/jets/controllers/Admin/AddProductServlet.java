@@ -1,9 +1,11 @@
 package gov.iti.jets.controllers.Admin;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import gov.iti.jets.persistent.dto.CategoryDto;
@@ -23,9 +25,9 @@ public class AddProductServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     ServletContext servletContext = getServletContext();
-		String contextPath = servletContext.getRealPath(File.separator);
-		PrintWriter out = response.getWriter();
-		out.println("<br/>File system context path (in TestServlet): " + contextPath);
+    String contextPath = servletContext.getRealPath(File.separator);
+    PrintWriter out = response.getWriter();
+    out.println("<br/>File system context path (in TestServlet): " + contextPath);
   }
 
   @Override
@@ -39,35 +41,48 @@ public class AddProductServlet extends HttpServlet {
 
     List<String> images = new ArrayList<>();
 
+    ServletContext servletContext = getServletContext();
+    String contextPath = servletContext.getRealPath(File.separator);
+    final String path = contextPath + "/presentation/assets/products_images/";
+
+    System.out.println("path is " + path);
+
+    final Collection<Part> filePart = request.getParts();
+
+    final PrintWriter writer = response.getWriter();
+
+    String dirName = productName + Math.random();
+
+    Boolean res = new File(path + dirName).mkdirs();
+
+    for (Part part : filePart) {
+      final String fileName = part.getSubmittedFileName();
+      System.out.println("name " + fileName);
+
+      if (fileName == null) {
+        continue;
+      }
+
+      String filePath = path + dirName + "/" + fileName;
+
+      images.add("/presentation/assets/products_images/" + dirName + "/" + fileName);
+
+      try {
+        part.write(filePath);
+        writer.println("<p>" + fileName + " Uploaded In: " + path + "</p>");
+      } catch (FileNotFoundException fne) {
+        writer.println("<p>Error While Uploading Your File</p>");
+      }
+    }
 
     CategoryDto categoryDto = new CategoryDto();
     categoryDto.setId(Integer.parseInt(category));
     ProductDto product = new ProductDto(productName, price, categoryDto, qty, description, images);
 
-
     AddProductService addProductService = new AddProductService();
 
-    addProductService.addProduct(product);
+    Integer productId = addProductService.addProduct(product);
 
-    // final String path = "/";
-
-    // System.out.println(path);
-
-    // final Collection<Part> filePart = request.getParts();
-
-    // final PrintWriter writer = response.getWriter();
-    // for (Part part : filePart) {
-    //   final String fileName = part.getSubmittedFileName();
-    //   System.out.println(fileName);
-    // }
-
-    // try {
-    // filePart.writer(path + fileName);
-    // writer.println("<p>" + fileName + " Uploaded In: " + path + " BY: "
-    // + request.getParameter("username") + "</p>");
-    // } catch (FileNotFoundException fne) {
-    // writer.println("<p>Error While Uploading Your File</p>");
-    // }
   }
 
 }

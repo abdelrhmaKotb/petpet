@@ -3,7 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
 	version="5.0" metadata-complete="true">
-	<!--Start of JSP mapping-->
+	<!--Start
+	of JSP mapping-->
 
 	<servlet>
 		<servlet-name>Home</servlet-name>
@@ -37,7 +38,19 @@
 		<servlet-name>login</servlet-name>
 		<jsp-file>/presentation/views/login.jsp</jsp-file>
 	</servlet>
+
 	<servlet>
+		<servlet-name>adminProducts</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.ProductListServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>adminEditProduct</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.EditProductServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+
 		<servlet-name>Add-Product-Page</servlet-name>
 		<jsp-file>/presentation/views/Admin/addProduct.jsp</jsp-file>
 	</servlet>
@@ -46,6 +59,11 @@
 		<jsp-file>/presentation/views/Admin/productsList.jsp</jsp-file>
 	</servlet>
 	<!---->
+
+	<servlet-mapping>
+		<servlet-name>adminEditProduct</servlet-name>
+		<url-pattern>/admin/show</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>Home</servlet-name>

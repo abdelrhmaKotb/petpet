@@ -13,6 +13,10 @@ public class ProductMapper implements Mapper<Product, ProductDto> {
     @Override
     public ProductDto toDto(Product pro) {
 
+        if (pro == null) {
+            return null;
+        }
+
         List<String> images = new ArrayList<>();
 
         List<ProductImage> imgs = pro.getImages();
@@ -29,13 +33,20 @@ public class ProductMapper implements Mapper<Product, ProductDto> {
 
     @Override
     public Product toEntity(ProductDto pro) {
-        
+
+        List<String> images = pro.getImagesUlrs();
+
+        List<ProductImage> imagesUlrs = new ArrayList<>();
+
         Product product = new Product();
+        images.forEach(e -> imagesUlrs.add(new ProductImage(product, e)));
+
         product.setName(pro.getName());
         product.setPrice(pro.getPrice());
         product.setQuantity(pro.getQuantity());
         product.setDescription(pro.getDescription());
         product.setCategory(new CategoryMapper().toEntity(pro.getCategory()));
+        product.setImages(imagesUlrs);
 
         return product;
 
