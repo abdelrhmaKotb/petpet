@@ -73,7 +73,7 @@
                                     </li>
                                     <li>
                                         <a
-                                            href="/petpet/shop">Shop</a>
+                                            href="/petpet/Shop">Shop</a>
                                     </li>
 
                                     <li>
@@ -82,7 +82,7 @@
                                     </li>
                                     <li>
                                         <a
-                                            href="/petpet/Add-Product-Page">Contact</a>
+                                            href="/petpet/contact">Contact</a>
                                     </li>
                                     <li><a
                                             href="/petpet/login">Login</a></li>
@@ -2032,11 +2032,11 @@
                                 <div class="widget">
                                     <h4 class="widget-title">Information</h4><!-- End .widget-title -->
                                     <ul class="widget-list">
-                                        <li><a href="about.jsp">About Molla</a></li>
+                                        <li><a href="/petpet/about">About Molla</a></li>
                                         <li><a href="#">How to shop on Molla</a></li>
                                         <li><a href="faq.jsp">FAQ</a></li>
-                                        <li><a href="contact.jsp">Contact us</a></li>
-                                        <li><a href="login.jsp">Log in</a></li>
+                                        <li><a href="/petpet/contact">Contact us</a></li>
+                                        <li><a href="/petpet/login">Log in</a></li>
                                     </ul><!-- End .widget-list -->
                                 </div><!-- End .widget -->
                             </div><!-- End .col-sm-4 col-lg-3 -->
@@ -2060,10 +2060,10 @@
                                     <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
                                     <ul class="widget-list">
                                         <li><a
-                                                href="/petpet/presentation/views/login.jsp">Sign
+                                                href="/petpet/login">Sign
                                                 In</a></li>
                                         <li><a
-                                                href="/petpet/presentation/views/cart.jsp">View
+                                                href="/petpet/cart">View
                                                 Cart</a></li>
                                         <li><a
                                                 href="/petpet/presentation/views/wishlist.jsp">My
@@ -2127,23 +2127,23 @@
 
                         <li>
                             <a
-                                href="/petpet/presentation/views/index-5.jsp">Home</a>
+                                href="/petpet/home">Home</a>
                         </li>
                         <li>
                             <a
-                                href="/petpet/presentation/views/category-fullwidth.jsp">Shop</a>
+                                href="/petpet/shop">Shop</a>
                         </li>
 
                         <li>
                             <a
-                                href="/petpet/presentation/views/about-2.jsp">About</a>
+                                href="/petpet/about">About</a>
                         </li>
                         <li>
                             <a
-                                href="/petpet/presentation/views/contact-2.jsp">Contact</a>
+                                href="/petpet/contact">Contact</a>
                         </li>
                         <li><a
-                                href="/petpet/presentation/views/login.jsp">Login</a></li>
+                                href="/petpet/login">Login</a></li>
                         <li><a
                                 href="/petpet/presentation/views/coming-soon.jsp">Coming
                                 Soon</a></li>

@@ -28,7 +28,8 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
             _entityManager.getTransaction().commit();
         } catch (Exception ex) {
             _entityManager.getTransaction().rollback();
-            throw ex;
+            System.out.println("erro : " + ex.getMessage());
+            // throw ex;
         }
 
         return e;
@@ -41,6 +42,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
     }
 
     @Override
+
     public List<E> findAll() {
 
         List<E> list = (List<E>) _entityManager.createQuery("FROM " + type.getName() + " ").getResultList();
@@ -51,6 +53,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
     @Override
     public boolean remove(E e) {
         try {
+
             _entityManager.getTransaction().begin();
             _entityManager.remove(e);
             _entityManager.getTransaction().commit();

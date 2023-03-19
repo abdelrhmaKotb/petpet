@@ -11,5 +11,6 @@ function preview_images() {
   }
   function resetForm(){
     $("#image_preview").html("");
-    return true;
+    $("#images").val("");
+
   }
