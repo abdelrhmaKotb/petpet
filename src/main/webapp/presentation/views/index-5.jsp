@@ -205,7 +205,7 @@
                         owl-nav-inside owl-light" data-toggle="owl"
                         data-owl-options='{" nav": false, "dots": false}'>
                         <div class="intro-slide" style="background-image:
-                            url(/petpet/presentation/views/assets/images/demos/demo-5/slider/slide-1.jpg);">
+                            url(/petpet/presentation/assets/images/demos/demo-5/slider/slide-4.jpg);">
                             <div class="container intro-content text-center">
                                 <h3 class="intro-subtitle text-white">Don’t Miss</h3><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title text-white">Mystery Deals</h1><!-- End .intro-title -->
@@ -217,7 +217,7 @@
                         </div><!-- End .intro-slide -->
 
                         <div class="intro-slide" style="background-image:
-                            url(/petpet/presentation/views/assets/images/demos/demo-5/slider/slide-2.jpg);">
+                            url(/petpet/presentation/assets/images/demos/demo-5/slider/slide-7.jpg);">
                             <div class="container intro-content text-center">
                                 <h3 class="intro-subtitle text-white">Limited
                                     time only</h3><!-- End .h3 intro-subtitle -->
@@ -263,43 +263,43 @@
                     }'>
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/1.png"
+                            src="/petpet/presentation/assets/images/brands/1.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/2.png"
+                            src="/petpet/presentation/assets/images/brands/2.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/3.png"
+                            src="/petpet/presentation/assets/images/brands/3.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/4.png"
+                            src="/petpet/presentation/assets/images/brands/4.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/5.png"
+                            src="/petpet/presentation/assets/images/brands/5.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/6.png"
+                            src="/petpet/presentation/assets/images/brands/6.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/7.png"
+                            src="/petpet/presentation/assets/images/brands/7.png"
                             alt="Brand Name">
                     </a>
                 </div><!-- End .owl-carousel -->
@@ -311,7 +311,7 @@
                                 <div class="banner banner-border">
                                     <a href="#">
                                         <img
-                                            src="/petpet/presentation/views/assets/images/demos/demo-5/banners/banner-1.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-5.jpg"
                                             alt="Banner">
                                     </a>
 
@@ -331,7 +331,7 @@
                                 <div class="banner banner-border-hover">
                                     <a href="#">
                                         <img
-                                            src="/petpet/presentation/views/assets/images/demos/demo-5/banners/banner-2.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-8.jpg"
                                             alt="Banner">
                                     </a>
 
@@ -350,7 +350,7 @@
                                 <div class="banner banner-border-hover">
                                     <a href="#">
                                         <img
-                                            src="/petpet/presentation/views/assets/images/demos/demo-5/banners/banner-3.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-7.jpg"
                                             alt="Banner">
                                     </a>
 
@@ -439,11 +439,11 @@
                                         <a
                                             href="/petpet/presentation/views/product.jsp">
                                             <img
-                                                src="/petpet/presentation/views/assets/images/demos/demo-5/products/product-1-1.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-1-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="/petpet/presentation/views/assets/images/demos/demo-5/products/product-1-2.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-1-2.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -490,11 +490,11 @@
                                         <a
                                             href="/petpet/presentation/views/product.jsp">
                                             <img
-                                                src="/petpet/presentation/views/assets/images/demos/demo-5/products/product-2-1.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-2-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="/petpet/presentation/views/assets/images/demos/demo-5/products/product-2-2.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-2-2.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -531,11 +531,11 @@
                                         <a
                                             href="/petpet/presentation/views/product.jsp">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-3-1.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-3-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-3-2.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-3-2.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -571,11 +571,11 @@
                                     <figure class="product-media">
                                         <a href="product.jsp">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-4-1.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-4-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-4-2.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-4-2.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -609,11 +609,11 @@
                                     <figure class="product-media">
                                         <a href="product.jsp">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-1-1.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-1-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-1-2.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-1-2.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -793,7 +793,7 @@
                                                                     <a
                                                                         href="product.jsp">
                                                                         <img
-                                                                            src="assets/images/demos/demo-5/products/product-13.jpg"
+                                                                            src="/petpet/presentation/assets/images/demos/demo-5/products/product-13.jpg"
                                                                             alt="Product
                                                                             image"
                                                                             class="product-image">
@@ -821,7 +821,7 @@
                                                                     <a
                                                                         href="product.jsp">
                                                                         <img
-                                                                            src="assets/images/demos/demo-5/products/product-14.jpg"
+                                                                            src="/petpet/presentation/assets/images/demos/demo-5/products/product-14.jpg"
                                                                             alt="Product
                                                                             image"
                                                                             class="product-image">
@@ -851,7 +851,7 @@
                                         banner-border-hover">
                                         <a href="#">
                                             <img
-                                                src="assets/images/demos/demo-5/banners/banner-4.jpg"
+                                                src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-4.jpg"
                                                 alt="banner">
                                         </a>
                                         <div class="banner-content">
@@ -921,11 +921,11 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-5-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-5-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-5-2.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-5-2.jpg"
                                                         alt="Product image"
                                                         class="product-image-hover">
                                                 </a>
@@ -977,11 +977,11 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-6-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-6-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-6-2.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-6-2.jpg"
                                                         alt="Product image"
                                                         class="product-image-hover">
                                                 </a>
@@ -1023,11 +1023,11 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-7-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-7-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-7-2.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-7-2.jpg"
                                                         alt="Product image"
                                                         class="product-image-hover">
                                                 </a>
@@ -1079,11 +1079,11 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-8-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-8-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-8-2.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-8-2.jpg"
                                                         alt="Product image"
                                                         class="product-image-hover">
                                                 </a>
@@ -1122,11 +1122,11 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-9-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-9-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-9-2.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-9-2.jpg"
                                                         alt="Product image"
                                                         class="product-image-hover">
                                                 </a>
@@ -1183,7 +1183,7 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-10-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-10-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
@@ -1226,11 +1226,11 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-11-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-11-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-11-2.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-11-2.jpg"
                                                         alt="Product image"
                                                         class="product-image-hover">
                                                 </a>
@@ -1269,11 +1269,11 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-12-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-12-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-12-2.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-12-2.jpg"
                                                         alt="Product image"
                                                         class="product-image-hover">
                                                 </a>
@@ -1321,11 +1321,11 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-5-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-5-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-5-2.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-5-2.jpg"
                                                         alt="Product image"
                                                         class="product-image-hover">
                                                 </a>
@@ -1377,11 +1377,11 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-7-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-7-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-7-2.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-7-2.jpg"
                                                         alt="Product image"
                                                         class="product-image-hover">
                                                 </a>
@@ -1433,11 +1433,11 @@
                                             <figure class="product-media">
                                                 <a href="product.jsp">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-10-1.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-10-1.jpg"
                                                         alt="Product image"
                                                         class="product-image">
                                                     <img
-                                                        src="assets/images/demos/demo-5/products/product-10-2.jpg"
+                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-10-2.jpg"
                                                         alt="Product image"
                                                         class="product-image-hover">
                                                 </a>
