@@ -58,7 +58,7 @@
                                 <i class="icon-bars"></i>
                             </button>
 
-                            <a href="/petpet/presentation/views/index-5.jsp"
+                            <a href="/petpet/presentation/views/home"
                                 class="logo">
                                 <img
                                     src="/petpet/presentation/assets/images/demos/demo-5/logo.png"
@@ -112,6 +112,11 @@
                                     </div><!-- End .header-search-wrapper -->
                                 </form>
                             </div><!-- End .header-search -->
+                            <div class="nav-line-1-container" style="color: transparent"> &amp; &amp; </div>
+                            <div class="nav-line-1-container">
+                                <span id="nav-link-accountList-nav-line-1" style="color : red;font-weight: bold;padding: inherit;" class="nav-line-1 nav-progressive-content">Hello, sign in
+                                </span>
+                            </div>
 
                             <a href="/petpet/wishlist"
                                 class="wishlist-link">
@@ -207,11 +212,11 @@
                         <div class="intro-slide" style="background-image:
                             url(/petpet/presentation/assets/images/demos/demo-5/slider/slide-4.jpg);">
                             <div class="container intro-content text-center">
-                                <h3 class="intro-subtitle text-white">Don’t Miss</h3><!-- End .h3 intro-subtitle -->
+                                <h3 class="intro-subtitle text-white">Discover over collections</h3> <br><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title text-white">Mystery Deals</h1><!-- End .intro-title -->
                                 <div class="intro-text text-white">Online Only</div><!-- End .intro-text -->
                                 <a
-                                    href="/petpet/presentation/views/category.jsp"
+                                    href="/petpet/Shop"
                                     class="btn btn-primary">Discover NOW</a>
                             </div><!-- End .intro-content -->
                         </div><!-- End .intro-slide -->
@@ -221,11 +226,10 @@
                             <div class="container intro-content text-center">
                                 <h3 class="intro-subtitle text-white">Limited
                                     time only</h3><!-- End .h3 intro-subtitle -->
-                                <h1 class="intro-title text-white">Treat your
-                                    self</h1><!-- End .intro-title -->
-                                <div class="intro-text text-white">Up to 50% off</div><!-- End .intro-text -->
+                                <h1 class="intro-title text-white">Pet your pet..now</h1><!-- End .intro-title -->
+                                <div class="intro-text text-white">Up to 50% OFF</div><!-- End .intro-text -->
                                 <a
-                                    href="/petpet/presentation/views/category.jsp"
+                                    href="/petpet/Shop"
                                     class="btn btn-primary">Shop NOW</a>
                             </div><!-- End .intro-content -->
                         </div><!-- End .intro-slide -->
@@ -439,11 +443,11 @@
                                         <a
                                             href="/petpet/presentation/views/product.jsp">
                                             <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-1-1.jpg"
+                                                src="/petpet/presentation/assets/images/products/single-cat/cat-single-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-1-2.jpg"
+                                                src="/petpet/presentation/assets/images/products/single-cat/cat-single-2.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -464,7 +468,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">Clothing</a>
+                                            <a href="#">Cats</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a
                                                 href="/petpet/presentation/views/product.jsp">Vest
@@ -473,15 +477,7 @@
                                             $9.99
                                         </div><!-- End .product-price -->
 
-                                        <div class="product-nav
-                                            product-nav-dots">
-                                            <a href="#" class="active"
-                                                style="background: #2d272b;"><span
-                                                    class="sr-only">Color name</span></a>
-                                            <a href="#" style="background:
-                                                #8f957d;"><span class="sr-only">Color
-                                                    name</span></a>
-                                        </div><!-- End .product-nav -->
+
                                     </div><!-- End .product-body -->
                                 </div><!-- End .product -->
 
@@ -490,11 +486,11 @@
                                         <a
                                             href="/petpet/presentation/views/product.jsp">
                                             <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-2-1.jpg"
+                                                src="/petpet/presentation/assets/images/products/single-dog/dog-single-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-2-2.jpg"
+                                                src="/petpet/presentation/assets/images/products/single-dog/dog-single-2.png"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -515,7 +511,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">Clothing</a>
+                                            <a href="#">Dogs</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a
                                                 href="/petpet/presentation/views/product.jsp">Dress
@@ -531,11 +527,11 @@
                                         <a
                                             href="/petpet/presentation/views/product.jsp">
                                             <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-3-1.jpg"
+                                                src="/petpet/presentation/assets/images/products/food/product-food-10.png"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-3-2.jpg"
+                                                src="/petpet/presentation/assets/images/images/products/food/product-food-10.png"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -556,7 +552,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">Shoes</a>
+                                            <a href="#">Food</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a
                                                 href="product.jsp">Sandals</a></h3><!-- End .product-title -->
@@ -571,11 +567,11 @@
                                     <figure class="product-media">
                                         <a href="product.jsp">
                                             <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-4-1.jpg"
+                                                src="/petpet/presentation/assets/images/products/accessories/product-acs-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-4-2.jpg"
+                                                src="/petpet/presentation/assets/images/products/accessories/product-acs-1-1.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -596,7 +592,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">Handbags</a>
+                                            <a href="#">Accessories</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a
                                                 href="product.jsp">Bucket bag</a></h3><!-- End .product-title -->
@@ -609,11 +605,11 @@
                                     <figure class="product-media">
                                         <a href="product.jsp">
                                             <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-1-1.jpg"
+                                                src="/petpet/presentation/assets/images/products/product-bird-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/products/product-1-2.jpg"
+                                                src="/petpet/presentation/assets/images/products/product-bird-1.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -634,7 +630,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">Clothing</a>
+                                            <a href="#">Birds</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a
                                                 href="product.jsp">Vest dress</a></h3><!-- End .product-title -->
@@ -642,15 +638,7 @@
                                             $9.99
                                         </div><!-- End .product-price -->
 
-                                        <div class="product-nav
-                                            product-nav-dots">
-                                            <a href="#" class="active"
-                                                style="background: #2d272b;"><span
-                                                    class="sr-only">Color name</span></a>
-                                            <a href="#" style="background:
-                                                #8f957d;"><span class="sr-only">Color
-                                                    name</span></a>
-                                        </div><!-- End .product-nav -->
+
                                     </div><!-- End .product-body -->
                                 </div><!-- End .product -->
                             </div><!-- End .owl-carousel -->
@@ -756,127 +744,14 @@
 
                 <div class="video-banner video-banner-bg bg-image text-center"
                     style="background-image:
-                    url(assets/images/demos/demo-5/bg-2.jpg)">
+                    url(/petpet/presentation/assets/images/backgrounds/bg-5.jpg);">
                     <div class="container">
                         <h3 class="video-banner-title h1 text-white"><span>New
-                                Collection</span><strong>Winter’19 <i>/</i>
-                                Spring’20</strong></h3><!-- End .video-banner-title -->
-                        <a href="https://www.youtube.com/watch?v=vBPgmASQ1A0"
-                            class="btn-video btn-iframe"><i class="icon-play"></i></a>
+                                Collection</span><strong>Winter <i>/</i>
+                                Spring</strong></h3><!-- End .video-banner-title -->
+
                     </div><!-- End .container -->
                 </div><!-- End .video-banner bg-image -->
-
-                <div class="pt-6 pb-6" style="background-color: #fff;">
-                    <div class="container">
-                        <div class="banner-set">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="banner-set-content text-center">
-                                        <div class="set-content-wrapper">
-                                            <h4>Special</h4>
-                                            <h2>Refine Your Style.</h2>
-
-                                            <p>Get on our exclusive email list
-                                                and be the first to hear about
-                                                sales, coupons, new arrivals and
-                                                more! </p>
-
-                                            <div class="banner-set-products">
-                                                <div class="row">
-                                                    <div class="products">
-                                                        <div class="col-6">
-                                                            <div class="product
-                                                                product-2
-                                                                text-center">
-                                                                <figure
-                                                                    class="product-media">
-                                                                    <a
-                                                                        href="product.jsp">
-                                                                        <img
-                                                                            src="/petpet/presentation/assets/images/demos/demo-5/products/product-13.jpg"
-                                                                            alt="Product
-                                                                            image"
-                                                                            class="product-image">
-                                                                    </a>
-                                                                </figure><!-- End .product-media -->
-                                                                <div
-                                                                    class="product-body">
-                                                                    <h3
-                                                                        class="product-title"><a
-                                                                            href="product.jsp">Rib-knit
-                                                                            cardigan</a></h3><!-- End .product-title -->
-                                                                    <div
-                                                                        class="product-price">
-                                                                        $24.99
-                                                                    </div><!-- End .product-price -->
-                                                                </div><!-- End .product-body -->
-                                                            </div><!-- End .product -->
-                                                        </div><!-- End .col-sm-6 -->
-                                                        <div class="col-6">
-                                                            <div class="product
-                                                                product-2
-                                                                text-center">
-                                                                <figure
-                                                                    class="product-media">
-                                                                    <a
-                                                                        href="product.jsp">
-                                                                        <img
-                                                                            src="/petpet/presentation/assets/images/demos/demo-5/products/product-14.jpg"
-                                                                            alt="Product
-                                                                            image"
-                                                                            class="product-image">
-                                                                    </a>
-                                                                </figure><!-- End .product-media -->
-                                                                <div
-                                                                    class="product-body">
-                                                                    <h3
-                                                                        class="product-title"><a
-                                                                            href="product.jsp">Linen-blend
-                                                                            trousers</a></h3><!-- End .product-title -->
-                                                                    <div
-                                                                        class="product-price">
-                                                                        $19.99
-                                                                    </div><!-- End .product-price -->
-                                                                </div><!-- End .product-body -->
-                                                            </div><!-- End .product -->
-                                                        </div><!-- End .col-sm-6 -->
-                                                    </div>
-                                                </div><!-- End .row -->
-                                            </div><!-- End .banner-set-products -->
-                                        </div><!-- End .set-content-wrapper -->
-                                    </div><!-- End .banner-set-content -->
-                                </div><!-- End .col-lg-6 -->
-                                <div class="col-lg-6">
-                                    <div class="banner-set-image
-                                        banner-border-hover">
-                                        <a href="#">
-                                            <img
-                                                src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-4.jpg"
-                                                alt="banner">
-                                        </a>
-                                        <div class="banner-content">
-                                            <h3 class="banner-title"><a
-                                                    href="#"><span>Casual basics
-                                                        and<br>trendy key
-                                                        pieces.</span></a></h3><!-- End .banner-title -->
-                                            <h4 class="banner-subtitle">in this
-                                                look</h4>
-                                            <!-- End .banner-subtitle -->
-                                            <h4 class="banner-detail">• Rib-knit
-                                                cardigan <br>• Linen-blend paper
-                                                bag trousers</h4>
-                                            <h4 class="banner-price">$19.99 -
-                                                $48.00</h4>
-                                            <a href="#" class="btn
-                                                btn-outline-primary-2
-                                                banner-link">buy all</a>
-                                        </div><!-- End .banner-content -->
-                                    </div><!-- End .banner-set-image -->
-                                </div><!-- End .col-lg-6 -->
-                            </div><!-- End .row -->
-                        </div><!-- End .banner-set -->
-                    </div><!-- End .container -->
-                </div><!-- End .bg-lighter pt6 pb-6 -->
 
                 <div class="container pt-6 new-arrivals">
                     <div class="heading heading-center mb-3">
@@ -2173,22 +2048,16 @@
                         <div class="col-xl-3-5col col-lg-7 banner-content-wrap">
                             <div class="banner-content text-center">
                                 <img
-                                    src="/petpet/presentation/assets/images/popup/newsletter/logo.png"
+                                    src="/petpet/presentation/assets/images/logo.png"
                                     class="logo" alt="logo" width="60"
                                     height="15">
                                 <h2 class="banner-title">get <span>25<light>%</light></span>
                                     off</h2>
-                                <p>Subscribe to the Molla eCommerce newsletter
-                                    to receive timely updates from your favorite
-                                    products.</p>
+                                <p>Join us today to get a fresh deals everyday !.</p>
                                 <form action="#">
                                     <div class="input-group input-group-round">
-                                        <input type="email" class="form-control
-                                            form-control-white"
-                                            placeholder="Your Email Address"
-                                            aria-label="Email Adress" required>
+
                                         <div class="input-group-append">
-                                            <button class="btn" type="submit"><span>go</span></button>
                                         </div><!-- .End .input-group-append -->
                                     </div><!-- .End .input-group -->
                                 </form>
@@ -2201,9 +2070,10 @@
                                         popup again</label>
                                 </div><!-- End .custom-checkbox -->
                             </div>
+
                         </div>
                         <div class="col-xl-2-5col col-lg-5 ">
-                            <img src="assets/images/popup/newsletter/img-1.jpg"
+                            <img src="/petpet/presentation/assets/images/popup/pop-1.jpg"
                                 class="newsletter-img" alt="newsletter">
                         </div>
                     </div>
