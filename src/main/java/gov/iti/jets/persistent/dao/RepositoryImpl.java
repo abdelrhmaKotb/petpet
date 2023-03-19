@@ -40,6 +40,11 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
         E ew = _entityManager.find(type, id);
         return ew;
     }
+    @Override
+    public E findFromContext(K id) {
+        E ew = _entityManager.getReference(type, id);
+        return ew;
+    }
 
     @Override
 

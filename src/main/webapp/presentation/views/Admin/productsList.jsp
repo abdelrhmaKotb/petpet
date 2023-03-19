@@ -241,7 +241,7 @@
                         <h3>Products List</h3>
                         </div>
                         <div class="col-sm-4" style="  padding: 1rem; ">
-                         <a href = "/petpet/Add-Product-Page"> <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+                         <a href = "/petpet/add-product"> <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
                           <span class="btn-text">Add Product</span>
                           	<span class="btn-hover-text">Add Product</span>
                         </button></a>
@@ -257,7 +257,6 @@
                                         <th class="text-center">#</th>
                                         <th>Pet Name</th>
                                         <th>Category</th>
-                                        <th>Description</th>
                                         <th class="text-right">Price</th>
                                         <th class="text-right">Quantity</th>
                                         <th class="text-right">Actions</th>
@@ -269,8 +268,7 @@
                                             <td>${product.getId() }</td>
                                             <td>${product.getName() }</td>
                                             <td>${product.getCategory().getName()}</td>
-                                            <td  width="200px" title="${product.getDescription()}">${product.getDescription() }</td>
-                                             <td class="text-right">${product.getPrice()}</td>
+                                           <td class="text-right">${product.getPrice()}</td>
                                             <td class="text-right">${product.getQuantity()}</td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip"

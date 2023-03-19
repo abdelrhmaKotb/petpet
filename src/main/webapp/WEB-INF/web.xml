@@ -14,10 +14,7 @@
 		<servlet-name>About</servlet-name>
 		<jsp-file>/presentation/views/about-2.jsp</jsp-file>
 	</servlet>
-	<servlet>
-		<servlet-name>Shop</servlet-name>
-		<jsp-file>/presentation/views/shop.jsp</jsp-file>
-	</servlet>
+
 	<servlet>
 		<servlet-name>contact</servlet-name>
 		<jsp-file>/presentation/views/contact-2.jsp</jsp-file>
@@ -85,10 +82,7 @@
 		<servlet-name>About</servlet-name>
 		<url-pattern>/about</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Shop</servlet-name>
-		<url-pattern>/shop</url-pattern>
-	</servlet-mapping>
+
 	<servlet-mapping>
 		<servlet-name>contact</servlet-name>
 		<url-pattern>/contact</url-pattern>
@@ -177,7 +171,14 @@
 		<servlet-name>All-Products</servlet-name>
 		<url-pattern>/Shop</url-pattern>
 	</servlet-mapping>
-
+	<servlet>
+		<servlet-name>Product</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.ProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Product</servlet-name>
+		<url-pattern>/product</url-pattern>
+	</servlet-mapping>
 	<!-- Welcome List-->
   <welcome-file-list>
 		<welcome-file>
