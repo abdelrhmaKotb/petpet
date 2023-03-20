@@ -7,6 +7,8 @@ public interface Repository<E, K> {
 
     E find(K id);
 
+    E findFromContext(K id);
+
     List<E> findAll();
 
     E update(E e);

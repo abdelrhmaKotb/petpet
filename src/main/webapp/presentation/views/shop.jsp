@@ -47,12 +47,13 @@
                         <div class="row">
 
                          <c:forEach var="products" items="${requestScope.productList}">
+
                             <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
                                 <div class="product">
                                     <figure class="product-media">
                                         <span class="product-label label-new">New</span>
 
-                                        <a href="/petpet/product.html">
+                                        <a href="/petpet/product?id=${products.getId()}">
                                             <img src="/petpet${products.getImagesUlrs().get(0)}" alt="Product image" class="product-image">
                                         </a>
 
@@ -71,7 +72,7 @@
                                         <div class="product-cat">
                                             <a href="#">${products.getCategory().getName()}</a>
                                         </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="product.html">${products.getName()}</a></h3><!-- End .product-title -->
+                                        <h3 class="product-title"><a href="/petpet/product?id=${products.getId()}">${products.getName()}</a></h3><!-- End .product-title -->
                                         <div class="product-price">
                                           ${products.getPrice()}
                                         </div><!-- End .product-price -->
@@ -79,7 +80,9 @@
                                     </div><!-- End .product-body -->
                                 </div><!-- End .product -->
                             </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
+
                         </c:forEach>
+
                         </div><!-- End .row -->
 
                         <div class="load-more-container text-center">
@@ -340,4 +343,6 @@
                 </div><!-- End .container-fluid -->
             </div><!-- End .page-content -->
         </main><!-- End .main -->
+      <script src="/petpet/presentation/assets/js/AllProducts.js"></script>
+
 	<%@ include file="footer.html" %>

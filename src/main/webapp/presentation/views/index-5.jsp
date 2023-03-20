@@ -2131,7 +2131,7 @@
                         </li>
                         <li>
                             <a
-                                href="/petpet/shop">Shop</a>
+                                href="/petpet/Shop">Shop</a>
                         </li>
 
                         <li>

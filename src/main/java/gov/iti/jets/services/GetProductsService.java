@@ -28,6 +28,11 @@ public class GetProductsService {
 
         return new ProductMapper().toDto(repo.find(productID));
     }
+    public ProductDto getFromContext(int productID){
+        RepositoryImpl<Product,Integer> repo = new RepositoryImpl<>(Product.class);
+
+        return new ProductMapper().toDto(repo.findFromContext(productID));
+    }
     public Product getProductFromContext(int productID){
         RepositoryImpl<Product,Integer> repo = new RepositoryImpl<>(Product.class);
 

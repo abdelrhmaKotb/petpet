@@ -19,7 +19,7 @@ import java.util.List;
 
         List<ProductDto> products =  productsService.getProducts();
 
-        RequestDispatcher requestDis = req.getRequestDispatcher("shop");
+        RequestDispatcher requestDis = req.getRequestDispatcher("/presentation/views/shop.jsp");
 
         req.setAttribute("productList", products);
 
