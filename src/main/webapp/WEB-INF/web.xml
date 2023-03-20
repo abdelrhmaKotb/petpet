@@ -55,7 +55,6 @@
 	</servlet>
 	
 	<servlet>
-
 		<servlet-name>Add-Product-Page</servlet-name>
 		<jsp-file>/presentation/views/Admin/addProduct.jsp</jsp-file>
 	</servlet>
@@ -69,7 +68,7 @@
 
 	<servlet-mapping>
 		<servlet-name>adminEditProduct</servlet-name>
-		<url-pattern>/admin/show</url-pattern>
+		<url-pattern>/admin/edit</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
@@ -176,6 +175,15 @@
 	<servlet-mapping>
 		<servlet-name>All-Products</servlet-name>
 		<url-pattern>/Shop</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>adminShowProduct</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.ShowProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminShowProduct</servlet-name>
+		<url-pattern>/admin/show</url-pattern>
 	</servlet-mapping>
 
 	<!-- Welcome List-->
