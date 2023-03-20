@@ -12,11 +12,11 @@ public class CategoryMapper implements Mapper<Category, CategoryDto> {
 
     @Override
     public Category toEntity(CategoryDto r) {
-        Category cat = new Category();
-        cat.setName(r.getName());
-        cat.setParentId(0);
-        cat.setId(r.getId());
-        return cat;
+        Category category = new Category();
+        category.setName(r.getName());
+        category.setParentId(0);
+        category.setId(r.getId());
+        return category;
     }
 
 }

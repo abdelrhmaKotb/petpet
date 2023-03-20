@@ -58,7 +58,7 @@
                                 <i class="icon-bars"></i>
                             </button>
 
-                            <a href="/petpet/presentation/views/index-5.jsp"
+                            <a href="/petpet/presentation/views/home"
                                 class="logo">
                                 <img
                                     src="/petpet/presentation/assets/images/demos/demo-5/logo.png"
@@ -69,23 +69,23 @@
                                 <ul class="menu sf-arrows">
                                     <li>
                                         <a
-                                            href="/petpet/presentation/views/index-5.jsp">Home</a>
+                                            href="/petpet/home">Home</a>
                                     </li>
                                     <li>
                                         <a
-                                            href="/petpet/presentation/views/category-fullwidth.jsp">Shop</a>
+                                            href="/petpet/Shop">Shop</a>
                                     </li>
 
                                     <li>
                                         <a
-                                            href="/petpet/aboutUs">About</a>
+                                            href="/petpet/about">About</a>
                                     </li>
                                     <li>
                                         <a
-                                            href="/petpet/presentation/views/Admin/addProduct.jsp">Contact</a>
+                                            href="/petpet/contact">Contact</a>
                                     </li>
                                     <li><a
-                                            href="/petpet/presentation/views/login.jsp">Login</a></li>
+                                            href="/petpet/login">Login</a></li>
                                     <li><a
                                             href="/petpet/presentation/views/coming-soon.jsp">Coming
                                             Soon</a></li>
@@ -112,8 +112,13 @@
                                     </div><!-- End .header-search-wrapper -->
                                 </form>
                             </div><!-- End .header-search -->
+                            <div class="nav-line-1-container" style="color: transparent"> &amp; &amp; </div>
+                            <div class="nav-line-1-container">
+                                <span id="nav-link-accountList-nav-line-1" style="color : red;font-weight: bold;padding: inherit;" class="nav-line-1 nav-progressive-content">Hello, sign in
+                                </span>
+                            </div>
 
-                            <a href="/petpet/presentation/views/wishlist.jsp"
+                            <a href="/petpet/wishlist"
                                 class="wishlist-link">
                                 <i class="icon-heart-o"></i>
                             </a>
@@ -205,27 +210,26 @@
                         owl-nav-inside owl-light" data-toggle="owl"
                         data-owl-options='{" nav": false, "dots": false}'>
                         <div class="intro-slide" style="background-image:
-                            url(/petpet/presentation/views/assets/images/demos/demo-5/slider/slide-1.jpg);">
+                            url(/petpet/presentation/assets/images/demos/demo-5/slider/slide-4.jpg);">
                             <div class="container intro-content text-center">
-                                <h3 class="intro-subtitle text-white">Don’t Miss</h3><!-- End .h3 intro-subtitle -->
+                                <h3 class="intro-subtitle text-white">Discover over collections</h3> <br><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title text-white">Mystery Deals</h1><!-- End .intro-title -->
                                 <div class="intro-text text-white">Online Only</div><!-- End .intro-text -->
                                 <a
-                                    href="/petpet/presentation/views/category.jsp"
+                                    href="/petpet/Shop"
                                     class="btn btn-primary">Discover NOW</a>
                             </div><!-- End .intro-content -->
                         </div><!-- End .intro-slide -->
 
                         <div class="intro-slide" style="background-image:
-                            url(/petpet/presentation/views/assets/images/demos/demo-5/slider/slide-2.jpg);">
+                            url(/petpet/presentation/assets/images/demos/demo-5/slider/slide-7.jpg);">
                             <div class="container intro-content text-center">
                                 <h3 class="intro-subtitle text-white">Limited
                                     time only</h3><!-- End .h3 intro-subtitle -->
-                                <h1 class="intro-title text-white">Treat your
-                                    self</h1><!-- End .intro-title -->
-                                <div class="intro-text text-white">Up to 50% off</div><!-- End .intro-text -->
+                                <h1 class="intro-title text-white">Pet your pet..now</h1><!-- End .intro-title -->
+                                <div class="intro-text text-white">Up to 50% OFF</div><!-- End .intro-text -->
                                 <a
-                                    href="/petpet/presentation/views/category.jsp"
+                                    href="/petpet/Shop"
                                     class="btn btn-primary">Shop NOW</a>
                             </div><!-- End .intro-content -->
                         </div><!-- End .intro-slide -->
@@ -263,43 +267,43 @@
                     }'>
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/1.png"
+                            src="/petpet/presentation/assets/images/brands/1.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/2.png"
+                            src="/petpet/presentation/assets/images/brands/2.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/3.png"
+                            src="/petpet/presentation/assets/images/brands/3.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/4.png"
+                            src="/petpet/presentation/assets/images/brands/4.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/5.png"
+                            src="/petpet/presentation/assets/images/brands/5.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/6.png"
+                            src="/petpet/presentation/assets/images/brands/6.png"
                             alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
                         <img
-                            src="/petpet/presentation/views/assets/images/brands/7.png"
+                            src="/petpet/presentation/assets/images/brands/7.png"
                             alt="Brand Name">
                     </a>
                 </div><!-- End .owl-carousel -->
@@ -311,7 +315,7 @@
                                 <div class="banner banner-border">
                                     <a href="#">
                                         <img
-                                            src="/petpet/presentation/views/assets/images/demos/demo-5/banners/banner-1.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-5.jpg"
                                             alt="Banner">
                                     </a>
 
@@ -331,7 +335,7 @@
                                 <div class="banner banner-border-hover">
                                     <a href="#">
                                         <img
-                                            src="/petpet/presentation/views/assets/images/demos/demo-5/banners/banner-2.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-8.jpg"
                                             alt="Banner">
                                     </a>
 
@@ -350,7 +354,7 @@
                                 <div class="banner banner-border-hover">
                                     <a href="#">
                                         <img
-                                            src="/petpet/presentation/views/assets/images/demos/demo-5/banners/banner-3.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-7.jpg"
                                             alt="Banner">
                                     </a>
 
@@ -386,13 +390,13 @@
                                 <a class="nav-link" id="trendy-women-link"
                                     data-toggle="tab" href="#trendy-women-tab"
                                     role="tab" aria-controls="trendy-women-tab"
-                                    aria-selected="false">Women</a>
+                                    aria-selected="false">Cats</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="trendy-men-link"
                                     data-toggle="tab" href="#trendy-men-tab"
                                     role="tab" aria-controls="trendy-men-tab"
-                                    aria-selected="false">Men</a>
+                                    aria-selected="false">Dgos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="trendy-access-link"
@@ -439,11 +443,11 @@
                                         <a
                                             href="/petpet/presentation/views/product.jsp">
                                             <img
-                                                src="/petpet/presentation/views/assets/images/demos/demo-5/products/product-1-1.jpg"
+                                                src="/petpet/presentation/assets/images/products/single-cat/cat-single-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="/petpet/presentation/views/assets/images/demos/demo-5/products/product-1-2.jpg"
+                                                src="/petpet/presentation/assets/images/products/single-cat/cat-single-2.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -464,7 +468,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">Clothing</a>
+                                            <a href="#">Cats</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a
                                                 href="/petpet/presentation/views/product.jsp">Vest
@@ -473,15 +477,7 @@
                                             $9.99
                                         </div><!-- End .product-price -->
 
-                                        <div class="product-nav
-                                            product-nav-dots">
-                                            <a href="#" class="active"
-                                                style="background: #2d272b;"><span
-                                                    class="sr-only">Color name</span></a>
-                                            <a href="#" style="background:
-                                                #8f957d;"><span class="sr-only">Color
-                                                    name</span></a>
-                                        </div><!-- End .product-nav -->
+
                                     </div><!-- End .product-body -->
                                 </div><!-- End .product -->
 
@@ -490,11 +486,11 @@
                                         <a
                                             href="/petpet/presentation/views/product.jsp">
                                             <img
-                                                src="/petpet/presentation/views/assets/images/demos/demo-5/products/product-2-1.jpg"
+                                                src="/petpet/presentation/assets/images/products/single-dog/dog-single-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="/petpet/presentation/views/assets/images/demos/demo-5/products/product-2-2.jpg"
+                                                src="/petpet/presentation/assets/images/products/single-dog/dog-single-2.png"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -515,7 +511,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">Clothing</a>
+                                            <a href="#">Dogs</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a
                                                 href="/petpet/presentation/views/product.jsp">Dress
@@ -531,11 +527,11 @@
                                         <a
                                             href="/petpet/presentation/views/product.jsp">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-3-1.jpg"
+                                                src="/petpet/presentation/assets/images/products/food/product-food-10.png"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-3-2.jpg"
+                                                src="/petpet/presentation/assets/images/images/products/food/product-food-10.png"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -556,7 +552,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">Shoes</a>
+                                            <a href="#">Food</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a
                                                 href="product.jsp">Sandals</a></h3><!-- End .product-title -->
@@ -571,11 +567,11 @@
                                     <figure class="product-media">
                                         <a href="product.jsp">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-4-1.jpg"
+                                                src="/petpet/presentation/assets/images/products/accessories/product-acs-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-4-2.jpg"
+                                                src="/petpet/presentation/assets/images/products/accessories/product-acs-1-1.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -596,7 +592,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">Handbags</a>
+                                            <a href="#">Accessories</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a
                                                 href="product.jsp">Bucket bag</a></h3><!-- End .product-title -->
@@ -609,11 +605,11 @@
                                     <figure class="product-media">
                                         <a href="product.jsp">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-1-1.jpg"
+                                                src="/petpet/presentation/assets/images/products/product-bird-1.jpg"
                                                 alt="Product image"
                                                 class="product-image">
                                             <img
-                                                src="assets/images/demos/demo-5/products/product-1-2.jpg"
+                                                src="/petpet/presentation/assets/images/products/product-bird-1.jpg"
                                                 alt="Product image"
                                                 class="product-image-hover">
                                         </a>
@@ -634,7 +630,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">Clothing</a>
+                                            <a href="#">Birds</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a
                                                 href="product.jsp">Vest dress</a></h3><!-- End .product-title -->
@@ -642,15 +638,7 @@
                                             $9.99
                                         </div><!-- End .product-price -->
 
-                                        <div class="product-nav
-                                            product-nav-dots">
-                                            <a href="#" class="active"
-                                                style="background: #2d272b;"><span
-                                                    class="sr-only">Color name</span></a>
-                                            <a href="#" style="background:
-                                                #8f957d;"><span class="sr-only">Color
-                                                    name</span></a>
-                                        </div><!-- End .product-nav -->
+
                                     </div><!-- End .product-body -->
                                 </div><!-- End .product -->
                             </div><!-- End .owl-carousel -->
@@ -684,6 +672,48 @@
                                 }
                                 }
                                 }'>
+                                <div class="product product-2">
+                                    <figure class="product-media">
+                                        <a
+                                                href="/petpet/presentation/views/product.jsp">
+                                            <img
+                                                    src="/petpet/presentation/assets/images/products/single-cat/cat-single-1.jpg"
+                                                    alt="Product image"
+                                                    class="product-image">
+                                            <img
+                                                    src="/petpet/presentation/assets/images/products/single-cat/cat-single-2.jpg"
+                                                    alt="Product image"
+                                                    class="product-image-hover">
+                                        </a>
+
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon
+                                                btn-wishlist btn-expandable"
+                                               title="Add to wishlist"><span>add
+                                                    to wishlist</span></a>
+                                        </div><!-- End .product-action -->
+
+                                        <div class="product-action
+                                            product-action-transparent">
+                                            <a href="#" class="btn-product
+                                                btn-cart"><span>add to cart</span></a>
+                                        </div><!-- End .product-action -->
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">Cats</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title"><a
+                                                href="/petpet/presentation/views/product.jsp">Vest
+                                            dress</a></h3><!-- End .product-title -->
+                                        <div class="product-price">
+                                            $9.99
+                                        </div><!-- End .product-price -->
+
+
+                                    </div><!-- End .product-body -->
+                                </div><!-- End .product -->
                             </div><!-- End .owl-carousel -->
                         </div><!-- .End .tab-pane -->
                         <div class="tab-pane p-0 fade" id="trendy-men-tab"
@@ -715,6 +745,46 @@
                                 }
                                 }
                                 }'>
+                                <div class="product product-2">
+                                    <figure class="product-media">
+                                        <a
+                                                href="/petpet/presentation/views/product.jsp">
+                                            <img
+                                                    src="/petpet/presentation/assets/images/products/single-dog/dog-single-1.jpg"
+                                                    alt="Product image"
+                                                    class="product-image">
+                                            <img
+                                                    src="/petpet/presentation/assets/images/products/single-dog/dog-single-2.png"
+                                                    alt="Product image"
+                                                    class="product-image-hover">
+                                        </a>
+
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon
+                                                btn-wishlist btn-expandable"
+                                               title="Add to wishlist"><span>add
+                                                    to wishlist</span></a>
+                                        </div><!-- End .product-action -->
+
+                                        <div class="product-action
+                                            product-action-transparent">
+                                            <a href="#" class="btn-product
+                                                btn-cart"><span>add to cart</span></a>
+                                        </div><!-- End .product-action -->
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">Dogs</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title"><a
+                                                href="/petpet/presentation/views/product.jsp">Dress
+                                            with a belt</a></h3><!-- End .product-title -->
+                                        <div class="product-price">
+                                            $29.99
+                                        </div><!-- End .product-price -->
+                                    </div><!-- End .product-body -->
+                                </div><!-- End .product -->
                             </div><!-- End .owl-carousel -->
                         </div><!-- .End .tab-pane -->
                         <div class="tab-pane p-0 fade" id="trendy-access-tab"
@@ -747,6 +817,44 @@
                                 }
                                 }
                                 }'>
+                                <div class="product product-2">
+                                    <figure class="product-media">
+                                        <a href="product.jsp">
+                                            <img
+                                                    src="/petpet/presentation/assets/images/products/accessories/product-acs-1.jpg"
+                                                    alt="Product image"
+                                                    class="product-image">
+                                            <img
+                                                    src="/petpet/presentation/assets/images/products/accessories/product-acs-1-1.jpg"
+                                                    alt="Product image"
+                                                    class="product-image-hover">
+                                        </a>
+
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon
+                                                btn-wishlist btn-expandable"
+                                               title="Add to wishlist"><span>add
+                                                    to wishlist</span></a>
+                                        </div><!-- End .product-action -->
+
+                                        <div class="product-action
+                                            product-action-transparent">
+                                            <a href="#" class="btn-product
+                                                btn-cart"><span>add to cart</span></a>
+                                        </div><!-- End .product-action -->
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">Accessories</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title"><a
+                                                href="product.jsp">Bucket bag</a></h3><!-- End .product-title -->
+                                        <div class="product-price">
+                                            $17.99
+                                        </div><!-- End .product-price -->
+                                    </div><!-- End .product-body -->
+                                </div><!-- End .product -->
                             </div><!-- End .owl-carousel -->
                         </div><!-- .End .tab-pane -->
                     </div><!-- End .tab-content -->
@@ -756,983 +864,870 @@
 
                 <div class="video-banner video-banner-bg bg-image text-center"
                     style="background-image:
-                    url(assets/images/demos/demo-5/bg-2.jpg)">
+                    url(/petpet/presentation/assets/images/backgrounds/bg-5.jpg);">
                     <div class="container">
                         <h3 class="video-banner-title h1 text-white"><span>New
-                                Collection</span><strong>Winter’19 <i>/</i>
-                                Spring’20</strong></h3><!-- End .video-banner-title -->
-                        <a href="https://www.youtube.com/watch?v=vBPgmASQ1A0"
-                            class="btn-video btn-iframe"><i class="icon-play"></i></a>
+                                Collection</span><strong>Winter <i>/</i>
+                                Spring</strong></h3><!-- End .video-banner-title -->
+
                     </div><!-- End .container -->
                 </div><!-- End .video-banner bg-image -->
 
-                <div class="pt-6 pb-6" style="background-color: #fff;">
-                    <div class="container">
-                        <div class="banner-set">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="banner-set-content text-center">
-                                        <div class="set-content-wrapper">
-                                            <h4>Special</h4>
-                                            <h2>Refine Your Style.</h2>
+<%--                <div class="container pt-6 new-arrivals">--%>
+<%--                    <div class="heading heading-center mb-3">--%>
+<%--                        <h2 class="title">New Arrivals</h2><!-- End .title -->--%>
+<%--                        <ul class="nav nav-pills justify-content-center"--%>
+<%--                            role="tablist">--%>
+<%--                            <li class="nav-item">--%>
+<%--                                <a class="nav-link active" id="new-all-link"--%>
+<%--                                    data-toggle="tab" href="#new-all-tab"--%>
+<%--                                    role="tab" aria-controls="new-all-tab"--%>
+<%--                                    aria-selected="true">All</a>--%>
+<%--                            </li>--%>
+<%--                            <li class="nav-item">--%>
+<%--                                <a class="nav-link" id="new-cloth-link"--%>
+<%--                                    data-toggle="tab" href="#new-cloth-tab"--%>
+<%--                                    role="tab" aria-controls="new-cloth-tab"--%>
+<%--                                    aria-selected="false">Clothing</a>--%>
+<%--                            </li>--%>
+<%--                            <li class="nav-item">--%>
+<%--                                <a class="nav-link" id="new-shoes-link"--%>
+<%--                                    data-toggle="tab" href="#new-shoes-tab"--%>
+<%--                                    role="tab" aria-controls="new-shoes-tab"--%>
+<%--                                    aria-selected="false">Shoes & Boots</a>--%>
+<%--                            </li>--%>
+<%--                            <li class="nav-item">--%>
+<%--                                <a class="nav-link" id="new-access-link"--%>
+<%--                                    data-toggle="tab" href="#new-access-tab"--%>
+<%--                                    role="tab" aria-controls="new-access-tab"--%>
+<%--                                    aria-selected="false">Accessories</a>--%>
+<%--                            </li>--%>
+<%--                        </ul>--%>
+<%--                    </div><!-- End .heading -->--%>
 
-                                            <p>Get on our exclusive email list
-                                                and be the first to hear about
-                                                sales, coupons, new arrivals and
-                                                more! </p>
+<%--                    <div class="tab-content">--%>
+<%--                        <div class="tab-pane p-0 fade show active"--%>
+<%--                            id="new-all-tab" role="tabpanel"--%>
+<%--                            aria-labelledby="new-all-link">--%>
+<%--                            <div class="products">--%>
+<%--                                <div class="row justify-content-center">--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-5-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-5-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                            <div class="banner-set-products">
-                                                <div class="row">
-                                                    <div class="products">
-                                                        <div class="col-6">
-                                                            <div class="product
-                                                                product-2
-                                                                text-center">
-                                                                <figure
-                                                                    class="product-media">
-                                                                    <a
-                                                                        href="product.jsp">
-                                                                        <img
-                                                                            src="assets/images/demos/demo-5/products/product-13.jpg"
-                                                                            alt="Product
-                                                                            image"
-                                                                            class="product-image">
-                                                                    </a>
-                                                                </figure><!-- End .product-media -->
-                                                                <div
-                                                                    class="product-body">
-                                                                    <h3
-                                                                        class="product-title"><a
-                                                                            href="product.jsp">Rib-knit
-                                                                            cardigan</a></h3><!-- End .product-title -->
-                                                                    <div
-                                                                        class="product-price">
-                                                                        $24.99
-                                                                    </div><!-- End .product-price -->
-                                                                </div><!-- End .product-body -->
-                                                            </div><!-- End .product -->
-                                                        </div><!-- End .col-sm-6 -->
-                                                        <div class="col-6">
-                                                            <div class="product
-                                                                product-2
-                                                                text-center">
-                                                                <figure
-                                                                    class="product-media">
-                                                                    <a
-                                                                        href="product.jsp">
-                                                                        <img
-                                                                            src="assets/images/demos/demo-5/products/product-14.jpg"
-                                                                            alt="Product
-                                                                            image"
-                                                                            class="product-image">
-                                                                    </a>
-                                                                </figure><!-- End .product-media -->
-                                                                <div
-                                                                    class="product-body">
-                                                                    <h3
-                                                                        class="product-title"><a
-                                                                            href="product.jsp">Linen-blend
-                                                                            trousers</a></h3><!-- End .product-title -->
-                                                                    <div
-                                                                        class="product-price">
-                                                                        $19.99
-                                                                    </div><!-- End .product-price -->
-                                                                </div><!-- End .product-body -->
-                                                            </div><!-- End .product -->
-                                                        </div><!-- End .col-sm-6 -->
-                                                    </div>
-                                                </div><!-- End .row -->
-                                            </div><!-- End .banner-set-products -->
-                                        </div><!-- End .set-content-wrapper -->
-                                    </div><!-- End .banner-set-content -->
-                                </div><!-- End .col-lg-6 -->
-                                <div class="col-lg-6">
-                                    <div class="banner-set-image
-                                        banner-border-hover">
-                                        <a href="#">
-                                            <img
-                                                src="assets/images/demos/demo-5/banners/banner-4.jpg"
-                                                alt="banner">
-                                        </a>
-                                        <div class="banner-content">
-                                            <h3 class="banner-title"><a
-                                                    href="#"><span>Casual basics
-                                                        and<br>trendy key
-                                                        pieces.</span></a></h3><!-- End .banner-title -->
-                                            <h4 class="banner-subtitle">in this
-                                                look</h4>
-                                            <!-- End .banner-subtitle -->
-                                            <h4 class="banner-detail">• Rib-knit
-                                                cardigan <br>• Linen-blend paper
-                                                bag trousers</h4>
-                                            <h4 class="banner-price">$19.99 -
-                                                $48.00</h4>
-                                            <a href="#" class="btn
-                                                btn-outline-primary-2
-                                                banner-link">buy all</a>
-                                        </div><!-- End .banner-content -->
-                                    </div><!-- End .banner-set-image -->
-                                </div><!-- End .col-lg-6 -->
-                            </div><!-- End .row -->
-                        </div><!-- End .banner-set -->
-                    </div><!-- End .container -->
-                </div><!-- End .bg-lighter pt6 pb-6 -->
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Clothing</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Linen-blend--%>
+<%--                                                        dress</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    $60.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                                <div class="product-nav--%>
+<%--                                                    product-nav-dots">--%>
+<%--                                                    <a href="#" class="active"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #e5dcb1;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #b9cbd8;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                </div><!-- End .product-nav -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-6-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-6-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                <div class="container pt-6 new-arrivals">
-                    <div class="heading heading-center mb-3">
-                        <h2 class="title">New Arrivals</h2><!-- End .title -->
-                        <ul class="nav nav-pills justify-content-center"
-                            role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="new-all-link"
-                                    data-toggle="tab" href="#new-all-tab"
-                                    role="tab" aria-controls="new-all-tab"
-                                    aria-selected="true">All</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="new-cloth-link"
-                                    data-toggle="tab" href="#new-cloth-tab"
-                                    role="tab" aria-controls="new-cloth-tab"
-                                    aria-selected="false">Clothing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="new-shoes-link"
-                                    data-toggle="tab" href="#new-shoes-tab"
-                                    role="tab" aria-controls="new-shoes-tab"
-                                    aria-selected="false">Shoes & Boots</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="new-access-link"
-                                    data-toggle="tab" href="#new-access-tab"
-                                    role="tab" aria-controls="new-access-tab"
-                                    aria-selected="false">Accessories</a>
-                            </li>
-                        </ul>
-                    </div><!-- End .heading -->
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Shoes</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Sandals--%>
+<%--                                                        with lacing</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    <span class="new-price">Now--%>
+<%--                                                        $70.00</span>--%>
+<%--                                                    <span class="old-price">Was--%>
+<%--                                                        $155.00</span>--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-7-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-7-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                    <div class="tab-content">
-                        <div class="tab-pane p-0 fade show active"
-                            id="new-all-tab" role="tabpanel"
-                            aria-labelledby="new-all-link">
-                            <div class="products">
-                                <div class="row justify-content-center">
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-5-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-5-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Clothing</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Paper--%>
+<%--                                                        bag trousers</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    $60.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                                <div class="product-nav--%>
+<%--                                                    product-nav-dots">--%>
+<%--                                                    <a href="#" class="active"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #9fac76;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #333333;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                </div><!-- End .product-nav -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-8-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-8-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Clothing</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Linen-blend
-                                                        dress</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    $60.00
-                                                </div><!-- End .product-price -->
-                                                <div class="product-nav
-                                                    product-nav-dots">
-                                                    <a href="#" class="active"
-                                                        style="background:
-                                                        #e5dcb1;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                    <a href="#"
-                                                        style="background:
-                                                        #b9cbd8;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                </div><!-- End .product-nav -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-6-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-6-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Handbags</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Paper--%>
+<%--                                                        straw shopper</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    $398.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-9-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-9-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Shoes</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Sandals
-                                                        with lacing</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">Now
-                                                        $70.00</span>
-                                                    <span class="old-price">Was
-                                                        $155.00</span>
-                                                </div><!-- End .product-price -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-7-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-7-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Handbags</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Bucket--%>
+<%--                                                        bag</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    $350.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                                <div class="product-nav--%>
+<%--                                                    product-nav-dots">--%>
+<%--                                                    <a href="#" class="active"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #e3a84d;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #f48a5b;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #333333;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                </div><!-- End .product-nav -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-10-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-10-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Clothing</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Paper
-                                                        bag trousers</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    $60.00
-                                                </div><!-- End .product-price -->
-                                                <div class="product-nav
-                                                    product-nav-dots">
-                                                    <a href="#" class="active"
-                                                        style="background:
-                                                        #9fac76;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                    <a href="#"
-                                                        style="background:
-                                                        #333333;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                </div><!-- End .product-nav -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-8-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-8-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Clothing</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Silk-blend--%>
+<%--                                                        kaftan</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    Now $370.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-11-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-11-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Handbags</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Paper
-                                                        straw shopper</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    $398.00
-                                                </div><!-- End .product-price -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-9-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-9-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Clothing</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Linen-blend--%>
+<%--                                                        jumpsuit</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    $595.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-12-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-12-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Handbags</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Bucket
-                                                        bag</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    $350.00
-                                                </div><!-- End .product-price -->
-                                                <div class="product-nav
-                                                    product-nav-dots">
-                                                    <a href="#" class="active"
-                                                        style="background:
-                                                        #e3a84d;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                    <a href="#"
-                                                        style="background:
-                                                        #f48a5b;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                    <a href="#"
-                                                        style="background:
-                                                        #333333;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                </div><!-- End .product-nav -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-10-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-10-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Shoes</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Sandals</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    <span class="new-price">Now--%>
+<%--                                                        $120.00</span>--%>
+<%--                                                    <span class="old-price">Was--%>
+<%--                                                        $140.00</span>--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                </div><!-- End .row -->--%>
+<%--                            </div><!-- End .products -->--%>
+<%--                        </div><!-- .End .tab-pane -->--%>
+<%--                        <div class="tab-pane p-0 fade" id="new-cloth-tab"--%>
+<%--                            role="tabpanel" aria-labelledby="new-cloth-link">--%>
+<%--                            <div class="products">--%>
+<%--                                <div class="row justify-content-center">--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-5-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-5-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Clothing</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Silk-blend
-                                                        kaftan</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    Now $370.00
-                                                </div><!-- End .product-price -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-11-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-11-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Clothing</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Linen-blend--%>
+<%--                                                        dress</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    $60.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                                <div class="product-nav--%>
+<%--                                                    product-nav-dots">--%>
+<%--                                                    <a href="#" class="active"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #e5dcb1;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #b9cbd8;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                </div><!-- End .product-nav -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-7-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-7-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Clothing</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Linen-blend
-                                                        jumpsuit</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    $595.00
-                                                </div><!-- End .product-price -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-12-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-12-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Clothing</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Paper--%>
+<%--                                                        bag trousers</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    $60.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                                <div class="product-nav--%>
+<%--                                                    product-nav-dots">--%>
+<%--                                                    <a href="#" class="active"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #9fac76;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #333333;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                </div><!-- End .product-nav -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-10-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="/petpet/presentation/assets/images/demos/demo-5/products/product-10-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Shoes</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Sandals</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">Now
-                                                        $120.00</span>
-                                                    <span class="old-price">Was
-                                                        $140.00</span>
-                                                </div><!-- End .product-price -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                </div><!-- End .row -->
-                            </div><!-- End .products -->
-                        </div><!-- .End .tab-pane -->
-                        <div class="tab-pane p-0 fade" id="new-cloth-tab"
-                            role="tabpanel" aria-labelledby="new-cloth-link">
-                            <div class="products">
-                                <div class="row justify-content-center">
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-5-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-5-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Clothing</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Silk-blend--%>
+<%--                                                        kaftan</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    Now $370.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-11-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-11-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Clothing</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Linen-blend
-                                                        dress</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    $60.00
-                                                </div><!-- End .product-price -->
-                                                <div class="product-nav
-                                                    product-nav-dots">
-                                                    <a href="#" class="active"
-                                                        style="background:
-                                                        #e5dcb1;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                    <a href="#"
-                                                        style="background:
-                                                        #b9cbd8;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                </div><!-- End .product-nav -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-7-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-7-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Clothing</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Linen-blend--%>
+<%--                                                        jumpsuit</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    $595.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                </div><!-- End .row -->--%>
+<%--                            </div><!-- End .products -->--%>
+<%--                        </div><!-- .End .tab-pane -->--%>
+<%--                        <div class="tab-pane p-0 fade" id="new-shoes-tab"--%>
+<%--                            role="tabpanel" aria-labelledby="new-shoes-link">--%>
+<%--                            <div class="products">--%>
+<%--                                <div class="row justify-content-center">--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-6-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-6-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Clothing</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Paper
-                                                        bag trousers</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    $60.00
-                                                </div><!-- End .product-price -->
-                                                <div class="product-nav
-                                                    product-nav-dots">
-                                                    <a href="#" class="active"
-                                                        style="background:
-                                                        #9fac76;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                    <a href="#"
-                                                        style="background:
-                                                        #333333;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                </div><!-- End .product-nav -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-10-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-10-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Shoes</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Sandals--%>
+<%--                                                        with lacing</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    <span class="new-price">Now--%>
+<%--                                                        $70.00</span>--%>
+<%--                                                    <span class="old-price">Was--%>
+<%--                                                        $155.00</span>--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-12-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-12-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Clothing</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Silk-blend
-                                                        kaftan</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    Now $370.00
-                                                </div><!-- End .product-price -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-11-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-11-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Shoes</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Sandals</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    <span class="new-price">Now--%>
+<%--                                                        $120.00</span>--%>
+<%--                                                    <span class="old-price">Was--%>
+<%--                                                        $140.00</span>--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                </div><!-- End .row -->--%>
+<%--                            </div><!-- End .products -->--%>
+<%--                        </div><!-- .End .tab-pane -->--%>
+<%--                        <div class="tab-pane p-0 fade" id="new-access-tab"--%>
+<%--                            role="tabpanel" aria-labelledby="new-access-link">--%>
+<%--                            <div class="products">--%>
+<%--                                <div class="row justify-content-center">--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-8-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-8-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Clothing</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Linen-blend
-                                                        jumpsuit</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    $595.00
-                                                </div><!-- End .product-price -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                </div><!-- End .row -->
-                            </div><!-- End .products -->
-                        </div><!-- .End .tab-pane -->
-                        <div class="tab-pane p-0 fade" id="new-shoes-tab"
-                            role="tabpanel" aria-labelledby="new-shoes-link">
-                            <div class="products">
-                                <div class="row justify-content-center">
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-6-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-6-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Handbags</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Paper--%>
+<%--                                                        straw shopper</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    $398.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                    <div class="col-6 col-md-4 col-lg-3">--%>
+<%--                                        <div class="product product-2">--%>
+<%--                                            <figure class="product-media">--%>
+<%--                                                <a href="product.jsp">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-9-1.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image">--%>
+<%--                                                    <img--%>
+<%--                                                        src="assets/images/demos/demo-5/products/product-9-2.jpg"--%>
+<%--                                                        alt="Product image"--%>
+<%--                                                        class="product-image-hover">--%>
+<%--                                                </a>--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Shoes</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Sandals
-                                                        with lacing</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">Now
-                                                        $70.00</span>
-                                                    <span class="old-price">Was
-                                                        $155.00</span>
-                                                </div><!-- End .product-price -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-12-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-12-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
+<%--                                                <div--%>
+<%--                                                    class="product-action-vertical">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product-icon--%>
+<%--                                                        btn-wishlist" title="Add--%>
+<%--                                                        to wishlist"><span>add--%>
+<%--                                                            to wishlist</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                                <div class="product-action--%>
+<%--                                                    product-action-transparent">--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        class="btn-product--%>
+<%--                                                        btn-cart"><span>add to--%>
+<%--                                                            cart</span></a>--%>
+<%--                                                </div><!-- End .product-action -->--%>
+<%--                                            </figure><!-- End .product-media -->--%>
+<%--                                            <div class="product-body">--%>
+<%--                                                <div class="product-cat">--%>
+<%--                                                    <a href="#">Handbags</a>--%>
+<%--                                                </div><!-- End .product-cat -->--%>
+<%--                                                <h3 class="product-title"><a--%>
+<%--                                                        href="product.jsp">Bucket--%>
+<%--                                                        bag</a></h3><!-- End .product-title -->--%>
+<%--                                                <div class="product-price">--%>
+<%--                                                    $350.00--%>
+<%--                                                </div><!-- End .product-price -->--%>
+<%--                                                <div class="product-nav--%>
+<%--                                                    product-nav-dots">--%>
+<%--                                                    <a href="#" class="active"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #e3a84d;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #f48a5b;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                    <a href="#"--%>
+<%--                                                        style="background:--%>
+<%--                                                        #333333;"><span--%>
+<%--                                                            class="sr-only">Color--%>
+<%--                                                            name</span></a>--%>
+<%--                                                </div><!-- End .product-nav -->--%>
+<%--                                            </div><!-- End .product-body -->--%>
+<%--                                        </div><!-- End .product -->--%>
+<%--                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->--%>
+<%--                                </div><!-- End .row -->--%>
+<%--                            </div><!-- End .products -->--%>
+<%--                        </div><!-- .End .tab-pane -->--%>
+<%--                    </div><!-- End .tab-content -->--%>
 
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Shoes</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Sandals</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">Now
-                                                        $120.00</span>
-                                                    <span class="old-price">Was
-                                                        $140.00</span>
-                                                </div><!-- End .product-price -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                </div><!-- End .row -->
-                            </div><!-- End .products -->
-                        </div><!-- .End .tab-pane -->
-                        <div class="tab-pane p-0 fade" id="new-access-tab"
-                            role="tabpanel" aria-labelledby="new-access-link">
-                            <div class="products">
-                                <div class="row justify-content-center">
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-8-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-8-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
-
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Handbags</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Paper
-                                                        straw shopper</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    $398.00
-                                                </div><!-- End .product-price -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product product-2">
-                                            <figure class="product-media">
-                                                <a href="product.jsp">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-9-1.jpg"
-                                                        alt="Product image"
-                                                        class="product-image">
-                                                    <img
-                                                        src="assets/images/demos/demo-5/products/product-9-2.jpg"
-                                                        alt="Product image"
-                                                        class="product-image-hover">
-                                                </a>
-
-                                                <div
-                                                    class="product-action-vertical">
-                                                    <a href="#"
-                                                        class="btn-product-icon
-                                                        btn-wishlist" title="Add
-                                                        to wishlist"><span>add
-                                                            to wishlist</span></a>
-                                                </div><!-- End .product-action -->
-                                                <div class="product-action
-                                                    product-action-transparent">
-                                                    <a href="#"
-                                                        class="btn-product
-                                                        btn-cart"><span>add to
-                                                            cart</span></a>
-                                                </div><!-- End .product-action -->
-                                            </figure><!-- End .product-media -->
-                                            <div class="product-body">
-                                                <div class="product-cat">
-                                                    <a href="#">Handbags</a>
-                                                </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a
-                                                        href="product.jsp">Bucket
-                                                        bag</a></h3><!-- End .product-title -->
-                                                <div class="product-price">
-                                                    $350.00
-                                                </div><!-- End .product-price -->
-                                                <div class="product-nav
-                                                    product-nav-dots">
-                                                    <a href="#" class="active"
-                                                        style="background:
-                                                        #e3a84d;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                    <a href="#"
-                                                        style="background:
-                                                        #f48a5b;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                    <a href="#"
-                                                        style="background:
-                                                        #333333;"><span
-                                                            class="sr-only">Color
-                                                            name</span></a>
-                                                </div><!-- End .product-nav -->
-                                            </div><!-- End .product-body -->
-                                        </div><!-- End .product -->
-                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                </div><!-- End .row -->
-                            </div><!-- End .products -->
-                        </div><!-- .End .tab-pane -->
-                    </div><!-- End .tab-content -->
-
-                    <div class="more-container text-center mt-1 mb-3">
-                        <a href="#" class="btn btn-outline-primary-2 btn-round
-                            btn-more">Load more</a>
-                    </div><!-- End .more-container -->
-                </div><!-- End .container -->
+<%--                    <div class="more-container text-center mt-1 mb-3">--%>
+<%--                        <a href="#" class="btn btn-outline-primary-2 btn-round--%>
+<%--                            btn-more">Load more</a>--%>
+<%--                    </div><!-- End .more-container -->--%>
+<%--                </div><!-- End .container -->--%>
 
                 <div class="mb-2"></div><!-- End .mb-2 -->
 
@@ -2032,11 +2027,11 @@
                                 <div class="widget">
                                     <h4 class="widget-title">Information</h4><!-- End .widget-title -->
                                     <ul class="widget-list">
-                                        <li><a href="about.jsp">About Molla</a></li>
+                                        <li><a href="/petpet/about">About Molla</a></li>
                                         <li><a href="#">How to shop on Molla</a></li>
                                         <li><a href="faq.jsp">FAQ</a></li>
-                                        <li><a href="contact.jsp">Contact us</a></li>
-                                        <li><a href="login.jsp">Log in</a></li>
+                                        <li><a href="/petpet/contact">Contact us</a></li>
+                                        <li><a href="/petpet/login">Log in</a></li>
                                     </ul><!-- End .widget-list -->
                                 </div><!-- End .widget -->
                             </div><!-- End .col-sm-4 col-lg-3 -->
@@ -2060,10 +2055,10 @@
                                     <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
                                     <ul class="widget-list">
                                         <li><a
-                                                href="/petpet/presentation/views/login.jsp">Sign
+                                                href="/petpet/login">Sign
                                                 In</a></li>
                                         <li><a
-                                                href="/petpet/presentation/views/cart.jsp">View
+                                                href="/petpet/cart">View
                                                 Cart</a></li>
                                         <li><a
                                                 href="/petpet/presentation/views/wishlist.jsp">My
@@ -2127,23 +2122,23 @@
 
                         <li>
                             <a
-                                href="/petpet/presentation/views/index-5.jsp">Home</a>
+                                href="/petpet/home">Home</a>
                         </li>
                         <li>
                             <a
-                                href="/petpet/presentation/views/category-fullwidth.jsp">Shop</a>
+                                href="/petpet/shop">Shop</a>
                         </li>
 
                         <li>
                             <a
-                                href="/petpet/presentation/views/about-2.jsp">About</a>
+                                href="/petpet/about">About</a>
                         </li>
                         <li>
                             <a
-                                href="/petpet/presentation/views/contact-2.jsp">Contact</a>
+                                href="/petpet/contact">Contact</a>
                         </li>
                         <li><a
-                                href="/petpet/presentation/views/login.jsp">Login</a></li>
+                                href="/petpet/login">Login</a></li>
                         <li><a
                                 href="/petpet/presentation/views/coming-soon.jsp">Coming
                                 Soon</a></li>
@@ -2173,22 +2168,16 @@
                         <div class="col-xl-3-5col col-lg-7 banner-content-wrap">
                             <div class="banner-content text-center">
                                 <img
-                                    src="/petpet/presentation/assets/images/popup/newsletter/logo.png"
+                                    src="/petpet/presentation/assets/images/logo.png"
                                     class="logo" alt="logo" width="60"
                                     height="15">
                                 <h2 class="banner-title">get <span>25<light>%</light></span>
                                     off</h2>
-                                <p>Subscribe to the Molla eCommerce newsletter
-                                    to receive timely updates from your favorite
-                                    products.</p>
+                                <p>Join us today to get a fresh deals everyday !.</p>
                                 <form action="#">
                                     <div class="input-group input-group-round">
-                                        <input type="email" class="form-control
-                                            form-control-white"
-                                            placeholder="Your Email Address"
-                                            aria-label="Email Adress" required>
+
                                         <div class="input-group-append">
-                                            <button class="btn" type="submit"><span>go</span></button>
                                         </div><!-- .End .input-group-append -->
                                     </div><!-- .End .input-group -->
                                 </form>
@@ -2201,9 +2190,10 @@
                                         popup again</label>
                                 </div><!-- End .custom-checkbox -->
                             </div>
+
                         </div>
                         <div class="col-xl-2-5col col-lg-5 ">
-                            <img src="assets/images/popup/newsletter/img-1.jpg"
+                            <img src="/petpet/presentation/assets/images/popup/pop-1.jpg"
                                 class="newsletter-img" alt="newsletter">
                         </div>
                     </div>

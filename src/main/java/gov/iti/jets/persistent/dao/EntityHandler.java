@@ -17,5 +17,7 @@ public class EntityHandler {
         }
 
         return entityManager;
+        // EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
+        // return emf.createEntityManager();
     }
 }

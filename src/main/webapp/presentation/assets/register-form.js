@@ -1,4 +1,4 @@
-var Firstname, username, password, phone, job, street, city, country, credit , d;
+var Firstname, username, password, phone, job, street, city, country, credit, d;
 
 $(document).ready(function () {
 
@@ -28,9 +28,9 @@ function checkName() {
 };
 
 function checkBD() {
-     d = $("#register-birth-2").val();
+    d = $("#register-birth-2").val();
 
-    if (!d){
+    if (!d) {
         $("#register-birth-2").replaceWith(`
             <input type="date" class="form-control" id="register-birth-2"
                                                     name="register-birth" value="${d}">
@@ -55,13 +55,13 @@ function checkUsername() {
         email: username
     }
     console.log("My json " + emailJson);
-    $.get("/petpet/register?email="+username,callBack)
+    $.get("/petpet/register?email=" + username, callBack)
 }
 
 function callBack(data) {
 
     console.log("Data " + data);
-    if(data.match("true")){
+    if (data.match("true")) {
         console.log("here")
         $("#register-username").replaceWith(`
                 <input type="email" class="form-control is-invalid" id="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
@@ -284,7 +284,7 @@ function registerUser() {
     }
 
     console.log(jsonUser);
-    $.post("/petpet/register",jsonUser, callBackSucess)
+    $.post("/petpet/register", jsonUser, callBackSucess)
 }
 
 function callBackSucess() {
