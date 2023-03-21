@@ -65,7 +65,9 @@
                                         </div><!-- End .product-action -->
 
                                         <div class="product-action action-icon-top">
-                                            <a href="#" onclick="addTochoping(e)" class="btn-product btn-cart"><span>add
+                                            <a data-id="${products.getId()}" data-price="${products.getPrice()}"
+                                                data-name="${products.getName()}"
+                                                class="btn-product btn-cart addToCart"><span>add
                                                     to cart</span></a>
                                             <a href="" class="btn-product btn-quickview" title="Quick view"><span>quick
                                                     view</span></a>
@@ -365,6 +367,5 @@
             </div><!-- End .container-fluid -->
         </div><!-- End .page-content -->
     </main><!-- End .main -->
-    <script src="/petpet/presentation/assets/js/AllProducts.js"></script>
 
     <%@ include file="footer.html" %>

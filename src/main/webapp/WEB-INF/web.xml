@@ -65,6 +65,7 @@
 		<jsp-file>/presentation/views/Admin/HomePage.jsp</jsp-file>
 	</servlet>
 	<!-- End Adim Part -->
+
 	<servlet>
 		<servlet-name>Add-Category-Page</servlet-name>
 		<jsp-file>/presentation/views/Admin/addCategory.jsp</jsp-file>
@@ -111,13 +112,6 @@
 		<url-pattern>/Add-Product-Page</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<
-		<
-		<
-		<
-		<
-		<
-		< HEAD
 		<servlet-name>Products-list</servlet-name>
 		<url-pattern>/Products-List</url-pattern>
 	</servlet-mapping>
@@ -128,37 +122,60 @@
 	<!--end
 	of JSP mapping-->
 
-<servlet>
+	<servlet>
 		<servlet-name>AddProduct</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.Admin.AddProductServlet</servlet-class>
 	</servlet>
-<servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>AddProduct</servlet-name>
 		<url-pattern>/add-product</url-pattern>
 	</servlet-mapping>
-	
-  <servlet>
+
+	<servlet>
 		<servlet-name>RegisterService</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.RegisterServlet</servlet-class>
 	</servlet>
-  <servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>RegisterService</servlet-name>
 		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
 
-<servlet>
+	<servlet>
 		<servlet-name>loginserv</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.LoginServlet</servlet-class>
 	</servlet>
-<servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>loginserv</servlet-name>
 		<url-pattern>/login_</url-pattern>
-	</servlet-mapping> ======= <servlet-name>Add-Category-Page</servlet-name>
-		<url-pattern>
-	/Add-Category-Page</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Add-Category-Page</servlet-name>
+		<url-pattern>/Add-Category-Page</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>addToCart</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.AddToCartServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>addToCart</servlet-name>
+		<url-pattern>/addToCart</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>showToCart</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.AddToCartServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>showToCart</servlet-name>
+		<url-pattern>/cartt</url-pattern>
 	</servlet-mapping>
 	<!--end
-	of JSP mapping--> >>>>>>> origin/addcategory <servlet>
+	of JSP mapping-->
+	<servlet>
 		<servlet-name>Products</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.Admin.ProductListServlet</servlet-class>
 	</servlet>
@@ -219,7 +236,7 @@
 		<url-pattern>/product</url-pattern>
 	</servlet-mapping>
 	<!-- Welcome List-->
-  <welcome-file-list>
+	<welcome-file-list>
 		<welcome-file>
 			presentation/views/index-5.jsp
 		</welcome-file>
