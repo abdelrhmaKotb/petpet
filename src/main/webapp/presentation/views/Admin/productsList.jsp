@@ -263,7 +263,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach var="product" items="${priductList}">
+                                    <c:forEach var="product" items="${productList}">
                                         <tr>
                                             <td>${product.getId() }</td>
                                             <td>${product.getName() }</td>

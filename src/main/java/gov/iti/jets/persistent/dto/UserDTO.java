@@ -22,6 +22,22 @@ public class UserDTO {
         this.userName = userName;
     }
 
+    public UserDTO(int id, String firstName, String userName, String phone, String password, String job,
+                   BigDecimal creditLimit, String country, String street, String zip, String city, LocalDate birthday) {
+        this.id = id;
+        this.firstName = firstName;
+        this.userName = userName;
+        this.phone = phone;
+        this.password = password;
+        this.job = job;
+        this.creditLimit = creditLimit;
+        this.country = country;
+        this.street = street;
+        this.zip = zip;
+        this.city = city;
+        this.birthday = birthday;
+    }
+
     public UserDTO(String name, String userName, String phone, String password, String job, BigDecimal creditLimit,
                    String country, String street, String zip, String city, LocalDate birthday) {
         this.firstName = name;
