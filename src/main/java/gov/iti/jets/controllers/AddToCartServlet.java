@@ -1,15 +1,7 @@
 package gov.iti.jets.controllers;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.Arrays;
-import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import gov.iti.jets.models.CartItem;
-import gov.iti.jets.persistent.entity.Cart;
 import gov.iti.jets.services.AddToCartService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -26,14 +18,16 @@ public class AddToCartServlet extends HttpServlet {
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("presentation/views/cart.jsp");
 
-        AddToCartService addToCartService = new AddToCartService();
-        String cartJson = addToCartService.get(userId);
+        // AddToCartService addToCartService = new AddToCartService();
+        // String cartJson = addToCartService.get(userId);
 
-        Gson gson = new Gson();
-        Type listType = new TypeToken<List<CartItem>>() {}.getType();
-        List<CartItem> cart = gson.fromJson(cartJson, listType);
-        System.out.println(cart);
-        req.setAttribute("cart", cart);
+        // Gson gson = new Gson();
+        // Type listType = new TypeToken<List<CartItem>>() {}.getType();
+        // List<CartItem> cart = gson.fromJson(cartJson, listType);
+        // System.out.println(cart);
+        // req.setAttribute("cart", cart);
+        // Double total = cart.stream().mapToDouble(item -> item.getProductPrice() * item.getProductQty()).sum();
+        // req.setAttribute("total", total);
         dispatcher.forward(req, resp);
     }
 

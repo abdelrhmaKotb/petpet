@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 
-    <jsp:directive.include file="header.html" />
+    <jsp:directive.include file="header.jsp" />
     <main class="main">
         <div class="page-header text-center"
             style="background-image: url('/petpet/presentation/assets/images/page-header-bg.jpg')">

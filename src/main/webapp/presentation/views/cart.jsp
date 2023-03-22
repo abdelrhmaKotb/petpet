@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 
-<jsp:directive.include file="header.html" />
+<jsp:directive.include file="header.jsp" />
         <main class="main">
         	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
         		<div class="container">
@@ -80,7 +80,7 @@
 			            				</form>
 			            			</div><!-- End .cart-discount -->
 
-			            			<a href="#" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
+										<button class="btn btn-outline-dark-2" ><span>UPDATE CART</span><i class="icon-refresh"></i></button>
 		            			</div><!-- End .cart-bottom -->
 	                		</div><!-- End .col-lg-9 -->
 	                		<aside class="col-lg-3">
@@ -91,7 +91,8 @@
 	                					<tbody>
 	                						<tr class="summary-subtotal">
 	                							<td>Subtotal:</td>
-	                							<td>$160.00</td>
+	                							<td>$ ${total}
+												</td>
 	                						</tr><!-- End .summary-subtotal -->
 	                						<tr class="summary-shipping">
 	                							<td>Shipping:</td>
