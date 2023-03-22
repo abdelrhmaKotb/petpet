@@ -2,12 +2,14 @@ package gov.iti.jets.controllers;
 
 import java.io.IOException;
 
+import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.services.loginService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class LoginServlet extends HttpServlet {
 
@@ -15,11 +17,12 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String Emal = req.getParameter("register-email");
         String pass = req.getParameter("register-password");
-
-        if (new loginService().isUser(Emal,pass)) {
+        UserDTO userDTO = new loginService().isUser(Emal,pass);
+        if (userDTO != null) {
             
-
-                resp.sendRedirect("presentation/views/index-5.jsp");
+                HttpSession session = req.getSession(true);
+                session.setAttribute("userSession" , userDTO);
+                resp.sendRedirect("home");
             }
             else if(new loginService().isExistUser(Emal)) {
                 req.setAttribute("errorMessage", "Incorrect password.");

@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,11 +86,16 @@
                                         <a
                                             href="/petpet/contact">Contact</a>
                                     </li>
-                                    <li><a
-                                            href="/petpet/login">Login</a></li>
-                                    <li><a
-                                            href="/petpet/presentation/views/coming-soon.jsp">Coming
-                                            Soon</a></li>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userSession}">
+                                            <li><a href="/petpet/login">Login</a></li>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <!-- Code to be executed if the expression is false -->
+                                            <li></li>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </ul><!-- End of Nav -->
 
                             </nav><!-- End .main-nav -->
@@ -112,16 +119,15 @@
                                     </div><!-- End .header-search-wrapper -->
                                 </form>
                             </div><!-- End .header-search -->
-                            <div class="nav-line-1-container" style="color: transparent"> &amp; &amp; </div>
-                            <div class="nav-line-1-container">
-                                <span id="nav-link-accountList-nav-line-1" style="color : red;font-weight: bold;padding: inherit;" class="nav-line-1 nav-progressive-content">Hello, sign in
-                                </span>
-                            </div>
+                            <c:if test="${not empty sessionScope.userSession}">
 
-                            <a href="/petpet/wishlist"
-                                class="wishlist-link">
-                                <i class="icon-heart-o"></i>
-                            </a>
+                                <div class="nav-line-1-container" style="visibility: hidden;" > &amp; &amp; </div>
+                                <div class="nav-line-1-container">
+                                     <span id="nav-link-accountList-nav-line-1" style=" font-family: Poppins ; color: whitesmoke; font-weight: bold; position: center " class="nav-line-1 nav-progressive-content">
+                                      Hello ,  ${sessionScope.userSession.getName()}
+                                </span>
+                                </div>
+                            </c:if>
 
                         <jsp:directive.include file="usercart.jsp" />
 
