@@ -6,6 +6,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
+import com.google.gson.Gson;
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
+
+import gov.iti.jets.helpers.Validation;
 import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.services.RegisterService;
 import jakarta.servlet.ServletException;
@@ -13,25 +17,43 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class RegisterServlet extends HttpServlet {
+// @WebServlet(urlPatterns = {"/register"} , name = "RegisterServlet")
+public class RegisterServlet extends HttpServlet{
 
+    String username = null;
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String fName = req.getParameter("firstName");
-        String userName = req.getParameter("userName");
-        String phone = req.getParameter("phone");
-        String password = req.getParameter("password");
-        String job = req.getParameter("job");
-        String creditLimit = req.getParameter("creditLimit");
-        String country = req.getParameter("country");
-        String street = req.getParameter("street");
-        String city = req.getParameter("city");
-        String birthday = req.getParameter("birthday");
+
+         Gson gson = new Gson();
+        
+        String fName =req.getParameter("register-Name");
+        String userName = req.getParameter("register-username");
+        System.out.println("user email " + userName);
+        //System.out.println("user email " + username);
+        String phone = req.getParameter("register-phone");
+        String password = req.getParameter("register-password-1");
+        String conf_password = req.getParameter("register-password-confirm");
+        String job = req.getParameter("register-job");
+        String creditLimit  = req.getParameter("register-credit");
+        String country  = req.getParameter("register-country");
+        String street  = req.getParameter("register-street");
+        String city  = req.getParameter("register-city");
+        String birthday  = req.getParameter("register-birth");
         BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
-        LocalDate date = LocalDate.parse(birthday, DateTimeFormatter.ofPattern("d-MMM-yyyy", Locale.US)); 
-        UserDTO user = new UserDTO(fName, userName, phone, password, job, cl, country, street, null, city, date);
+        LocalDate date = LocalDate.parse(birthday); //date formater
+        UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,date);
         RegisterService service = new RegisterService();
-        service.register(user);
+        if(Validation.isValidName(fName)  && Validation.validCountry(country)
+                && Validation.validPhone(phone)  && Validation.validPassword(password) && Validation.isEmail(userName))
+        {
+            System.out.println("All true");
+            service.register(user);
+            req.getRequestDispatcher("presentation/views/index-5.jsp").forward(req,resp);
+        }
+        else {
+            resp.sendRedirect("presentation/views/login.jsp");
+        }
+
     }
 
     @Override

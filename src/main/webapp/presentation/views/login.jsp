@@ -82,10 +82,10 @@
 							    		</div><!-- End .form-footer -->
 							    	</form>
 							    </div><!-- .End .tab-pane -->
-							    <div class="tab-pane fade" id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
-							    	<form action="#">
+							    <div class="tab-pane fade show active" id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
+							    	<form action="/petpet/register" method="post">
                                         <div id="name-div" class="col-sm-12">
-                                            <label for="register-name-2">Name *</label>
+                                            <label for="register-Name">Name *</label>
                                             <input type="text" class="form-control" id="register-Name" onblur="checkName()"
                                                 name="register-name" required="">
                                                 <div class="invalid-feedback">Please provide your name
@@ -94,10 +94,10 @@
 
                                         
                                         <div class="col-md-12">
-                                            <label for="register-email" class="form-label">Username</label>
+                                            <label for="register-username" class="form-label">Username</label>
                                             <div class="input-group form-outline">
                                               <span class="input-group-text" style="font-size: 2rem;" id="inputGroupPrepend">@</span>
-                                              <input type="email" class="form-control" id="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" required />
+                                              <input type="email" class="form-control" id="register-username" name="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" required />
                                               
                                               <div class="invalid-feedback">Email Already exists</div>
                                             </div>
@@ -137,8 +137,8 @@
                                             </div>
 
                                             <div class="col-sm-6">
-                                                <label for="register-birth-2">Birthday *</label>
-                                                <input type="date" class="form-control" id="register-birth-2"
+                                                <label for="register-birth">Birthday *</label>
+                                                <input type="date" class="form-control" id="register-birth"
                                                     name="register-birth">
                                     
                                             </div>
@@ -189,7 +189,7 @@
                                     
 
                                         <div class="form-footer">
-                                            <button type="button" onclick="registerUser()" class="btn btn-outline-primary-2">
+                                            <button type="submit" class="btn btn-outline-primary-2">
                                                 <span>SIGN UP</span>
                                                 <i class="icon-long-arrow-right"></i>
                                             </button>
@@ -458,7 +458,7 @@
                                         </div><!-- End .form-group -->
 
                                         <div class="form-footer">
-                                            <button type="submit" class="btn btn-outline-primary-2">
+                                            <button type="submit" class="btn btn-outline-primary-2" >
                                                 <span>SIGN UP</span>
                                                 <i class="icon-long-arrow-right"></i>
                                             </button>
