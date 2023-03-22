@@ -32,6 +32,7 @@ public class UserMapper implements Mapper<User, UserDTO> {
             return null;
         }
         return new UserDTO(
+                user.getId(),
                 user.getName(),
                 user.getEmail(),
                 user.getPhone(),

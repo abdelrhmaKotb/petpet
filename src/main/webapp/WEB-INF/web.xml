@@ -47,6 +47,13 @@
 		<servlet-name>adminEditProduct</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.Admin.EditProductServlet</servlet-class>
 	</servlet>
+
+
+	<servlet>
+		<servlet-name>adminDeleteUser</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.DeleteUserServlet</servlet-class>
+	</servlet>
+	
 	<servlet>
 		<servlet-name>EditProduct</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.Admin.EditProductServlet</servlet-class>
@@ -65,6 +72,10 @@
 		<jsp-file>/presentation/views/Admin/HomePage.jsp</jsp-file>
 	</servlet>
 	<!-- End Adim Part -->
+	<servlet>
+		<servlet-name>Users-List</servlet-name>
+		<jsp-file>/presentation/views/Admin/usersList.jsp</jsp-file>
+	</servlet>
 
 	<servlet>
 		<servlet-name>Add-Category-Page</servlet-name>
@@ -75,6 +86,12 @@
 	<servlet-mapping>
 		<servlet-name>adminEditProduct</servlet-name>
 		<url-pattern>/admin/edit</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>adminDeleteUser</servlet-name>
+		<url-pattern>/Delete-User</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
@@ -121,6 +138,10 @@
 	</servlet-mapping>
 	<!--end
 	of JSP mapping-->
+	<servlet-mapping>
+		<servlet-name>Users-List</servlet-name>
+		<url-pattern>/Users-List</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>AddProduct</servlet-name>
@@ -234,6 +255,14 @@
 	<servlet-mapping>
 		<servlet-name>Product</servlet-name>
 		<url-pattern>/product</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Review-Customer-Profile</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.ReviewCustomerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Review-Customer-Profile</servlet-name>
+		<url-pattern>/review-customers</url-pattern>
 	</servlet-mapping>
 	<!-- Welcome List-->
 
