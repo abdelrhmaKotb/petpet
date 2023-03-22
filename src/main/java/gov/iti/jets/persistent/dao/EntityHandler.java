@@ -10,14 +10,14 @@ public class EntityHandler {
     private EntityHandler(){};
 
     public static EntityManager getEntityManager(){
-        if(entityManager == null){
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-            entityManager = emf.createEntityManager();
-            return entityManager;
-        }
+        // if(entityManager == null){
+        //     EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
+        //     entityManager = emf.createEntityManager();
+        //     return entityManager;
+        // }
 
-        return entityManager;
-        // EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-        // return emf.createEntityManager();
+        // return entityManager;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
+        return emf.createEntityManager();
     }
 }

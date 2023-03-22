@@ -8,7 +8,7 @@ import jakarta.persistence.Query;
 
 public class RepositoryImpl<E, K> implements Repository<E, K> {
 
-    private EntityManager _entityManager;
+    protected EntityManager _entityManager;
     private Class<E> type;
 
     public RepositoryImpl() {

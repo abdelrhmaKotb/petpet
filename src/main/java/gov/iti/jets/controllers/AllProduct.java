@@ -23,6 +23,8 @@ import java.util.List;
 
         req.setAttribute("productList", products);
 
+        System.out.println(products);
+
         requestDis.forward(req, resp);
 
     }
