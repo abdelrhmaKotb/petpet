@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- molla/checkout.html  22 Nov 2019 09:55:06 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +9,31 @@
     <meta name="keywords" content="HTML5 Template">
     <meta name="description" content="PetPet">
     <meta name="author" content="p-themes">
+    <link rel="icon" type="image/png" sizes="16x16" href="/petpet/presentation/assets/images/icons/favicon-32x32.png">
+    <title>Ample Admin Template - The Ultimate Multipurpose admin template</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/petpet/presentation/assets/css/bootstrap.min.css">
+    <!-- Menu CSS -->
+    <link href="/petpet/presentation/assets/css/Admin/sidebar-nav.min.css" rel="stylesheet">
+    <!-- toast CSS -->
+    <link href="/petpet/presentation/assets/css/Admin/jquery.toast.css" rel="stylesheet">
+    <!-- morris CSS -->
+    <link href="/petpet/presentation/assets/css/Admin/morris.css" rel="stylesheet">
+    <!-- chartist CSS -->
+    <link href="/petpet/presentation/assets/css/Admin/chartist.min.css" rel="stylesheet">
+    <link href="/petpet/presentation/assets/css/Admin/chartist-plugin-tooltip.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="/petpet/presentation/assets/css/Admin/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/petpet/presentation/assets/css/Admin/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="/petpet/presentation/assets/css/Admin/default.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/petpet/presentation/assets/images/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="32x32"
@@ -31,8 +54,22 @@
     <link rel="stylesheet" href="/petpet/presentation/assets/css/style.css">
 </head>
 
-<body>
-<div class="page-wrapper">
+<body class="d-flex flex-column min-vh-100">
+<!-- ============================================================== -->
+<!-- Preloader -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+    </svg>
+</div>
+<!-- ============================================================== -->
+<!-- Wrapper -->
+<!-- ============================================================== -->
+<div id="wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
     <header class="header">
         <div class="header-top">
             <div class="container">
@@ -42,24 +79,11 @@
 
                 </div><!-- End .header-left -->
 
-                <div class="header-right">
-                    <ul class="top-menu">
-                        <li>
-                            <a href="#">Links</a>
-                            <ul>
-                                <li><a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a></li>
-                                <li><a href="/petpet/wishlist"><i class="icon-heart-o"></i>Wishlist <span>(3)</span></a></li>
-                                <li><a href="/petpet/about">About Us</a></li>
-                                <li><a href="/petpet/contact">Contact Us</a></li>
-                                <li><a href="/petpet/login" data-toggle="modal"><i class="icon-user"></i>Login</a></li>
-                            </ul>
-                        </li>
-                    </ul><!-- End .top-menu -->
-                </div><!-- End .header-right -->
+
             </div><!-- End .container -->
         </div><!-- End .header-top -->
 
-        <div class="header-middle sticky-header">
+        <div class="header-middle sticky-header fixed">
             <div class="container">
                 <div class="header-left">
                     <button class="mobile-menu-toggler">
@@ -70,19 +94,23 @@
                     <a href="/petpet/home" class="logo">
                         <img src="/petpet/presentation/assets/images/logo.png" alt="PetPet Logo" width="105" height="25">
                     </a>
-
                     <nav class="main-nav">
                         <ul class="menu sf-arrows">
                             <li class="megamenu-container active">
-                                <a href="/petpet/home" >Home</a>
-
+                                <a href="/petpet/Admin-Home" > Dashboard</a>
                             </li>
                             <li>
-                                <a href="/petpet/shop" >Shop</a>
-
+                                <a href="/petpet/Products" > Products</a>
+                            </li>
+                            <li>
+                                <a href="/petpet/" > Users</a>
+                            </li>
+                            <li>
+                                <a href="/petpet/" > Categories</a>
                             </li>
 
                         </ul><!-- End .menu -->
+
                     </nav><!-- End .main-nav -->
                 </div><!-- End .header-left -->
 
@@ -96,76 +124,39 @@
                             </div><!-- End .header-search-wrapper -->
                         </form>
                     </div><!-- End .header-search -->
-                    <div class="dropdown compare-dropdown">
-                        <a href="/petpet/wishlist"
-                           class="wishlist-link">
-                            <i class="icon-heart-o"></i>
-                        </a>
 
-                    </div><!-- End .compare-dropdown -->
-
-                    <div class="dropdown cart-dropdown">
-                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                            <i class="icon-shopping-cart"></i>
-                            <span class="cart-count">2</span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <div class="dropdown-cart-products">
-                                <div class="product">
-                                    <div class="product-cart-details">
-                                        <h4 class="product-title">
-                                            <a href="product.html">Beige knitted elastic runner shoes</a>
-                                        </h4>
-
-                                        <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $84.00
-                                            </span>
-                                    </div><!-- End .product-cart-details -->
-
-                                    <figure class="product-image-container">
-                                        <a href="product.html" class="product-image">
-                                            <img src="/petpet/presentation/assets/images/products/cart/product-1.jpg" alt="product">
-                                        </a>
-                                    </figure>
-                                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
-                                </div><!-- End .product -->
-
-                                <div class="product">
-                                    <div class="product-cart-details">
-                                        <h4 class="product-title">
-                                            <a href="product.html">Blue utility pinafore denim dress</a>
-                                        </h4>
-
-                                        <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $76.00
-                                            </span>
-                                    </div><!-- End .product-cart-details -->
-
-                                    <figure class="product-image-container">
-                                        <a href="product.html" class="product-image">
-                                            <img src="/petpet/presentation/assets/images/products/cart/product-2.jpg" alt="product">
-                                        </a>
-                                    </figure>
-                                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
-                                </div><!-- End .product -->
-                            </div><!-- End .cart-product -->
-
-                            <div class="dropdown-cart-total">
-                                <span>Total</span>
-
-                                <span class="cart-total-price">$160.00</span>
-                            </div><!-- End .dropdown-cart-total -->
-
-                            <div class="dropdown-cart-action">
-                                <a href="cart.html" class="btn btn-primary">View Cart</a>
-                                <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
-                            </div><!-- End .dropdown-cart-total -->
-                        </div><!-- End .dropdown-menu -->
-                    </div><!-- End .cart-dropdown -->
                 </div><!-- End .header-right -->
             </div><!-- End .container -->
         </div><!-- End .header-middle -->
     </header><!-- End .header -->
+
+    <!-- End Top Navigation -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav slimscrollsidebar">
+            <div class="sidebar-head">
+                <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3>
+            </div>
+            <ul class="nav" id="side-menu">
+                <li style="padding: 70px 0 0;">
+                    <a href="/petpet/Admin-Home" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="/petpet/Products" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Products</a>
+                </li>
+                <li>
+                    <a href="" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Users</a>
+                </li>
+                <li>
+                    <a href="" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i>Categories</a>
+                </li>
+
+            </ul>
+            <div class="center p-20">
+                <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank" class="btn btn-danger btn-block waves-effect waves-light">Upgrade to Pro</a>
+            </div>
+        </div>
+
+    </div>
