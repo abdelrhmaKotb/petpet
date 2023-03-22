@@ -1,6 +1,7 @@
 package gov.iti.jets.filters;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -29,6 +30,9 @@ public class AddHeaderFilter implements Filter {
         Type listType = new TypeToken<List<CartItem>>() {
         }.getType();
         List<CartItem> cart = gson.fromJson(cartJson, listType);
+        if(cart == null){
+            cart = new ArrayList<>();
+        }
         System.out.println(" cart " +  cart);
         request.setAttribute("cart", cart);
         Double total = cart.stream().mapToDouble(item -> item.getProductPrice() * item.getProductQty()).sum();
