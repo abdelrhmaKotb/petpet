@@ -1,12 +1,12 @@
-<jsp:directive.include file="header.html" />
+<jsp:directive.include file="AdminHeader.html" />
         <!-- ============================================================== -->
         <!-- End Left Sidebar -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Page Content -->
         <!-- ============================================================== -->
-
-        <div id="page-wrapper">
+<main style=" margin: 50px 0;">
+        <div style ="background-color: #edf1f5;">
             <div class="container-fluid">
 
                 <!-- /.row -->

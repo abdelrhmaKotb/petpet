@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 
-	<jsp:directive.include file="header.html" />
+	<jsp:directive.include file="AdminHeader.html" />
 
 	<main class="main">
 		<div class="page-header text-center" style="background-image:

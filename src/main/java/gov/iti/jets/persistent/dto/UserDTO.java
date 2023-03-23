@@ -1,7 +1,10 @@
 package gov.iti.jets.persistent.dto;
 
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDTO {
     int id;
@@ -17,10 +20,12 @@ public class UserDTO {
     String zip;
     String city;
     LocalDate birthday;
+    List<OrderDto> orderDTOS = new ArrayList<>();
 
     public UserDTO(String userName) {
         this.userName = userName;
     }
+
 
     public UserDTO(int id, String firstName, String userName, String phone, String password, String job,
                    BigDecimal creditLimit, String country, String street, String zip, String city, LocalDate birthday) {
@@ -126,5 +131,12 @@ public class UserDTO {
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
-    
+    public List<OrderDto> getOrderDTOS() {
+        return orderDTOS;
+    }
+
+    public void setOrderDTOS(List<OrderDto> orderDTOS) {
+        this.orderDTOS = orderDTOS;
+    }
+
 }

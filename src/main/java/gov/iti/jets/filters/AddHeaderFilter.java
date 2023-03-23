@@ -23,7 +23,7 @@ public class AddHeaderFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
 
-        int userId = 12;
+        int userId = 14;
         AddToCartService addToCartService = new AddToCartService();
         String cartJson = addToCartService.get(userId);
         Gson gson = new Gson();
