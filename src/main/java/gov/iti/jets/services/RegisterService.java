@@ -7,9 +7,9 @@ import gov.iti.jets.services.mapper.UserMapper;
 
 public class RegisterService {
 
-    public void register(UserDTO userDTO) {
-        RepositoryImpl<User, Integer> repository = new RepositoryImpl<>(User.class);
-
+    public void register(UserDTO userDTO){
+        RepositoryImpl<User,Integer> repository = new RepositoryImpl<>(User.class);
+        //validation
         User u = new UserMapper().toEntity(userDTO);
 
         repository.create(u);

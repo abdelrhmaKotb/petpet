@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,11 +86,16 @@
                                         <a
                                             href="/petpet/contact">Contact</a>
                                     </li>
-                                    <li><a
-                                            href="/petpet/login">Login</a></li>
-                                    <li><a
-                                            href="/petpet/presentation/views/coming-soon.jsp">Coming
-                                            Soon</a></li>
+                                    <c:choose>
+                                        <c:when test="${empty sessionScope.userSession}">
+                                            <li><a href="/petpet/login">Login</a></li>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <!-- Code to be executed if the expression is false -->
+                                            <li></li>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </ul><!-- End of Nav -->
 
                             </nav><!-- End .main-nav -->
@@ -112,93 +119,19 @@
                                     </div><!-- End .header-search-wrapper -->
                                 </form>
                             </div><!-- End .header-search -->
-                            <div class="nav-line-1-container" style="color: transparent"> &amp; &amp; </div>
-                            <div class="nav-line-1-container">
-                                <span id="nav-link-accountList-nav-line-1" style="color : red;font-weight: bold;padding: inherit;" class="nav-line-1 nav-progressive-content">Hello, sign in
+                            <c:if test="${not empty sessionScope.userSession}">
+
+                                <div class="nav-line-1-container" style="visibility: hidden;" > &amp; &amp; </div>
+                                <div class="nav-line-1-container">
+                                     <span id="nav-link-accountList-nav-line-1" style=" font-family: Poppins ; color: whitesmoke; font-weight: bold; position: center " class="nav-line-1 nav-progressive-content">
+                                      Hello ,  ${sessionScope.userSession.getName()}
                                 </span>
-                            </div>
+                                </div>
+                            </c:if>
 
-                            <a href="/petpet/wishlist"
-                                class="wishlist-link">
-                                <i class="icon-heart-o"></i>
-                            </a>
+                        <jsp:directive.include file="usercart.jsp" />
 
-                            <div class="dropdown cart-dropdown">
-                                <a href="#" class="dropdown-toggle"
-                                    role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false"
-                                    data-display="static">
-                                    <i class="icon-shopping-cart"></i>
-                                    <span class="cart-count">2</span>
-                                </a>
 
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-cart-products">
-                                        <div class="product">
-                                            <div class="product-cart-details">
-                                                <h4 class="product-title">
-                                                    <a
-                                                        href="/petpet/presentation/views/product.jsp">Beige
-                                                        knitted elastic runner
-                                                        shoes</a>
-                                                </h4>
-
-                                                <span class="cart-product-info">
-                                                    <span
-                                                        class="cart-product-qty">1</span>
-                                                    x $84.00
-                                                </span>
-                                            </div><!-- End .product-cart-details -->
-                                        </div><!-- End .product -->
-
-                                        <div class="product">
-                                            <div class="product-cart-details">
-                                                <h4 class="product-title">
-                                                    <a
-                                                        href="/petpet/presentation/views/product.jsp">Blue
-                                                        utility pinafore denim
-                                                        dress</a>
-                                                </h4>
-
-                                                <span class="cart-product-info">
-                                                    <span
-                                                        class="cart-product-qty">1</span>
-                                                    x $76.00
-                                                </span>
-                                            </div><!-- End .product-cart-details -->
-                                            <figure
-                                                class="product-image-container">
-                                                <a
-                                                    href="/petpet/presentation/views/product.jsp"
-                                                    class="product-image">
-                                                    <img
-                                                        src="/petpet/presentation/assets/images/products/cart/product-2.jpg"
-                                                        alt="product">
-                                                </a>
-                                            </figure>
-                                            <a href="#" class="btn-remove"
-                                                title="Remove Product"><i
-                                                    class="icon-close"></i></a>
-                                        </div><!-- End .product -->
-                                    </div><!-- End .cart-product -->
-
-                                    <div class="dropdown-cart-total">
-                                        <span>Total</span>
-
-                                        <span class="cart-total-price">$160.00</span>
-                                    </div><!-- End .dropdown-cart-total -->
-
-                                    <div class="dropdown-cart-action">
-                                        <a
-                                            href="/petpet/presentation/views/cart.jsp"
-                                            class="btn btn-primary">View Cart</a>
-                                        <a
-                                            href="/petpet/presentation/views/checkout.jsp"
-                                            class="btn btn-outline-primary-2"><span>Checkout</span><i
-                                                class="icon-long-arrow-right"></i></a>
-                                    </div><!-- End .dropdown-cart-total -->
-                                </div><!-- End .dropdown-menu -->
-                            </div><!-- End .cart-dropdown -->
                         </div><!-- End .header-right -->
                     </div><!-- End .container-fluid -->
                 </div><!-- End .header-middle -->

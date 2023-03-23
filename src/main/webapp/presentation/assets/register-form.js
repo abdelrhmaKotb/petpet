@@ -50,7 +50,13 @@ function validateEmail(input) {
 
 function checkUsername() {
     username = $("#register-username").val()
-
+    if(!username){
+        $("#register-username").replaceWith(`
+             
+                <input type="email" class="form-control is-invalid" id="register-username" name="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="" required />
+                
+        `)
+    }
     let emailJson = {
         email: username
     }
@@ -61,17 +67,20 @@ function checkUsername() {
 function callBack(data) {
 
     console.log("Data " + data);
-    if (data.match("true")) {
+
+
+
+    if(data.match("true")){
         console.log("here")
         $("#register-username").replaceWith(`
-                <input type="email" class="form-control is-invalid" id="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
+                <input type="email" class="form-control is-invalid" id="register-username" name="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
         `)
     }
     else {
         $("#register-username").replaceWith(`
              
-                <input type="email" class="form-control is-valid" id="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
-        
+                <input type="email" class="form-control is-valid" id="register-username" name="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
+                
         `)
     }
 }
