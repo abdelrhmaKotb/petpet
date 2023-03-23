@@ -87,7 +87,7 @@
                                         <div id="name-div" class="col-sm-12">
                                             <label for="register-Name">Name *</label>
                                             <input type="text" class="form-control" id="register-Name" onblur="checkName()"
-                                                name="register-name" required="">
+                                                name="register-Name" required="">
                                                 <div class="invalid-feedback">Please provide your name
                                                 </div>
                                         </div>
@@ -99,7 +99,7 @@
                                               <span class="input-group-text" style="font-size: 2rem;" id="inputGroupPrepend">@</span>
                                               <input type="email" class="form-control" id="register-username" name="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" required />
                                               
-                                              <div class="invalid-feedback">Email Already exists</div>
+                                              <div id="emailfeedback" class="invalid-feedback"></div>
                                             </div>
                                         </div>
                                         <br>
@@ -182,6 +182,7 @@
                                                 <input type="text" name="register-country" id="register-country" class="form-control"
                                                     onblur="checkCountry()" required>
                                                 <div class="invalid-feedback">Please enter a value</div>
+                                                <div id="inValidCountry">${inValidCountry}</div>
                                             </div>
 
                                         </div>

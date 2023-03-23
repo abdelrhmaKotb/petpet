@@ -14,7 +14,7 @@ public class Validation {
             System.out.println("email is bad");
             return false;
         }
-        regex = "^(.+)@(.+)$";
+        regex = "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$";
         Pattern = Pattern.compile(regex);
         matcher = Pattern.matcher(email);
         System.out.println("Checked email");
@@ -23,9 +23,10 @@ public class Validation {
     }
     public static boolean isValidName(String name){
         if (name == null || name.equals("")){
+            System.out.println("bad name");
             return false;
         }
-        regex = "^[a-zA-Z]{2,30}$";
+        regex = "^[a-zA-Z\\s]{2,30}$";
         Pattern = Pattern.compile(regex);
         matcher = Pattern.matcher(name);
         System.out.println("Checked name");
@@ -34,6 +35,7 @@ public class Validation {
 
     public static boolean validPhone(String phone) {
         if (phone == null|| phone.equals("")) {
+            System.out.println("bad phone");
             return false;
         }
         regex = "^01[0125][0-9]{8}$";
@@ -45,6 +47,7 @@ public class Validation {
     }
     public static boolean validPassword(String password) {
         if (password == null || password.equals("")) {
+            System.out.println("bad password");
             return false;
         }
         regex = "^\\d{8,20}";
@@ -88,7 +91,7 @@ public class Validation {
         for (String countryCode : locales) {
             Locale obj = new Locale("", countryCode);
             //System.out.println(obj.getDisplayCountry());
-            if((obj.getDisplayCountry()).equalsIgnoreCase(country)) {
+            if((obj.getDisplayCountry()).equalsIgnoreCase(country) || obj.getDisplayCountry().contains(country) ) {
                 System.out.println("Country matched");
                 return true;
             }

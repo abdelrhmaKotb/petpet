@@ -264,6 +264,14 @@
 		<servlet-name>Review-Customer-Profile</servlet-name>
 		<url-pattern>/review-customers</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>CheckCountry</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.CheckCountryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckCountry</servlet-name>
+		<url-pattern>/checkcountry</url-pattern>
+	</servlet-mapping>
 	<!-- Welcome List-->
 
 	<filter>

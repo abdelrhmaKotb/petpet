@@ -19,12 +19,11 @@ public class RegisterServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-         Gson gson = new Gson();
-        
+        System.out.println("Hiii in post");
         String fName =req.getParameter("register-Name");
+        System.out.println("fName "+fName);
         String userName = req.getParameter("register-username");
         System.out.println("user email " + userName);
-        //System.out.println("user email " + username);
         String phone = req.getParameter("register-phone");
         String password = req.getParameter("register-password-1");
         String conf_password = req.getParameter("register-password-confirm");
@@ -38,32 +37,38 @@ public class RegisterServlet extends HttpServlet{
         LocalDate date = LocalDate.parse(birthday); //date formater
         UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,date);
         RegisterService service = new RegisterService();
-        if(Validation.isValidName(fName)  && Validation.validCountry(country)
-                && Validation.validPhone(phone)  && Validation.validPassword(password) && Validation.isEmail(userName))
+        if(Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone))
         {
             System.out.println("All true");
             service.register(user);
-            req.getRequestDispatcher("presentation/views/index-5.jsp").forward(req,resp);
+            req.getRequestDispatcher("home").forward(req,resp);
         }
         else {
-            resp.sendRedirect("presentation/views/login.jsp");
+            resp.sendRedirect("login");
         }
 
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("email");
-        // validate here
+         username = req.getParameter("email");
+        System.out.println(username);
+
         UserDTO user = new UserDTO(username);
         RegisterService service = new RegisterService();
-        if (service.isUserExists(user)) {
+        if (!service.isUserExists(user)) {
             System.out.println("Servlet true");
+            if(!Validation.isEmail(username))
+                resp.getWriter().print("invalid");
             resp.getWriter().print("true");
-        } else {
+        }
+
+        else {
             System.out.println("Servlet false");
             resp.getWriter().print("false");
 
         }
+
+    //else resp.getWriter().print("empty");
     }
 }
