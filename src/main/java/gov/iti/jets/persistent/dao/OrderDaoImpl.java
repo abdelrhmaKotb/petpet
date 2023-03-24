@@ -15,14 +15,14 @@ public class OrderDaoImpl extends  RepositoryImpl<Order,Integer> implements Orde
     @Override
     public List<Order> findUserOrder(Integer userId, Integer pageNumber) {
 
-        Integer firstResult = 10*pageNumber;
+        Integer firstResult = 5*pageNumber;
         RepositoryImpl<User,Integer> User  = new RepositoryImpl<>(User.class);
 
         User user = User.find(userId);
         Query query = _entityManager.createQuery("From Order o where o.user = :id ORDER BY o.createdAt ASC")
                                     .setParameter("id",user);
         query.setFirstResult(firstResult);
-        query.setMaxResults(10);
+        query.setMaxResults(5);
         List<Order> orderList = query.getResultList();
 
 

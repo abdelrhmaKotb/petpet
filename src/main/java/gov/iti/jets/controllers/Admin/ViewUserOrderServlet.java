@@ -28,7 +28,7 @@ public class ViewUserOrderServlet  extends HttpServlet {
 
         req.setAttribute("Orders", orderDtoList);
         req.setAttribute("UserId", UserId);
-        req.setAttribute("totalPages", Math.ceil( (double)totalPages/10));
+        req.setAttribute("totalPages", Math.ceil( (double)totalPages/5));
 
         orderDtoList.forEach(e->System.out.println(e.getId()));
         requestDis.forward(req, resp);

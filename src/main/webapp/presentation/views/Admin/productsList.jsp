@@ -1,7 +1,8 @@
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:directive.include file="AdminHeader.html" />
         <link rel="stylesheet" href="/petpet/presentation/assets/css/AdminProductsList.css">
 
-            <div class="container">
+            <div class="container" style="margin-top :5em">
                 <div class="title row">
                     <div class="col-sm-8">
                         <h3>Products List</h3>
@@ -30,7 +31,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach var="product" items="${priductList}">
+                                <c:forEach var="product" items="${requestScope.productList}">
                                     <tr>
                                         <td>${product.getId() }</td>
                                         <td>${product.getName() }</td>
@@ -52,12 +53,13 @@
                                         </td>
                                     </tr>
                                 </c:forEach>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="/petpet/presentation/assets/js/Admin/ProductList.js"></script>
         <%@ include file="footer.html" %>

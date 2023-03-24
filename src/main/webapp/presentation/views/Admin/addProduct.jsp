@@ -96,5 +96,7 @@
 		</div><!-- End .checkout -->
 		</div><!-- End .page-content -->
 	</main><!-- End .main -->
+
 	<script src="/petpet/presentation/assets/js/Admin/addProduct.js"></script>
+
 	<%@ include file="footer.html" %>

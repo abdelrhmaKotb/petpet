@@ -2,7 +2,7 @@
 <jsp:directive.include file="AdminHeader.html" />
         <link rel="stylesheet" href="/petpet/presentation/assets/css/AdminProductsList.css">
 
-            <div class="container" style="margin :50px 0">
+            <div class="container" style="margin-top :5em">
                 <div class="title row">
                     <div class="col-sm-8">
                         <h3> Orders  </h3>
@@ -45,26 +45,26 @@
 
                             </tbody>
                         </table>
-                        <nav aria-label="Page navigation example">
-                          <ul class="pagination">
-                            <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                              </a>
-                            </li>
-                              <c:forEach var = "i" begin = "1" end = "${requestScope.totalPages}">
-                                <li class="page-item"><a class="page-link next" href="#" data-id="${i}" data-userId="${requestScope.UserId}">${i}</a></li>
-                               </c:forEach>
-                            <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                              </a>
-                            </li>
+                             <nav aria-label="Page navigation example">
+                              <ul class="pagination">
+                                <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                  </a>
+                                </li>
+                                  <c:forEach var = "i" begin = "1" end = "${requestScope.totalPages}">
+                                    <li class="page-item"><a class="page-link next" href="#" data-id="${i}" data-userId="${requestScope.UserId}">${i}</a></li>
+                                   </c:forEach>
+                                <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                  </a>
+                                </li>
 
-                          </ul>
-                        </nav>
+                              </ul>
+                            </nav>
                     </div>
                 </div>
             </div>
