@@ -15,6 +15,8 @@ import java.util.List;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        System.out.println("fsdffds df sdfs ddsf session" + req.getSession(false));
         GetProductsService productsService =  new  GetProductsService();
 
         List<ProductDto> products =  productsService.getProducts();

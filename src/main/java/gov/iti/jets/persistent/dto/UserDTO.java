@@ -126,5 +126,13 @@ public class UserDTO {
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
+
+    @Override
+    public String toString() {
+        return "UserDTO [id=" + id + ", firstName=" + firstName + ", userName=" + userName + ", phone=" + phone
+                + ", password=" + password + ", job=" + job + ", creditLimit=" + creditLimit + ", country=" + country
+                + ", street=" + street + ", zip=" + zip + ", city=" + city + ", birthday=" + birthday + "]";
+    }
+    
     
 }

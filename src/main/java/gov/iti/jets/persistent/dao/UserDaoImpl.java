@@ -14,7 +14,7 @@ import jakarta.persistence.criteria.Root;
 
 public class UserDaoImpl implements UserDao {
     EntityManagerFactory ef = Persistence.createEntityManagerFactory("default");
-    EntityManager em = ef.createEntityManager();
+    EntityManager em = ef.createEntityManager(); 
 
     @Override
     public User create(User user) {
