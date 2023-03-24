@@ -34,10 +34,17 @@ public class ProductDaoImpl extends RepositoryImpl<Product,Integer> implements P
 
     @Override
     public double highestPrise() {
-        String maxPrise = "Select MAX(p.price) from Product p ";
+        String maxPrise = "Select MAX(p.price) from Product p";
         Query maxQuery = _entityManager.createQuery(maxPrise);
-        double maxResults = (double) maxQuery.getSingleResult();
-        return maxResults;
+        Object maxResults =  maxQuery.getSingleResult();
+
+        Double max = 0d;
+        
+        if(maxResults != null){
+            max = (Double) maxResults;
+        }
+        
+        return max;
     }
 
     @Override

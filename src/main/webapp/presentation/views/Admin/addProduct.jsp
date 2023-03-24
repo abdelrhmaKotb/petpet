@@ -77,7 +77,7 @@
 								<div class="row">
 								<div class="my-2">
 									<input type="file" class="form-control" id="images" name="images[]"
-										onchange="preview_images();" multiple />
+										onchange="preview_images();" multiple required />
 								</div>
 								<input onclick="resetForm();" type="button" class="btn btn-dangers " name='reset_images'
 									value="Reset" />

@@ -9,10 +9,12 @@ import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
-public class CategoryDaoImpl extends RepositoryImpl<Category,Integer> implements CategoryDao   {
-    public CategoryDaoImpl(){
+public class CategoryDaoImpl extends RepositoryImpl<Category, Integer> implements CategoryDao {
+    
+    public CategoryDaoImpl() {
         super(Category.class);
     }
+
     @Override
     public List<String> AllCategoryName() {
 
@@ -24,9 +26,9 @@ public class CategoryDaoImpl extends RepositoryImpl<Category,Integer> implements
 
         return result;
     }
+
     @Override
     public int getCategoryId(String CategoryName) {
-
 
         CriteriaQuery<Integer> q = _criteriaBuilder.createQuery(Integer.class);
         Root<Category> category = q.from(Category.class);
@@ -34,9 +36,10 @@ public class CategoryDaoImpl extends RepositoryImpl<Category,Integer> implements
 
         List<Integer> result = _entityManager.createQuery(q).getResultList();
         if (result.isEmpty())
-            return 0;    
+            return 0;
         return result.get(0);
     }
+
     @Override
     public boolean isCategory(String CategoryName) {
 
@@ -48,7 +51,7 @@ public class CategoryDaoImpl extends RepositoryImpl<Category,Integer> implements
 
         List<Integer> result = _entityManager.createQuery(q).getResultList();
 
-        if (result.isEmpty()){
+        if (result.isEmpty()) {
             System.out.println("   0 ");
             return false;
         }
@@ -58,35 +61,19 @@ public class CategoryDaoImpl extends RepositoryImpl<Category,Integer> implements
 
     @Override
     public List<getCategoryAnditsQuantityDTO> getCategoryAndQuantity() {
-      /*  CriteriaQuery<Tuple> query = _criteriaBuilder.createQuery(Tuple.class);
-        Root<Category> categoryRoot = query.from(Category.class);
-        Join<Product, Category> b = categoryRoot.join("id" , JoinType.INNER);
-        query.groupBy(b.get("id"),b.get("name"));
-        query.multiselect(categoryRoot.get("id"),categoryRoot.get("name"), _criteriaBuilder.count(b));
-        TypedQuery<Tuple> typedQuery = _entityManager.createQuery(query);
-        List<Tuple> resultList = typedQuery.getResultList();
 
-        Map<Map<Integer,String>,Long> categoryMap = new LinkedHashMap<>();
-        Map<Integer,String> map=null;
-        for ( Tuple tuple : resultList ) {
-            map  = new LinkedHashMap<>();
-            map.put((Integer) tuple.get( 0 ),(String) tuple.get( 1 ));
-
-            categoryMap.put(map, (Long) tuple.get( 2 ));
-           }
-*/
         String countQ = "Select new gov.iti.jets.persistent.dto.getCategoryAnditsQuantityDTO(p.category.name, p.category.id, count(p.id))  FROM Product p  group by p.category.id";
         Query countQuery = _entityManager.createQuery(countQ, getCategoryAnditsQuantityDTO.class);
         List<getCategoryAnditsQuantityDTO> countResults = countQuery.getResultList();
-        countResults.forEach(e->{
-            System.out.println("List"+e.getProductsQuantity());
+        countResults.forEach(e -> {
+            System.out.println("List" + e.getProductsQuantity());
         });
         return countResults;
     }
 
     @Override
-    public void AddCategory(String cName,int parentId){
-        Category c= new Category();
+    public void AddCategory(String cName, int parentId) {
+        Category c = new Category();
         c.setName(cName);
         c.setParentId(parentId);
         _entityManager.getTransaction().begin();
