@@ -124,7 +124,7 @@
                     <div class="sidebar-filter-wrapper">
                         <div class="widget widget-clean">
                             <label><i class="icon-close"></i>Filters</label>
-                            <a href="" onClick="CleanAllFilters(e)" class="sidebar-filter-clear">Clean All</a>
+                            <a href="#" onclick="CleanAllFilters(event)" class="sidebar-filter-clear">Clear ALL Filter Results</a>
                         </div><!-- End .widget -->
                         <div class="widget widget-collapsible">
                             <h3 class="widget-title">

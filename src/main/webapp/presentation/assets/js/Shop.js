@@ -76,12 +76,12 @@ let html =`
             </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->`;
             $(".productsDiv").append(html);
 }
-function CleanAllFilters(e){
-    e.preventDefault();
-
-
-
-}
+function CleanAllFilters(event){
+console.log("from clear");
+    event.preventDefault();
+    document.querySelector('input[name=range]').value =0;
+    location.href = "/petpet/Shop";
+    }
 
 
 
@@ -90,6 +90,8 @@ function filter(event){
     var p = event.target.closest('a');
     event.preventDefault();
     let  priseSliderValue = $("#priseSliderValue").text();
+    document.querySelector('input[name=range]').value =0;
+    $("#priseSliderValue").text("0");
     let boxes = $('input[name=category]:checked');
     selectedCategories =[];
        Object.keys(boxes).forEach(key => {
@@ -97,8 +99,6 @@ function filter(event){
                 selectedCategories.push(boxes[key].id);
              }
       });
-    console.log(priseSliderValue);
-    console.log(JSON.stringify(selectedCategories));
          $.ajax
                 (
                     {

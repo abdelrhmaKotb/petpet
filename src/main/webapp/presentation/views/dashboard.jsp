@@ -58,7 +58,7 @@
 								    	<a href="/petpet/Shope" class="btn btn-outline-primary-2"><span>GO SHOP</span><i class="icon-long-arrow-right"></i></a>
 								      </c:when>
 								        <c:otherwise>
-								        <p>Your latest 5 order.</p>
+								        <p>Your last 5 order.</p>
                                           <table id="UserOrderTable" class="table">
                                                 <thead>
                                                     <tr>
