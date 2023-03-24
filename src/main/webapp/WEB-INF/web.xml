@@ -291,6 +291,15 @@
 		<servlet-name>userOrders</servlet-name>
 		<url-pattern>/userOrders</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>product-filter</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.filterProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>product-filter</servlet-name>
+		<url-pattern>/product-filter</url-pattern>
+	</servlet-mapping>
 	<!-- Welcome List-->
 
 	<filter>
