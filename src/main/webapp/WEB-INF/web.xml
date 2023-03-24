@@ -264,6 +264,42 @@
 		<servlet-name>Review-Customer-Profile</servlet-name>
 		<url-pattern>/review-customers</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>View-Order</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.ViewUserOrderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>View-Order</servlet-name>
+		<url-pattern>/View-Order</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>profile</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.UserProfileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>profile</servlet-name>
+		<url-pattern>/profile</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>userOrders</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.ViewOrderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userOrders</servlet-name>
+		<url-pattern>/userOrders</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>product-filter</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.filterProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>product-filter</servlet-name>
+		<url-pattern>/product-filter</url-pattern>
+	</servlet-mapping>
 	<!-- Welcome List-->
 
 	<filter>

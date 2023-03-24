@@ -1,4 +1,4 @@
-<jsp:directive.include file="header.html" />
+<jsp:directive.include file="AdminHeader.html" />
 <main class="main">
 	<div class="page-header text-center" style="background-image:
 			url('assets/images/page-header-bg.jpg')">
