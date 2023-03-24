@@ -797,7 +797,7 @@
 
                 <div class="video-banner video-banner-bg bg-image text-center"
                     style="background-image:
-                    url(/petpet/presentation/assets/images/backgrounds/bg-5.jpg);">
+                    url(/petpet/presentation/assets/images/backgrounds/bg-6.jpg);">
                     <div class="container">
                         <h3 class="video-banner-title h1 text-white"><span>New
                                 Collection</span><strong>Winter <i>/</i>
