@@ -13,39 +13,39 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 // @WebServlet(urlPatterns = {"/register"} , name = "RegisterServlet")
-public class RegisterServlet extends HttpServlet{
+public class RegisterServlet extends HttpServlet {
 
     String username = null;
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-         Gson gson = new Gson();
-        
-        String fName =req.getParameter("register-Name");
+        Gson gson = new Gson();
+
+        String fName = req.getParameter("register-Name");
         String userName = req.getParameter("register-username");
         System.out.println("user email " + userName);
-        //System.out.println("user email " + username);
+        // System.out.println("user email " + username);
         String phone = req.getParameter("register-phone");
         String password = req.getParameter("register-password-1");
         String conf_password = req.getParameter("register-password-confirm");
         String job = req.getParameter("register-job");
-        String creditLimit  = req.getParameter("register-credit");
-        String country  = req.getParameter("register-country");
-        String street  = req.getParameter("register-street");
-        String city  = req.getParameter("register-city");
-        String birthday  = req.getParameter("register-birth");
-        BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
-        LocalDate date = LocalDate.parse(birthday); //date formater
-        UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,date);
+        String creditLimit = req.getParameter("register-credit");
+        String country = req.getParameter("register-country");
+        String street = req.getParameter("register-street");
+        String city = req.getParameter("register-city");
+        String birthday = req.getParameter("register-birth");
+        // Double cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
+        Double cl = Double.parseDouble(req.getParameter("register-credit"));
+        LocalDate date = LocalDate.parse(birthday); // date formater
+        UserDTO user = new UserDTO(fName, userName, phone, password, job, cl, country, street, null, city, date);
         RegisterService service = new RegisterService();
-        if(Validation.isValidName(fName)  && Validation.validCountry(country)
-                && Validation.validPhone(phone)  && Validation.validPassword(password) && Validation.isEmail(userName))
-        {
+        if (Validation.isValidName(fName) && Validation.validCountry(country)
+                && Validation.validPhone(phone) && Validation.validPassword(password) && Validation.isEmail(userName)) {
             System.out.println("All true");
             service.register(user);
-            req.getRequestDispatcher("presentation/views/index-5.jsp").forward(req,resp);
-        }
-        else {
+            req.getRequestDispatcher("presentation/views/index-5.jsp").forward(req, resp);
+        } else {
             resp.sendRedirect("presentation/views/login.jsp");
         }
 

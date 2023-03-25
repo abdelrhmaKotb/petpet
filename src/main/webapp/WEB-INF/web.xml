@@ -19,10 +19,10 @@
 		<servlet-name>contact</servlet-name>
 		<jsp-file>/presentation/views/contact-2.jsp</jsp-file>
 	</servlet>
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>checkout</servlet-name>
 		<jsp-file>/presentation/views/Checkout.jsp</jsp-file>
-	</servlet>
+	</servlet> -->
 	<servlet>
 		<servlet-name>wishlist</servlet-name>
 		<jsp-file>/presentation/views/wishlist.jsp</jsp-file>
@@ -300,6 +300,17 @@
 		<servlet-name>product-filter</servlet-name>
 		<url-pattern>/product-filter</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>checkout</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.CheckoutServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>checkout</servlet-name>
+		<url-pattern>/checkout</url-pattern>
+	</servlet-mapping>
+
 	<!-- Welcome List-->
 
 	<filter>
