@@ -29,6 +29,7 @@ public class RegisterServlet extends HttpServlet{
         String phone = req.getParameter("register-phone");
         String password = req.getParameter("register-password-1");
         String conf_password = req.getParameter("register-password-confirm");
+        String hashedPassword = Hash(password);
         String job = req.getParameter("register-job");
         String creditLimit  = req.getParameter("register-credit");
         String country  = req.getParameter("register-country");
@@ -37,7 +38,7 @@ public class RegisterServlet extends HttpServlet{
         String birthday  = req.getParameter("register-birth");
         BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
         LocalDate date = LocalDate.parse(birthday); //date formater
-        UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,date);
+        UserDTO user = new UserDTO(fName,userName,phone,hashedPassword,job,cl,country,street,null,city,date);
 
         RegisterService service = new RegisterService();
         if(Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone))
@@ -78,6 +79,7 @@ public class RegisterServlet extends HttpServlet{
     private static String Hash(String password){
         String salt = BCrypt.gensalt(10); // generate a random salt
         String hashedPassword = BCrypt.hashpw(password, salt); // hash the password
+        System.out.println("Hashed Password " + hashedPassword);
         return hashedPassword;
     }
 }
