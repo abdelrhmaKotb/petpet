@@ -5,10 +5,12 @@ import java.util.List;
 import gov.iti.jets.persistent.dao.interfaces.Repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
+import jakarta.persistence.criteria.CriteriaBuilder;
 
 public class RepositoryImpl<E, K> implements Repository<E, K> {
 
     protected EntityManager _entityManager;
+    protected CriteriaBuilder _criteriaBuilder;
     private Class<E> type;
 
     public RepositoryImpl() {
@@ -16,6 +18,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
 
     public RepositoryImpl(Class<E> e) {
         _entityManager = EntityHandler.getEntityManager();
+        _criteriaBuilder = EntityHandler.getCriteriaBuilder();
         type = e;
     }
 

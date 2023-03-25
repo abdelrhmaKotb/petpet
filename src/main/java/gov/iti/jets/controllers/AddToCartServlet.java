@@ -35,7 +35,7 @@ public class AddToCartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String item = req.getParameter("cart");
 
-        System.out.println(item);
+        System.out.println("cart is " + item);
 
         /* if we want to cast */
         /*

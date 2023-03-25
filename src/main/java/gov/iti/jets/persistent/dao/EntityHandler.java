@@ -3,21 +3,22 @@ package gov.iti.jets.persistent.dao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.criteria.CriteriaBuilder;
 
 public class EntityHandler {
-    private static EntityManager entityManager;
-
+    private static EntityManagerFactory entityManagerFactory;
     private EntityHandler(){};
 
     public static EntityManager getEntityManager(){
-        // if(entityManager == null){
-        //     EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-        //     entityManager = emf.createEntityManager();
-        //     return entityManager;
-        // }
-
-        // return entityManager;
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-        return emf.createEntityManager();
+         if(entityManagerFactory == null){
+              entityManagerFactory = Persistence.createEntityManagerFactory("default");
+         }
+        return entityManagerFactory.createEntityManager();
+    }
+    public static CriteriaBuilder getCriteriaBuilder(){
+        if(entityManagerFactory == null){
+            entityManagerFactory = Persistence.createEntityManagerFactory("default");
+        }
+        return entityManagerFactory.getCriteriaBuilder();
     }
 }

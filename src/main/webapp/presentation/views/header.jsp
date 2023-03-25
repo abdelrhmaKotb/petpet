@@ -79,14 +79,13 @@
                             <ul class="menu sf-arrows">
                                 <li class="megamenu-container active">
                                     <a href="/petpet/home">Home</a>
-
                                 </li>
                                 <li>
-
                                     <a href="/petpet/Shop">Shop</a>
-
                                 </li>
-
+                                 <li>
+                                         <a href="/petpet/about">About</a>
+                                 </li>
                             </ul><!-- End .menu -->
                         </nav><!-- End .main-nav -->
                     </div><!-- End .header-left -->

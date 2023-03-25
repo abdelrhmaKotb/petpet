@@ -1,3 +1,5 @@
+
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:directive.include file="header.jsp" />
 
         <main class="main">
@@ -9,8 +11,8 @@
             <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
                 <div class="container">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item"><a href="/petpet/home">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/petpet/Shop">Shop</a></li>
                         <li class="breadcrumb-item active" aria-current="page">My Account</li>
                     </ol>
                 </div><!-- End .container -->
@@ -26,11 +28,9 @@
 								        <a class="nav-link active" id="tab-dashboard-link" data-toggle="tab" href="#tab-dashboard" role="tab" aria-controls="tab-dashboard" aria-selected="true">Dashboard</a>
 								    </li>
 								    <li class="nav-item">
-								        <a class="nav-link" id="tab-orders-link" data-toggle="tab" href="#tab-orders" role="tab" aria-controls="tab-orders" aria-selected="false">Orders</a>
+								        <a class="nav-link orders"  id="tab-orders-link" data-toggle="tab" href="#tab-orders" role="tab" aria-controls="tab-orders" aria-selected="false" >Orders</a>
 								    </li>
-								    <li class="nav-item">
-								        <a class="nav-link" id="tab-downloads-link" data-toggle="tab" href="#tab-downloads" role="tab" aria-controls="tab-downloads" aria-selected="false">Downloads</a>
-								    </li>
+
 								    <li class="nav-item">
 								        <a class="nav-link" id="tab-address-link" data-toggle="tab" href="#tab-address" role="tab" aria-controls="tab-address" aria-selected="false">Adresses</a>
 								    </li>
@@ -46,20 +46,39 @@
 	                		<div class="col-md-8 col-lg-9">
 	                			<div class="tab-content">
 								    <div class="tab-pane fade show active" id="tab-dashboard" role="tabpanel" aria-labelledby="tab-dashboard-link">
-								    	<p>Hello <span class="font-weight-normal text-dark">User</span> (not <span class="font-weight-normal text-dark">User</span>? <a href="#">Log out</a>) 
+								    	<p>Hello <span class="font-weight-normal text-dark">${sessionScope.userSession.getName()}</span> (Different  <span class="font-weight-normal text-dark">User</span>? <a href="#">Log out</a>)
 								    	<br>
 								    	From your account dashboard you can view your <a href="#tab-orders" class="tab-trigger-link link-underline">recent orders</a>, manage your <a href="#tab-address" class="tab-trigger-link">shipping and billing addresses</a>, and <a href="#tab-account" class="tab-trigger-link">edit your password and account details</a>.</p>
 								    </div><!-- .End .tab-pane -->
 
 								    <div class="tab-pane fade" id="tab-orders" role="tabpanel" aria-labelledby="tab-orders-link">
+                                       <c:choose>
+                                        <c:when test="${sessionScope.userSession==null}">
 								    	<p>No order has been made yet.</p>
-								    	<a href="category.html" class="btn btn-outline-primary-2"><span>GO SHOP</span><i class="icon-long-arrow-right"></i></a>
+								    	<a href="/petpet/Shope" class="btn btn-outline-primary-2"><span>GO SHOP</span><i class="icon-long-arrow-right"></i></a>
+								      </c:when>
+								        <c:otherwise>
+								        <p>Your last 5 order.</p>
+                                          <table id="UserOrderTable" class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">#</th>
+                                                        <th>createdAt</th>
+                                                        <th>totalPrice</th>
+                                                        <th>Status</th>
+                                                        <th class="text-right">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                          </table>
+
+                                        </c:otherwise>
+								      </c:choose>
 								    </div><!-- .End .tab-pane -->
 
-								    <div class="tab-pane fade" id="tab-downloads" role="tabpanel" aria-labelledby="tab-downloads-link">
-								    	<p>No downloads available yet.</p>
-								    	<a href="category.html" class="btn btn-outline-primary-2"><span>GO SHOP</span><i class="icon-long-arrow-right"></i></a>
-								    </div><!-- .End .tab-pane -->
+
 
 								    <div class="tab-pane fade" id="tab-address" role="tabpanel" aria-labelledby="tab-address-link">
 								    	<p>The following addresses will be used on the checkout page by default.</p>
@@ -70,7 +89,7 @@
 								    				<div class="card-body">
 								    					<h3 class="card-title">Billing Address</h3><!-- End .card-title -->
 
-														<p>User Name<br>
+														<p><br>
 														User Company<br>
 														John str<br>
 														New York, NY 10001<br>
@@ -137,4 +156,6 @@
                 </div><!-- End .dashboard -->
             </div><!-- End .page-content -->
         </main><!-- End .main -->
+       <script src="/petpet/presentation/assets/js/UserOrders.js"></script>
+
 	<%@ include file="footer.html" %>

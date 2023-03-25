@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "`order`")
@@ -14,7 +17,7 @@ public class Order {
     private Integer id;
 
     @Column(name = "created_at")
-    private Instant createdAt;
+    private Date createdAt;
 
     @Column(name = "total_price", precision = 10)
     private BigDecimal totalPrice;
@@ -26,6 +29,17 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
+    List<OrderDetail> orderDetails = new ArrayList<>();
+
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -34,11 +48,11 @@ public class Order {
         this.id = id;
     }
 
-    public Instant getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Instant createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -66,4 +80,21 @@ public class Order {
         this.user = user;
     }
 
+    public Order() {
+    }
+
+    public Order(Integer id, Date createdAt, BigDecimal totalPrice, Integer status, User user) {
+        this.id = id;
+        this.createdAt = createdAt;
+        this.totalPrice = totalPrice;
+        this.status = status;
+        this.user = user;
+    }
+
+    public Order(Date createdAt, BigDecimal totalPrice, Integer status, User user) {
+        this.createdAt = createdAt;
+        this.totalPrice = totalPrice;
+        this.status = status;
+        this.user = user;
+    }
 }

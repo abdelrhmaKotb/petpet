@@ -22,12 +22,11 @@ public class DeleteProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
         String Msg = "";
+        System.out.println("delete");
         int productID = Integer.parseInt(req.getParameter("id"));
-        GetProductsService getProductsService = new GetProductsService();
         DeleteProductService deleteProductServlet = new DeleteProductService();
-        Product product = getProductsService.getProductFromContext(productID) ;
-        boolean result = deleteProductServlet.deleteProduct(product);
-        deleteImagesFromTomcat(product.getImages());
+        Product result = deleteProductServlet.deleteProduct(productID);
+        deleteImagesFromTomcat(result.getImages());
         //DO SOMETHING
     }
     @Override

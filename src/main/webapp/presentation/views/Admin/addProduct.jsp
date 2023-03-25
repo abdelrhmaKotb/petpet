@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 
-	<jsp:directive.include file="header.html" />
+	<jsp:directive.include file="AdminHeader.html" />
 
 	<main class="main">
 		<div class="page-header text-center" style="background-image:
@@ -96,5 +96,7 @@
 		</div><!-- End .checkout -->
 		</div><!-- End .page-content -->
 	</main><!-- End .main -->
+
 	<script src="/petpet/presentation/assets/js/Admin/addProduct.js"></script>
+
 	<%@ include file="footer.html" %>

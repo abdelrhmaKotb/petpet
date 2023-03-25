@@ -22,6 +22,7 @@ public class LoginServlet extends HttpServlet {
             
                 HttpSession session = req.getSession(true);
                 session.setAttribute("userSession" , userDTO);
+                System.out.println("getAttribute " +session.getAttribute("userSession"));
                 resp.sendRedirect("home");
             }
             else if(new loginService().isExistUser(Emal)) {

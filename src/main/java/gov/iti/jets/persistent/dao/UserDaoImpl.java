@@ -4,26 +4,22 @@ import java.util.List;
 
 import gov.iti.jets.persistent.dao.interfaces.UserDao;
 import gov.iti.jets.persistent.entity.User;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.Query;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
-public class UserDaoImpl implements UserDao {
-    EntityManagerFactory ef = Persistence.createEntityManagerFactory("default");
-    EntityManager em = ef.createEntityManager();
+public class UserDaoImpl extends RepositoryImpl<User,Integer>  implements UserDao {
 
+    public UserDaoImpl(){
+        super(User.class);
+    }
     @Override
     public User create(User user) {
 
-        em.getTransaction().begin();
+        _entityManager.getTransaction().begin();
         if(user.getId() != null) {
-            em.persist(user);
+            _entityManager.persist(user);
             System.out.println("User added");
-            em.getTransaction().commit();
+            _entityManager.getTransaction().commit();
             return user;
         }
         return null;
@@ -38,12 +34,12 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findUserByEmail(String Email) {
        
-        CriteriaBuilder cb = ef.getCriteriaBuilder();
-        CriteriaQuery<User> q = cb.createQuery(User.class);
+
+        CriteriaQuery<User> q = _criteriaBuilder.createQuery(User.class);
         Root<User> user = q.from(User.class);
-        q.select(user).where(cb.equal(user.<String>get("email"),Email));
+        q.select(user).where(_criteriaBuilder.equal(user.<String>get("email"),Email));
        
-        List<User> result = em.createQuery(q).getResultList();
+        List<User> result = _entityManager.createQuery(q).getResultList();
         if (result.size()==0)return null;
         return result.get(0);
     }
