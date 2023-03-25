@@ -6,6 +6,7 @@ import gov.iti.jets.persistent.dao.UserDaoImpl;
 import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.persistent.entity.User;
 import gov.iti.jets.services.mapper.UserMapper;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class loginService {
 
@@ -13,7 +14,7 @@ public class loginService {
         UserMapper userMapper = new UserMapper();
         UserDaoImpl user = new UserDaoImpl();
         UserDTO userDTO = userMapper.toDto(user.findUserByEmail(Email));
-        if(userDTO!= null&&pass.equals(userDTO.getPassword()))
+        if(userDTO!= null && verifyPassword(pass , userDTO.getPassword()))
             return userDTO;
         return null;
     }
@@ -25,5 +26,7 @@ public class loginService {
 
         return false;
     }
-
+    private static boolean verifyPassword(String password, String hashedPassword) {
+        return BCrypt.checkpw(password, hashedPassword); // verify the password against the stored hash
+    }
 }

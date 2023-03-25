@@ -21,7 +21,7 @@ public class RegisterService {
         User u = new UserMapper().toEntity(userDTO);
 
         boolean x = repo.findByEmail(u, u.getEmail());
-
+        System.out.println(x);
         return x;
 
     }

@@ -3,232 +3,267 @@
 
 
 <!-- molla/login.html  22 Nov 2019 10:04:03 GMT -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Molla - Bootstrap eCommerce Template</title>
+    <title>PetPet</title>
     <meta name="keywords" content="HTML5 Template">
-    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="description" content="PetPet">
     <meta name="author" content="p-themes">
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/petpet/presentation/assets/images/icons/apple-touch-icon.png">
+    <link rel="icon" sizes="180x180" href="/petpet/presentation/assets/images/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/petpet/presentation/assets/images/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/petpet/presentation/assets/images/icons/favicon-32x32.png">
     <link rel="manifest" href="/petpet/presentation/assets/images/icons/site.html">
     <link rel="mask-icon" href="/petpet/presentation/assets/images/icons/safari-pinned-tab.svg" color="#666666">
     <link rel="shortcut icon" href="/petpet/presentation/assets/images/icons/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Molla">
-    <meta name="application-name" content="Molla">
+    <meta name="apple-mobile-web-app-title" content="PetPet">
+    <meta name="application-name" content="PetPet">
     <meta name="msapplication-TileColor" content="#cc9966">
     <meta name="msapplication-config" content="/petpet/presentation/assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <!-- Plugins CSS File -->
     <link rel="stylesheet" href="/petpet/presentation/assets/css/bootstrap.min.css">
+   
     <link rel="stylesheet" href="/petpet/presentation/assets/css/bootstrap-select-country.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     <!-- Main CSS File -->
     <link rel="stylesheet" href="/petpet/presentation/assets/css/style.css">
+    <!-- <link rel="stylesheet" href="/petpet/presentation/assets/css/select2-bootstrap-5-theme.css">
+    <link rel="stylesheet" href="/petpet/presentation/assets/css/select2-bootstrap-5-theme.rtl.css">
+    <link rel="stylesheet" href="/petpet/presentation/assets/css/select2-bootstrap-5-theme.min.css">
+    <link rel="stylesheet" href="/petpet/presentation/assets/css/select2-bootstrap-5-theme.rtl.min.css"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
 
-        <main class="main">
-            <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
-                <div class="container">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+    <main class="main">
+        <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/petpet/home">Home</a></li>
+                    <%-- <li class="breadcrumb-item"><a href="#">Pages</a></li>--%>
                         <li class="breadcrumb-item active" aria-current="page">Login</li>
-                    </ol>
-                </div><!-- End .container -->
-            </nav><!-- End .breadcrumb-nav -->
+                </ol>
+            </div><!-- End .container -->
+        </nav><!-- End .breadcrumb-nav -->
 
-            <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('/petpet/presentation/assets/images/backgrounds/bg-dog.jpg')">
-            	<div class="container">
-            		<div class="form-box">
-            			<div class="form-tab">
-	            			<ul class="nav nav-pills nav-fill" role="tablist">
-							    <li class="nav-item">
-							        <a class="nav-link active" id="signin-tab-2" data-toggle="tab" href="#signin-2" role="tab" aria-controls="signin-2" aria-selected="true">Sign In</a>
-							    </li>
-							    <li class="nav-item">
-							        <a class="nav-link " id="register-tab-2" data-toggle="tab" href="#register-2" role="tab" aria-controls="register-2" aria-selected="false">Register</a>
-							    </li>
-							</ul>
-							<div class="tab-content">
-							    <div class="tab-pane fade show active" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
-							    	<form action="/petpet/login_" method="post">
-							    		<div class="form-group">
-							    			<label for="register-email-2">Your email address *</label>
-							    			<input type="email" class="form-control" id="register-email-2" name="register-email" required>
-							    		</div><!-- End .form-group -->
+        <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
+            style="background-image: url('/petpet/presentation/assets/images/backgrounds/login-bg.jpg') ">
+            <div class="container">
+                <div class="form-box">
+                    <div class="form-tab">
+                        <ul class="nav nav-pills nav-fill" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="signin-tab-2" data-toggle="tab" href="#signin-2"
+                                    role="tab" aria-controls="signin-2" aria-selected="true">Sign In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " id="register-tab-2" data-toggle="tab" href="#register-2" role="tab"
+                                    aria-controls="register-2" aria-selected="false">Register</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="signin-2" role="tabpanel"
+                                aria-labelledby="signin-tab-2">
+                                <form action="/petpet/login_" method="post">
+                                    <div class="form-group">
+                                        <label for="register-email-2">Your email address *</label>
+                                        <input type="email" class="form-control" id="register-email-2"
+                                            name="register-email" required>
+                                    </div><!-- End .form-group -->
 
-							    		<div class="form-group">
-							    			<label for="register-password-2">Password *</label>
-							    			<input type="password" class="form-control" id="register-password-2" name="register-password" required>
-							    		</div><!-- End .form-group -->
-                                        <div id="errorMessage" style="text-align: center;color: red;" >${errorMessage}</div>
-							    		<div class="form-footer">
-							    			<button type="submit" class="btn btn-outline-primary-2">
-			                					<span>SIGN UP</span>
-			            						<i class="icon-long-arrow-right"></i>
-			                				</button>
+                                    <div class="form-group">
+                                        <label for="register-password-2">Password *</label>
+                                        <input type="password" class="form-control" id="register-password-2"
+                                            name="register-password" required>
+                                    </div><!-- End .form-group -->
+                                    <div id="errorMessage" style="text-align: center;color: red;">${errorMessage}</div>
+                                    <div class="form-footer">
+                                        <button type="submit" class="btn btn-outline-primary-2">
+                                            <span>SIGN UP</span>
+                                            <i class="icon-long-arrow-right"></i>
+                                        </button>
 
-			                				<div class="custom-control custom-checkbox">
-												<input type="checkbox" class="custom-control-input" id="register-policy-2" required>
-												<label class="custom-control-label" for="register-policy-2">I agree to the <a href="#">privacy policy</a> *</label>
-											</div><!-- End .custom-checkbox -->
-							    		</div><!-- End .form-footer -->
-							    	</form>
-							    </div><!-- .End .tab-pane -->
-							    <div class="tab-pane fade show active" id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
-							    	<form action="/petpet/register" method="post">
-                                        <div id="name-div" class="col-sm-12">
-                                            <label for="register-Name">Name *</label>
-                                            <input type="text" class="form-control" id="register-Name" onblur="checkName()"
-                                                name="register-name" required="">
-                                                <div class="invalid-feedback">Please provide your name
-                                                </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="register-policy-2"
+                                                required>
+                                            <label class="custom-control-label" for="register-policy-2">I agree to the
+                                                <a href="#">privacy policy</a> *</label>
+                                        </div><!-- End .custom-checkbox -->
+                                    </div><!-- End .form-footer -->
+                                </form>
+                            </div><!-- .End .tab-pane -->
+                            <div class="tab-pane fade show active" id="register-2" role="tabpanel"
+                                aria-labelledby="register-tab-2">
+                                <form action="/petpet/register" method="post">
+                                    <div id="name-div" class="col-sm-12">
+                                        <label for="register-Name">Name *</label>
+                                        <input type="text" class="form-control" id="register-Name" onblur="checkName()"
+                                            name="register-Name" required="">
+                                        <div class="invalid-feedback">Please provide your name
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <label for="register-username" class="form-label">Username</label>
+                                        <div class="input-group form-outline">
+                                            <span class="input-group-text" style="font-size: 2rem;"
+                                                id="inputGroupPrepend">@</span>
+                                            <input type="email" class="form-control" id="register-username"
+                                                name="register-username" aria-describedby="inputGroupPrepend"
+                                                onblur="checkUsername()" required />
+
+                                            <div id="emailfeedback" class="invalid-feedback"></div>
+                                        </div>
+                                    </div>
+                                    <br>
+
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label for="register-password-1">Password *</label>
+                                            <input type="password" class="form-control" id="register-password-1"
+                                                name="register-password-1" onblur="checkPassword()" required>
+
+                                            <div class="invalid-feedback">Must be 8-20 characters long.</div>
+                                            <!-- <div class="valid-feedback">Please provide a valid city.</div> -->
+
+                                        </div><!-- End .form-group -->
+
+                                        <div class="col-sm-6">
+                                            <label for="register-password-confirm">Confirm Password *</label>
+                                            <input type="password" class="form-control" id="register-password-confirm"
+                                                name="register-password-confirm" onblur="checkMatchPassword()" required>
+
+                                            <div class="invalid-feedback">Password doesn't match</div>
+                                        </div><!-- End .form-group -->
+
+                                    </div>
+
+                                    <div class="row">
+
+
+                                        <div class="col-sm-6">
+                                            <label for="register-phone">Phone *</label>
+                                            <input type="tel" class="form-control" id="register-phone"
+                                                name="register-phone" onblur="checkPhone()" required>
+                                            <div class="invalid-feedback">Invalid Phone Number</div>
                                         </div>
 
-                                        
-                                        <div class="col-md-12">
-                                            <label for="register-username" class="form-label">Username</label>
-                                            <div class="input-group form-outline">
-                                              <span class="input-group-text" style="font-size: 2rem;" id="inputGroupPrepend">@</span>
-                                              <input type="email" class="form-control" id="register-username" name="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" required />
-                                              
-                                              <div class="invalid-feedback">Email Already exists</div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        
-
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <label for="register-password-1">Password *</label>
-                                                <input type="password" class="form-control" id="register-password-1"
-                                                    name="register-password-1"  onblur="checkPassword()" required>
-                                                    
-                                                    <div class="invalid-feedback">Must be 8-20 characters long.</div>
-                                                <!-- <div class="valid-feedback">Please provide a valid city.</div> -->
-
-                                            </div><!-- End .form-group -->
-
-                                            <div class="col-sm-6">
-                                                <label for="register-password-confirm">Confirm Password *</label>
-                                                <input type="password" class="form-control"
-                                                    id="register-password-confirm" name="register-password-confirm"  onblur="checkMatchPassword()" required>
-                                                
-                                                    <div class="invalid-feedback">Password doesn't match</div>
-                                            </div><!-- End .form-group -->
-                                            
-                                        </div>
-
-                                        <div class="row">
-                                    
-
-                                            <div class="col-sm-6">
-                                                <label for="register-phone">Phone *</label>
-                                                <input type="tel" class="form-control" id="register-phone"
-                                                    name="register-phone" onblur="checkPhone()" required>
-                                                <div class="invalid-feedback">Invalid Phone Number</div>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <label for="register-birth">Birthday *</label>
-                                                <input type="date" class="form-control" id="register-birth"
-                                                    name="register-birth">
-                                    
-                                            </div>
-
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <label for="register-job">Job *</label>
-                                                <input type="text" class="form-control" id="register-job"
-                                                    name="register-job" onblur="checkJob()" required="">
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <label for="register-credit">Credit Limit *</label>
-                                                <input type="number" class="form-control" min="100" max="5000" step="10" name="register-credit"
-                                                 id="register-credit" onblur="checkCredit()" required>
-                                                 <div class="invalid-feedback">Please enter a value</div>
-                                            </div>
-
-                                        </div>
-                                        <div class="row">
-
-                                            <div class="col-sm-4">
-                                                <label for="register-street">Street *</label>
-                                                <input type="text" class="form-control" id="register-street"
-                                                    name="register-street" onblur="checkStreet()" required="">
-                                                <div class="invalid-feedback">Please enter a value</div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <label for="register-city">City *</label>
-                                                <input type="text" class="form-control" id="register-city"
-                                                    name="register-city" onblur="checkCity()" required="">
-                                                <div class="invalid-feedback">Please enter a value</div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <label for="register-country">Country *</label>
-                                                <!-- <select class="form-control" id="register-country" ></select> -->
-                                                <input type="text" name="register-country" id="register-country" class="form-control"
-                                                    onblur="checkCountry()" required>
-                                                <div class="invalid-feedback">Please enter a value</div>
-                                            </div>
+                                        <div class="col-sm-6">
+                                            <label for="register-birth">Birthday *</label>
+                                            <input type="date" class="form-control" id="register-birth"
+                                                name="register-birth">
 
                                         </div>
 
-                                    
+                                    </div>
 
-                                        <div class="form-footer">
-                                            <button type="submit" class="btn btn-outline-primary-2">
-                                                <span>SIGN UP</span>
-                                                <i class="icon-long-arrow-right"></i>
-                                            </button>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label for="register-job">Job *</label>
+                                            <input type="text" class="form-control" id="register-job"
+                                                name="register-job" onblur="checkJob()" required="">
+                                        </div>
 
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="register-policy"
-                                                    required="">
-                                                <label class="custom-control-label" for="register-policy">I agree to the
-                                                    <a
-                                                        href="#">privacy
-                                                        policy</a> *</label>
-                                            </div><!-- End .custom-checkbox -->
-                                        </div><!-- End .form-footer -->
+                                        <div class="col-sm-6">
+                                            <label for="register-credit">Credit Limit *</label>
+                                            <input type="number" class="form-control" min="100" max="5000" step="10"
+                                                name="register-credit" id="register-credit" onblur="checkCredit()"
+                                                required>
+                                            <div class="invalid-feedback">Please enter a value</div>
+                                        </div>
 
-                                    </form>
-							    	<!-- <div class="form-choice">
-								    	<p class="text-center">or sign in with</p>
-								    	<div class="row">
-								    		<div class="col-sm-6">
-								    			<a href="#" class="btn btn-login btn-g">
-								    				<i class="icon-google"></i>
-								    				Login With Google
-								    			</a>
-								    		</div> End .col-6 
-								    		<div class="col-sm-6">
-								    			<a href="#" class="btn btn-login  btn-f">
-								    				<i class="icon-facebook-f"></i>
-								    				Login With Facebook
-								    			</a>
-								    		</div><End .col-6 
-								    	</div> End .row 
-							    	</div> -->
-							    </div><!-- .End .tab-pane -->
-							</div><!-- End .tab-content -->
-						</div><!-- End .form-tab -->
-            		</div><!-- End .form-box -->
-            	</div><!-- End .container -->
-            </div><!-- End .login-page section-bg -->
-        </main><!-- End .main -->
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-sm-4">
+                                            <label for="register-street">Street *</label>
+                                            <input type="text" class="form-control" id="register-street"
+                                                name="register-street" onblur="checkStreet()" required="">
+                                            <div class="invalid-feedback">Please enter a value</div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <label for="register-city">City *</label>
+                                            <input type="text" class="form-control" id="register-city"
+                                                name="register-city" onblur="checkCity()" required="">
+                                            <div class="invalid-feedback">Please enter a value</div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <label for="register-country">Country *</label>
+                                            <!-- <select class="form-control" id="register-country" ></select> -->
+                                            <input type="text" name="register-country" id="register-country"
+                                                class="form-control" onblur="checkCountry()" required>
+                                            <div id="inValidCountry" class="invalid-feedback">Invalid country</div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <select class="form-control" id="multiple-select-field" name="multiple-select-field"
+                                            data-placeholder="Choose interests" multiple onchange="userInterests()">
+                                            <option>Dogs</option>
+                                            <option>Cats</option>
+                                            <option>Birds</option>
+                                            <option>Watering Supplies</option>
+                                            <option>Pet Accessories</option>
+                                            <option>Dog Crates , Houses</option>
+                                            <option>Pet Feeding</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="form-footer">
+                                        <button type="submit" class="btn btn-outline-primary-2">
+                                            <span>SIGN UP</span>
+                                            <i class="icon-long-arrow-right"></i>
+                                        </button>
+
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="register-policy"
+                                                required="">
+                                            <label class="custom-control-label" for="register-policy">I agree to the
+                                                <a href="#">privacy
+                                                    policy</a> *</label>
+                                        </div><!-- End .custom-checkbox -->
+                                    </div><!-- End .form-footer -->
+
+                                </form>
+                                <!-- <div class="form-choice">
+                                <p class="text-center">or sign in with</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <a href="#" class="btn btn-login btn-g">
+                                            <i class="icon-google"></i>
+                                            Login With Google
+                                        </a>
+                                    </div> End .col-6
+                                    <div class="col-sm-6">
+                                        <a href="#" class="btn btn-login  btn-f">
+                                            <i class="icon-facebook-f"></i>
+                                            Login With Facebook
+                                        </a>
+                                    </div><End .col-6
+                                </div> End .row
+                            </div> -->
+                            </div><!-- .End .tab-pane -->
+                        </div><!-- End .tab-content -->
+                    </div><!-- End .form-tab -->
+                </div><!-- End .form-box -->
+            </div><!-- End .container -->
+        </div><!-- End .login-page section-bg -->
+    </main><!-- End .main -->
 
     </div><!-- End .page-wrapper -->
     <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
@@ -242,10 +277,11 @@
 
             <form action="#" method="get" class="mobile-search">
                 <label for="mobile-search" class="sr-only">Search</label>
-                <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="Search in..." required>
+                <input type="search" class="form-control" name="mobile-search" id="mobile-search"
+                    placeholder="Search in..." required>
                 <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
             </form>
-            
+
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
                     <li class="active">
@@ -285,10 +321,12 @@
                             <li><a href="category-2cols.html">Shop Grid 2 Columns</a></li>
                             <li><a href="category.html">Shop Grid 3 Columns</a></li>
                             <li><a href="category-4cols.html">Shop Grid 4 Columns</a></li>
-                            <li><a href="category-boxed.html"><span>Shop Boxed No Sidebar<span class="tip tip-hot">Hot</span></span></a></li>
+                            <li><a href="category-boxed.html"><span>Shop Boxed No Sidebar<span
+                                            class="tip tip-hot">Hot</span></span></a></li>
                             <li><a href="category-fullwidth.html">Shop Fullwidth No Sidebar</a></li>
                             <li><a href="product-category-boxed.html">Product Category Boxed</a></li>
-                            <li><a href="product-category-fullwidth.html"><span>Product Category Fullwidth<span class="tip tip-new">New</span></span></a></li>
+                            <li><a href="product-category-fullwidth.html"><span>Product Category Fullwidth<span
+                                            class="tip tip-new">New</span></span></a></li>
                             <li><a href="cart.html">Cart</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
                             <li><a href="wishlist.html">Wishlist</a></li>
@@ -300,7 +338,8 @@
                         <ul>
                             <li><a href="product.html">Default</a></li>
                             <li><a href="product-centered.html">Centered</a></li>
-                            <li><a href="product-extended.html"><span>Extended Info<span class="tip tip-new">New</span></span></a></li>
+                            <li><a href="product-extended.html"><span>Extended Info<span
+                                            class="tip tip-new">New</span></span></a></li>
                             <li><a href="product-gallery.html">Gallery</a></li>
                             <li><a href="product-sticky.html">Sticky Info</a></li>
                             <li><a href="product-sidebar.html">Boxed With Sidebar</a></li>
@@ -418,14 +457,17 @@
                         <div class="form-tab">
                             <ul class="nav nav-pills nav-fill" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="signin" aria-selected="true">Sign In</a>
+                                    <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin"
+                                        role="tab" aria-controls="signin" aria-selected="true">Sign In</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+                                    <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab"
+                                        aria-controls="register" aria-selected="false">Register</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="tab-content-5">
-                                <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
+                                <div class="tab-pane fade show active" id="signin" role="tabpanel"
+                                    aria-labelledby="signin-tab">
                                     //here
                                     <div class="form-choice">
                                         <p class="text-center">or sign in with</p>
@@ -449,23 +491,27 @@
                                     <form action="#">
                                         <div class="form-group">
                                             <label for="register-email">Your email address *</label>
-                                            <input type="email" class="form-control" id="register-email" name="register-email" required>
+                                            <input type="email" class="form-control" id="register-email"
+                                                name="register-email" required>
                                         </div><!-- End .form-group -->
 
                                         <div class="form-group">
                                             <label for="register-password">Password *</label>
-                                            <input type="password" class="form-control" id="register-password" name="register-password" required>
+                                            <input type="password" class="form-control" id="register-password"
+                                                name="register-password" required>
                                         </div><!-- End .form-group -->
 
                                         <div class="form-footer">
-                                            <button type="submit" class="btn btn-outline-primary-2" >
+                                            <button type="submit" class="btn btn-outline-primary-2">
                                                 <span>SIGN UP</span>
                                                 <i class="icon-long-arrow-right"></i>
                                             </button>
 
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="register-policy" required>
-                                                <label class="custom-control-label" for="register-policy">I agree to the <a href="#">privacy policy</a> *</label>
+                                                <input type="checkbox" class="custom-control-input" id="register-policy"
+                                                    required>
+                                                <label class="custom-control-label" for="register-policy">I agree to the
+                                                    <a href="#">privacy policy</a> *</label>
                                             </div><!-- End .custom-checkbox -->
                                         </div><!-- End .form-footer -->
                                     </form>
@@ -506,10 +552,18 @@
     <script src="/petpet/presentation/assets/js/bootstrap-select-country.js"></script>
     <!-- Main JS File -->
     <script src="/petpet/presentation/assets/js/main.js"></script>
+<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>--%>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
     <script src="/petpet/presentation/assets/register-form.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $('.js-example-basic-multiple').select2();
+            $('#multiple-select-field').select2();
+        });
+    </script>
 </body>
 
 
-
 <!-- molla/login.html  22 Nov 2019 10:04:03 GMT -->
+
 </html>

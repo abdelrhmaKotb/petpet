@@ -11,6 +11,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.mindrot.jbcrypt.BCrypt;
 
 // @WebServlet(urlPatterns = {"/register"} , name = "RegisterServlet")
 public class RegisterServlet extends HttpServlet{
@@ -19,15 +20,16 @@ public class RegisterServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-         Gson gson = new Gson();
-        
+        System.out.println("Hiii in post");
         String fName =req.getParameter("register-Name");
+        String [] selectedInterest = req.getParameterValues("multiple-select-field");
+        System.out.println(selectedInterest.length);
         String userName = req.getParameter("register-username");
         System.out.println("user email " + userName);
-        //System.out.println("user email " + username);
         String phone = req.getParameter("register-phone");
         String password = req.getParameter("register-password-1");
         String conf_password = req.getParameter("register-password-confirm");
+        String hashedPassword = Hash(password);
         String job = req.getParameter("register-job");
         String creditLimit  = req.getParameter("register-credit");
         String country  = req.getParameter("register-country");
@@ -36,34 +38,48 @@ public class RegisterServlet extends HttpServlet{
         String birthday  = req.getParameter("register-birth");
         BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
         LocalDate date = LocalDate.parse(birthday); //date formater
-        UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,date);
+        UserDTO user = new UserDTO(fName,userName,phone,hashedPassword,job,cl,country,street,null,city,date);
+
         RegisterService service = new RegisterService();
-        if(Validation.isValidName(fName)  && Validation.validCountry(country)
-                && Validation.validPhone(phone)  && Validation.validPassword(password) && Validation.isEmail(userName))
+        if(Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone))
         {
             System.out.println("All true");
             service.register(user);
-            req.getRequestDispatcher("presentation/views/index-5.jsp").forward(req,resp);
+            req.getRequestDispatcher("home").forward(req,resp);
         }
         else {
-            resp.sendRedirect("presentation/views/login.jsp");
+            resp.sendRedirect("login");
         }
 
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("email");
-        // validate here
+         username = req.getParameter("email");
+        System.out.println(username);
+
         UserDTO user = new UserDTO(username);
         RegisterService service = new RegisterService();
-        if (service.isUserExists(user)) {
+        if (!service.isUserExists(user)) {
             System.out.println("Servlet true");
+            if(!Validation.isEmail(username))
+                resp.getWriter().print("invalid");
             resp.getWriter().print("true");
-        } else {
+        }
+
+        else {
             System.out.println("Servlet false");
             resp.getWriter().print("false");
 
         }
+
+    //else resp.getWriter().print("empty");
+    }
+
+    private static String Hash(String password){
+        String salt = BCrypt.gensalt(10); // generate a random salt
+        String hashedPassword = BCrypt.hashpw(password, salt); // hash the password
+        System.out.println("Hashed Password " + hashedPassword);
+        return hashedPassword;
     }
 }

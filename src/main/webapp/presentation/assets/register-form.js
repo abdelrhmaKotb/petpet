@@ -8,22 +8,14 @@ InputBody = {
     Name: Firstname,
     username: username
 }
+
 function checkName() {
 
     Firstname = $("#register-Name").val()
     if (!Firstname) {
-        $("#register-Name").replaceWith(`
-         
-        <input type="text" class="form-control is-invalid" id="register-Name" value="" onblur="checkName()"  name="register-Name" required="">
-    
-    `);
-    }
-    else {
-        $("#register-Name").replaceWith(`
-         
-        <input type="text" class="form-control is-valid" id="register-Name" value=${Firstname} onblur="checkName()"  name="register-Name" required="">
-    
-    `);
+        $("#register-Name").removeClass("form-control is-valid").addClass("form-control is-invalid")
+    } else {
+        $("#register-Name").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
 };
 
@@ -31,119 +23,85 @@ function checkBD() {
     d = $("#register-birth-2").val();
 
     if (!d) {
-        $("#register-birth-2").replaceWith(`
-            <input type="date" class="form-control" id="register-birth-2"
-                                                    name="register-birth" value="${d}">
-        `)
+        $("#register-birth-2").addClass("form-control is-invalid")
+    }
+    else {
+        $("#register-birth-2").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
 
 }
 
 function validateEmail(input) {
-    let emailRegex =
-        /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    if (!emailRegex.test(input)) {
-        return false;
-    }
-    return true;
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    console.log(emailRegex.test(input) + " check")
+    return(emailRegex.test(input))
 }
 
 function checkUsername() {
     username = $("#register-username").val()
-    if(!username){
-        $("#register-username").replaceWith(`
-             
-                <input type="email" class="form-control is-invalid" id="register-username" name="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="" required />
-                
-        `)
+
+    console.log(username)
+    if (username != "") {
+        let emailJson = {
+            email: username
+        }
+        console.log("My json " + emailJson);
+        $.get("/petpet/register?email=" + username, callBack)
+    } else {
+        $("#register-username").addClass("form-control is-invalid")
     }
-    let emailJson = {
-        email: username
-    }
-    console.log("My json " + emailJson);
-    $.get("/petpet/register?email=" + username, callBack)
 }
 
 function callBack(data) {
 
     console.log("Data " + data);
-
-
-
-    if(data.match("true")){
+    if (validateEmail(username) && data.match("true")  ) {
         console.log("here")
-        $("#register-username").replaceWith(`
-                <input type="email" class="form-control is-invalid" id="register-username" name="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
-        `)
+        $("#register-username").removeClass("form-control is-invalid").addClass("form-control is-valid")
+    } else if (!validateEmail(username) && data.match("invalid")){
+        $("#emailfeedback").text("Email is empty or invalid format")
+        $("#register-username").addClass("form-control is-invalid")
     }
-    else {
-        $("#register-username").replaceWith(`
-             
-                <input type="email" class="form-control is-valid" id="register-username" name="register-username" aria-describedby="inputGroupPrepend" onblur="checkUsername()" value="${username}" required />
-                
-        `)
+    else if(data.match("false")) {
+        $("#emailfeedback").text("Email already exists")
+        $("#register-username").addClass("form-control is-invalid")
+
     }
+
 }
 
 function checkPassword() {
-    password = $("#register-password-1").val();
-    var pass2 = $("#register-password-2").val();
+    password = $("#register-password-1").val().trim();
 
     if (!password) {
-        $("#register-password-1").replaceWith(`
-        <input type="password" class="form-control" id="register-password-1"
-        name="register-password-1" value="" onblur="checkPassword()" required>
-        `)
-    }
+        $("#register-password-1").removeClass("form-control is-valid").addClass("form-control is-invalid")
+    } else if (password.length < 8 || password.length > 20) {
+        $("#register-password-1").removeClass("form-control is-valid").addClass("form-control is-invalid")
+    } else {
 
-    else if (password.length < 8 || password.length > 20) {
-        $("#register-password-1").replaceWith(`
-        <input type="password" class="form-control is-invalid" id="register-password-1"
-        name="register-password-1" value=${password}  onblur="checkPassword()" required>
-        `)
-    }
-
-    else {
-        $("#register-password-1").replaceWith(`
-        <input type="password" class="form-control is-valid" id="register-password-1"
-        name="register-password-1" value=${password}  onblur="checkPassword()" required>
-        `)
+        $("#register-password-1").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
 
 
 }
 
 function checkMatchPassword() {
-    var pass2 = $("#register-password-confirm").val();
+    var pass2 = $("#register-password-confirm").val().trim();
     console.log("password " + password);
     console.log("pass " + pass2);
 
     if (!pass2) {
-        $("#register-password-confirm").replaceWith(`
-        <input type="password" class="form-control" id="register-password-confirm"
-        name="register-password-confirm" value="" onblur="checkMatchPassword()" required>
-        `)
+        $("#register-password-confirm").addClass("form-control is-invalid")
+    }
+    if ((pass2.length > 8 || pass2.length < 20) && (password == pass2) && pass2 ) {
+        $("#register-password-1").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $("#register-password-confirm").removeClass("form-control is-invalid").addClass("form-control is-valid")
+    } else {
+        $("#register-password-confirm").removeClass("form-control is-valid").addClass("form-control is-invalid")
     }
 
-    if ((pass2.length > 8 || pass2.length < 20) && (password == pass2)) {
-        $("#register-password-1").replaceWith(`
-        <input type="password" class="form-control is-valid" id="register-password-1"
-        name="register-password-1" value=${password}  onblur="checkPassword()" required>
-        `)
-        $("#register-password-confirm").replaceWith(`
-        <input type="password" class="form-control is-valid" id="register-password-confirm"
-        name="register-password-confirm" value=${pass2} onblur="checkMatchPassword()" required>
-        `)
-    }
-
-
-    else {
-        $("#register-password-confirm").replaceWith(`
-        <input type="password" class="form-control is-invalid" id="register-password-confirm"
-        name="register-password-confirm" value="" onblur="checkMatchPassword()" required>
-        `)
-    }
 }
+
 function validePhone(mob) {
     var pattern = /^01[0125][0-9]{8}$/
 
@@ -163,31 +121,18 @@ function checkPhone() {
     phone = $("#register-phone").val();
     // phoneSeq(phone);
     if (validePhone(phone)) {
-        $("#register-phone").replaceWith(`
-        <input type="tel" class="form-control is-valid" id="register-phone"
-        name="register-phone" value="${phone}" onblur="checkPhone()" required="">
-        `)
-    }
-    else {
-        $("#register-phone").replaceWith(`
-        <input type="tel" class="form-control is-invalid" id="register-phone"
-        name="register-phone" value="${phone}" onblur="checkPhone()" required="">
-        `)
+        $("#register-phone").removeClass("form-control is-invalid").addClass("form-control is-valid")
+    } else {
+        $("#register-phone").removeClass("form-control is-valid").addClass("form-control is-invalid")
     }
 }
+
 function checkJob() {
     job = $("#register-job").val()
     if (!job) {
-        $("#register-job").replaceWith(`
-        <input type="text" class="form-control is-invalid" id="register-job"
-        name="register-job" value="" onblur="checkJob()" required="">
-        `)
-    }
-    else {
-        $("#register-job").replaceWith(`
-        <input type="text" class="form-control is-valid" id="register-job"
-        name="register-job" value=${job} onblur="checkJob()" required="">
-        `)
+        $("#register-job").addClass("form-control is-invalid")
+    } else {
+        $("#register-job").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
 
 }
@@ -195,16 +140,9 @@ function checkJob() {
 function checkCredit() {
     credit = $("#register-credit").val()
     if (!credit) {
-        $("#register-credit").replaceWith(`
-        <input type="text" class="form-control is-invalid" id="register-credit"
-        name="register-credit" onblur="checkCredit()" required="">
-        `)
-    }
-    else {
-        $("#register-credit").replaceWith(`
-        <input type="text" class="form-control is-valid" id="register-credit"
-        name="register-credit" value=${credit} onblur="checkCredit()" required="">
-        `)
+        $("#register-credit").addClass("form-control is-invalid")
+    } else {
+        $("#register-credit").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
 
 }
@@ -213,54 +151,44 @@ function checkCredit() {
 function checkStreet() {
     street = $("#register-street").val()
     if (!street) {
-        $("#register-street").replaceWith(`
-        <input type="tel" class="form-control is-invalid" id="register-street"
-        name="register-street" value="" onblur="checkStreet()" required="">
-        `)
-    }
-
-
-
-    else {
-        $("#register-street").replaceWith(`
-        <input type="tel" class="form-control is-valid" id="register-street"
-        name="register-street" value=${street} onblur="checkStreet()" required="">
-        `)
+        $("#register-street").addClass("form-control is-invalid")
+    } else {
+        $("#register-street").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
 }
 
 function checkCity() {
     city = $("#register-city").val()
     if (!city) {
-        $("#register-city").replaceWith(`
-        <input type="tel" class="form-control is-invalid" id="register-city"
-        name="register-city" value="" onblur="checkCity()" required="">
-        `)
-    }
-
-    else {
-        $("#register-city").replaceWith(`
-        <input type="tel" class="form-control is-valid" id="register-city"
-        name="register-city" value=${city} onblur="checkCity()" required="">
-        `)
+        $("#register-city").addClass("form-control is-invalid")
+    } else {
+        $("#register-city").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
 }
 
 function checkCountry() {
     country = $("#register-country").val()
     if (!country) {
-        $("#register-country").replaceWith(`
-        <input type="tel" class="form-control is-invalid" id="register-country"
-        name="register-country" value="" onblur="checkCountry()" required="">
-        `)
-    }
+        $("#register-country").addClass("form-control is-invalid")
+    } else {
+        $.get("/petpet/checkcountry?country=" + country, callBackCountry)
 
-    else {
-        $("#register-country").replaceWith(`
-        <input type="tel" class="form-control is-valid" id="register-country"
-        name="register-country" value=${country} onblur="checkCountry()" required="">
-        `)
     }
+}
+function callBackCountry(data){
+    if(data.match("true")){
+        $("#register-country").removeClass("form-control is-invalid").addClass("form-control is-valid")
+    }
+    else {
+        $("#register-country").addClass("form-control is-invalid")
+    }
+}
+
+function userInterests(){
+    var selectedElements  = $("#multiple-select-field").val();
+    selectedElements.forEach(function (value) {
+        console.log(value)
+    })
 }
 
 
