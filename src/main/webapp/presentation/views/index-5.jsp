@@ -92,7 +92,7 @@
                                         </c:when>
                                         <c:otherwise>
                                             <!-- Code to be executed if the expression is false -->
-                                            <li></li>
+                                            <li> <a href="/petpet/logout">Log out</a> </li>
                                         </c:otherwise>
                                     </c:choose>
 

@@ -11,6 +11,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.mindrot.jbcrypt.BCrypt;
 
 // @WebServlet(urlPatterns = {"/register"} , name = "RegisterServlet")
 public class RegisterServlet extends HttpServlet{
@@ -21,7 +22,8 @@ public class RegisterServlet extends HttpServlet{
 
         System.out.println("Hiii in post");
         String fName =req.getParameter("register-Name");
-        System.out.println("fName "+fName);
+        String [] selectedInterest = req.getParameterValues("multiple-select-field");
+        System.out.println(selectedInterest.length);
         String userName = req.getParameter("register-username");
         System.out.println("user email " + userName);
         String phone = req.getParameter("register-phone");
@@ -36,6 +38,7 @@ public class RegisterServlet extends HttpServlet{
         BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
         LocalDate date = LocalDate.parse(birthday); //date formater
         UserDTO user = new UserDTO(fName,userName,phone,password,job,cl,country,street,null,city,date);
+
         RegisterService service = new RegisterService();
         if(Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone))
         {
@@ -70,5 +73,11 @@ public class RegisterServlet extends HttpServlet{
         }
 
     //else resp.getWriter().print("empty");
+    }
+
+    private static String Hash(String password){
+        String salt = BCrypt.gensalt(10); // generate a random salt
+        String hashedPassword = BCrypt.hashpw(password, salt); // hash the password
+        return hashedPassword;
     }
 }

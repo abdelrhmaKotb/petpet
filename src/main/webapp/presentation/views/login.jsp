@@ -55,7 +55,7 @@
         </nav><!-- End .breadcrumb-nav -->
 
         <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
-            style="background-image: url('/petpet/presentation/assets/images/backgrounds/login-bg.jpg')">
+            style="background-image: url('/petpet/presentation/assets/images/backgrounds/login-bg.jpg') ">
             <div class="container">
                 <div class="form-box">
                     <div class="form-tab">
@@ -209,16 +209,20 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-sm-8">
-                                        <label for="multiple-select-field">Interests</label>
-                                        <select class="form-select-lg" id="multiple-select-field"
-                                            data-placeholder="Choose anything" multiple>
-                                            <option>Christmas Island</option>
-                                            <option>South Sudan</option>
-                                            <option>Jamaica</option>
-                                        </select>
 
+                                    <div class="col-sm-12">
+                                        <select class="form-control" id="multiple-select-field" name="multiple-select-field"
+                                            data-placeholder="Choose interests" multiple onchange="userInterests()">
+                                            <option>Dogs</option>
+                                            <option>Cats</option>
+                                            <option>Birds</option>
+                                            <option>Watering Supplies</option>
+                                            <option>Pet Accessories</option>
+                                            <option>Dog Crates , Houses</option>
+                                            <option>Pet Feeding</option>
+                                        </select>
                                     </div>
+
 
                                     <div class="form-footer">
                                         <button type="submit" class="btn btn-outline-primary-2">
@@ -548,8 +552,7 @@
     <script src="/petpet/presentation/assets/js/bootstrap-select-country.js"></script>
     <!-- Main JS File -->
     <script src="/petpet/presentation/assets/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>--%>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
     <script src="/petpet/presentation/assets/register-form.js"></script>
     <script>

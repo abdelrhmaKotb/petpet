@@ -184,6 +184,13 @@ function callBackCountry(data){
     }
 }
 
+function userInterests(){
+    var selectedElements  = $("#multiple-select-field").val();
+    selectedElements.forEach(function (value) {
+        console.log(value)
+    })
+}
+
 
 function User(Firstname, username, phone, job, street, city, country, credit) {
     this.Firstname = Firstname;
