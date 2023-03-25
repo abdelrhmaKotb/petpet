@@ -169,7 +169,16 @@
 		<servlet-name>loginserv</servlet-name>
 		<url-pattern>/login_</url-pattern>
 	</servlet-mapping>
-
+	
+	<servlet>
+		<servlet-name>logout</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>Add-Category-Page</servlet-name>
 		<url-pattern>/Add-Category-Page</url-pattern>
@@ -264,7 +273,14 @@
 		<servlet-name>Review-Customer-Profile</servlet-name>
 		<url-pattern>/review-customers</url-pattern>
 	</servlet-mapping>
-
+	<servlet>
+		<servlet-name>CheckCountry</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.CheckCountryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckCountry</servlet-name>
+		<url-pattern>/checkcountry</url-pattern>
+	</servlet-mapping>
 	<servlet>
 		<servlet-name>View-Order</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.Admin.ViewUserOrderServlet</servlet-class>

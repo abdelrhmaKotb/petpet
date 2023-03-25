@@ -92,7 +92,7 @@
                                         </c:when>
                                         <c:otherwise>
                                             <!-- Code to be executed if the expression is false -->
-                                            <li></li>
+                                            <li> <a href="/petpet/logout">Log out</a> </li>
                                         </c:otherwise>
                                     </c:choose>
 
@@ -797,7 +797,7 @@
 
                 <div class="video-banner video-banner-bg bg-image text-center"
                     style="background-image:
-                    url(/petpet/presentation/assets/images/backgrounds/bg-5.jpg);">
+                    url(/petpet/presentation/assets/images/backgrounds/bg-6.jpg);">
                     <div class="container">
                         <h3 class="video-banner-title h1 text-white"><span>New
                                 Collection</span><strong>Winter <i>/</i>
@@ -1734,7 +1734,8 @@
                                 <div class="feed-col">
                                     <div class="instagram-feed">
                                         <img
-                                            src="assets/images/demos/demo-5/instagram/1.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/instagram/11.jpg"
+
                                             alt="img">
 
                                         <div class="instagram-feed-content">
@@ -1748,7 +1749,8 @@
                                 <div class="feed-col">
                                     <div class="instagram-feed">
                                         <img
-                                            src="assets/images/demos/demo-5/instagram/2.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/instagram/12.jpg"
+                                            style="height: 100%"
                                             alt="img">
 
                                         <div class="instagram-feed-content">
@@ -1762,7 +1764,7 @@
                                 <div class="feed-col feed-col-title">
                                     <div class="instagram-feed-title">
                                         <i class="icon-instagram"></i>
-                                        <p>@Molla_store <br>on instagram</p>
+                                        <p>@PetPet Store <br>On instagram</p>
                                         <a href="#">FOLLOW</a>
                                     </div><!-- End .instagram-feed-title -->
                                 </div><!-- End .feed-col -->
@@ -1770,7 +1772,7 @@
                                 <div class="feed-col">
                                     <div class="instagram-feed">
                                         <img
-                                            src="assets/images/demos/demo-5/instagram/3.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/instagram/13.jpg"
                                             alt="img">
 
                                         <div class="instagram-feed-content">
@@ -1784,7 +1786,7 @@
                                 <div class="feed-col">
                                     <div class="instagram-feed">
                                         <img
-                                            src="assets/images/demos/demo-5/instagram/4.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/instagram/14.jpg"
                                             alt="img">
 
                                         <div class="instagram-feed-content">
@@ -1798,7 +1800,7 @@
                                 <div class="feed-col">
                                     <div class="instagram-feed">
                                         <img
-                                            src="assets/images/demos/demo-5/instagram/5.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/instagram/15.jpg"
                                             alt="img">
 
                                         <div class="instagram-feed-content">
@@ -1812,7 +1814,7 @@
                                 <div class="feed-col">
                                     <div class="instagram-feed">
                                         <img
-                                            src="assets/images/demos/demo-5/instagram/6.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/instagram/16.jpg"
                                             alt="img">
 
                                         <div class="instagram-feed-content">
@@ -1826,7 +1828,7 @@
                                 <div class="feed-col">
                                     <div class="instagram-feed">
                                         <img
-                                            src="assets/images/demos/demo-5/instagram/7.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/instagram/17.jpg"
                                             alt="img">
 
                                         <div class="instagram-feed-content">
@@ -1840,7 +1842,7 @@
                                 <div class="feed-col">
                                     <div class="instagram-feed">
                                         <img
-                                            src="assets/images/demos/demo-5/instagram/8.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/instagram/18.jpg"
                                             alt="img">
 
                                         <div class="instagram-feed-content">
@@ -1854,7 +1856,7 @@
                                 <div class="feed-col">
                                     <div class="instagram-feed">
                                         <img
-                                            src="assets/images/demos/demo-5/instagram/9.jpg"
+                                            src="/petpet/presentation/assets/images/demos/demo-5/instagram/19.jpg"
                                             alt="img">
 
                                         <div class="instagram-feed-content">
