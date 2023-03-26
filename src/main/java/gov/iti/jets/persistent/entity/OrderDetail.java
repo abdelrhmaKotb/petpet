@@ -2,13 +2,11 @@ package gov.iti.jets.persistent.entity;
 
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
-
 @Entity
 @Table(name = "order_details")
 public class OrderDetail {
     @EmbeddedId
-    private OrderDetailId id;
+    private OrderDetailId id = new OrderDetailId();
 
     @MapsId("orderId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -24,7 +22,24 @@ public class OrderDetail {
     private Integer quantity;
 
     @Column(name = "product_price", precision = 10)
-    private BigDecimal productPrice;
+    private Double productPrice;
+
+    public OrderDetail(Order order, Product product, Integer quantity, Double productPrice) {
+        this.order = order;
+        this.product = product;
+        this.quantity = quantity;
+        this.productPrice = productPrice;
+    }
+    public OrderDetail(OrderDetailId id,Order order, Product product, Integer quantity, Double productPrice) {
+        this.id = id;
+        this.order = order;
+        this.product = product;
+        this.quantity = quantity;
+        this.productPrice = productPrice;
+    }
+
+    public OrderDetail() {
+    }
 
     public OrderDetailId getId() {
         return id;
@@ -58,11 +73,11 @@ public class OrderDetail {
         this.quantity = quantity;
     }
 
-    public BigDecimal getProductPrice() {
+    public Double getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(BigDecimal productPrice) {
+    public void setProductPrice(Double productPrice) {
         this.productPrice = productPrice;
     }
 
