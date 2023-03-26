@@ -253,11 +253,11 @@
                                     </a>
 
                                     <div class="banner-content">
-                                        <h4 class="banner-subtitle"><a href="#">Trending
+                                        <h4 class="banner-subtitle"><a href="/petpet/Shop">Trending
                                                 now</a></h4><!-- End .banner-subtitle -->
-                                        <h3 class="banner-title"><a href="#"><span>This
+                                        <h3 class="banner-title"><a href="/petpet/Shop"><span>This
                                                     Week's<br>Most Wanted</span></a></h3><!-- End .banner-title -->
-                                        <a href="#" class="btn
+                                        <a href="/petpet/Shop" class="btn
                                             btn-outline-primary-2 banner-link">Discover
                                             Now<i class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .banner-content -->
@@ -273,12 +273,11 @@
                                     </a>
 
                                     <div class="banner-content">
-                                        <h4 class="banner-subtitle"><a href="#">Limited
+                                        <h4 class="banner-subtitle"><a href="/petpet/Shop">Limited
                                                 time only.</a></h4><!-- End .banner-subtitle -->
-                                        <h3 class="banner-title"><a href="#"><span>Trainers
-                                                    & Sportwear<br>Sale Up to
+                                        <h3 class="banner-title"><a href="/petpet/Shop"><span>Sale Up to
                                                     70% off</span></a></h3><!-- End .banner-title -->
-                                        <a href="#" class="btn
+                                        <a href="/petpet/Shop" class="btn
                                             btn-outline-primary-2 banner-link">Shop
                                             Now<i class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .banner-content -->
@@ -292,11 +291,10 @@
                                     </a>
 
                                     <div class="banner-content">
-                                        <h4 class="banner-subtitle"><a href="#">This
+                                        <h4 class="banner-subtitle"><a href="/petpet/Shop">This
                                                 week we love...</a></h4><!-- End .banner-subtitle -->
-                                        <h3 class="banner-title"><a href="#"><span>Womens
-                                                    <br>Holiday Clothes</span></a></h3><!-- End .banner-title -->
-                                        <a href="#" class="btn
+                                        <h3 class="banner-title"><a href="/petpet/Shop"><span>Accessories</span></a></h3><!-- End .banner-title -->
+                                        <a href="/petpet/Shop" class="btn
                                             btn-outline-primary-2 banner-link">Discover
                                             Now<i class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .banner-content -->

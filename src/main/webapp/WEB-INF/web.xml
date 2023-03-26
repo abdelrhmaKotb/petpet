@@ -6,7 +6,7 @@
 	<!--Start
 	of JSP mapping-->
 
-<!--	<servlet>
+	<!--	<servlet>
 		<servlet-name>Home</servlet-name>
 		<jsp-file>/presentation/views/index-5.jsp</jsp-file>
 	</servlet> -->
@@ -51,7 +51,7 @@
 		<servlet-name>adminDeleteUser</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.Admin.DeleteUserServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet>
 		<servlet-name>EditProduct</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.Admin.EditProductServlet</servlet-class>
@@ -164,7 +164,7 @@
 		<servlet-name>loginserv</servlet-name>
 		<url-pattern>/login_</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>logout</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.LogoutServlet</servlet-class>
@@ -173,7 +173,7 @@
 		<servlet-name>logout</servlet-name>
 		<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet-mapping>
 		<servlet-name>add-category-page</servlet-name>
 		<url-pattern>/admin/add-category-page</url-pattern>
@@ -326,7 +326,7 @@
 		<servlet-name>checkout</servlet-name>
 		<servlet-class>gov.iti.jets.controllers.CheckoutServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>checkout</servlet-name>
 		<url-pattern>/checkout</url-pattern>
@@ -350,7 +350,13 @@
 		<filter-name>AdminFilter</filter-name>
 		<url-pattern>/admin/*</url-pattern>
 	</filter-mapping>
-<!--Welcom List-->
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/presentation/views/404.jsp</location>
+	</error-page>
+	<!--Welcom
+	List-->
 	<welcome-file-list>
 		<welcome-file>
 			home

@@ -1,9 +1,7 @@
 package gov.iti.jets.controllers;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.time.LocalDate;
-import com.google.gson.Gson;
 import gov.iti.jets.helpers.Validation;
 import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.services.RegisterService;

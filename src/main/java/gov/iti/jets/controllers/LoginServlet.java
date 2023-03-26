@@ -1,10 +1,7 @@
 package gov.iti.jets.controllers;
 
 import java.io.IOException;
-import java.util.List;
-
 import gov.iti.jets.persistent.dto.UserDTO;
-import gov.iti.jets.services.Categoryservices;
 import gov.iti.jets.services.loginService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
