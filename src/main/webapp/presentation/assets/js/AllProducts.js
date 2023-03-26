@@ -16,8 +16,8 @@ $(document).ready(function () {
 
     let cart = [];
 
-    if (sessionStorage.getItem('cart')) {
-      cart = JSON.parse(sessionStorage.getItem('cart'));
+    if (localStorage.getItem('cart')) {
+      cart = JSON.parse(localStorage.getItem('cart'));
     }
 
     let obj = cart.find(function (ele) {
@@ -33,7 +33,7 @@ $(document).ready(function () {
     }
 
     let cartJSON = JSON.stringify(cart);
-    sessionStorage.setItem('cart', cartJSON);
+    localStorage.setItem('cart', cartJSON);
     console.log(cart);
 
     $.ajax
@@ -78,7 +78,7 @@ $(document).ready(function () {
 
     let cart = JSON.stringify(table);
 
-    sessionStorage.setItem('cart', cart);
+    localStorage.setItem('cart', cart);
 
     $.ajax
       (
@@ -104,8 +104,8 @@ $(document).ready(function () {
 
     let cart = [];
 
-    if (sessionStorage.getItem('cart')) {
-      cart = JSON.parse(sessionStorage.getItem('cart'));
+    if (localStorage.getItem('cart')) {
+      cart = JSON.parse(localStorage.getItem('cart'));
     }
 
     let obj = cart.find(function (ele) {
@@ -119,7 +119,7 @@ $(document).ready(function () {
     }
 
     let cartJSON = JSON.stringify(cart);
-    sessionStorage.setItem('cart', cartJSON);
+    localStorage.setItem('cart', cartJSON);
     console.log(cart);
 
     $.ajax

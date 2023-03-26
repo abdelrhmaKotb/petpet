@@ -65,7 +65,7 @@ public class AddProductServlet extends HttpServlet {
       final String fileName = part.getSubmittedFileName();
       System.out.println("name " + fileName);
 
-      if (fileName == null) {
+      if (fileName == null || fileName.equals("")) {
         continue;
       }
 
