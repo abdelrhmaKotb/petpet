@@ -2,6 +2,8 @@ package gov.iti.jets;
 
 import java.util.List;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import gov.iti.jets.persistent.dao.CartDaoImpl;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
 import gov.iti.jets.persistent.entity.Cart;
@@ -26,7 +28,9 @@ public class Main {
         //         .setParameter(1, user).getResultList();
 
         // System.out.println(cart);
-
+        String salt = BCrypt.gensalt(10); // generate a random salt
+        String hashedPassword = BCrypt.hashpw("123", salt); // hash the password
+        System.out.println("Hashed Password " + hashedPassword);
 
     }
 }

@@ -33,7 +33,6 @@ $(document).ready(function () {
     }
 
     let cartJSON = JSON.stringify(cart);
-    localStorage.setItem('cart', cartJSON);
     console.log(cart);
 
     $.ajax
@@ -44,8 +43,31 @@ $(document).ready(function () {
           type: 'post',
           cache: false,
           success: (data) => {
-            $(this).text("view cart");
-            $(this).attr("href", '/petpet/cartt');
+
+            console.log("here " + data);
+
+
+            if (data.trim() === 'invalid') {
+              console.log("you must login");
+              Swal.fire({
+                position: 'bottom-end',
+                title: 'you must login',
+                showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+                },
+                showConfirmButton: false,
+                timer: 1500
+              })
+            } else {
+              console.log("valid");
+              localStorage.setItem('cart', cartJSON);
+              $(this).after(`<a href="/petpet/cart" class="btn-product btn-cart">view cart</a>`);
+              $(this).remove()
+            }
+
 
             // swalWithBootstrapButtons.fire(
             //   'Deleted!',
@@ -88,7 +110,7 @@ $(document).ready(function () {
           type: 'post',
           cache: false,
           success: (data) => {
-           location.reload();
+            location.reload();
           },
           error: function () {
             alert('error');
@@ -140,27 +162,4 @@ $(document).ready(function () {
 
 
   });
-
-  function addTochoping(e) {
-    $.ajax
-      (
-        {
-          url: '/petpet/Delete-Product',
-          data: { "id": selectedId },
-          type: 'post',
-          cache: false,
-          success: function (data) {
-            swalWithBootstrapButtons.fire(
-              'Deleted!',
-              'Your Product has been deleted.',
-              'success'
-            )
-            e.target.closest('tr').remove();
-          },
-          error: function () {
-            alert('error');
-          }
-        }
-      );
-  }
 });

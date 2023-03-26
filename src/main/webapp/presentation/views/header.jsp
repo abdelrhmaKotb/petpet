@@ -27,6 +27,8 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Plugins CSS File -->
     <link rel="stylesheet" href="/petpet/presentation/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
     <!-- Main CSS File -->
     <link rel="stylesheet" href="/petpet/presentation/assets/css/style.css">
     <link rel="stylesheet" href="/petpet/presentation/assets/css/product.css">
@@ -83,9 +85,9 @@
                                 <li>
                                     <a href="/petpet/Shop">Shop</a>
                                 </li>
-                                 <li>
-                                         <a href="/petpet/about">About</a>
-                                 </li>
+                                <li>
+                                    <a href="/petpet/about">About</a>
+                                </li>
                             </ul><!-- End .menu -->
                         </nav><!-- End .main-nav -->
                     </div><!-- End .header-left -->

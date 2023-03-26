@@ -16,26 +16,31 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String Emal = req.getParameter("register-email");
         String pass = req.getParameter("register-password");
-        UserDTO userDTO = new loginService().isUser(Emal,pass);
+        UserDTO userDTO = new loginService().isUser(Emal, pass);
 
         if (userDTO != null) {
-            
-                HttpSession session = req.getSession(true);
 
-                session.setAttribute("userSession" , userDTO);
+            HttpSession session = req.getSession(true);
 
-                System.out.println("getAttribute " +session.getAttribute("userSession"));
+            session.setAttribute("userSession", userDTO);
 
-                req.getRequestDispatcher("home").forward(req,resp);
+            System.out.println("getAttribute " + session.getAttribute("userSession"));
+
+            // req.getRequestDispatcher("home").forward(req, resp);
+
+            if(userDTO.isAdmin()){
+                resp.sendRedirect("/petpet/admin");
+            }else{
+                resp.sendRedirect("/petpet/home");
             }
-            else if(new loginService().isExistUser(Emal)) {
-                req.setAttribute("errorMessage", "Incorrect password.");
-                RequestDispatcher r = req.getRequestDispatcher("presentation/views/login.jsp");
-                r.forward(req, resp);
+        } else if (new loginService().isExistUser(Emal)) {
+            req.setAttribute("errorMessage", "Incorrect password.");
+            RequestDispatcher r = req.getRequestDispatcher("presentation/views/login.jsp");
+            r.forward(req, resp);
 
-            }
+        }
 
-         else {
+        else {
             req.setAttribute("errorMessage", " Incorrect E-mail Address");
             RequestDispatcher r = req.getRequestDispatcher("presentation/views/login.jsp");
             r.forward(req, resp);
