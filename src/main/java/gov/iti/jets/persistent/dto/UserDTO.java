@@ -73,7 +73,7 @@ public class UserDTO {
         this.birthday = birthday;
     }
 
-    public UserDTO(String firstName, String userName, String phone, String password, String job, BigDecimal creditLimit,
+    public UserDTO(String firstName, String userName, String phone, String password, String job, Double creditLimit,
                    String country, String street, String zip, String city, LocalDate birthday, List<InterestDto> interestDtos) {
         this.firstName = firstName;
         this.userName = userName;
