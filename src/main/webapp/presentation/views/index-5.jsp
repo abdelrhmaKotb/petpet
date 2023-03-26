@@ -246,18 +246,18 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="banner banner-border">
-                                    <a href="#">
+                                    <a href="/petpet/Shop?category=trendy">
                                         <img
                                             src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-5.jpg"
                                             alt="Banner">
                                     </a>
 
                                     <div class="banner-content">
-                                        <h4 class="banner-subtitle"><a href="/petpet/Shop">Trending
+                                        <h4 class="banner-subtitle"><a href="/petpet/Shop?category=trendy">Trending
                                                 now</a></h4><!-- End .banner-subtitle -->
-                                        <h3 class="banner-title"><a href="/petpet/Shop"><span>This
+                                        <h3 class="banner-title"><a href="/petpet/Shop?category=trendy"><span>This
                                                     Week's<br>Most Wanted</span></a></h3><!-- End .banner-title -->
-                                        <a href="/petpet/Shop" class="btn
+                                        <a href="/petpet/Shop?category=trendy" class="btn
                                             btn-outline-primary-2 banner-link">Discover
                                             Now<i class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .banner-content -->
@@ -266,7 +266,7 @@
 
                             <div class="col-md-6">
                                 <div class="banner banner-border-hover">
-                                    <a href="#">
+                                    <a href="/petpet/Shop">
                                         <img
                                             src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-8.jpg"
                                             alt="Banner">
@@ -284,17 +284,17 @@
                                 </div><!-- End .banner -->
 
                                 <div class="banner banner-border-hover">
-                                    <a href="#">
+                                    <a href="/petpet/Shop?category=accessories">
                                         <img
                                             src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-7.jpg"
                                             alt="Banner">
                                     </a>
 
                                     <div class="banner-content">
-                                        <h4 class="banner-subtitle"><a href="/petpet/Shop">This
+                                        <h4 class="banner-subtitle"><a href="/petpet/Shop?category=accessories">This
                                                 week we love...</a></h4><!-- End .banner-subtitle -->
-                                        <h3 class="banner-title"><a href="/petpet/Shop"><span>Accessories</span></a></h3><!-- End .banner-title -->
-                                        <a href="/petpet/Shop" class="btn
+                                        <h3 class="banner-title"><a href="/petpet/Shop?category=accessories"><span>Accessories</span></a></h3><!-- End .banner-title -->
+                                        <a href="/petpet/Shop?category=accessories" class="btn
                                             btn-outline-primary-2 banner-link">Discover
                                             Now<i class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .banner-content -->

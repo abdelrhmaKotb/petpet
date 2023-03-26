@@ -6,6 +6,7 @@ import java.util.List;
 import gov.iti.jets.persistent.dao.OrderDaoImpl;
 import gov.iti.jets.persistent.dao.ProductDaoImpl;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
+import gov.iti.jets.persistent.dao.interfaces.ProductDao;
 import gov.iti.jets.persistent.dto.CategoryDto;
 import gov.iti.jets.persistent.dto.OrderDto;
 import gov.iti.jets.persistent.dto.ProductDto;
@@ -98,6 +99,30 @@ public class GetProductsService {
         ProductDaoImpl productDao = new ProductDaoImpl();
         List<TrendyProductsDTO> productList = productDao.firstThreeTrendyProducts(mainCategories);
         return productList;
+    }
+    public List<ProductDto> trendyProducts(){
+        ProductDaoImpl productDao = new ProductDaoImpl();
+        List<TrendyProductsDTO> productList = productDao.trendyProducts();
+        List<ProductDto> productDaos = new ArrayList<>();
+        productList.forEach(elemet ->{
+            productDaos.add(new ProductMapper().toDto(elemet.getProduct()));
+        });
+        return productDaos;
+    }
+    public List<ProductDto> getproductsByCategory(String category){
+        Categoryservices categoryservices = new Categoryservices();
+        int categoryId =categoryservices.CategoryId(category);
+        
+        System.out.println("category id"+categoryId);
+
+        ProductDaoImpl productDao = new ProductDaoImpl();
+        List<Product> productList = productDao.filterProductsByCategoryId(categoryId);
+        List<ProductDto> productDtos =new ArrayList<>();
+
+        productList.forEach(e -> {
+            productDtos.add(new ProductMapper().toDto(e));
+        });
+        return productDtos;
     }
     public   long totalOrders( ) {
         ProductDaoImpl productDao = new ProductDaoImpl();

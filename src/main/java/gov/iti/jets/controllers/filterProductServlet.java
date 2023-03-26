@@ -3,7 +3,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.google.gson.Gson;
 import gov.iti.jets.persistent.dto.ProductDto;
+import gov.iti.jets.persistent.dto.TrendyProductsDTO;
+import gov.iti.jets.persistent.dto.getCategoryAnditsQuantityDTO;
 import gov.iti.jets.persistent.entity.Product;
+import gov.iti.jets.services.GetCategoriesService;
 import gov.iti.jets.services.GetProductsService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -31,11 +34,11 @@ public class filterProductServlet extends HttpServlet {
         {
             categories.add(i);
         }
-
-         GetProductsService getProductsService = new GetProductsService();
+        GetProductsService getProductsService = new GetProductsService();
         List <ProductDto> productDtos = getProductsService.filterProducts(Double.parseDouble(priceRange),categories);
         PrintWriter printWriter =resp.getWriter();
         printWriter.write(new Gson().toJson(productDtos));
 
     }
+
 }

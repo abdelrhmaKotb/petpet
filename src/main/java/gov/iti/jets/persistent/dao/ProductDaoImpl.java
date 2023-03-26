@@ -60,9 +60,18 @@ public class ProductDaoImpl extends RepositoryImpl<Product,Integer> implements P
         List<Product> filteredProducts =  maxQuery.getResultList();
         return filteredProducts;
     }
+
+    @Override
+    public List<Product> filterProductsByCategoryId (int categoriesId) {
+        String maxPrise = "Select p from Product p where  p.category.id = :category";
+        Query maxQuery = _entityManager.createQuery(maxPrise)
+                .setParameter("category",categoriesId);
+        List<Product> filteredProducts =  maxQuery.getResultList();
+        return filteredProducts;
+    }
+
     @Override
     public List<TrendyProductsDTO> firstThreeTrendyProducts(List<CategoryDto> mainCategories) {
-
         List<TrendyProductsDTO> result = new ArrayList<>();
         for (CategoryDto category : mainCategories) {
 
@@ -91,8 +100,27 @@ public class ProductDaoImpl extends RepositoryImpl<Product,Integer> implements P
         String countQ = "Select COUNT(p) from Product p ";
         Query countQuery = _entityManager.createQuery(countQ);
         long countResults = (long) countQuery.getSingleResult();
-        System.out.println("countOfOrders"+countQuery.getSingleResult());
         return countResults;
+    }
+    @Override
+    public List<TrendyProductsDTO> trendyProducts() {
+        
+      
+       
+           Query itemQuery = _entityManager.createQuery("""
+                            select new gov.iti.jets.persistent.dto.TrendyProductsDTO( od.product,od.product.category ,count(od))
+                            from OrderDetail od
+                            group by od.product.category ,od.product
+                            ORDER BY COUNT(od) DESC
+                            """
+                    , TrendyProductsDTO.class);
+          
+
+            List<TrendyProductsDTO> items = itemQuery.getResultList();
+         
+        
+
+        return items;
     }
 
 }

@@ -19,7 +19,7 @@
 		<div class="checkout">
 			<div class="container">
 
-				<form action="/petpet/adimn/add-category" method="POST" >
+				<form action="/petpet/admin/add-category" method="POST" >
 					<div class="row">
 						<div class="col-lg-9">
 							<h2 class="checkout-title"> Adding Category </h2><!-- End .checkout-title -->
