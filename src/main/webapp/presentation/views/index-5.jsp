@@ -322,8 +322,8 @@
                             <c:forEach var="category" items="${requestScope.mainCategories}">
                             <li class="nav-item">
                                 <a class="nav-link ${category.getId()} " id="trendy-all-link"
-                                    data-toggle="tab" href="#trendy-all-tab"
-                                    role="tab" aria-controls="trendy-all-tab"
+                                    data-toggle="tab" href="#cat-${category.getId()}"
+                                    role="tab" aria-controls="${category.getId()}"
                                     aria-selected="true">${category.getName()}</a>
                             </li>
                            </c:forEach>
@@ -361,213 +361,58 @@
                                 }
                                 }
                                 }'>
-                                <div class="product product-2">
-                                    <figure class="product-media">
-                                        <a
-                                            href="/petpet/presentation/views/product.jsp">
-                                            <img
-                                                src="/petpet/presentation/assets/images/products/single-cat/cat-single-1.jpg"
-                                                alt="Product image"
-                                                class="product-image">
-                                            <img
-                                                src="/petpet/presentation/assets/images/products/single-cat/cat-single-2.jpg"
-                                                alt="Product image"
-                                                class="product-image-hover">
-                                        </a>
+                                  <c:forEach var="trendy" items="${requestScope.trendyProductsDTOS}">
+                                   <div class="product product-2">
+                                       <figure class="product-media">
+                                           <a
+                                               href="/petpet/product?id=${trendy.getProduct().getId()}">
+                                               <img
+                                                   src="/petpet${trendy.getProduct().getImages().get(0).getImageUrl()}"
+                                                   alt="Product image"
+                                                   class="product-image">
+                                               <c:if test="${trendy.getProduct().getImages().size() > 1 }">
+                                               <img
+                                                   src="/petpet${trendy.getProduct().getImages().get(1).getImageUrl()}"
+                                                   alt="Product image"
+                                                   class="product-image-hover">
+                                               </c:if>
+                                           </a>
 
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon
-                                                btn-wishlist btn-expandable"
-                                                title="Add to wishlist"><span>add
-                                                    to wishlist</span></a>
-                                        </div><!-- End .product-action -->
+                                           <div class="product-action-vertical">
+                                               <a href="#" class="btn-product-icon
+                                                   btn-wishlist btn-expandable"
+                                                   title="Add to wishlist"><span>add
+                                                       to wishlist</span></a>
+                                           </div><!-- End .product-action -->
 
-                                        <div class="product-action
-                                            product-action-transparent">
-                                            <a href="#" class="btn-product
-                                                btn-cart"><span>add to cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
+                                           <div class="product-action
+                                               product-action-transparent">
+                                               <a href="#" class="btn-product
+                                                   btn-cart"><span>add to cart</span></a>
+                                           </div><!-- End .product-action -->
+                                       </figure><!-- End .product-media -->
 
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">Cats</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a
-                                                href="/petpet/presentation/views/product.jsp">Vest
-                                                dress</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            $9.99
-                                        </div><!-- End .product-price -->
-
-
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
-
-                                <div class="product product-2">
-                                    <figure class="product-media">
-                                        <a
-                                            href="/petpet/presentation/views/product.jsp">
-                                            <img
-                                                src="/petpet/presentation/assets/images/products/single-dog/dog-single-1.jpg"
-                                                alt="Product image"
-                                                class="product-image">
-                                            <img
-                                                src="/petpet/presentation/assets/images/products/single-dog/dog-single-2.png"
-                                                alt="Product image"
-                                                class="product-image-hover">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon
-                                                btn-wishlist btn-expandable"
-                                                title="Add to wishlist"><span>add
-                                                    to wishlist</span></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action
-                                            product-action-transparent">
-                                            <a href="#" class="btn-product
-                                                btn-cart"><span>add to cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">Dogs</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a
-                                                href="/petpet/presentation/views/product.jsp">Dress
-                                                with a belt</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            $29.99
-                                        </div><!-- End .product-price -->
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
-
-                                <div class="product product-2">
-                                    <figure class="product-media">
-                                        <a
-                                            href="/petpet/presentation/views/product.jsp">
-                                            <img
-                                                src="/petpet/presentation/assets/images/products/food/product-food-10.png"
-                                                alt="Product image"
-                                                class="product-image">
-                                            <img
-                                                src="/petpet/presentation/assets/images/images/products/food/product-food-10.png"
-                                                alt="Product image"
-                                                class="product-image-hover">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon
-                                                btn-wishlist btn-expandable"
-                                                title="Add to wishlist"><span>add
-                                                    to wishlist</span></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action
-                                            product-action-transparent">
-                                            <a href="#" class="btn-product
-                                                btn-cart"><span>add to cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">Food</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a
-                                                href="product.jsp">Sandals</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            <span class="new-price">Now $24.99</span>
-                                            <span class="old-price">Was $30.99</span>
-                                        </div><!-- End .product-price -->
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
-
-                                <div class="product product-2">
-                                    <figure class="product-media">
-                                        <a href="product.jsp">
-                                            <img
-                                                src="/petpet/presentation/assets/images/products/accessories/product-acs-1.jpg"
-                                                alt="Product image"
-                                                class="product-image">
-                                            <img
-                                                src="/petpet/presentation/assets/images/products/accessories/product-acs-1-1.jpg"
-                                                alt="Product image"
-                                                class="product-image-hover">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon
-                                                btn-wishlist btn-expandable"
-                                                title="Add to wishlist"><span>add
-                                                    to wishlist</span></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action
-                                            product-action-transparent">
-                                            <a href="#" class="btn-product
-                                                btn-cart"><span>add to cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">Accessories</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a
-                                                href="product.jsp">Bucket bag</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            $17.99
-                                        </div><!-- End .product-price -->
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
-                                <div class="product product-2">
-                                    <figure class="product-media">
-                                        <a href="product.jsp">
-                                            <img
-                                                src="/petpet/presentation/assets/images/products/product-bird-1.jpg"
-                                                alt="Product image"
-                                                class="product-image">
-                                            <img
-                                                src="/petpet/presentation/assets/images/products/product-bird-1.jpg"
-                                                alt="Product image"
-                                                class="product-image-hover">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon
-                                                btn-wishlist btn-expandable"
-                                                title="Add to wishlist"><span>add
-                                                    to wishlist</span></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action
-                                            product-action-transparent">
-                                            <a href="#" class="btn-product
-                                                btn-cart"><span>add to cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">Birds</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a
-                                                href="product.jsp">Vest dress</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            $9.99
-                                        </div><!-- End .product-price -->
+                                       <div class="product-body">
+                                           <div class="product-cat">
+                                               <a href="#">${trendy.getCategory().getName()}</a>
+                                           </div><!-- End .product-cat -->
+                                           <h3 class="product-title"><a
+                                                   href="/petpet/product?id=${trendy.getProduct().getId()}">${trendy.getProduct().getName()}
+                                                   </a></h3><!-- End .product-title -->
+                                           <div class="product-price">
+                                               ${trendy.getProduct().getPrice()}
+                                           </div><!-- End .product-price -->
 
 
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
-                            </div><!-- End .owl-carousel -->
-                        </div><!-- .End .tab-pane -->
-                        <div class="tab-pane p-0 fade" id="trendy-women-tab"
-                            role="tabpanel" aria-labelledby="trendy-women-link">
+                                       </div><!-- End .product-body -->
+                                   </div><!-- End .product -->
+                               </c:forEach>
+                               </div><!-- End .owl-carousel -->
+                           </div><!-- .End .tab-pane -->
+
+                     <c:forEach var="category" items="${requestScope.mainCategories}">
+                        <div class="tab-pane p-0 fade" id="cat-${category.getId()}"
+                            role="tabpanel" aria-labelledby="${category.getId()}">
                             <div class="owl-carousel owl-simple
                                 carousel-equal-height carousel-with-shadow"
                                 data-toggle="owl"
@@ -595,191 +440,58 @@
                                 }
                                 }
                                 }'>
-                                <div class="product product-2">
-                                    <figure class="product-media">
-                                        <a
-                                                href="/petpet/presentation/views/product.jsp">
-                                            <img
-                                                    src="/petpet/presentation/assets/images/products/single-cat/cat-single-1.jpg"
-                                                    alt="Product image"
-                                                    class="product-image">
-                                            <img
-                                                    src="/petpet/presentation/assets/images/products/single-cat/cat-single-2.jpg"
-                                                    alt="Product image"
-                                                    class="product-image-hover">
-                                        </a>
+                                  <c:forEach var="trendy" items="${requestScope.trendyProductsDTOS}">
+                                  <c:if test="${trendy.getCategory().getId() == category.getId() }">
 
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon
-                                                btn-wishlist btn-expandable"
-                                               title="Add to wishlist"><span>add
-                                                    to wishlist</span></a>
-                                        </div><!-- End .product-action -->
+                                   <div class="product product-2">
+                                       <figure class="product-media">
+                                           <a
+                                               href="/petpet/product?id=${trendy.getProduct().getId()}">
+                                               <img
+                                                   src="/petpet${trendy.getProduct().getImages().get(0).getImageUrl()}"
+                                                   alt="Product image"
+                                                   class="product-image">
+                                               <c:if test="${trendy.getProduct().getImages().size() > 1 }">
+                                               <img
+                                                   src="/petpet${trendy.getProduct().getImages().get(1).getImageUrl()}"
+                                                   alt="Product image"
+                                                   class="product-image-hover">
+                                               </c:if>
+                                           </a>
 
-                                        <div class="product-action
-                                            product-action-transparent">
-                                            <a href="#" class="btn-product
-                                                btn-cart"><span>add to cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
+                                           <div class="product-action-vertical">
+                                               <a href="#" class="btn-product-icon
+                                                   btn-wishlist btn-expandable"
+                                                   title="Add to wishlist"><span>add
+                                                       to wishlist</span></a>
+                                           </div><!-- End .product-action -->
 
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">Cats</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a
-                                                href="/petpet/presentation/views/product.jsp">Vest
-                                            dress</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            $9.99
-                                        </div><!-- End .product-price -->
+                                           <div class="product-action
+                                               product-action-transparent">
+                                               <a href="#" class="btn-product
+                                                   btn-cart"><span>add to cart</span></a>
+                                           </div><!-- End .product-action -->
+                                       </figure><!-- End .product-media -->
+
+                                       <div class="product-body">
+                                           <div class="product-cat">
+                                               <a href="#">${trendy.getCategory().getName()}</a>
+                                           </div><!-- End .product-cat -->
+                                           <h3 class="product-title"><a
+                                                   href="/petpet/product?id=${trendy.getProduct().getId()}">
+                                                   ${trendy.getProduct().getName()}</a></h3><!-- End .product-title -->
+                                           <div class="product-price">
+                                               ${trendy.getProduct().getPrice()}
+                                           </div><!-- End .product-price -->
 
 
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
+                                       </div><!-- End .product-body -->
+                                   </div><!-- End .product -->
+                                   </c:if>
+                               </c:forEach>
                             </div><!-- End .owl-carousel -->
                         </div><!-- .End .tab-pane -->
-                        <div class="tab-pane p-0 fade" id="trendy-men-tab"
-                            role="tabpanel" aria-labelledby="trendy-men-link">
-                            <div class="owl-carousel owl-simple
-                                carousel-equal-height carousel-with-shadow"
-                                data-toggle="owl"
-                                data-owl-options='{
-                                "nav": false,
-                                "dots": true,
-                                "margin": 20,
-                                "loop": false,
-                                "responsive": {
-                                "0": {
-                                "items":2
-                                },
-                                "480": {
-                                "items":2
-                                },
-                                "768": {
-                                "items":3
-                                },
-                                "992": {
-                                "items":4
-                                },
-                                "1200": {
-                                "items":4,
-                                "nav": true
-                                }
-                                }
-                                }'>
-                                <div class="product product-2">
-                                    <figure class="product-media">
-                                        <a
-                                                href="/petpet/presentation/views/product.jsp">
-                                            <img
-                                                    src="/petpet/presentation/assets/images/products/single-dog/dog-single-1.jpg"
-                                                    alt="Product image"
-                                                    class="product-image">
-                                            <img
-                                                    src="/petpet/presentation/assets/images/products/single-dog/dog-single-2.png"
-                                                    alt="Product image"
-                                                    class="product-image-hover">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon
-                                                btn-wishlist btn-expandable"
-                                               title="Add to wishlist"><span>add
-                                                    to wishlist</span></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action
-                                            product-action-transparent">
-                                            <a href="#" class="btn-product
-                                                btn-cart"><span>add to cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">Dogs</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a
-                                                href="/petpet/presentation/views/product.jsp">Dress
-                                            with a belt</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            $29.99
-                                        </div><!-- End .product-price -->
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
-                            </div><!-- End .owl-carousel -->
-                        </div><!-- .End .tab-pane -->
-                        <div class="tab-pane p-0 fade" id="trendy-access-tab"
-                            role="tabpanel"
-                            aria-labelledby="trendy-access-link">
-                            <div class="owl-carousel owl-simple
-                                carousel-equal-height carousel-with-shadow"
-                                data-toggle="owl"
-                                data-owl-options='{
-                                "nav": false,
-                                "dots": true,
-                                "margin": 20,
-                                "loop": false,
-                                "responsive": {
-                                "0": {
-                                "items":2
-                                },
-                                "480": {
-                                "items":2
-                                },
-                                "768": {
-                                "items":3
-                                },
-                                "992": {
-                                "items":4
-                                },
-                                "1200": {
-                                "items":4,
-                                "nav": true
-                                }
-                                }
-                                }'>
-                                <div class="product product-2">
-                                    <figure class="product-media">
-                                        <a href="product.jsp">
-                                            <img
-                                                    src="/petpet/presentation/assets/images/products/accessories/product-acs-1.jpg"
-                                                    alt="Product image"
-                                                    class="product-image">
-                                            <img
-                                                    src="/petpet/presentation/assets/images/products/accessories/product-acs-1-1.jpg"
-                                                    alt="Product image"
-                                                    class="product-image-hover">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon
-                                                btn-wishlist btn-expandable"
-                                               title="Add to wishlist"><span>add
-                                                    to wishlist</span></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action
-                                            product-action-transparent">
-                                            <a href="#" class="btn-product
-                                                btn-cart"><span>add to cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">Accessories</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a
-                                                href="product.jsp">Bucket bag</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            $17.99
-                                        </div><!-- End .product-price -->
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
-                            </div><!-- End .owl-carousel -->
-                        </div><!-- .End .tab-pane -->
+                        </c:forEach>
                     </div><!-- End .tab-content -->
                 </div><!-- End .container -->
 
@@ -787,14 +499,14 @@
 
                 <div class="video-banner video-banner-bg bg-image text-center"
                     style="background-image:
-                    url(/petpet/presentation/assets/images/backgrounds/bg-6.jpg);">
+                    url(/petpet/presentation/assets/images/backgrounds/bg-5.jpg);">
                     <div class="container">
                         <h3 class="video-banner-title h1 text-white"><span>New
                                 Collection</span><strong>Winter <i>/</i>
                                 Spring</strong></h3><!-- End .video-banner-title -->
+</div>
+</div>
 
-                    </div><!-- End .container -->
-                </div><!-- End .video-banner bg-image -->
 
 
                 <div class="mb-2"></div><!-- End .mb-2 -->
@@ -864,6 +576,145 @@
                 <div class="bg-lighter pt-7 pb-4" style="background-color:
                     #fafafa;">
                     <div class="container">
+                             <div class="instagram-feed-container">
+                                                   <div class="row">
+                                                       <div class="feed-col">
+                                                           <div class="instagram-feed">
+                                                               <img
+                                                                   src="/petpet/presentation/assets/images/demos/demo-5/instagram/11.jpg"
+
+                                                                   alt="img">
+
+                                                               <div class="instagram-feed-content">
+                                                                   <a href="#"><i class="icon-heart-o"></i>387</a>
+                                                                   <a href="#"><i
+                                                                           class="icon-comments"></i>45</a>
+                                                               </div><!-- End .instagram-feed-content -->
+                                                           </div><!-- End .instagram-feed -->
+                                                       </div><!-- End .feed-col -->
+
+                                                       <div class="feed-col">
+                                                           <div class="instagram-feed">
+                                                               <img
+                                                                   src="/petpet/presentation/assets/images/demos/demo-5/instagram/12.jpg"
+                                                                   style="height: 100%"
+                                                                   alt="img">
+
+                                                               <div class="instagram-feed-content">
+                                                                   <a href="#"><i class="icon-heart-o"></i>691</a>
+                                                                   <a href="#"><i
+                                                                           class="icon-comments"></i>87</a>
+                                                               </div><!-- End .instagram-feed-content -->
+                                                           </div><!-- End .instagram-feed -->
+                                                       </div><!-- End .feed-col -->
+
+                                                       <div class="feed-col feed-col-title">
+                                                           <div class="instagram-feed-title">
+                                                               <i class="icon-instagram"></i>
+                                                               <p>@PetPet Store <br>On instagram</p>
+                                                               <a href="#">FOLLOW</a>
+                                                           </div><!-- End .instagram-feed-title -->
+                                                       </div><!-- End .feed-col -->
+
+                                                       <div class="feed-col">
+                                                           <div class="instagram-feed">
+                                                               <img
+                                                                   src="/petpet/presentation/assets/images/demos/demo-5/instagram/13.jpg"
+                                                                   alt="img">
+
+                                                               <div class="instagram-feed-content">
+                                                                   <a href="#"><i class="icon-heart-o"></i>321</a>
+                                                                   <a href="#"><i
+                                                                           class="icon-comments"></i>54</a>
+                                                               </div><!-- End .instagram-feed-content -->
+                                                           </div><!-- End .instagram-feed -->
+                                                       </div><!-- End .feed-col -->
+
+                                                       <div class="feed-col">
+                                                           <div class="instagram-feed">
+                                                               <img
+                                                                   src="/petpet/presentation/assets/images/demos/demo-5/instagram/14.jpg"
+                                                                   alt="img">
+
+                                                               <div class="instagram-feed-content">
+                                                                   <a href="#"><i class="icon-heart-o"></i>44</a>
+                                                                   <a href="#"><i
+                                                                           class="icon-comments"></i>55</a>
+                                                               </div><!-- End .instagram-feed-content -->
+                                                           </div><!-- End .instagram-feed -->
+                                                       </div><!-- End .feed-col -->
+
+                                                       <div class="feed-col">
+                                                           <div class="instagram-feed">
+                                                               <img
+                                                                   src="/petpet/presentation/assets/images/demos/demo-5/instagram/15.jpg"
+                                                                   alt="img">
+
+                                                               <div class="instagram-feed-content">
+                                                                   <a href="#"><i class="icon-heart-o"></i>128</a>
+                                                                   <a href="#"><i
+                                                                           class="icon-comments"></i>99</a>
+                                                               </div><!-- End .instagram-feed-content -->
+                                                           </div><!-- End .instagram-feed -->
+                                                       </div><!-- End .feed-col -->
+
+                                                       <div class="feed-col">
+                                                           <div class="instagram-feed">
+                                                               <img
+                                                                   src="/petpet/presentation/assets/images/demos/demo-5/instagram/16.jpg"
+                                                                   alt="img">
+
+                                                               <div class="instagram-feed-content">
+                                                                   <a href="#"><i class="icon-heart-o"></i>433</a>
+                                                                   <a href="#"><i
+                                                                           class="icon-comments"></i>25</a>
+                                                               </div><!-- End .instagram-feed-content -->
+                                                           </div><!-- End .instagram-feed -->
+                                                       </div><!-- End .feed-col -->
+
+                                                       <div class="feed-col">
+                                                           <div class="instagram-feed">
+                                                               <img
+                                                                   src="/petpet/presentation/assets/images/demos/demo-5/instagram/17.jpg"
+                                                                   alt="img">
+
+                                                               <div class="instagram-feed-content">
+                                                                   <a href="#"><i class="icon-heart-o"></i>588</a>
+                                                                   <a href="#"><i
+                                                                           class="icon-comments"></i>44</a>
+                                                               </div><!-- End .instagram-feed-content -->
+                                                           </div><!-- End .instagram-feed -->
+                                                       </div><!-- End .feed-col -->
+
+                                                       <div class="feed-col">
+                                                           <div class="instagram-feed">
+                                                               <img
+                                                                   src="/petpet/presentation/assets/images/demos/demo-5/instagram/18.jpg"
+                                                                   alt="img">
+
+                                                               <div class="instagram-feed-content">
+                                                                   <a href="#"><i class="icon-heart-o"></i>87</a>
+                                                                   <a href="#"><i
+                                                                           class="icon-comments"></i>23</a>
+                                                               </div><!-- End .instagram-feed-content -->
+                                                           </div><!-- End .instagram-feed -->
+                                                       </div><!-- End .feed-col -->
+
+                                                       <div class="feed-col">
+                                                           <div class="instagram-feed">
+                                                               <img
+                                                                   src="/petpet/presentation/assets/images/demos/demo-5/instagram/19.jpg"
+                                                                   alt="img">
+
+                                                               <div class="instagram-feed-content">
+                                                                   <a href="#"><i class="icon-heart-o"></i>87</a>
+                                                                   <a href="#"><i
+                                                                           class="icon-comments"></i>23</a>
+                                                               </div><!-- End .instagram-feed-content -->
+                                                           </div><!-- End .instagram-feed -->
+                                                       </div><!-- End .feed-col -->
+                                                   </div><!-- End .row -->
+                                               </div><!-- End .instagra-feed-container -->
 
                         <div class="row justify-content-center">
                             <div class="col-sm-6 col-lg-4">

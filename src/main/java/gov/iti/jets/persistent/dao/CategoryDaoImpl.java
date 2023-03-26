@@ -72,7 +72,13 @@ public class CategoryDaoImpl extends RepositoryImpl<Category, Integer> implement
     @Override
     public List<Category> getMainCategories() {
 
-        String countQ = "FROM Category c where c.parentId = 0";
+        String countQ = """
+                            select od.product.category
+                            from OrderDetail od  
+                            group by od.product.category 
+                            having od.product.category.parentId = 0
+                            ORDER BY COUNT(od) DESC 
+                            """;
         Query countQuery = _entityManager.createQuery(countQ, Category.class);
         List<Category> countResults = countQuery.getResultList();
         return countResults;

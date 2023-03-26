@@ -11,6 +11,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.eclipse.tags.shaded.org.apache.xalan.trace.TraceListener;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,7 +29,7 @@ public class HomeServlet extends HttpServlet {
 
         List<CategoryDto> mainCategories = getCategoriesService.getMainCategories();
         GetProductsService getProductsService = new GetProductsService();
-        List<TrendyProductsDTO> trendyProductsDTOS = getProductsService.firstThreeProducts();
+        List<TrendyProductsDTO> trendyProductsDTOS = getProductsService.firstThreeProducts(mainCategories);
 
         req.setAttribute("mainCategories",mainCategories);
         req.setAttribute("trendyProductsDTOS",trendyProductsDTOS);

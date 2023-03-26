@@ -6,6 +6,7 @@ import java.util.List;
 import gov.iti.jets.persistent.dao.OrderDaoImpl;
 import gov.iti.jets.persistent.dao.ProductDaoImpl;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
+import gov.iti.jets.persistent.dto.CategoryDto;
 import gov.iti.jets.persistent.dto.OrderDto;
 import gov.iti.jets.persistent.dto.ProductDto;
 import gov.iti.jets.persistent.dto.TrendyProductsDTO;
@@ -80,9 +81,9 @@ public class GetProductsService {
 
         return productDtos;
     }
-    public List<TrendyProductsDTO> firstThreeProducts(){
+    public List<TrendyProductsDTO> firstThreeProducts(List<CategoryDto> mainCategories){
         ProductDaoImpl productDao = new ProductDaoImpl();
-        List<TrendyProductsDTO> productList = productDao.firstThreeTrendyProducts();
+        List<TrendyProductsDTO> productList = productDao.firstThreeTrendyProducts(mainCategories);
         return productList;
     }
 }

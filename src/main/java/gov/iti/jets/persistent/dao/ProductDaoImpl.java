@@ -1,10 +1,12 @@
 package gov.iti.jets.persistent.dao;
 
 import gov.iti.jets.persistent.dao.interfaces.ProductDao;
+import gov.iti.jets.persistent.dto.CategoryDto;
 import gov.iti.jets.persistent.dto.TrendyProductsDTO;
 import gov.iti.jets.persistent.entity.Product;
 import jakarta.persistence.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDaoImpl extends RepositoryImpl<Product,Integer> implements ProductDao {
@@ -59,22 +61,41 @@ public class ProductDaoImpl extends RepositoryImpl<Product,Integer> implements P
         return filteredProducts;
     }
     @Override
-    public List<TrendyProductsDTO> firstThreeTrendyProducts() {
-
+    public List<TrendyProductsDTO> firstThreeTrendyProducts(List<CategoryDto> mainCategories) {
+/*
         String maxPrise = """
-                            select new gov.iti.jets.persistent.dto.TrendyProductsDTO( od.product,od.product.category ,count(od)) 
-                            from OrderDetail od  
-                            group by od.product.category ,od.product 
+                            select new gov.iti.jets.persistent.dto.TrendyProductsDTO( od.product,od.product.category ,count(od))
+                            from OrderDetail od
+                            group by od.product.category ,od.product
                             having od.product.category.parentId = 0
-                            ORDER BY COUNT(od) DESC 
+                            ORDER BY COUNT(od) DESC
                             """;
+
         Query maxQuery = _entityManager.createQuery(maxPrise, TrendyProductsDTO.class);
         List<TrendyProductsDTO> filteredProducts =  maxQuery.getResultList();
         filteredProducts.forEach(element ->{
             System.out.println(element);
         });
+*/
+        List<TrendyProductsDTO> result = new ArrayList<>();
+        for (CategoryDto category : mainCategories) {
 
-        return filteredProducts;
+           Query itemQuery = _entityManager.createQuery("""
+                            select new gov.iti.jets.persistent.dto.TrendyProductsDTO( od.product,od.product.category ,count(od))
+                            from OrderDetail od
+                            group by od.product.category ,od.product
+                            having od.product.category.id = :category
+                            ORDER BY COUNT(od) DESC
+                            """
+                    , TrendyProductsDTO.class);
+            itemQuery.setParameter("category", category.getId());
+            itemQuery.setMaxResults(3);
+
+            List<TrendyProductsDTO> items = itemQuery.getResultList();
+            result.addAll(items);
+        }
+
+        return result;
     }
 
 }
