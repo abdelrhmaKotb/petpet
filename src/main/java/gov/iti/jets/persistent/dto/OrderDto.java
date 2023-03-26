@@ -14,10 +14,11 @@ import java.util.Objects;
 public class OrderDto implements Serializable {
     private final Integer id;
     private final Date createdAt;
-    private final BigDecimal totalPrice;
+    private final Double totalPrice;
     private final Integer status;
+    
 
-    public OrderDto(Integer id, Date createdAt, BigDecimal totalPrice, Integer status) {
+    public OrderDto(Integer id, Date createdAt, Double totalPrice, Integer status) {
         this.id = id;
         this.createdAt = createdAt;
         this.totalPrice = totalPrice;
@@ -32,7 +33,7 @@ public class OrderDto implements Serializable {
         return createdAt;
     }
 
-    public BigDecimal getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 

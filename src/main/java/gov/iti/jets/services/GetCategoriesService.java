@@ -36,5 +36,15 @@ public class GetCategoriesService {
 
         return categoryAndQuantity;
     }
+    public List<CategoryDto> getMainCategories(){
+        CategoryDaoImpl categoryDao =new CategoryDaoImpl();
 
+        List<Category> categoryList = categoryDao.getMainCategories();
+        List<CategoryDto> categoryDtos = new ArrayList<>();
+        CategoryMapper mapper = new CategoryMapper();
+        categoryList.forEach(category -> {
+            categoryDtos.add(mapper.toDto(category));
+        });
+        return categoryDtos;
+    }
 }

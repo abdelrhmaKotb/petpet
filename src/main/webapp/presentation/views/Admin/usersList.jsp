@@ -6,12 +6,7 @@
             <div class="col-sm-8">
                 <h3>Users List</h3>
             </div>
-<%--            <div class="col-sm-4" style="  padding: 1rem; ">--%>
-<%--                <a href = "/petpet/add-product"> <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">--%>
-<%--                    <span class="btn-text">Add Product</span>--%>
-<%--                    <span class="btn-hover-text">Add Product</span>--%>
-<%--                </button></a>--%>
-<%--            </div>--%>
+
         </div>
 
         <div class="col-lg-15 col-md-15 ml-auto mr-auto">
@@ -32,8 +27,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <%--@elvariable id="AllUsers" type="java.util.List"--%>
-                    <c:forEach var="index" items="${AllUsers}">
+                    <c:forEach var="index" items="${requestScope.AllUsers}">
                         <tr>
                             <td class="text-center">${index.getId()}</td>
                             <td class="text-center">${index.getName()}</td>
@@ -48,7 +42,7 @@
                                         class="btn btn-success btn-link
                                                     btn-just-icon btn-sm"
                                         data-original-title="" title="Edit">
-                                    <a href = "/petpet/View-Order?id=${index.getId()}">
+                                    <a href = "/petpet/admin/view-order?id=${index.getId()}">
                                         <i class="icon-cart-arrow-down"></i></a>
 
                                 </button>

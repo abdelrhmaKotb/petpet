@@ -6,8 +6,10 @@ import java.util.List;
 import gov.iti.jets.persistent.dao.OrderDaoImpl;
 import gov.iti.jets.persistent.dao.ProductDaoImpl;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
+import gov.iti.jets.persistent.dto.CategoryDto;
 import gov.iti.jets.persistent.dto.OrderDto;
 import gov.iti.jets.persistent.dto.ProductDto;
+import gov.iti.jets.persistent.dto.TrendyProductsDTO;
 import gov.iti.jets.persistent.entity.Order;
 import gov.iti.jets.persistent.entity.Product;
 import gov.iti.jets.services.mapper.OrderMapper;
@@ -26,6 +28,19 @@ public class GetProductsService {
         });
 
         return productsList;
+    }
+    public List<ProductDto> getProductsByPageNumber(Integer pageNumber){
+        ProductDaoImpl productDao = new ProductDaoImpl();
+
+        List<Product> productList = productDao.findAllProductsByPage(pageNumber);
+
+        List<ProductDto> productDtoList = new ArrayList<>();
+
+        productList.forEach(e -> {
+            productDtoList.add(new ProductMapper().toDto(e));
+        });
+
+        return productDtoList;
     }
 
     public ProductDto getProduct(int productID){
@@ -78,5 +93,17 @@ public class GetProductsService {
         });
 
         return productDtos;
+    }
+    public List<TrendyProductsDTO> firstThreeProducts(List<CategoryDto> mainCategories){
+        ProductDaoImpl productDao = new ProductDaoImpl();
+        List<TrendyProductsDTO> productList = productDao.firstThreeTrendyProducts(mainCategories);
+        return productList;
+    }
+    public   long totalOrders( ) {
+        ProductDaoImpl productDao = new ProductDaoImpl();
+
+        long totalProduct = productDao.totalOrders();
+
+        return totalProduct;
     }
 }

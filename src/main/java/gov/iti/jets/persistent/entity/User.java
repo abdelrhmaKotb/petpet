@@ -31,7 +31,7 @@ public class User {
     private String email;
 
     @Column(name = "credit_limit", precision = 10)
-    private BigDecimal creditLimit;
+    private Double creditLimit;
 
     @Column(name = "country", length = 100)
     private String country;
@@ -48,8 +48,18 @@ public class User {
     @Column(name = "ZIP", length = 100)
     private String zip;
 
+    private boolean isAdmin;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    private List<Order> orderList=new ArrayList<Order>();
+    private List<Order> orderList = new ArrayList<Order>();
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
 
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user" , cascade = CascadeType.ALL)
@@ -117,11 +127,11 @@ public class User {
         this.email = email;
     }
 
-    public BigDecimal getCreditLimit() {
+    public Double getCreditLimit() {
         return creditLimit;
     }
 
-    public void setCreditLimit(BigDecimal creditLimit) {
+    public void setCreditLimit(Double creditLimit) {
         this.creditLimit = creditLimit;
     }
 
@@ -171,7 +181,5 @@ public class User {
                 + job + ", email=" + email + ", creditLimit=" + creditLimit + ", country=" + country + ", street="
                 + street + ", city=" + city + ", phone=" + phone + ", zip=" + zip + "]";
     }
-
-    
 
 }

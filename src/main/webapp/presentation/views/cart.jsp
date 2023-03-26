@@ -10,8 +10,8 @@
 		<nav aria-label="breadcrumb" class="breadcrumb-nav">
 			<div class="container">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-					<li class="breadcrumb-item"><a href="#">Shop</a></li>
+					<li class="breadcrumb-item"><a href="/petpet/home">Home</a></li>
+					<li class="breadcrumb-item"><a href="/petpet/Shop">Shop</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
 				</ol>
 			</div><!-- End .container -->
@@ -41,14 +41,14 @@
 											<td class="product-col">
 												<div class="product">
 													<figure class="product-media">
-														<a href="#">
+														<a href="/petpet/product?id=${item.getProductId()}">
 															<img src="/petpet/presentation/assets/images/products/table/product-1.jpg"
 																alt="Product image">
 														</a>
 													</figure>
 
 													<h3 class="product-title">
-														<a href="#">${item.getProductName()}</a>
+														<a href="/petpet/product?id=${item.getProductId()}">${item.getProductName()}</a>
 													</h3><!-- End .product-title -->
 												</div><!-- End .product -->
 											</td>
@@ -155,7 +155,7 @@
 									</tbody>
 								</table><!-- End .table table-summary -->
 
-								<a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO
+								<a href="/petpet/checkout" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO
 									CHECKOUT</a>
 							</div><!-- End .summary -->
 
