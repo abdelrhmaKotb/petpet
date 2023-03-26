@@ -22,6 +22,7 @@ public class UserMapper implements Mapper<User, UserDTO> {
         user.setPhone(userDTO.getPhone());
         user.setZip(userDTO.getZip());
         user.setStreet(userDTO.getStreet());
+//        user.setInterest(userDTO.getInterestDtos());
         return user;
 
     }
