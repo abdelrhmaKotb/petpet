@@ -24,7 +24,7 @@ document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListene
              $.ajax
                     (
                         {
-                            url:'/petpet/Delete-Product',
+                            url:'/petpet/admin/delete-product',
                             data:{"id":selectedId},
                             type:'post',
                             cache:false,

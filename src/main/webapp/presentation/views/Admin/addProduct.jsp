@@ -2,7 +2,7 @@
 
 	<jsp:directive.include file="AdminHeader.html" />
 
-	<main class="main">
+	<main class="main" style="margin-top :5em">
 		<div class="page-header text-center" style="background-image:
 			url('/petpet/presentation/assets/images/page-header-bg.jpg')">
 			<div class="container">
@@ -71,7 +71,7 @@
 							</aside><!-- End .col-lg-3 -->
 
 						</div><!-- End .row -->
-						<c:if test='${!requestScope.action.equals("/petpet/edit-product")}'>
+						<c:if test='${!requestScope.action.equals("/petpet/admin/edit-product")}'>
 							<input type="hidden" name="id" value="${requestScope.product.getId()}">
 							<div class="container">
 								<div class="row">
@@ -87,7 +87,7 @@
 						<div class="row" id="image_preview"></div>
 					</c:if>
 					</div>
-				<c:if test='${requestScope.action.equals("/petpet/edit-product")}'>
+				<c:if test='${requestScope.action.equals("/petpet/admin/edit-product")}'>
 					<input type="hidden" name="id" value="${requestScope.product.getId()}">
 					<input type="hidden" name="images"  value='${String.join(",,",requestScope.product.getImagesUlrs())}'>
 				</c:if>

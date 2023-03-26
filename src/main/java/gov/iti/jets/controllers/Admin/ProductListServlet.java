@@ -18,7 +18,7 @@ public class ProductListServlet extends HttpServlet{
 
         List<ProductDto> products =  productsService.getProducts();
 
-        RequestDispatcher requestDis = req.getRequestDispatcher("Products-List");
+        RequestDispatcher requestDis = req.getRequestDispatcher("product-list");
         System.out.println("Products"+products);
         req.setAttribute("productList", products);
 

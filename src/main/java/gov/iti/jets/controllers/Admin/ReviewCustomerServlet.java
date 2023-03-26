@@ -22,7 +22,7 @@ public class ReviewCustomerServlet extends HttpServlet {
 
         req.setAttribute("AllUsers" , users);
 
-        req.getRequestDispatcher("Users-List").forward(req , resp);
+        req.getRequestDispatcher("user-list").forward(req , resp);
 
 
 

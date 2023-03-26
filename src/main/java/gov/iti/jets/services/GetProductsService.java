@@ -8,6 +8,7 @@ import gov.iti.jets.persistent.dao.ProductDaoImpl;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
 import gov.iti.jets.persistent.dto.OrderDto;
 import gov.iti.jets.persistent.dto.ProductDto;
+import gov.iti.jets.persistent.dto.TrendyProductsDTO;
 import gov.iti.jets.persistent.entity.Order;
 import gov.iti.jets.persistent.entity.Product;
 import gov.iti.jets.services.mapper.OrderMapper;
@@ -78,5 +79,10 @@ public class GetProductsService {
         });
 
         return productDtos;
+    }
+    public List<TrendyProductsDTO> firstThreeProducts(){
+        ProductDaoImpl productDao = new ProductDaoImpl();
+        List<TrendyProductsDTO> productList = productDao.firstThreeTrendyProducts();
+        return productList;
     }
 }

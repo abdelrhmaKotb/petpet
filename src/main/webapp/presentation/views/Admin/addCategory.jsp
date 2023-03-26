@@ -1,5 +1,5 @@
 <jsp:directive.include file="AdminHeader.html" />
-<main class="main">
+<main class="main" style="margin-top :5em">
 	<div class="page-header text-center" style="background-image:
 			url('assets/images/page-header-bg.jpg')">
 		<div class="container">
@@ -19,7 +19,7 @@
 		<div class="checkout">
 			<div class="container">
 
-				<form action="/petpet/add-category" method="POST" >
+				<form action="/petpet/adimn/add-category" method="POST" >
 					<div class="row">
 						<div class="col-lg-9">
 							<h2 class="checkout-title"> Adding Category </h2><!-- End .checkout-title -->
@@ -52,3 +52,4 @@
 	</div><!-- End .page-content -->
 </main><!-- End .main -->
 <script src="/petpet/presentation/assets/js/Admin/addCategory.js"></script>
+	<%@ include file="footer.html" %>
