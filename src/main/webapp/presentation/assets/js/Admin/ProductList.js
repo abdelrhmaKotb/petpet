@@ -54,3 +54,75 @@ document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListene
     });
  }));
 
+ var table = document.getElementById("productTable");
+
+ document.querySelectorAll(".next").forEach(link => link.addEventListener('click', (e) => {
+         var p = e.target.closest('a');
+         console.log("from next");
+         e.preventDefault();
+         let pageNumber = p.getAttribute("data-id") ;
+
+
+         console.log(pageNumber);
+              $.ajax
+                     (
+                         {
+                             url:'/petpet/admin/products',
+                             data:{"pageNumber":pageNumber},
+                             type:'post',
+                             cache:false,
+                             success:function(data){
+                              const obj = JSON.parse(data);
+                              fillTable(obj);
+                             },
+                             error:function(){
+                             alert('error');
+                             }
+                         }
+                     );
+
+  }));
+
+ function fillTable(data){
+
+       while(table.rows.length > 1) {
+         table.deleteRow(-1);
+       }
+
+        data.forEach(createRows)
+
+ }
+
+ function createRows(item, index, arr) {
+
+
+      var row = table.insertRow(-1);
+
+
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      var cell5 = row.insertCell(4);
+      var cell6= row.insertCell(5);
+
+      cell1.innerHTML = item.id;
+      cell2.innerHTML = item.name;
+      cell3.innerHTML = item.category.name;
+      cell4.innerHTML = item.prise;
+      cell5.innerHTML = item.quantity;
+      cell6.innerHTML = `<button type="button" rel="tooltip" class="btn btn-success btn-link
+                                                          btn-just-icon btn-sm" data-original-title="" title="Edit">
+                                                      <c:set var="foo" scope="request" value="..." />
+                                                      <a href="/petpet/admin/edit-product?id=${item.id}"><i
+                                                              class="icon-edit"></i></a>
+
+                                                  </button>
+                                                  <button type="button" rel="tooltip" data-id="${item.id}" class="deleteProduct btn btn-danger btn-link
+                                                          btn-just-icon btn-sm" data-original-title="" title="Delete">
+                                                      <i class="icon-close"></i>
+                                                  </button>`;
+
+       $(cell5).find('button').addClass('td-actions text-right');
+ }
+

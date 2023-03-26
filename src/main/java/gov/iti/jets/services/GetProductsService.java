@@ -29,6 +29,19 @@ public class GetProductsService {
 
         return productsList;
     }
+    public List<ProductDto> getProductsByPageNumber(Integer pageNumber){
+        ProductDaoImpl productDao = new ProductDaoImpl();
+
+        List<Product> productList = productDao.findAllProductsByPage(pageNumber);
+
+        List<ProductDto> productDtoList = new ArrayList<>();
+
+        productList.forEach(e -> {
+            productDtoList.add(new ProductMapper().toDto(e));
+        });
+
+        return productDtoList;
+    }
 
     public ProductDto getProduct(int productID){
         RepositoryImpl<Product,Integer> repo = new RepositoryImpl<>(Product.class);
@@ -85,5 +98,12 @@ public class GetProductsService {
         ProductDaoImpl productDao = new ProductDaoImpl();
         List<TrendyProductsDTO> productList = productDao.firstThreeTrendyProducts(mainCategories);
         return productList;
+    }
+    public   long totalOrders( ) {
+        ProductDaoImpl productDao = new ProductDaoImpl();
+
+        long totalProduct = productDao.totalOrders();
+
+        return totalProduct;
     }
 }

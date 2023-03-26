@@ -19,7 +19,7 @@
                 <div class="col-lg-15 col-md-15 ml-auto mr-auto">
 
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table" id="productTable">
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
@@ -55,6 +55,26 @@
                                 </c:forEach>
                             </tbody>
                         </table>
+                          <nav aria-label="Page navigation example">
+                              <ul class="pagination">
+                                <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                  </a>
+                                </li>
+                                  <c:forEach var = "i" begin = "1" end = "${requestScope.totalPages}">
+                                    <li class="page-item"><a class="page-link next" href="#" data-id="${i}" data-userId="${requestScope.UserId}">${i}</a></li>
+                                   </c:forEach>
+                                <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                  </a>
+                                </li>
+
+                              </ul>
+                            </nav>
                     </div>
                 </div>
             </div>

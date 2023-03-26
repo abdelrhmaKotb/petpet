@@ -15,11 +15,11 @@ public class ProductDaoImpl extends RepositoryImpl<Product,Integer> implements P
     }
     @Override
     public List<Product> findAllProductsByPage(Integer pageNumber) {
-        Integer firstResult = 10*pageNumber;
+        Integer firstResult = 5*pageNumber;
 
         Query query = _entityManager.createQuery("From Product p ORDER BY p.id DESC");
         query.setFirstResult(firstResult);
-        query.setMaxResults(10);
+        query.setMaxResults(5);
         List<Product> productList = query.getResultList();
 
 
@@ -62,21 +62,7 @@ public class ProductDaoImpl extends RepositoryImpl<Product,Integer> implements P
     }
     @Override
     public List<TrendyProductsDTO> firstThreeTrendyProducts(List<CategoryDto> mainCategories) {
-/*
-        String maxPrise = """
-                            select new gov.iti.jets.persistent.dto.TrendyProductsDTO( od.product,od.product.category ,count(od))
-                            from OrderDetail od
-                            group by od.product.category ,od.product
-                            having od.product.category.parentId = 0
-                            ORDER BY COUNT(od) DESC
-                            """;
 
-        Query maxQuery = _entityManager.createQuery(maxPrise, TrendyProductsDTO.class);
-        List<TrendyProductsDTO> filteredProducts =  maxQuery.getResultList();
-        filteredProducts.forEach(element ->{
-            System.out.println(element);
-        });
-*/
         List<TrendyProductsDTO> result = new ArrayList<>();
         for (CategoryDto category : mainCategories) {
 
@@ -96,6 +82,17 @@ public class ProductDaoImpl extends RepositoryImpl<Product,Integer> implements P
         }
 
         return result;
+    }
+
+
+    @Override
+    public long totalProducts() {
+
+        String countQ = "Select COUNT(p) from Product p ";
+        Query countQuery = _entityManager.createQuery(countQ);
+        long countResults = (long) countQuery.getSingleResult();
+        System.out.println("countOfOrders"+countQuery.getSingleResult());
+        return countResults;
     }
 
 }

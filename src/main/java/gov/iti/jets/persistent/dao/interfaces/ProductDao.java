@@ -13,4 +13,6 @@ public interface ProductDao   {
     public List<Product> filterProducts (double price, List<Integer> categoriesId);
 
     List<TrendyProductsDTO> firstThreeTrendyProducts(List<CategoryDto> mainCategories);
+
+    long totalProducts();
 }
