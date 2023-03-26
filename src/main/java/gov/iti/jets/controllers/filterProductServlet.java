@@ -3,7 +3,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.google.gson.Gson;
 import gov.iti.jets.persistent.dto.ProductDto;
-import gov.iti.jets.persistent.entity.Product;
 import gov.iti.jets.services.GetProductsService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -13,11 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class filterProductServlet extends HttpServlet {
     @Override

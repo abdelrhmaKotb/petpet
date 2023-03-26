@@ -179,11 +179,14 @@ public class UserDTO {
         this.birthday = birthday;
     }
 
+   
+
     @Override
     public String toString() {
         return "UserDTO [id=" + id + ", firstName=" + firstName + ", userName=" + userName + ", phone=" + phone
                 + ", password=" + password + ", job=" + job + ", creditLimit=" + creditLimit + ", country=" + country
-                + ", street=" + street + ", zip=" + zip + ", city=" + city + ", birthday=" + birthday + "]";
+                + ", street=" + street + ", zip=" + zip + ", city=" + city + ", birthday=" + birthday + ", orderDTOS="
+                + orderDTOS + ", isAdmin=" + isAdmin + "]";
     }
 
     public List<OrderDto> getOrderDTOS() {
