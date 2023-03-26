@@ -60,7 +60,7 @@
                                 <i class="icon-bars"></i>
                             </button>
 
-                            <a href="/petpet/presentation/views/home"
+                            <a href="/petpet/home"
                                 class="logo">
                                 <img
                                     src="/petpet/presentation/assets/images/demos/demo-5/logo.png"

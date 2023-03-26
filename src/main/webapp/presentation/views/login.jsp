@@ -87,7 +87,7 @@
                                     <div id="errorMessage" style="text-align: center;color: red;">${errorMessage}</div>
                                     <div class="form-footer">
                                         <button type="submit" class="btn btn-outline-primary-2">
-                                            <span>SIGN UP</span>
+                                            <span>SIGN In</span>
                                             <i class="icon-long-arrow-right"></i>
                                         </button>
 
@@ -100,7 +100,7 @@
                                     </div><!-- End .form-footer -->
                                 </form>
                             </div><!-- .End .tab-pane -->
-                            <div class="tab-pane fade show active" id="register-2" role="tabpanel"
+                            <div class="tab-pane fade show " id="register-2" role="tabpanel"
                                 aria-labelledby="register-tab-2">
                                 <form action="/petpet/register" method="post">
                                     <div id="name-div" class="col-sm-12">
