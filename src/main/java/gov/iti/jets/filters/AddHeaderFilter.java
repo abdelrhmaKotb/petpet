@@ -55,6 +55,9 @@ public class AddHeaderFilter implements Filter {
                 request.setAttribute("total", total);
                 request.setAttribute("cartItemCount", cart.size());
 
+            }else{
+                request.setAttribute("total", 0);
+                request.setAttribute("cartItemCount", 0);
             }
 
         }

@@ -5,10 +5,10 @@ const swalWithBootstrapButtons = Swal.mixin({
   },
   buttonsStyling: false
 })
-function addListener(){
-document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListener('click', (e) => {
-     var p = e.target.closest('button');
-     console.log(p);
+function addListener() {
+  document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListener('click', (e) => {
+    var p = e.target.closest('button');
+    console.log(p);
     swalWithBootstrapButtons.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -19,28 +19,28 @@ document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListene
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-        let selectedId = p.getAttribute("data-id") ;
+        let selectedId = p.getAttribute("data-id");
         console.log(selectedId);
-             $.ajax
-                    (
-                        {
-                            url:'/petpet/admin/delete-product',
-                            data:{"id":selectedId},
-                            type:'post',
-                            cache:false,
-                            success:function(data){
-                                swalWithBootstrapButtons.fire(
-                                  'Deleted!',
-                                  'Your Product has been deleted.',
-                                  'success'
-                                )
-                                    e.target.closest('tr').remove();
-                            },
-                            error:function(){
-                            alert('error');
-                            }
-                        }
-                    );
+        $.ajax
+          (
+            {
+              url: '/petpet/admin/delete-product',
+              data: { "id": selectedId },
+              type: 'post',
+              cache: false,
+              success: function (data) {
+                swalWithBootstrapButtons.fire(
+                  'Deleted!',
+                  'Your Product has been deleted.',
+                  'success'
+                )
+                e.target.closest('tr').remove();
+              },
+              error: function () {
+                alert('error');
+              }
+            }
+          );
       } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
@@ -52,70 +52,70 @@ document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListene
         )
       }
     });
- }));
+  }));
 
 }
 addListener();
 
- var table = document.getElementById("productTable");
+var table = document.getElementById("productTable");
 
- document.querySelectorAll(".next").forEach(link => link.addEventListener('click', (e) => {
-         var p = e.target.closest('a');
-         console.log("from next");
-         e.preventDefault();
-         let pageNumber = p.getAttribute("data-id") ;
-
-
-         console.log(pageNumber);
-              $.ajax
-                     (
-                         {
-                             url:'/petpet/admin/products',
-                             data:{"pageNumber":pageNumber},
-                             type:'post',
-                             cache:false,
-                             success:function(data){
-                              const obj = JSON.parse(data);
-                              fillTable(obj);
-                             },
-                             error:function(){
-                             alert('error');
-                             }
-                         }
-                     );
-
-  }));
-
- function fillTable(data){
-
-       while(table.rows.length > 1) {
-         table.deleteRow(-1);
-       }
-
-        data.forEach(createRows);
-        addListener();
-
- }
-
- function createRows(item, index, arr) {
+document.querySelectorAll(".next").forEach(link => link.addEventListener('click', (e) => {
+  var p = e.target.closest('a');
+  console.log("from next");
+  e.preventDefault();
+  let pageNumber = p.getAttribute("data-id");
 
 
-      var row = table.insertRow(-1);
+  console.log(pageNumber);
+  $.ajax
+    (
+      {
+        url: '/petpet/admin/products',
+        data: { "pageNumber": pageNumber },
+        type: 'post',
+        cache: false,
+        success: function (data) {
+          const obj = JSON.parse(data);
+          fillTable(obj);
+        },
+        error: function () {
+          alert('error');
+        }
+      }
+    );
+
+}));
+
+function fillTable(data) {
+
+  while (table.rows.length > 1) {
+    table.deleteRow(-1);
+  }
+
+  data.forEach(createRows);
+  addListener();
+
+}
+
+function createRows(item, index, arr) {
 
 
-      var cell1 = row.insertCell(0);
-      var cell2 = row.insertCell(1);
-      var cell3 = row.insertCell(2);
-      var cell4 = row.insertCell(3);
-      var cell5 = row.insertCell(4);
-      var cell6= row.insertCell(5);
+  var row = table.insertRow(-1);
 
-      cell1.innerHTML = item.id;
-      cell2.innerHTML = item.name;
-      cell3.innerHTML = item.category.name;
-      cell4.innerHTML = item.prise;
-      cell5.innerHTML = item.quantity;
-      cell6.innerHTML = `<button type="button" rel="tooltip" class="btn btn-success btn-link
+
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+
+  cell1.innerHTML = item.id;
+  cell2.innerHTML = item.name;
+  cell3.innerHTML = item.category.name;
+  cell4.innerHTML = item.price;
+  cell5.innerHTML = item.quantity;
+  cell6.innerHTML = `<button type="button" rel="tooltip" class="btn btn-success btn-link
                                                           btn-just-icon btn-sm" data-original-title="" title="Edit">
                                                       <a href="/petpet/admin/edit-product?id=${item.id}"><i
                                                               class="icon-edit"></i></a>
@@ -126,6 +126,8 @@ addListener();
                                                       <i class="icon-close"></i>
                                                   </button>`;
 
-       $(cell5).find('button').addClass('td-actions text-right');
- }
+  $(cell4).addClass('td-actions text-right');
+  $(cell5).addClass('td-actions text-right');
+  $(cell6).addClass('td-actions text-right');
+}
 

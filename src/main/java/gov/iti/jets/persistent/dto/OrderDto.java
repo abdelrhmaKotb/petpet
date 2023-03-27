@@ -3,8 +3,6 @@ package gov.iti.jets.persistent.dto;
 import gov.iti.jets.persistent.entity.Order;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.Instant;
 import java.util.Date;
 import java.util.Objects;
 
