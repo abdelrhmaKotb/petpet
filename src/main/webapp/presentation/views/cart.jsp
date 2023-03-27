@@ -159,7 +159,7 @@
 									CHECKOUT</a>
 							</div><!-- End .summary -->
 
-							<a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE
+							<a href="/petpet/cart" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE
 									SHOPPING</span><i class="icon-refresh"></i></a>
 						</aside><!-- End .col-lg-3 -->
 					</div><!-- End .row -->

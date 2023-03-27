@@ -72,9 +72,15 @@
 											<a href="/petpet/Shope" class="btn btn-outline-primary-2"><span>GO
 													SHOP</span><i class="icon-long-arrow-right"></i></a>
 										</c:when>
+
 										<c:otherwise>
-											<p>Your last 5 order.</p>
-											<table id="" class="table">
+										<c:choose>
+										    <c:when>
+                                                <p>Your Don&apos;t have Orders Yet </span>? <a href="/petpet/Shop">go shopping </a>.</p>
+										    </c:when>
+										    <c:otherwise>
+                                            <p>Your last ${requestScope.totalOrders}  order.</p>
+											    <table id="" class="table">
 												<thead>
 													<tr class="text-center">
 														<th class="text-center">#</th>
@@ -85,7 +91,7 @@
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach var="item" items="${orders}">
+													<c:forEach var="item" items="${requestScope.orders}">
 
 														<tr class="text-center">
 															<td>${item.getId()}</td>
@@ -98,6 +104,9 @@
 													</c:forEach>
 												</tbody>
 											</table>
+
+										    </c:otherwise>
+										</c:choose>
 
 										</c:otherwise>
 									</c:choose>

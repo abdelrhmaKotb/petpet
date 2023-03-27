@@ -38,10 +38,12 @@ public class UserAccount extends HttpServlet {
                 GetOrdersServices getOrdersServices = new GetOrdersServices();
                 List<OrderDto> orderDtoList = getOrdersServices.getUserOrders((userDTO.getId()),
                         Integer.valueOf(pageNumber));
-
+                long totalOrders = getOrdersServices.totalOrders(userDTO.getId());
                 System.out.println("orderDto"+orderDtoList);
+                System.out.println("totalOrders"+totalOrders);
 
                 req.setAttribute("orders", orderDtoList);
+                req.setAttribute("totalOrders", totalOrders);
 
                 dispatcher.forward(req, resp);
 
