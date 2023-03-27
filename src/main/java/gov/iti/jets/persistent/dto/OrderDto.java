@@ -3,6 +3,7 @@ package gov.iti.jets.persistent.dto;
 import gov.iti.jets.persistent.entity.Order;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -11,12 +12,12 @@ import java.util.Objects;
  */
 public class OrderDto implements Serializable {
     private final Integer id;
-    private final Date createdAt;
+    private final LocalDate createdAt;
     private final Double totalPrice;
-    private final Integer status;
+    private final String status;
     
 
-    public OrderDto(Integer id, Date createdAt, Double totalPrice, Integer status) {
+    public OrderDto(Integer id, LocalDate createdAt, Double totalPrice, String status) {
         this.id = id;
         this.createdAt = createdAt;
         this.totalPrice = totalPrice;
@@ -27,7 +28,7 @@ public class OrderDto implements Serializable {
         return id;
     }
 
-    public Date getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
@@ -35,7 +36,7 @@ public class OrderDto implements Serializable {
         return totalPrice;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 

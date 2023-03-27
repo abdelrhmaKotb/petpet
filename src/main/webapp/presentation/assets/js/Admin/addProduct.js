@@ -32,16 +32,41 @@ var validation = {
 
 $("input").change(function () {
     console.log("input changed");
-    if (produuctImages && productQuantity && productPrice && productName) {
+    if (productQuantity && productPrice && productName) {
         addProductBtn.disabled = false;
     } else {
         addProductBtn.disabled = true;
     }
 });
 
+$(document).ready(function () {
+    if ($("#productPrice").val()) {
+        numbersValidation($("#productPrice"), "#wrongPrice", "price");
+    }
+
+    if ($("#productQuantity").val()) {
+        numbersValidation($("#productQuantity"), "#wrongPrice", "Quantity");
+    }
+
+
+    if($('#productName').val()){
+        if (validation.isNumber($('#productName').val())) {
+            $("#wrongName").text("The product name need to contain a characters");
+            $("#wrongName").removeClass("d-none");
+            $($('#productName')).removeClass("form-control is-valid").addClass("form-control is-invalid");
+            productName = false;
+        } else {
+            $("#wrongName").addClass("d-none");
+            $($('#productName')).removeClass("form-control is-invalid").addClass("form-control is-valid");
+            productName = true;
+        }
+    }
+
+
+});
+
 $("#productPrice").keyup(function () {
     numbersValidation(this, "#wrongPrice", "price");
-
 });
 
 $("#productQuantity").keyup(function () {

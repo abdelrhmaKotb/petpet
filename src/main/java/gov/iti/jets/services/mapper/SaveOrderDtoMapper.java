@@ -28,6 +28,7 @@ public class SaveOrderDtoMapper implements Mapper<Order, SaveOrderDto> {
         order.setUser(new UserMapper().toEntity(r.getUser()));
         System.out.println(new UserMapper().toEntity(r.getUser()));
         order.setTotalPrice(r.getTotalPrice());
+        order.setCreatedAt(r.getCreatedAt());
         return order;
     }
 
