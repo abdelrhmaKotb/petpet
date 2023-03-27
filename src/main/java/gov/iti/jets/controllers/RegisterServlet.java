@@ -9,6 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.mindrot.jbcrypt.BCrypt;
 
 // @WebServlet(urlPatterns = {"/register"} , name = "RegisterServlet")
@@ -19,7 +20,6 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        System.out.println("Hiii in post");
         String fName = req.getParameter("register-Name");
         String[] selectedInterest = req.getParameterValues("multiple-select-field");
         System.out.println(selectedInterest.length);
@@ -43,8 +43,16 @@ public class RegisterServlet extends HttpServlet {
         RegisterService service = new RegisterService();
         if (Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone)) {
             System.out.println("All true");
-            service.register(user);
-            req.getRequestDispatcher("home").forward(req, resp);
+            boolean creationResult = service.register(user);
+            if(creationResult){
+                HttpSession session = req.getSession(true);
+                session.setAttribute("userSession", user);
+                req.getRequestDispatcher("home").forward(req, resp);
+            }else {
+                req.setAttribute("errorMsg","something happened wrongly please try to register again");
+                req.getRequestDispatcher("login").forward(req, resp);
+            }
+
         } else {
             resp.sendRedirect("login");
         }

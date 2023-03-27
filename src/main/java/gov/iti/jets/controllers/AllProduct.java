@@ -25,7 +25,6 @@ public class AllProduct extends HttpServlet {
         if(category != null){
             GetProductsService getProductsService = new GetProductsService();
             List<ProductDto> dtos = null;
-            System.out.println("category isn'tr null "+ category);
             switch (category) {
                 case "trendy":
                     dtos =getProductsService.trendyProducts();

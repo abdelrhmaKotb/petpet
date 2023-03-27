@@ -3,13 +3,23 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
 	version="5.0" metadata-complete="true">
-	<!--Start
-	of JSP mapping-->
 
-	<!--	<servlet>
-		<servlet-name>Home</servlet-name>
-		<jsp-file>/presentation/views/index-5.jsp</jsp-file>
-	</servlet> -->
+	<!-- Start of Listeners Mapping -->
+	<listener>
+		<listener-class>
+			gov.iti.jets.listeners.ApplicationListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			gov.iti.jets.listeners.SessionListener
+		</listener-class>
+	</listener>
+
+	<!--  end of Listeners  -->
+	<!--Start of JSP mapping-->
+
+
 	<servlet>
 		<servlet-name>About</servlet-name>
 		<jsp-file>/presentation/views/about-2.jsp</jsp-file>

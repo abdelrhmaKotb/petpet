@@ -32,6 +32,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
         } catch (Exception ex) {
             _entityManager.getTransaction().rollback();
             System.out.println("erro : " + ex.getMessage());
+            return null;
             // throw ex;
         }
 
