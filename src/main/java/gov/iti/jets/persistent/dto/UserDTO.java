@@ -1,6 +1,5 @@
 package gov.iti.jets.persistent.dto;
 
-import gov.iti.jets.persistent.entity.Interest;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

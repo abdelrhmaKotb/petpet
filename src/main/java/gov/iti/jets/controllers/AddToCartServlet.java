@@ -16,7 +16,6 @@ public class AddToCartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // must come from session (currentUser)
-        int userId = 12;
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("presentation/views/cart.jsp");
 

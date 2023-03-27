@@ -1,13 +1,9 @@
 package gov.iti.jets.services;
 
 import gov.iti.jets.persistent.dao.OrderDaoImpl;
-import gov.iti.jets.persistent.dao.RepositoryImpl;
 import gov.iti.jets.persistent.dto.OrderDto;
-import gov.iti.jets.persistent.dto.ProductDto;
 import gov.iti.jets.persistent.entity.Order;
-import gov.iti.jets.persistent.entity.Product;
 import gov.iti.jets.services.mapper.OrderMapper;
-import gov.iti.jets.services.mapper.ProductMapper;
 
 import java.util.ArrayList;
 import java.util.List;

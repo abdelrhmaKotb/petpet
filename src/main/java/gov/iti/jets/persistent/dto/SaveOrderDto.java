@@ -1,7 +1,7 @@
 package gov.iti.jets.persistent.dto;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class SaveOrderDto  {
@@ -9,7 +9,7 @@ public class SaveOrderDto  {
 
     private Integer id;
 
-    private LocalDate createdAt;
+    private Date createdAt;
 
     
     private String country;
@@ -74,11 +74,11 @@ public class SaveOrderDto  {
         this.id = id;
     }
 
-    public LocalDate getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDate createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 

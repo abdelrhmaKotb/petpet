@@ -29,7 +29,6 @@ public class UserDaoImpl extends RepositoryImpl<User,Integer>  implements UserDa
 
     @Override
     public User find() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'find'");
     }
 

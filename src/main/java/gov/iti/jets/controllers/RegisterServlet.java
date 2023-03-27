@@ -2,6 +2,7 @@ package gov.iti.jets.controllers;
 
 import java.io.IOException;
 import java.time.LocalDate;
+
 import gov.iti.jets.helpers.Validation;
 import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.services.RegisterService;
@@ -39,6 +40,8 @@ public class RegisterServlet extends HttpServlet {
         LocalDate date = LocalDate.parse(birthday); // date formater
         UserDTO user = new UserDTO(fName, userName, phone, hashedPassword, job, creditLimit, country, street, null,
                 city, date);
+
+
 
         RegisterService service = new RegisterService();
         if (Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone)) {

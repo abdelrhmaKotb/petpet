@@ -1,9 +1,6 @@
 package gov.iti.jets.services;
 
 import gov.iti.jets.persistent.dao.CartDaoImpl;
-import gov.iti.jets.persistent.dao.RepositoryImpl;
-import gov.iti.jets.persistent.dao.interfaces.CartDao;
-import gov.iti.jets.persistent.dto.CartDto;
 import gov.iti.jets.persistent.entity.Cart;
 import gov.iti.jets.persistent.entity.User;
 
