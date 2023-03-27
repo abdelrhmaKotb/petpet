@@ -18,7 +18,6 @@
                         <th class="text-center">#</th>
                         <th class="text-center">Customer Name</th>
                         <th class="text-center">Email</th>
-                        <th class="text-center">Password</th>
                         <th class="text-center">CreditLimit</th>
                         <th class="text-center">Birthday</th>
                         <th class="text-center">Job</th>
@@ -32,7 +31,6 @@
                             <td class="text-center">${index.getId()}</td>
                             <td class="text-center">${index.getName()}</td>
                             <td class="text-center">${index.getEmail()}</td>
-                            <td class="text-center">${index.getPassword()}</td>
                             <td class="text-center">${index.getCreditLimit()}</td>
                             <td class="text-center">${index.getBirthday()}</td>
                             <td class="text-center">${index.getJob()}</td>

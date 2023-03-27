@@ -28,7 +28,7 @@ public class CheckoutServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int userId = 12;
+       // int userId = 12;
 
         HttpSession session = req.getSession(false);
 
@@ -36,50 +36,56 @@ public class CheckoutServlet extends HttpServlet {
 
         if (session != null) {
             user = (UserDTO) session.getAttribute("userSession");
-        }
+            if(user != null) {
 
-        String country = req.getParameter("register-country");
-        String street = req.getParameter("register-street");
-        String city = req.getParameter("register-city");
-        String phone = req.getParameter("register-phone");
-        String email = req.getParameter("register-email");
-        String zip = req.getParameter("zip");
-        String notes = req.getParameter("notes");
+                String country = req.getParameter("register-country");
+                String street = req.getParameter("register-street");
+                String city = req.getParameter("register-city");
+                String phone = req.getParameter("register-phone");
+                String email = req.getParameter("register-email");
+                String zip = req.getParameter("zip");
+                String notes = req.getParameter("notes");
 
-        SaveOrderDto order = new SaveOrderDto();
-        order.setCity(city);
-        order.setCountry(country);
-        order.setPhone(phone);
-        order.setEmail(email);
-        order.setStreet(street);
-        order.setNotes(notes);
-        order.setZIP(zip);
-        order.setUser(user);
+                SaveOrderDto order = new SaveOrderDto();
+                order.setCity(city);
+                order.setCountry(country);
+                order.setPhone(phone);
+                order.setEmail(email);
+                order.setStreet(street);
+                order.setNotes(notes);
+                order.setZIP(zip);
+                order.setUser(user);
 
-        // Double cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
+                // Double cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
 
-        AddToCartService addToCartService = new AddToCartService();
-        String cartJson = addToCartService.get(userId);
-        Gson gson = new Gson();
-        Type listType = new TypeToken<List<CartItem>>() {
-        }.getType();
-        List<CartItem> cart = gson.fromJson(cartJson, listType);
-        if (cart == null) {
-            cart = new ArrayList<>();
-        }
+                AddToCartService addToCartService = new AddToCartService();
+                String cartJson = addToCartService.get(user.getId());
+                Gson gson = new Gson();
+                Type listType = new TypeToken<List<CartItem>>() {
+                }.getType();
+                List<CartItem> cart = gson.fromJson(cartJson, listType);
+                if (cart == null) {
+                    cart = new ArrayList<>();
+                }
 
-        CheckoutService checkoutService = new CheckoutService();
-        List<String> err = checkoutService.checkout(cart, order);
+                CheckoutService checkoutService = new CheckoutService();
+                List<String> err = checkoutService.checkout(cart, order);
 
-        if (err.size() > 0) {
-            // resp.getWriter().println(err);
-            req.setAttribute("errors", err);
-            req.getRequestDispatcher("presentation/views/checkout.jsp").forward(req, resp);
+                if (err.size() > 0) {
+                    // resp.getWriter().println(err);
+                    req.setAttribute("errors", err);
+                    req.getRequestDispatcher("presentation/views/checkout.jsp").forward(req, resp);
 
-        } else {
-            // resp.getWriter().println("done");
+                } else {
+                    // resp.getWriter().println("done");
+                    resp.sendRedirect("/petpet/my-account?cart=empty");
+
+                }
+            }else {
+                resp.sendRedirect("/petpet/my-account?cart=empty");
+            }
+        }else {
             resp.sendRedirect("/petpet/my-account?cart=empty");
-
         }
     }
 }

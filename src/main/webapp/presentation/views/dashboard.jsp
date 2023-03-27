@@ -29,7 +29,7 @@
 										aria-selected="true">Dashboard</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link orders" id="tab-orders-link" data-toggle="tab" href="#tab-orders"
+									<a class="nav-link " id="tab-orders-link" data-toggle="tab" href="#tab-orders"
 										role="tab" aria-controls="tab-orders" aria-selected="false">Orders</a>
 								</li>
 

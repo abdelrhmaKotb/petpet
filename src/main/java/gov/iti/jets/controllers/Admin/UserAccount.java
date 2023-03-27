@@ -32,14 +32,14 @@ public class UserAccount extends HttpServlet {
             } else {
 
                 // String pageNumber = req.getParameter("pageNumber");
-                String pageNumber = "1";
+                String pageNumber = "0";
                 UserDTO userDTO = (UserDTO) session.getAttribute("userSession");
 
                 GetOrdersServices getOrdersServices = new GetOrdersServices();
                 List<OrderDto> orderDtoList = getOrdersServices.getUserOrders((userDTO.getId()),
                         Integer.valueOf(pageNumber));
 
-                System.out.println(orderDtoList);
+                System.out.println("orderDto"+orderDtoList);
 
                 req.setAttribute("orders", orderDtoList);
 
