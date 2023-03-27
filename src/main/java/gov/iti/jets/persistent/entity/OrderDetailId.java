@@ -2,7 +2,6 @@ package gov.iti.jets.persistent.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
@@ -16,6 +15,14 @@ public class OrderDetailId implements Serializable {
 
     @Column(name = "product_id", nullable = false)
     private Integer productId;
+
+    public OrderDetailId() {
+    }
+
+    public OrderDetailId(Integer orderId, Integer productId) {
+        this.orderId = orderId;
+        this.productId = productId;
+    }
 
     public Integer getOrderId() {
         return orderId;
@@ -35,8 +42,10 @@ public class OrderDetailId implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        if (this == o)
+            return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
+            return false;
         OrderDetailId entity = (OrderDetailId) o;
         return Objects.equals(this.productId, entity.productId) &&
                 Objects.equals(this.orderId, entity.orderId);

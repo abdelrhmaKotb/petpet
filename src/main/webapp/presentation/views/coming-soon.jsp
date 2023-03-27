@@ -1,4 +1,4 @@
-<jsp:directive.include file="header.html" />
+<jsp:directive.include file="header.jsp" />
  <script>
     $(function() {
         "use strict";

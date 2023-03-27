@@ -2,7 +2,6 @@ package gov.iti.jets.persistent.entity;
 
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +30,16 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.MERGE}, orphanRemoval = true)
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST,
+            CascadeType.MERGE }, orphanRemoval = true)
     List<ProductImage> images = new ArrayList<>();
+
+    public Product() {
+    }
+
+    public Product(Integer id) {
+        this.id = id;
+    }
 
     public List<ProductImage> getImages() {
         return images;
@@ -85,6 +92,8 @@ public class Product {
     public String getDescription() {
         return description;
     }
+
+    
 
     public void setDescription(String description) {
         this.description = description;

@@ -1,5 +1,6 @@
 package gov.iti.jets.persistent.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,10 +21,7 @@ public class ProductDto {
   
     private String description;
 
-    private List<String> imagesUlrs;
-
-
-  
+    private List<String> imagesUlrs = new ArrayList<>();
 
     public ProductDto(String name, Double price, CategoryDto category, Integer quantity, String description,
             List<String> imagesUlrs) {
@@ -93,7 +91,7 @@ public class ProductDto {
         this.description = description;
     }
 
-    public List<String> getImagesUlrs() {
+        public List<String> getImagesUlrs() {
         return imagesUlrs;
     }
 

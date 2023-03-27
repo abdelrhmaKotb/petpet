@@ -5,10 +5,12 @@ import java.util.List;
 import gov.iti.jets.persistent.dao.interfaces.Repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
+import jakarta.persistence.criteria.CriteriaBuilder;
 
 public class RepositoryImpl<E, K> implements Repository<E, K> {
 
-    private EntityManager _entityManager;
+    protected EntityManager _entityManager;
+    protected CriteriaBuilder _criteriaBuilder;
     private Class<E> type;
 
     public RepositoryImpl() {
@@ -16,6 +18,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
 
     public RepositoryImpl(Class<E> e) {
         _entityManager = EntityHandler.getEntityManager();
+        _criteriaBuilder = EntityHandler.getCriteriaBuilder();
         type = e;
     }
 
@@ -29,6 +32,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
         } catch (Exception ex) {
             _entityManager.getTransaction().rollback();
             System.out.println("erro : " + ex.getMessage());
+            return null;
             // throw ex;
         }
 
@@ -40,9 +44,13 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
         E ew = _entityManager.find(type, id);
         return ew;
     }
+    @Override
+    public E findFromContext(K id) {
+        E ew = _entityManager.getReference(type, id);
+        return ew;
+    }
 
     @Override
-
     public List<E> findAll() {
 
         List<E> list = (List<E>) _entityManager.createQuery("FROM " + type.getName() + " ").getResultList();

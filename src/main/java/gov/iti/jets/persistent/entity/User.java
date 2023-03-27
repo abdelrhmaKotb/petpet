@@ -1,14 +1,11 @@
 package gov.iti.jets.persistent.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -34,7 +31,7 @@ public class User {
     private String email;
 
     @Column(name = "credit_limit", precision = 10)
-    private BigDecimal creditLimit;
+    private Double creditLimit;
 
     @Column(name = "country", length = 100)
     private String country;
@@ -50,6 +47,27 @@ public class User {
 
     @Column(name = "ZIP", length = 100)
     private String zip;
+
+    private boolean isAdmin;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Order> orderList = new ArrayList<Order>();
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
 
     public Integer getId() {
         return id;
@@ -99,11 +117,11 @@ public class User {
         this.email = email;
     }
 
-    public BigDecimal getCreditLimit() {
+    public Double getCreditLimit() {
         return creditLimit;
     }
 
-    public void setCreditLimit(BigDecimal creditLimit) {
+    public void setCreditLimit(Double creditLimit) {
         this.creditLimit = creditLimit;
     }
 
@@ -153,7 +171,5 @@ public class User {
                 + job + ", email=" + email + ", creditLimit=" + creditLimit + ", country=" + country + ", street="
                 + street + ", city=" + city + ", phone=" + phone + ", zip=" + zip + "]";
     }
-
-    
 
 }

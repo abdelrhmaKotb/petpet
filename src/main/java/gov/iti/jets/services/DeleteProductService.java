@@ -6,12 +6,12 @@ import gov.iti.jets.persistent.entity.Product;
 import gov.iti.jets.services.mapper.ProductMapper;
 
 public class DeleteProductService {
-    public boolean deleteProduct(Product product) {
+    public Product deleteProduct(Integer productId) {
 
         RepositoryImpl<Product, Integer> repo = new RepositoryImpl<>(Product.class);
-
+        Product  product = repo.find(productId);
         boolean result = repo.remove(product);
 
-        return result;
+        return product;
     }
 }
