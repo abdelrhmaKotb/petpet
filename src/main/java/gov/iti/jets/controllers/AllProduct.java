@@ -38,7 +38,7 @@ public class AllProduct extends HttpServlet {
             
             req.setAttribute("productList", dtos);
             
-            dtos.forEach(System.out::println);
+            // dtos.forEach(System.out::println);
 
             req.getRequestDispatcher("/presentation/views/shop.jsp").forward(req, resp);
         }else {  

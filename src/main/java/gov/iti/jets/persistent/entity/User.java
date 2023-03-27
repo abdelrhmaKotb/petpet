@@ -2,8 +2,8 @@ package gov.iti.jets.persistent.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -18,7 +18,7 @@ public class User {
     private String name;
 
     @Column(name = "birthday")
-    private LocalDate birthday;
+    private Date birthday;
 
     @Column(name = "password")
     private String password;
@@ -88,7 +88,7 @@ public class User {
         this.name = name;
     }
 
-    public LocalDate getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
     public List<Interest> getInterest() {
@@ -98,7 +98,7 @@ public class User {
     public void setInterest(List<Interest> interest) {
         this.interest = interest;
     }
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 

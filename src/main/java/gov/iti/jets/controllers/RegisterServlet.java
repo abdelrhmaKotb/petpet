@@ -39,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
         // BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
         LocalDate date = LocalDate.parse(birthday); // date formater
         UserDTO user = new UserDTO(fName, userName, phone, hashedPassword, job, creditLimit, country, street, null,
-                city, date);
+                city, java.sql.Date.valueOf(date));
 
 
 

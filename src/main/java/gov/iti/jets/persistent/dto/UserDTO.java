@@ -1,7 +1,6 @@
 package gov.iti.jets.persistent.dto;
 
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class UserDTO {
     String street;
     String zip;
     String city;
-    LocalDate birthday;
+    java.util.Date birthday;
     List<OrderDto> orderDTOS = new ArrayList<>();
     List<InterestDto> interestDtos = new ArrayList<>();
     boolean isAdmin;
@@ -28,7 +27,7 @@ public class UserDTO {
     }
 
     public UserDTO(Integer id, String firstName, String userName, String phone, String password, String job,
-            Double creditLimit, String country, String street, String zip, String city, LocalDate birthday) {
+            Double creditLimit, String country, String street, String zip, String city, java.util.Date birthday) {
         this.id = id;
         this.firstName = firstName;
         this.userName = userName;
@@ -43,7 +42,7 @@ public class UserDTO {
         this.birthday = birthday;
     }
     public UserDTO(Integer id, String firstName, String userName, String phone, String password, String job,
-            Double creditLimit, String country, String street, String zip, String city, LocalDate birthday,boolean isAdmin) {
+            Double creditLimit, String country, String street, String zip, String city, java.util.Date birthday,boolean isAdmin) {
         this.id = id;
         this.firstName = firstName;
         this.userName = userName;
@@ -60,7 +59,7 @@ public class UserDTO {
     }
 
     public UserDTO(String name, String userName, String phone, String password, String job, Double creditLimit,
-            String country, String street, String zip, String city, LocalDate birthday) {
+            String country, String street, String zip, String city, java.util.Date birthday) {
         this.firstName = name;
         this.userName = userName;
         this.phone = phone;
@@ -75,7 +74,7 @@ public class UserDTO {
     }
 
     public UserDTO(String firstName, String userName, String phone, String password, String job, Double creditLimit,
-                   String country, String street, String zip, String city, LocalDate birthday, List<InterestDto> interestDtos) {
+                   String country, String street, String zip, String city, java.util.Date birthday, List<InterestDto> interestDtos) {
         this.firstName = firstName;
         this.userName = userName;
         this.phone = phone;
@@ -189,11 +188,11 @@ public class UserDTO {
         this.city = city;
     }
 
-    public LocalDate getBirthday() {
+    public java.util.Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(java.util.Date birthday) {
         this.birthday = birthday;
     }
 
