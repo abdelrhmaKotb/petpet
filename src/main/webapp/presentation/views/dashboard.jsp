@@ -75,8 +75,8 @@
 
 										<c:otherwise>
 										<c:choose>
-										    <c:when>
-                                                <p>Your Don&apos;t have Orders Yet </span>? <a href="/petpet/Shop">go shopping </a>.</p>
+										    <c:when  test="${requestScope.totalOrders < 1}">
+                                                <p>No order has been made yet </span><a href="/petpet/Shop">go shopping ?</a>.</p>
 										    </c:when>
 										    <c:otherwise>
                                             <p>Your last ${requestScope.totalOrders}  order.</p>
