@@ -13,13 +13,38 @@ import jakarta.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RequestDispatcher dispatcher = req.getRequestDispatcher("presentation/views/login.jsp");
+
+        HttpSession session = req.getSession(false);
+
+        if (session == null) {
+
+            dispatcher.forward(req, resp);
+
+        } else {
+            UserDTO user = (UserDTO) session.getAttribute("userSession");
+
+            System.out.println("user " + user);
+
+            if (user == null) {
+                dispatcher.forward(req, resp);
+            } else {
+                resp.sendRedirect("/petpet/home");
+
+
+            }
+        }
+
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String Emal = req.getParameter("register-email");
         String pass = req.getParameter("register-password");
         UserDTO userDTO = new loginService().isUser(Emal, pass);
 
         if (userDTO != null) {
-
             HttpSession session = req.getSession(true);
 
             session.setAttribute("userSession", userDTO);
@@ -28,9 +53,9 @@ public class LoginServlet extends HttpServlet {
 
             // req.getRequestDispatcher("home").forward(req, resp);
 
-            if(userDTO.isAdmin()){
+            if (userDTO.isAdmin()) {
                 resp.sendRedirect("/petpet/admin");
-            }else{
+            } else {
                 resp.sendRedirect("/petpet/home");
             }
         } else if (new loginService().isExistUser(Emal)) {
@@ -49,10 +74,4 @@ public class LoginServlet extends HttpServlet {
 
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        RequestDispatcher r = req.getRequestDispatcher("presentation/views/login.jsp");
-        r.forward(req, resp);
-    }
 }

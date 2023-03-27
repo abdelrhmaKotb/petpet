@@ -4,13 +4,21 @@ $(document).ready(function () {
     let productId = $(this).attr("data-id");
     let productName = $(this).attr("data-name");
     let productPrice = $(this).attr("data-price");
-    let productQty = 1;
+    let productImage = $(this).attr("data-image");
+    let productQty = $("#qty").val();
+
+    if(!productQty){
+      productQty = 1;
+    }
+
+    console.log(productQty);
 
     let cartItem = {
       productId,
       productName,
       productQty,
-      productPrice
+      productPrice,
+      productImage
     };
 
 
@@ -27,7 +35,7 @@ $(document).ready(function () {
     console.log(obj);
 
     if (obj) {
-      obj.productQty++;
+      obj.productQty =  +obj.productQty + +productQty;
     } else {
       cart.push(cartItem);
     }

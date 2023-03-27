@@ -41,7 +41,7 @@
 
 	<servlet>
 		<servlet-name>login</servlet-name>
-		<jsp-file>/presentation/views/login.jsp</jsp-file>
+		<servlet-class>gov.iti.jets.controllers.LoginServlet</servlet-class>
 	</servlet>
 
 
@@ -352,6 +352,7 @@
 		<filter-name>AddHeaderFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+
 	<filter>
 		<filter-name>AdminFilter</filter-name>
 		<filter-class>gov.iti.jets.filters.AdminFilter</filter-class>
@@ -360,6 +361,16 @@
 		<filter-name>AdminFilter</filter-name>
 		<url-pattern>/admin/*</url-pattern>
 	</filter-mapping>
+
+
+	<servlet>
+		<servlet-name>userAccount</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.UserAccount</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userAccount</servlet-name>
+		<url-pattern>/my-account</url-pattern>
+	</servlet-mapping>
 
 	<error-page>
 		<error-code>404</error-code>
