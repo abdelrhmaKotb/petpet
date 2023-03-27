@@ -75,11 +75,28 @@
                                     </li>
                                     <c:choose>
                                         <c:when test="${empty sessionScope.userSession}">
-                                            <li><a href="/petpet/login">Login</a></li>
+                                            <li><a href="/petpet/login">Sign In/Up</a></li>
                                         </c:when>
                                         <c:otherwise>
-                                            <!-- Code to be executed if the expression is false -->
-                                            <li> <a href="/petpet/logout">Log out</a> </li>
+                                            <li>  <a href="/petpet/my-account">Profile</a>
+                                             <div class="megamenu megamenu-md">
+                                                <div class="row no-gutters">
+                                                    <div class="">
+                                                        <div class="menu-col">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="menu-title"><a href="/petpet/my-account">My Account</a></div>
+                                                                    <div class="menu-title"><a href="/petpet/logout">Logout</a></div>
+                                                                </div><!-- End .col-md-6 -->
+                                                            </div><!-- End .row -->
+                                                        </div><!-- End .menu-col -->
+                                                    </div><!-- End .col-md-8 -->
+
+
+                                                </div><!-- End .row -->
+                                            </div><!-- End .megamenu megamenu-md -->
+                                            </li>
+
                                         </c:otherwise>
                                     </c:choose>
 

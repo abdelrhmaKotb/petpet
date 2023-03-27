@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 
 <!-- molla/checkout.html  22 Nov 2019 09:55:06 GMT -->
 
@@ -88,6 +88,26 @@
                                 <li>
                                     <a href="/petpet/about">About</a>
                                 </li>
+                                 <c:choose>
+                                    <c:when test="${empty sessionScope.userSession}">
+                                        <li><a href="/petpet/login">Sign In/Up</a></li>
+                                    </c:when>
+                                    <c:otherwise>
+                                      <li>  <span> Profile </span>
+                                       <div class="megamenu megamenu-md">
+                                          <div class="row no-gutters">
+                                              <div class="">
+                                                  <div class="menu-col">
+                                                      <div class="row">
+                                                          <div class="col-md-6">
+                                                              <div class="menu-title"><a href="/petpet/my-account">My Account</a></div>
+                                                              <div class="menu-title"><a href="/petpet/logout">Logout</a></div>
+                                                          </div><!-- End .col-md-6 -->
+                                                      </div><!-- End .row -->
+                                                  </div><!-- End .menu-col -->
+                                              </div><!-- End .col-md-8 -->
+                                    </c:otherwise>
+                                </c:choose>
                             </ul><!-- End .menu -->
                         </nav><!-- End .main-nav -->
                     </div><!-- End .header-left -->

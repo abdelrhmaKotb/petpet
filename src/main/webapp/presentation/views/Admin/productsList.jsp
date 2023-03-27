@@ -25,6 +25,7 @@
                             <th class="text-center">#</th>
                             <th>Pet Name</th>
                             <th>Category</th>
+                            <th>Status</th>
                             <th class="text-right">Price</th>
                             <th class="text-right">Quantity</th>
                             <th class="text-right">Actions</th>
@@ -36,7 +37,15 @@
                                 <td class="text-center">${product.getId() }</td>
                                 <td>${product.getName() }</td>
                                 <td>${product.getCategory().getName()}</td>
-                                <td class="text-right">${product.getPrice()}</td>
+                                 <c:choose>
+                                 <c:when test="${product.getQuantity() == 0}">
+                                    <td class="stock-col"><span class="out-of-stock">Out stock</span></td>
+                                  </c:when>
+                                  <c:otherwise>
+                                         <td class="stock-col"><span class="in-stock">In stock</span></td>
+                                   </c:otherwise>
+                                    </c:choose>
+                                <td class="text-right">${product.getPrice()} EGP</td>
                                 <td class="text-right">${product.getQuantity()}</td>
                                 <td class="td-actions text-right">
                                     <button type="button" rel="tooltip" class="btn btn-success btn-link

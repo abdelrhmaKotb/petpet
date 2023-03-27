@@ -34,7 +34,7 @@
                                          <td class="td-actions text-right">
                                             <button type="button" rel="tooltip" class="btn btn-success btn-link btn-just-icon btn-sm" data-original-title="" title="Edit">
                                                 <c:set var="foo" scope="request" value="..." />
-                                                <a href="/petpet/admin/edit-product?id=${order.getId()}"><i
+                                                <a href="/petpet/admin/order-details?id=${order.getId()}"><i
                                                         class="icon-edit"></i></a>
 
                                             </button>
