@@ -8,6 +8,8 @@ import gov.iti.jets.services.GetCategoriesService;
 import gov.iti.jets.services.GetProductsService;
 import gov.iti.jets.services.mapper.CategoryMapper;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,13 +19,10 @@ import java.io.IOException;
 import java.util.List;
 
 public class HomeServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("from home");
-    }
+
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
 
         GetCategoriesService getCategoriesService =  new GetCategoriesService();
 
@@ -33,8 +32,8 @@ public class HomeServlet extends HttpServlet {
 
         req.setAttribute("mainCategories",mainCategories);
         req.setAttribute("trendyProductsDTOS",trendyProductsDTOS);
-        req.getRequestDispatcher("presentation/views/index-5.jsp").forward(req,resp);
-
+        req.getRequestDispatcher("presentation/views/index-5.jsp").forward(req,res);
     }
+
 
 }

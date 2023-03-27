@@ -7,12 +7,14 @@ import gov.iti.jets.services.mapper.UserMapper;
 
 public class RegisterService {
 
-    public void register(UserDTO userDTO){
+    public boolean register(UserDTO userDTO){
         RepositoryImpl<User,Integer> repository = new RepositoryImpl<>(User.class);
         //validation
         User u = new UserMapper().toEntity(userDTO);
 
-        repository.create(u);
+        User result =repository.create(u);
+
+        return result != null;
     }
 
     public boolean isUserExists(UserDTO userDTO) {
