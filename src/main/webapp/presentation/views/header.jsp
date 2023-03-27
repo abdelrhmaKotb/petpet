@@ -51,8 +51,7 @@
                                 <a href="#">Links</a>
                                 <ul>
                                     <li><a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a></li>
-                                    <li><a href="/petpet/wishlist"><i class="icon-heart-o"></i>Wishlist
-                                            <span>(3)</span></a></li>
+
                                     <li><a href="/petpet/about">About Us</a></li>
                                     <li><a href="/petpet/contact">Contact Us</a></li>
                                     <li><a href="/petpet/login" data-toggle="modal"><i class="icon-user"></i>Login</a>
@@ -124,12 +123,7 @@
                                 </div><!-- End .header-search-wrapper -->
                             </form>
                         </div><!-- End .header-search -->
-                        <div class="dropdown compare-dropdown">
-                            <a href="/petpet/wishlist" class="wishlist-link">
-                                <i class="icon-heart-o"></i>
-                            </a>
 
-                        </div><!-- End .compare-dropdown -->
 
                         <jsp:directive.include file="usercart.jsp" />
 

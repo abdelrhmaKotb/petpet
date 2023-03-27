@@ -97,7 +97,7 @@
 															<td>${item.getId()}</td>
 															<td>${item.getCreatedAt()}</td>
 															<td>${item.getTotalPrice()}</td>
-															<td>${item.getStatus()}</td>
+															<td class="in-stock">${item.getStatus()}</td>
 															<td></td>
 														</tr>
 
