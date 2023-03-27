@@ -17,26 +17,30 @@ public class AdminFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
         System.out.println("admin filter");
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession(false);
-        int userId = -1;
 
         if (session != null) {
             UserDTO user = (UserDTO) session.getAttribute("userSession");
 
             if (user != null) {
-                if(!user.isAdmin()){
+                if (!user.isAdmin()) {
                     ((HttpServletResponse) response).sendRedirect("/petpet/home");
+                    return;
+                } else {
+                    chain.doFilter(request, response);
                     return;
                 }
             }
 
         }
 
-        chain.doFilter(request, response);
+        ((HttpServletResponse) response).sendRedirect("/petpet/login");
+
     }
 
     @Override

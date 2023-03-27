@@ -72,9 +72,13 @@ public class CheckoutServlet extends HttpServlet {
         List<String> err = checkoutService.checkout(cart, order);
 
         if (err.size() > 0) {
-            resp.getWriter().println(err);
+            // resp.getWriter().println(err);
+            req.setAttribute("errors", err);
+            req.getRequestDispatcher("presentation/views/checkout.jsp").forward(req, resp);
+
         } else {
-            resp.getWriter().println("done");
+            // resp.getWriter().println("done");
+            resp.sendRedirect("/petpet/my-account?cart=empty");
 
         }
     }

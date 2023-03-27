@@ -42,7 +42,7 @@
 												<div class="product">
 													<figure class="product-media">
 														<a href="/petpet/product?id=${item.getProductId()}">
-															<img src="/petpet/presentation/assets/images/products/table/product-1.jpg"
+															<img src="/petpet/${item.getProductImage()}"
 																alt="Product image">
 														</a>
 													</figure>
@@ -150,7 +150,7 @@
 
 										<tr class="summary-total">
 											<td>Total:</td>
-											<td>$160.00</td>
+											<td>$ ${total}</td>
 										</tr><!-- End .summary-total -->
 									</tbody>
 								</table><!-- End .table table-summary -->

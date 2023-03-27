@@ -30,6 +30,13 @@
 				<form action="/petpet/checkout" method="post">
 					<div class="row">
 						<div class="col-lg-9">
+
+							<ul style="color: red;">
+								<c:forEach var="item" items="${requestScope.errors}">
+									<li>${item}</li>
+								</c:forEach>
+							</ul>
+
 							<h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
 							<div class="row">
 								<div class="col-sm-12">
@@ -40,12 +47,12 @@
 							</div><!-- End .row -->
 
 							<label>Country *</label>
-							<input type="text" class="form-control" name="register-country" value="${sessionScope.userSession.getCountry()}"
-								required>
+							<input type="text" class="form-control" name="register-country"
+								value="${sessionScope.userSession.getCountry()}" required>
 
 							<label>Street address *</label>
-							<input type="text" class="form-control" name="register-street" value="${sessionScope.userSession.getStreet()}"
-								required>
+							<input type="text" class="form-control" name="register-street"
+								value="${sessionScope.userSession.getStreet()}" required>
 
 							<div class="row">
 								<div class="col-sm-12">
@@ -59,23 +66,27 @@
 							<div class="row">
 								<div class="col-sm-6">
 									<label>Postcode / ZIP *</label>
-									<input type="text" name="zip" class="form-control" value="${sessionScope.userSession.getZip()}" required>
+									<input type="text" name="zip" class="form-control"
+										value="${sessionScope.userSession.getZip()}" required>
 								</div><!-- End .col-sm-6 -->
 
 								<div class="col-sm-6">
 									<label>Phone *</label>
-									<input type="tel" name="register-phone" class="form-control" value="${sessionScope.userSession.getPhone()}" required>
+									<input type="tel" name="register-phone" class="form-control"
+										value="${sessionScope.userSession.getPhone()}" required>
 								</div><!-- End .col-sm-6 -->
 							</div><!-- End .row -->
 
 							<label>Email address *</label>
-							<input type="email" class="form-control" name="register-email"	 value="${sessionScope.userSession.getEmail()}" required>
+							<input type="email" class="form-control" name="register-email"
+								value="${sessionScope.userSession.getEmail()}" required>
 
-		
+
 
 							<label>Order notes (optional)</label>
 							<textarea class="form-control" cols="30" rows="4"
-								placeholder="Notes about your order, e.g. special notes for delivery" name="notes"></textarea>
+								placeholder="Notes about your order, e.g. special notes for delivery"
+								name="notes"></textarea>
 						</div><!-- End .col-lg-9 -->
 						<aside class="col-lg-3">
 							<div class="summary">
@@ -90,7 +101,7 @@
 									</thead>
 
 									<tbody>
-							
+
 										<tr class="summary-subtotal">
 											<td>Subtotal:</td>
 											<td>$ ${total}</td>
@@ -106,7 +117,7 @@
 									</tbody>
 								</table><!-- End .table table-summary -->
 
-							
+
 
 								<button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
 									<span class="btn-text">Place Order</span>
