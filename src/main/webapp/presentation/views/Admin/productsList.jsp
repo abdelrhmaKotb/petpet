@@ -34,7 +34,7 @@
                     <tbody>
                         <c:forEach var="product" items="${requestScope.productList}">
                             <tr>
-                                <td>${product.getId() }</td>
+                                <td class="text-center">${product.getId() }</td>
                                 <td>${product.getName() }</td>
                                 <td>${product.getCategory().getName()}</td>
                                  <c:choose>
