@@ -2,8 +2,8 @@ package gov.iti.jets.persistent.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -15,7 +15,7 @@ public class Order {
     private Integer id;
 
     @Column(name = "created_at")
-    private LocalDate createdAt;
+    private Date createdAt;
 
     
     private String country;
@@ -50,7 +50,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(Integer id, LocalDate createdAt, Double totalPrice, String status, User user) {
+    public Order(Integer id, Date createdAt, Double totalPrice, String status, User user) {
         this.id = id;
         this.createdAt = createdAt;
         this.totalPrice = totalPrice;
@@ -58,7 +58,7 @@ public class Order {
         this.user = user;
     }
 
-    public Order(LocalDate createdAt, Double totalPrice, String status, User user) {
+    public Order(Date createdAt, Double totalPrice, String status, User user) {
         this.createdAt = createdAt;
         this.totalPrice = totalPrice;
         this.status = status;
@@ -89,11 +89,11 @@ public class Order {
         this.id = id;
     }
 
-    public LocalDate getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDate createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 

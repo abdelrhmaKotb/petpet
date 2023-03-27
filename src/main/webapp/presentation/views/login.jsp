@@ -218,7 +218,7 @@
 
                                     <div class="col-sm-12">
                                         <select class="js-example-basic-multiple" id="multiple-select-field"
-                                            name="multiple-select-field" data-placeholder="Choose interests" multiple
+                                            name="multiple-select-field[]" data-placeholder="Choose interests" multiple
                                              style="display: block;">
                                             <option>Dogs</option>
                                             <option>Cats</option>

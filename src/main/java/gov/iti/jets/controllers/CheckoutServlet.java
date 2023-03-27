@@ -17,8 +17,10 @@ import jakarta.servlet.http.HttpSession;
 
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class CheckoutServlet extends HttpServlet {
@@ -29,7 +31,7 @@ public class CheckoutServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       // int userId = 12;
+        // int userId = 12;
 
         HttpSession session = req.getSession(false);
 
@@ -37,7 +39,7 @@ public class CheckoutServlet extends HttpServlet {
 
         if (session != null) {
             user = (UserDTO) session.getAttribute("userSession");
-            if(user != null) {
+            if (user != null) {
 
                 String country = req.getParameter("register-country");
                 String street = req.getParameter("register-street");
@@ -56,7 +58,7 @@ public class CheckoutServlet extends HttpServlet {
                 order.setNotes(notes);
                 order.setZIP(zip);
                 order.setUser(user);
-                order.setCreatedAt(LocalDate.now());
+                order.setCreatedAt(java.sql.Date.valueOf(LocalDate.now()));
 
                 // Double cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
 
@@ -83,10 +85,10 @@ public class CheckoutServlet extends HttpServlet {
                     resp.sendRedirect("/petpet/my-account?cart=empty");
 
                 }
-            }else {
+            } else {
                 resp.sendRedirect("/petpet/my-account?cart=empty");
             }
-        }else {
+        } else {
             resp.sendRedirect("/petpet/my-account?cart=empty");
         }
     }
