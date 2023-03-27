@@ -21,6 +21,7 @@ public class UserDTO {
     String city;
     LocalDate birthday;
     List<OrderDto> orderDTOS = new ArrayList<>();
+    List<InterestDto> interestDtos = new ArrayList<>();
     boolean isAdmin;
 
     public UserDTO(String userName) {
@@ -74,8 +75,24 @@ public class UserDTO {
         this.birthday = birthday;
     }
 
-    public UserDTO() {
+    public UserDTO(String firstName, String userName, String phone, String password, String job, Double creditLimit,
+                   String country, String street, String zip, String city, LocalDate birthday, List<InterestDto> interestDtos) {
+        this.firstName = firstName;
+        this.userName = userName;
+        this.phone = phone;
+        this.password = password;
+        this.job = job;
+        this.creditLimit = creditLimit;
+        this.country = country;
+        this.street = street;
+        this.zip = zip;
+        this.city = city;
+        this.birthday = birthday;
+        this.interestDtos = interestDtos;
     }
+
+    public UserDTO(){}
+    
 
     public boolean isAdmin() {
         return isAdmin;
@@ -182,6 +199,13 @@ public class UserDTO {
     }
 
    
+    public List<InterestDto> getInterestDtos() {
+        return interestDtos;
+    }
+
+    public void setInterestDtos(List<InterestDto> interestDtos) {
+        this.interestDtos = interestDtos;
+    }
 
     @Override
     public String toString() {

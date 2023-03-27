@@ -61,6 +61,10 @@ public class User {
         this.isAdmin = isAdmin;
     }
 
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user" , cascade = CascadeType.ALL)
+    private List<Interest> interest = new ArrayList<Interest>() ;
+
     public List<Order> getOrderList() {
         return orderList;
     }
@@ -88,7 +92,13 @@ public class User {
     public LocalDate getBirthday() {
         return birthday;
     }
+    public List<Interest> getInterest() {
+        return interest;
+    }
 
+    public void setInterest(List<Interest> interest) {
+        this.interest = interest;
+    }
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
