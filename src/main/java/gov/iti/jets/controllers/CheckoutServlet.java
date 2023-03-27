@@ -17,6 +17,7 @@ import jakarta.servlet.http.HttpSession;
 
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,6 +56,7 @@ public class CheckoutServlet extends HttpServlet {
                 order.setNotes(notes);
                 order.setZIP(zip);
                 order.setUser(user);
+                order.setCreatedAt(LocalDate.now());
 
                 // Double cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
 
