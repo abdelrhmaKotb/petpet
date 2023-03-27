@@ -41,7 +41,7 @@
 
 	<servlet>
 		<servlet-name>login</servlet-name>
-		<jsp-file>/presentation/views/login.html</jsp-file>
+		<jsp-file>/presentation/views/login.jsp</jsp-file>
 	</servlet>
 
 

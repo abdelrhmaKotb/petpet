@@ -5,7 +5,7 @@ const swalWithBootstrapButtons = Swal.mixin({
   },
   buttonsStyling: false
 })
-
+function addListener(){
 document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListener('click', (e) => {
      var p = e.target.closest('button');
      console.log(p);
@@ -54,6 +54,9 @@ document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListene
     });
  }));
 
+}
+addListener();
+
  var table = document.getElementById("productTable");
 
  document.querySelectorAll(".next").forEach(link => link.addEventListener('click', (e) => {
@@ -89,7 +92,8 @@ document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListene
          table.deleteRow(-1);
        }
 
-        data.forEach(createRows)
+        data.forEach(createRows);
+        addListener();
 
  }
 
@@ -113,7 +117,6 @@ document.querySelectorAll(".deleteProduct").forEach(link => link.addEventListene
       cell5.innerHTML = item.quantity;
       cell6.innerHTML = `<button type="button" rel="tooltip" class="btn btn-success btn-link
                                                           btn-just-icon btn-sm" data-original-title="" title="Edit">
-                                                      <c:set var="foo" scope="request" value="..." />
                                                       <a href="/petpet/admin/edit-product?id=${item.id}"><i
                                                               class="icon-edit"></i></a>
 

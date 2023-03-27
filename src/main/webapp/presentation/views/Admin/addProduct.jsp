@@ -29,8 +29,10 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<label>Product Name *</label>
-										<input type="text" class="form-control" name="product_name" required
+										<input type="text" class="form-control" id="productName"name="product_name" required
 											value="${requestScope.product.getName()}">
+									   <p id="wrongName" style="color: red;" class="d-none"> </p>
+
 									</div><!-- End .col-sm-6 -->
 									<div class="col-sm-6">
 
@@ -48,13 +50,14 @@
 
 								</div><!-- End .row -->
 
-								<label>Product Price</label>
-								<input type="text" class="form-control" name="product_price"
+								<label>Product Price <span>*</span></label>
+								<input type="text"  class="form-control" id="productPrice" name="product_price"
 									value="${requestScope.product.getPrice()}">
-
+                                <p id="wrongPrice" style="color: red;" class="d-none"> </p>
 								<label>Product Quantity *</label>
-								<input type="number" class="form-control" name="product_quantity" required
+								<input type="number" class="form-control" id="productQuantity"name="product_quantity" required
 									value="${requestScope.product.getQuantity()}">
+								<p id="wrongQuantity" style="color: red;" class="d-none"> </p>
 								<label>Product Description (optional)</label>
 								<textarea class="form-control" cols="30" rows="4" placeholder="Notes about your Product"
 									name="product_description">${requestScope.product.getDescription()}</textarea>
@@ -63,7 +66,7 @@
 								<div class="summary">
 									<h3 class="summary-title">Your Product Images</h3><!-- End .summary-title -->
 
-									<button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+									<button type="submit" id="addProductBtn" class="btn btn-outline-primary-2 btn-order btn-block">
 										<span class="btn-text">Add Product</span>
 										<span class="btn-hover-text">Add Product</span>
 									</button>
@@ -96,6 +99,7 @@
 		</div><!-- End .checkout -->
 		</div><!-- End .page-content -->
 	</main><!-- End .main -->
+  <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 
 	<script src="/petpet/presentation/assets/js/Admin/addProduct.js"></script>
 

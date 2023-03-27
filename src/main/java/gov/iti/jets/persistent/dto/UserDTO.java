@@ -1,11 +1,13 @@
 package gov.iti.jets.persistent.dto;
 
+import gov.iti.jets.persistent.entity.Interest;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserDTO {
-    int id;
+    Integer id;
 
     String firstName;
     String userName;
@@ -25,7 +27,7 @@ public class UserDTO {
         this.userName = userName;
     }
 
-    public UserDTO(int id, String firstName, String userName, String phone, String password, String job,
+    public UserDTO(Integer id, String firstName, String userName, String phone, String password, String job,
             Double creditLimit, String country, String street, String zip, String city, LocalDate birthday) {
         this.id = id;
         this.firstName = firstName;
@@ -40,7 +42,7 @@ public class UserDTO {
         this.city = city;
         this.birthday = birthday;
     }
-    public UserDTO(int id, String firstName, String userName, String phone, String password, String job,
+    public UserDTO(Integer id, String firstName, String userName, String phone, String password, String job,
             Double creditLimit, String country, String street, String zip, String city, LocalDate birthday,boolean isAdmin) {
         this.id = id;
         this.firstName = firstName;
@@ -83,11 +85,11 @@ public class UserDTO {
         this.isAdmin = isAdmin;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

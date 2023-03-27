@@ -28,6 +28,8 @@ public class AddHeaderFilter implements Filter {
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession(false);
+        if(session !=null)
+            System.out.println("session attrebute name "+session.getAttributeNames());
         int userId = -1;
 
         if (session != null) {
@@ -35,29 +37,29 @@ public class AddHeaderFilter implements Filter {
 
             if (user != null) {
                 userId = user.getId();
+
+                AddToCartService addToCartService = new AddToCartService();
+                String cartJson = addToCartService.get(userId);
+                Gson gson = new Gson();
+                Type listType = new TypeToken<List<CartItem>>() {
+                }.getType();
+
+                List<CartItem> cart = gson.fromJson(cartJson, listType);
+                if (cart == null) {
+                    cart = new ArrayList<>();
+                }
+
+                Double total = cart.stream().mapToDouble(item -> item.getProductPrice() * item.getProductQty()).sum();
+
+                request.setAttribute("cart", cart);
+                request.setAttribute("total", total);
+                request.setAttribute("cartItemCount", cart.size());
+
             }
 
         }
 
         // userId = 12;
-
-        AddToCartService addToCartService = new AddToCartService();
-        String cartJson = addToCartService.get(userId);
-        Gson gson = new Gson();
-        Type listType = new TypeToken<List<CartItem>>() {
-        }.getType();
-
-        List<CartItem> cart = gson.fromJson(cartJson, listType);
-        if (cart == null) {
-            cart = new ArrayList<>();
-        }
-
-        Double total = cart.stream().mapToDouble(item -> item.getProductPrice() * item.getProductQty()).sum();
-
-        request.setAttribute("cart", cart);
-        request.setAttribute("total", total);
-        request.setAttribute("cartItemCount", cart.size());
-
         chain.doFilter(request, response);
 
     }

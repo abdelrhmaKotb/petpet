@@ -113,7 +113,7 @@
 
 
                                     <div class="col-md-12">
-                                        <label for="register-username" class="form-label">Username</label>
+                                        <label for="register-username" class="form-label">Email</label>
                                         <div class="input-group form-outline">
                                             <span class="input-group-text" style="font-size: 2rem;"
                                                 id="inputGroupPrepend">@</span>

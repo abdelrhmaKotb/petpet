@@ -43,14 +43,13 @@ public class RegisterServlet extends HttpServlet {
         RegisterService service = new RegisterService();
         if (Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone)) {
             System.out.println("All true");
-            boolean creationResult = service.register(user);
-            if(creationResult){
+            UserDTO creationResult = service.register(user);
+            if(creationResult != null){
                 HttpSession session = req.getSession(true);
-                session.setAttribute("userSession", user);
-                req.getRequestDispatcher("home").forward(req, resp);
+                session.setAttribute("userSession", creationResult);
+                resp.sendRedirect("home");
             }else {
-                req.setAttribute("errorMsg","something happened wrongly please try to register again");
-                req.getRequestDispatcher("login").forward(req, resp);
+                resp.sendRedirect("login");
             }
 
         } else {
