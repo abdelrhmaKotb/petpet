@@ -79,7 +79,15 @@
                                                 <p>No order has been made yet </span><a href="/petpet/Shop">go shopping ?</a>.</p>
 										    </c:when>
 										    <c:otherwise>
-                                            <p>Your last ${requestScope.totalOrders}  order.</p>
+										    <c:choose>
+										    <c:when test="${requestScope.totalOrders >5}">
+										    <p>Your last ${requestScope.totalOrders}  order.</p>
+										    </c:when>
+										    <c:otherwise>
+										     <p>Your last 5 order.</p>
+										    </c:otherwise>
+										    </c:choose>
+
 											    <table id="" class="table">
 												<thead>
 													<tr class="text-center">
@@ -98,7 +106,9 @@
 															<td>${item.getCreatedAt()}</td>
 															<td>${item.getTotalPrice()}</td>
 															<td class="in-stock">${item.getStatus()}</td>
-															<td></td>
+															<td class="action-col">
+                                                                <button class="btn btn-block btn-outline-primary-2">  <a href="/petpet/admin/order-details?id=${item.getId()}">View Details</a></button>
+                                                            </td>
 														</tr>
 
 													</c:forEach>
