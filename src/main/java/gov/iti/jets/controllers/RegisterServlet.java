@@ -2,7 +2,6 @@ package gov.iti.jets.controllers;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.List;
 
 import gov.iti.jets.helpers.Validation;
 import gov.iti.jets.persistent.dto.UserDTO;
@@ -42,7 +41,7 @@ public class RegisterServlet extends HttpServlet {
         UserDTO user = new UserDTO(fName, userName, phone, hashedPassword, job, creditLimit, country, street, null,
                 city, date);
 
-                
+
 
         RegisterService service = new RegisterService();
         if (Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone)) {

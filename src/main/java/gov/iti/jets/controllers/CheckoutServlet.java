@@ -17,10 +17,8 @@ import jakarta.servlet.http.HttpSession;
 
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class CheckoutServlet extends HttpServlet {

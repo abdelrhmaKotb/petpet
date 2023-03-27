@@ -8,7 +8,6 @@ import gov.iti.jets.models.CartItem;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
 import gov.iti.jets.persistent.dto.SaveOrderDto;
 import gov.iti.jets.persistent.dto.UserDTO;
-import gov.iti.jets.persistent.entity.Cart;
 import gov.iti.jets.persistent.entity.Order;
 import gov.iti.jets.persistent.entity.OrderDetail;
 import gov.iti.jets.persistent.entity.OrderDetailId;

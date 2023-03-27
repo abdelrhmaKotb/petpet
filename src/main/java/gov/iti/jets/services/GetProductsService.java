@@ -3,17 +3,12 @@ package gov.iti.jets.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import gov.iti.jets.persistent.dao.OrderDaoImpl;
 import gov.iti.jets.persistent.dao.ProductDaoImpl;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
-import gov.iti.jets.persistent.dao.interfaces.ProductDao;
 import gov.iti.jets.persistent.dto.CategoryDto;
-import gov.iti.jets.persistent.dto.OrderDto;
 import gov.iti.jets.persistent.dto.ProductDto;
 import gov.iti.jets.persistent.dto.TrendyProductsDTO;
-import gov.iti.jets.persistent.entity.Order;
 import gov.iti.jets.persistent.entity.Product;
-import gov.iti.jets.services.mapper.OrderMapper;
 import gov.iti.jets.services.mapper.ProductMapper;
 
 public class GetProductsService {
@@ -52,7 +47,7 @@ public class GetProductsService {
     public ProductDto getFromContext(int productID){
         RepositoryImpl<Product,Integer> repo = new RepositoryImpl<>(Product.class);
 
-        return new ProductMapper().toDto(repo.findFromContext(productID));
+        return new ProductMapper().toDto(repo.find(productID));
     }
     public Product getProductFromContext(int productID){
         RepositoryImpl<Product,Integer> repo = new RepositoryImpl<>(Product.class);
