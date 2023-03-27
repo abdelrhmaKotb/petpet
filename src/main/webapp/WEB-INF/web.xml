@@ -372,6 +372,15 @@
 		<url-pattern>/my-account</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>orderDetails</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.GetOrderDetailsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderDetails</servlet-name>
+		<url-pattern>/admin/order-details</url-pattern>
+	</servlet-mapping>
+
 	<error-page>
 		<error-code>404</error-code>
 		<location>/presentation/views/404.jsp</location>

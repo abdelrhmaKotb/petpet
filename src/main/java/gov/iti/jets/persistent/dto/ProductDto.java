@@ -23,9 +23,6 @@ public class ProductDto {
 
     private List<String> imagesUlrs = new ArrayList<>();
 
-
-  
-
     public ProductDto(String name, Double price, CategoryDto category, Integer quantity, String description,
             List<String> imagesUlrs) {
         this.name = name;
@@ -94,7 +91,7 @@ public class ProductDto {
         this.description = description;
     }
 
-    public List<String> getImagesUlrs() {
+        public List<String> getImagesUlrs() {
         return imagesUlrs;
     }
 

@@ -1,17 +1,18 @@
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
-<jsp:directive.include file="header.jsp" />
+<jsp:directive.include file="AdminHeader.html" />
         <main class="main" style="margin-top:5em">
         	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
         		<div class="container">
-        			<h1 class="page-title">Wishlist<span>Shop</span></h1>
+        			<h1 class="page-title">Order<span>Details</span></h1>
         		</div><!-- End .container -->
         	</div><!-- End .page-header -->
             <nav aria-label="breadcrumb" class="breadcrumb-nav">
                 <div class="container">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                        <li class="breadcrumb-item"><a href="/petpet/admin">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/petpet/admin/review-customers">User</a></li>
+                        <li class="breadcrumb-item"><a href="/petpet/admin/view-order">Orders</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Order Details</li>
                     </ol>
                 </div><!-- End .container -->
             </nav><!-- End .breadcrumb-nav -->
@@ -23,86 +24,37 @@
 							<tr>
 								<th>Product</th>
 								<th>Price</th>
-								<th>Stock Status</th>
-								<th></th>
-								<th></th>
+								<th>Quantity</th>
+								<th>Total Price</th>
+
 							</tr>
 						</thead>
 
 						<tbody>
+						   <c:forEach var = "orderDetail"  items = "${requestScope.orderDetails}">
 							<tr>
 								<td class="product-col">
 									<div class="product">
 										<figure class="product-media">
 											<a href="#">
-												<img src="assets/images/products/table/product-1.jpg" alt="Product image">
+												<img src="/petpet${orderDetail.getProduct().getImagesUlrs().get(0)}" alt="Product image">
 											</a>
 										</figure>
 
 										<h3 class="product-title">
-											<a href="#">Beige knitted elastic runner shoes</a>
+											<a href="#">${orderDetail.getProduct().getName()}</a>
 										</h3><!-- End .product-title -->
 									</div><!-- End .product -->
 								</td>
-								<td class="price-col">$84.00</td>
-								<td class="stock-col"><span class="in-stock">In stock</span></td>
-								<td class="action-col">
-                                    <div class="dropdown">
-									<button class="btn btn-block btn-outline-primary-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="icon-list-alt"></i>Select Options
-                                    </button>
+								<td class="price-col">${orderDetail.getProduct().getPrice()} EGP </td>
+								<td class="price-col">${orderDetail.getQuantity()}</td>
+								<td class="price-col">${orderDetail.getQuantity()*orderDetail.getProduct().getPrice()}</td>
 
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">First option</a>
-                                        <a class="dropdown-item" href="#">Another option</a>
-                                        <a class="dropdown-item" href="#">The best option</a>
-                                      </div>
-                                    </div>
-								</td>
-								<td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td>
-							</tr>
-							<tr>
-								<td class="product-col">
-									<div class="product">
-										<figure class="product-media">
-											<a href="#">
-												<img src="assets/images/products/table/product-2.jpg" alt="Product image">
-											</a>
-										</figure>
 
-										<h3 class="product-title">
-											<a href="#">Blue utility pinafore denim dress</a>
-										</h3><!-- End .product-title -->
-									</div><!-- End .product -->
-								</td>
-								<td class="price-col">$76.00</td>
-								<td class="stock-col"><span class="in-stock">In stock</span></td>
-								<td class="action-col">
-									<button class="btn btn-block btn-outline-primary-2"><i class="icon-cart-plus"></i>Add to Cart</button>
-								</td>
-								<td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td>
 							</tr>
-							<tr>
-								<td class="product-col">
-									<div class="product">
-										<figure class="product-media">
-											<a href="#">
-												<img src="assets/images/products/table/product-3.jpg" alt="Product image">
-											</a>
-										</figure>
 
-										<h3 class="product-title">
-											<a href="#">Orange saddle lock front chain cross body bag</a>
-										</h3><!-- End .product-title -->
-									</div><!-- End .product -->
-								</td>
-								<td class="price-col">$52.00</td>
-								<td class="stock-col"><span class="out-of-stock">Out of stock</span></td>
-								<td class="action-col">
-									<button class="btn btn-block btn-outline-primary-2 disabled">Out of Stock</button>
-								</td>
-								<td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td>
-							</tr>
+							</c:forEach>
+
 						</tbody>
 					</table><!-- End .table table-wishlist -->
 	            	<div class="wishlist-share">
