@@ -1,7 +1,7 @@
 
 
 
-var table = document.getElementById("productTable");
+var table = document.getElementById("usersTable");
 
 document.querySelectorAll(".next").forEach(link => link.addEventListener('click', (e) => {
   var p = e.target.closest('a');
@@ -37,12 +37,11 @@ function fillTable(data) {
   }
 
   data.forEach(createRows);
-  addListener();
 
 }
 
 function createRows(item, index, arr) {
-
+console.log(item);
 
   var row = table.insertRow(-1);
 
@@ -54,13 +53,22 @@ function createRows(item, index, arr) {
       var cell5 = row.insertCell(4);
       var cell6= row.insertCell(5);
       var cell7= row.insertCell(6);
+      var cell8= row.insertCell(7);
 
-      cell1.innerHTML = item.name;
-      cell2.innerHTML = item.email;
-      cell3.innerHTML = item.creditLimit;
-      cell4.innerHTML = item.birthday;
-      cell5.innerHTML = item.job;
-      cell6.innerHTML = item.country;
+      cell1.innerHTML = item.id == null?"-":item.id;
+      cell2.innerHTML = item.firstName== null?"-":item.firstName;
+      cell3.innerHTML = item.userName== null?"-":item.userName;
+      cell4.innerHTML = item.creditLimit== null?"-":item.creditLimit;
+      cell5.innerHTML = item.birthday== null?"-":item.birthday;
+      cell6.innerHTML = item.job== null?"-":item.job;
+      cell7.innerHTML = item.country== null ?"-":item.country;
+      cell8.innerHTML = ` <button type="button" rel="tooltip"
+                                         class="btn btn-success btn-link
+                                                     btn-just-icon btn-sm"
+                                         data-original-title="" title="Edit">
+                                     <a href = "/petpet/admin/view-order?id=${item.id}">
+                                         <i class="icon-cart-arrow-down"></i></a>`;
+
 
 
   $(cell1).addClass('text-center');
@@ -69,5 +77,7 @@ function createRows(item, index, arr) {
   $(cell4).addClass('text-center');
   $(cell5).addClass('text-center');
   $(cell6).addClass('text-center');
+  $(cell7).addClass('text-center');
+  $(cell8).addClass('text-center text-right');
 }
 

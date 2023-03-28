@@ -54,7 +54,7 @@ function createRows(item, index, arr) {
      cell3.innerHTML = item.totalPrice;
      cell4.innerHTML = item.status;
      cell5.innerHTML = `<button type="button" rel="tooltip" class="btn btn-success btn-link btn-just-icon btn-sm" data-original-title="" title="Edit">
-                                                                        <a href="/petpet/admin/edite-product?id=${item.id}"><i class="icon-edit"></i></a>
+                                                                        <a href="/petpet/admin/order-details?id=${item.id}"><i class="icon-edit"></i></a>
                                                                          </button>`;
 
       $(cell5).find('button').addClass('td-actions text-right');
