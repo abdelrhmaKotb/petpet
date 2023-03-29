@@ -2,7 +2,9 @@ package gov.iti.jets.services;
 
 import gov.iti.jets.persistent.dao.OrderDaoImpl;
 import gov.iti.jets.persistent.dto.OrderDto;
+import gov.iti.jets.persistent.dto.ProductDto;
 import gov.iti.jets.persistent.entity.Order;
+import gov.iti.jets.persistent.entity.Product;
 import gov.iti.jets.services.mapper.OrderMapper;
 
 import java.util.ArrayList;
@@ -29,4 +31,12 @@ public class GetOrdersServices {
 
         return totalOrders;
     }
+    public   long countOfOrders( ) {
+        OrderDaoImpl orderDao = new OrderDaoImpl();
+
+        long totalOrders = orderDao.allOrders();
+
+        return totalOrders;
+    }
+
 }

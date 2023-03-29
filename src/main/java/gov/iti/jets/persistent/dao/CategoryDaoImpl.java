@@ -3,6 +3,7 @@ package gov.iti.jets.persistent.dao;
 import java.util.List;
 
 import gov.iti.jets.persistent.dao.interfaces.CategoryDao;
+import gov.iti.jets.persistent.dto.CategoryAndItsSalies;
 import gov.iti.jets.persistent.dto.getCategoryAnditsQuantityDTO;
 import gov.iti.jets.persistent.entity.Category;
 import jakarta.persistence.*;
@@ -92,5 +93,14 @@ public class CategoryDaoImpl extends RepositoryImpl<Category, Integer> implement
         _entityManager.persist(c);
         _entityManager.getTransaction().commit();
 
+    }
+
+    @Override
+    public List<CategoryAndItsSalies> categoryAndItsSalies() {
+        String countQ = "Select new gov.iti.jets.persistent.dto.CategoryAndItsSalies(od.product.category.name,SUM(od.quantity))  FROM OrderDetail od group by od.product.category.id ";
+        Query countQuery = _entityManager.createQuery(countQ, CategoryAndItsSalies.class);
+        List<CategoryAndItsSalies>  categoryAndItsSalies = countQuery.getResultList();
+       
+        return categoryAndItsSalies;
     }
 }

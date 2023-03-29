@@ -141,5 +141,6 @@ function createRows(item, index, arr) {
   $(cell4).addClass('td-actions text-right');
   $(cell5).addClass('td-actions text-right');
   $(cell6).addClass('td-actions text-right');
+  $(cell7).addClass('td-actions text-right');
 }
 

@@ -1,116 +1,164 @@
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:directive.include file="AdminHeader.html" />
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page Content -->
-        <!-- ============================================================== -->
-<main style=" margin: 50px 0;">
-        <div style ="background-color: #edf1f5;">
-            <div class="container-fluid">
 
-                <!-- /.row -->
-                <!-- ============================================================== -->
-                <!-- Different data widgets -->
-                <!-- ============================================================== -->
-                <!-- .row -->
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Total Visit</h3>
-                            <ul class="list-inline two-part">
-                                <li>
-                                    <div id="sparklinedash"></div>
-                                </li>
-                                <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">659</span></li>
-                            </ul>
+     <div class="app-main__outer" style=" margin: 5em;">
+                    <div class="app-main__inner">
+                        <div class="app-page-title">
+                              </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Total Page Views</h3>
-                            <ul class="list-inline two-part">
-                                <li>
-                                    <div id="sparklinedash2"></div>
-                                </li>
-                                <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">869</span></li>
-                            </ul>
+                        <div class="row">
+                            
+
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Unique Visitor</h3>
-                            <ul class="list-inline two-part">
-                                <li>
-                                    <div id="sparklinedash3"></div>
-                                </li>
-                                <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">911</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!--/.row -->
-                <!--row -->
-                <!-- /.row -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                        <div class="white-box">
-                            <h3 class="box-title">Products Yearly Sales</h3>
-                            <ul class="list-inline text-right">
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5 text-info"></i>Mac</h5> </li>
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5 text-inverse"></i>Windows</h5> </li>
-                            </ul>
-                          <div id="ct-visits" style="height: 405px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- table -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12">
-                        <div class="white-box">
-                            <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
-                                <select class="form-control pull-right row b-none">
-                                    <option>March 2017</option>
-                                    <option>April 2017</option>
-                                    <option>May 2017</option>
-                                    <option>June 2017</option>
-                                    <option>July 2017</option>
-                                </select>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-6">
+                                <div class="mb-3 card">
+                                    <div class="card-header-tab card-header-tab-animation lead card-header">
+                                        <div class="card-header-title">
+                                            <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                                            Categories Report
+                                        </div>
+
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade show active" id="tabs-eg-77">
+                                                <div class="card mb-3 widget-chart widget-chart2 text-left w-100">
+                                                    <div class="widget-chat-wrapper-outer">
+                                                        <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
+                                                            <canvas id="canvas"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h6 class="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">Top Products</h6>
+                                                <div class="scroll-area-sm"style="height: auto;">
+                                                    <div class="scrollbar-container">
+                                                        <ul class="rm-list-borders rm-list-borders-scroll list-group list-group-flush">
+                                                            <c:forEach var="best" items="${requestScope.categoriesReport}">
+                                                            <li class="list-group-item">
+                                                                <div class="widget-content p-0">
+                                                                    <div class="widget-content-wrapper">
+                                                                        <div class="widget-content-left">
+                                                                            <div class="widget-heading">${best.getCategoryName()}</div>
+                                                                        </div>
+                                                                        <div class="widget-content-right">
+                                                                            <div class="font-size-xlg text-muted">
+                                                                                
+                                                                                <span>${best.getCategorySales()}</span>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            </c:forEach>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="box-title">Recent sales</h3>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>NAME</th>
-                                            <th>STATUS</th>
-                                            <th>DATE</th>
-                                            <th>PRICE</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-
-                                            <td>1</td>
-                                            <td class="txt-oflo">Elite admin</td>
-                                            <td>SALE</td>
-                                            <td class="txt-oflo">April 18, 2017</td>
-                                            <td><span class="text-success">$24</span></td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
+                            <div class="col-md-12 col-lg-6">
+                                <div class="">
+                                    <div class="card mb-3 widget-content">
+                                        <div class="widget-content-outer">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Total Orders</div>
+                                                    <div class="widget-subheading">Last year expenses</div>
+                                                </div>
+                                                <div class="widget-content-right">
+                                                    <div><p class="counter-count text-success widget-numbers ">${requestScope.totalOrders}</p></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="card mb-3 widget-content">
+                                        <div class="widget-content-outer">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Products Sold</div>
+                                                    <div class="widget-subheading">Revenue streams</div>
+                                                </div>
+                                                <div class="widget-content-right">
+                                                    <div >   <p class="counter-count text-success widget-numbers ">${requestScope.productSold}</p></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="card mb-3 widget-content">
+                                        <div class="widget-content-outer">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Users</div>
+                                                    <div class="widget-subheading">Our Customers</div>
+                                                </div>
+                                                <div class="widget-content-right">
+                                                    <div ><p class="counter-count text-success widget-numbers ">${requestScope.totalUsers}</p></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
                             </div>
                         </div>
+  
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-header lead" style=" font-size: initial;">Best Selling
+                                        
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">#</th>
+                                                <th>Product</th>
+                                                <th class="text-center">Quantity</th>
+                                                <th class="text-center">Unit Price</th>
+                                                <th class="text-center">Revenue</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            
+                                        <c:forEach var="best" items="${requestScope.bestSelling}">
+                                            <tr>
+                                                <td class="text-center text-muted">${best.getId()}</td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                         
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">${best.getProductName()}</div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">${best.getQuantity()}</td>
+                                                <td class="text-center">${best.getUnitPrice()} EGP</td>
+                                                <td class="text-center">${best.getTotalPrice()} EGP</td>
+                                                <!-- <td class="text-center">
+                                                    <button type="button" id="PopoverCustomT-4" class="btn btn-primary btn-sm">Details</button>
+                                                </td> -->
+                                            </tr>
+                                            </c:forEach>
+                                            </tbody>
+                                        </table>
+
+                                     </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-             </div>
-            </div>
-            <!-- /.container-fluid -->
-            <!-- Footer -->
-          	<%@ include file="footer.html" %>
+             <%@ include file="footer.html" %>

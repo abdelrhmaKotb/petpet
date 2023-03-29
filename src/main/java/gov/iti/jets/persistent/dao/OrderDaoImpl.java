@@ -2,6 +2,7 @@ package gov.iti.jets.persistent.dao;
 
 import gov.iti.jets.persistent.dao.interfaces.OrderDao;
 import gov.iti.jets.persistent.entity.Order;
+import gov.iti.jets.persistent.entity.Product;
 import gov.iti.jets.persistent.entity.User;
 import jakarta.persistence.Query;
 
@@ -36,7 +37,16 @@ public class OrderDaoImpl extends  RepositoryImpl<Order,Integer> implements Orde
         String countQ = "Select COUNT(o) from Order o where o.user = :u";
         Query countQuery = _entityManager.createQuery(countQ).setParameter("u",user);
         long countResults = (long) countQuery.getSingleResult();
-        System.out.println("countOfOrders"+countQuery.getSingleResult());
         return countResults;
     }
+
+    @Override
+    public long allOrders() {
+        String countQ = "Select COUNT(o) from Order o ";
+        Query countQuery = _entityManager.createQuery(countQ);
+        long countResults = (long) countQuery.getSingleResult();
+        return countResults;
+    }
+    
+
 }
