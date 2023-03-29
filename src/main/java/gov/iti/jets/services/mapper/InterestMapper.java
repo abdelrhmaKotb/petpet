@@ -8,14 +8,14 @@ public class InterestMapper implements Mapper<Interest, InterestDto> {
 
     @Override
     public InterestDto toDto(Interest interest) {
-        UserDTO userDTO = new UserDTO();
-        InterestDto interestDto = new InterestDto(userDTO);
+        InterestDto interestDto = new InterestDto(new UserMapper().toDto(interest.getUser()),new CategoryMapper().toDto(interest.getInterest()));
 
         return interestDto;
     }
 
     @Override
     public Interest toEntity(InterestDto interestDto) {
-        return null;
+        return new Interest(new UserMapper().toEntity(interestDto.getUserDTO()),new CategoryMapper().toEntity(interestDto.getCategoryDto()));
+
     }
 }

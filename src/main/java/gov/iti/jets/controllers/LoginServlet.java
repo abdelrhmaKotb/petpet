@@ -5,6 +5,7 @@ import java.net.InetAddress;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
@@ -13,7 +14,9 @@ import javax.crypto.NoSuchPaddingException;
 import com.google.gson.Gson;
 
 import gov.iti.jets.helpers.GenerateEncryptionPassword;
+import gov.iti.jets.persistent.dto.CategoryDto;
 import gov.iti.jets.persistent.dto.UserDTO;
+import gov.iti.jets.services.GetCategoriesService;
 import gov.iti.jets.services.loginService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -30,7 +33,10 @@ public class LoginServlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("presentation/views/login.jsp");
 
         HttpSession session = req.getSession(false);
-
+        GetCategoriesService getCategoriesService = new GetCategoriesService();
+        List<CategoryDto> categoryDtoList = getCategoriesService.getCategories();
+        System.out.println(categoryDtoList);
+        req.setAttribute("categories",categoryDtoList);
         if (session == null) {
 
             dispatcher.forward(req, resp);

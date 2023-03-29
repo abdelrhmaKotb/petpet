@@ -10,8 +10,12 @@ import gov.iti.jets.helpers.Validation;
 import gov.iti.jets.persistent.dto.CategoryDto;
 import gov.iti.jets.persistent.dto.InterestDto;
 import gov.iti.jets.persistent.dto.UserDTO;
+import gov.iti.jets.persistent.entity.Category;
+import gov.iti.jets.persistent.entity.Interest;
 import gov.iti.jets.services.GetCategoriesService;
+import gov.iti.jets.services.InterestService;
 import gov.iti.jets.services.RegisterService;
+import gov.iti.jets.services.mapper.CategoryMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -41,21 +45,26 @@ public class RegisterServlet extends HttpServlet {
         String street = req.getParameter("register-street");
         String city = req.getParameter("register-city");
         String birthday = req.getParameter("register-birth");
-        List<InterestDto> interestDtos = new ArrayList<>();
-
+        List<Interest> interestList = new ArrayList<>();
 
 
         LocalDate date = LocalDate.parse(birthday); // date formater
-        UserDTO user = new UserDTO(fName, userName, phone, hashedPassword, job, creditLimit, country, street, null,
-                city, java.sql.Date.valueOf(date));
+
         GetCategoriesService getCategoriesService =  new GetCategoriesService();
+        InterestService interestService = new InterestService();
+        List<Interest> interestArrayList=new ArrayList<>();
 
         for (String interest : selectedInterest) {
-            CategoryDto categoryDto = getCategoriesService.getCategoryById(Integer.valueOf(interest));
-            interestDtos.add(new InterestDto(user,categoryDto));
+            Category category = getCategoriesService.getCategoryById(Integer.valueOf(interest));
+            Interest userInterest1 = new Interest();
+            userInterest1.setInterest(category);
+            interestList.add(userInterest1);
         }
-getCategoriesService.add
+        System.out.println("interest list "+interestList);
+        UserDTO user = new UserDTO(fName, userName, phone, hashedPassword, job, creditLimit, country, street, null,
+                city, java.sql.Date.valueOf(date));
 
+        System.out.println("user after interest "+user);
         RegisterService service = new RegisterService();
         if (Validation.isValidName(fName) &&
                 Validation.validPassword(password) &&
@@ -64,7 +73,9 @@ getCategoriesService.add
                 Validation.validDate(date)) {
             System.out.println("All true");
             UserDTO createdUser = service.register(user);
+
             if (createdUser != null) {
+                interestService.setUserInterests(interestArrayList);
                 HttpSession session = req.getSession(true);
                 session.setAttribute("userSession", createdUser);
                 resp.sendRedirect("home");

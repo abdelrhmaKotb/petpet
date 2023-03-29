@@ -1,6 +1,8 @@
 package gov.iti.jets.persistent.dto;
 
 
+import gov.iti.jets.persistent.entity.Interest;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +21,7 @@ public class UserDTO {
     String city;
     java.util.Date birthday;
     List<OrderDto> orderDTOS = new ArrayList<>();
-    List<InterestDto> interestDtos = new ArrayList<>();
+    List<Interest> interestDtos = new ArrayList<>();
     boolean isAdmin;
 
     public UserDTO(String userName) {
@@ -40,6 +42,23 @@ public class UserDTO {
         this.zip = zip;
         this.city = city;
         this.birthday = birthday;
+    }
+    public UserDTO(Integer id, String firstName, String userName, String phone, String password, String job,
+                   Double creditLimit, String country, String street, String zip, String city, java.util.Date birthday,boolean isAdmin,List<Interest> interestList) {
+        this.id = id;
+        this.firstName = firstName;
+        this.userName = userName;
+        this.phone = phone;
+        this.password = password;
+        this.job = job;
+        this.creditLimit = creditLimit;
+        this.country = country;
+        this.street = street;
+        this.zip = zip;
+        this.city = city;
+        this.birthday = birthday;
+        this.isAdmin = isAdmin;
+        this.interestDtos = interestList;
     }
     public UserDTO(Integer id, String firstName, String userName, String phone, String password, String job,
             Double creditLimit, String country, String street, String zip, String city, java.util.Date birthday,boolean isAdmin) {
@@ -74,7 +93,7 @@ public class UserDTO {
     }
 
     public UserDTO(String firstName, String userName, String phone, String password, String job, Double creditLimit,
-                   String country, String street, String zip, String city, java.util.Date birthday, List<InterestDto> interestDtos) {
+                   String country, String street, String zip, String city, java.util.Date birthday, List<Interest> interest) {
         this.firstName = firstName;
         this.userName = userName;
         this.phone = phone;
@@ -86,11 +105,11 @@ public class UserDTO {
         this.zip = zip;
         this.city = city;
         this.birthday = birthday;
-        this.interestDtos = interestDtos;
+        this.interestDtos = interest;
     }
 
     public UserDTO(){}
-    
+
 
     public boolean isAdmin() {
         return isAdmin;
@@ -196,12 +215,12 @@ public class UserDTO {
         this.birthday = birthday;
     }
 
-   
-    public List<InterestDto> getInterestDtos() {
+
+    public List<Interest> getInterest() {
         return interestDtos;
     }
 
-    public void setInterestDtos(List<InterestDto> interestDtos) {
+    public void setInterest(List<Interest> interestDtos) {
         this.interestDtos = interestDtos;
     }
 

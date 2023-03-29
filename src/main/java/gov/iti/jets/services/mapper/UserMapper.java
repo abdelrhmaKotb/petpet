@@ -23,7 +23,8 @@ public class UserMapper implements Mapper<User, UserDTO> {
         user.setPhone(userDTO.getPhone());
         user.setZip(userDTO.getZip());
         user.setStreet(userDTO.getStreet());
-//        user.setInterest(userDTO.getInterestDtos());
+        System.out.println("from mapper "+userDTO.getInterest());
+        user.setInterest(userDTO.getInterest());
         user.setAdmin(userDTO.isAdmin());
         return user;
 
@@ -47,7 +48,8 @@ public class UserMapper implements Mapper<User, UserDTO> {
                 user.getZip(),
                 user.getCity(),
                 user.getBirthday(),
-                user.isAdmin()
+                user.isAdmin(),
+                user.getInterest()
                 );
 
     }
