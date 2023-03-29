@@ -62,7 +62,7 @@ public class RegisterServlet extends HttpServlet {
         }
         System.out.println("interest list "+interestList);
         UserDTO user = new UserDTO(fName, userName, phone, hashedPassword, job, creditLimit, country, street, null,
-                city, java.sql.Date.valueOf(date));
+                city, java.sql.Date.valueOf(date),interestArrayList);
 
         System.out.println("user after interest "+user);
         RegisterService service = new RegisterService();
