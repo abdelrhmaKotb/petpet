@@ -35,7 +35,7 @@ public class Order {
     private Double totalPrice;
 
     @Column(name = "status")
-    private String status;
+    private String status = "new";
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")

@@ -18,6 +18,16 @@ public class loginService {
         return null;
     }
 
+    public UserDTO isUser2(String Email, String pass) {
+        UserMapper userMapper = new UserMapper();
+        UserDaoImpl user = new UserDaoImpl();
+        UserDTO userDTO = userMapper.toDto(user.findUserByEmail(Email));
+        if (userDTO != null && pass.equals(userDTO.getPassword())) {
+            return userDTO;
+        }
+        return null;
+    }
+
     public boolean isExistUser(String Email) {
         UserMapper userMapper = new UserMapper();
         UserDaoImpl user = new UserDaoImpl();

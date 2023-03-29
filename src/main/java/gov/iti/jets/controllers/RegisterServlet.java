@@ -7,8 +7,10 @@ import java.util.Collections;
 import java.util.List;
 
 import gov.iti.jets.helpers.Validation;
+import gov.iti.jets.persistent.dto.CategoryDto;
 import gov.iti.jets.persistent.dto.InterestDto;
 import gov.iti.jets.persistent.dto.UserDTO;
+import gov.iti.jets.services.GetCategoriesService;
 import gov.iti.jets.services.RegisterService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -46,11 +48,13 @@ public class RegisterServlet extends HttpServlet {
         LocalDate date = LocalDate.parse(birthday); // date formater
         UserDTO user = new UserDTO(fName, userName, phone, hashedPassword, job, creditLimit, country, street, null,
                 city, java.sql.Date.valueOf(date));
+        GetCategoriesService getCategoriesService =  new GetCategoriesService();
 
-        /*for (String interest : selectedInterest) {
-            interestDtos.add(new InterestDto())
-        }*/
-
+        for (String interest : selectedInterest) {
+            CategoryDto categoryDto = getCategoriesService.getCategoryById(Integer.valueOf(interest));
+            interestDtos.add(new InterestDto(user,categoryDto));
+        }
+getCategoriesService.add
 
         RegisterService service = new RegisterService();
         if (Validation.isValidName(fName) &&

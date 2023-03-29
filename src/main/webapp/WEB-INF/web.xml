@@ -17,7 +17,8 @@
 	</listener>
 
 	<!--  end of Listeners  -->
-	<!--Start of JSP mapping-->
+	<!--Start
+	of JSP mapping-->
 
 
 	<servlet>
@@ -75,7 +76,7 @@
 		<servlet-name>Products-list</servlet-name>
 		<jsp-file>/presentation/views/Admin/productsList.jsp</jsp-file>
 	</servlet>
-	
+
 	<!-- End Adim Part -->
 	<servlet>
 		<servlet-name>Users-List</servlet-name>
@@ -134,7 +135,7 @@
 		<servlet-name>Products-list</servlet-name>
 		<url-pattern>/admin/product-list</url-pattern>
 	</servlet-mapping>
-	
+
 	<!--end
 	of JSP mapping-->
 	<servlet-mapping>
@@ -348,6 +349,15 @@
 
 
 	<!-- Welcome List-->
+
+	<filter>
+		<filter-name>checkcookieFilter</filter-name>
+		<filter-class>gov.iti.jets.filters.CheckCookieFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>checkcookieFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 	<filter>
 		<filter-name>AddHeaderFilter</filter-name>

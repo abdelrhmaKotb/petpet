@@ -13,8 +13,7 @@ public class SessionListener implements HttpSessionListener {
             Integer totalLogins= (Integer)servletContext.getAttribute("totalLogins");
             totalLogins= Integer.valueOf(totalLogins+1);
             servletContext.setAttribute("totalLogins", totalLogins );
-            System.out.println("totalLogins start session: "+totalLogins);
-            System.out.println("totalLogins start session: "+se.getSession().getId());
+          
 
        
     }

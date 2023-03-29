@@ -1,10 +1,23 @@
 package gov.iti.jets.controllers;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+
+import com.google.gson.Gson;
+
+import gov.iti.jets.helpers.GenerateEncryptionPassword;
 import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.services.loginService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -32,7 +45,6 @@ public class LoginServlet extends HttpServlet {
             } else {
                 resp.sendRedirect("/petpet/home");
 
-
             }
         }
 
@@ -42,6 +54,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String Emal = req.getParameter("register-email");
         String pass = req.getParameter("register-password");
+        String remember = req.getParameter("remember");
         UserDTO userDTO = new loginService().isUser(Emal, pass);
 
         if (userDTO != null) {
@@ -52,6 +65,36 @@ public class LoginServlet extends HttpServlet {
             System.out.println("getAttribute " + session.getAttribute("userSession"));
 
             // req.getRequestDispatcher("home").forward(req, resp);
+            System.out.println("remember " + remember);
+
+            if (remember != null) {
+
+                String ip = req.getRemoteAddr();
+                if (ip.equalsIgnoreCase("0:0:0:0:0:0:0:1")) {
+                    InetAddress inetAddress = InetAddress.getLocalHost();
+                    String ipAddress = inetAddress.getHostAddress();
+
+                    ip = ipAddress;
+                }
+
+                String enc = null;
+                try {
+                    enc = GenerateEncryptionPassword.encrypte(new Gson().toJson(
+                            new gov.iti.jets.models.Cookie(userDTO.getEmail(), userDTO.getPassword(), ip)));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                Cookie c = new Cookie("urml", enc);
+                c.setMaxAge(60 * 60 * 24 * 15);
+
+                c.getName();
+
+                System.out.println(c.getName());
+                System.out.println(c.getValue());
+
+                resp.addCookie(c);
+            }
 
             if (userDTO.isAdmin()) {
                 resp.sendRedirect("/petpet/admin");

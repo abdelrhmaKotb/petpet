@@ -3,7 +3,6 @@ package gov.iti.jets.services;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import gov.iti.jets.models.CartItem;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
 import gov.iti.jets.persistent.dto.SaveOrderDto;
@@ -70,6 +69,7 @@ public class CheckoutService {
         // find user
 
         User u = repo.find(user.getId());
+
         Double creditLimit = u.getCreditLimit();
 
         System.out.println(creditLimit + " " + total);
@@ -125,7 +125,8 @@ public class CheckoutService {
         Order savedOrder = repo.create(o);
         System.out.println("a " + o);
         cart.forEach(Item -> {
-            OrderDetail dd = new OrderDetail(new OrderDetailId(o.getId(),Item.getProductId()),o, new Product(Item.getProductId()), Item.getProductQty(),
+            OrderDetail dd = new OrderDetail(new OrderDetailId(o.getId(), Item.getProductId()), o,
+                    new Product(Item.getProductId()), Item.getProductQty(),
                     Item.getProductPrice());
 
             repo2.update(dd);
@@ -136,28 +137,27 @@ public class CheckoutService {
     // handel credit limit
     private void handelCreditLimit(UserDTO userDto) {
         RepositoryImpl<User, Integer> repo = new RepositoryImpl<>(User.class);
-        User user = new UserMapper().toEntity(userDto);
+        User user = repo.find(userDto.getId());
         user.setCreditLimit(user.getCreditLimit() - total);
         repo.update(user);
     }
 
     // handel product qty
-    private void handelProductQty(List<CartItem> cart){
-        RepositoryImpl<Product,Integer> repo = new RepositoryImpl<>(Product.class);
-        
+    private void handelProductQty(List<CartItem> cart) {
+        RepositoryImpl<Product, Integer> repo = new RepositoryImpl<>(Product.class);
+
         cart.forEach(e -> {
-            Product p =  repo.find(e.getProductId());
+            Product p = repo.find(e.getProductId());
             p.setQuantity(p.getQuantity() - e.getProductQty());
             repo.update(p);
         });
     }
 
-
-    private void handelCart(UserDTO user){
+    private void handelCart(UserDTO user) {
 
         AddToCartService addToCartService = new AddToCartService();
         addToCartService.add("[]", user.getId());
-        
+
     }
 
 }
