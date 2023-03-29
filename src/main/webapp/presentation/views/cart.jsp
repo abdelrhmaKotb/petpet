@@ -48,7 +48,7 @@
 															<figure class="product-media">
 																<a href="/petpet/product?id=${item.getProductId()}">
 																	<img src="/petpet/${item.getProductImage()}"
-																		alt="Product image">
+																		alt="Product image" data-src="${item.getProductImage()}">
 																</a>
 															</figure>
 		
@@ -164,7 +164,7 @@
 											CHECKOUT</a>
 									</div><!-- End .summary -->
 		
-									<a href="/petpet/cart" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE
+									<a href="/petpet/Shop" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE
 											SHOPPING</span><i class="icon-refresh"></i></a>
 								</aside><!-- End .col-lg-3 -->
 							</div><!-- End .row -->
