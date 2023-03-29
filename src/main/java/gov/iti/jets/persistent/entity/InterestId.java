@@ -11,10 +11,10 @@ import java.util.Objects;
 @Embeddable
 public class InterestId implements Serializable {
     private static final long serialVersionUID = 2921898278925120749L;
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "user_id")
     private Integer userId;
 
-    @Column(name = "interest_id", nullable = false)
+    @Column(name = "interest_id")
     private Integer interestId;
 
     public Integer getUserId() {
@@ -30,6 +30,14 @@ public class InterestId implements Serializable {
     }
 
     public void setInterestId(Integer interestId) {
+        this.interestId = interestId;
+    }
+
+    public InterestId() {
+    }
+
+    public InterestId(Integer userId, Integer interestId) {
+        this.userId = userId;
         this.interestId = interestId;
     }
 

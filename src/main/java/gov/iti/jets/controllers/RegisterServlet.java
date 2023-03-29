@@ -16,6 +16,7 @@ import gov.iti.jets.services.GetCategoriesService;
 import gov.iti.jets.services.InterestService;
 import gov.iti.jets.services.RegisterService;
 import gov.iti.jets.services.mapper.CategoryMapper;
+import gov.iti.jets.services.mapper.UserMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -54,28 +55,25 @@ public class RegisterServlet extends HttpServlet {
         InterestService interestService = new InterestService();
         List<Interest> interestArrayList=new ArrayList<>();
 
-        for (String interest : selectedInterest) {
-            Category category = getCategoriesService.getCategoryById(Integer.valueOf(interest));
-            Interest userInterest1 = new Interest();
-            userInterest1.setInterest(category);
-            interestList.add(userInterest1);
-        }
-        System.out.println("interest list "+interestList);
         UserDTO user = new UserDTO(fName, userName, phone, hashedPassword, job, creditLimit, country, street, null,
-                city, java.sql.Date.valueOf(date),interestArrayList);
+                city, java.sql.Date.valueOf(date));
 
-        System.out.println("user after interest "+user);
         RegisterService service = new RegisterService();
-        if (Validation.isValidName(fName) &&
-                Validation.validPassword(password) &&
-                Validation.validPhone(phone)&&
-                Validation.validConfirmPassword(password,conf_password)&&
-                Validation.validDate(date)) {
+        if (Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone) && Validation.validConfirmPassword(password, conf_password)) {
             System.out.println("All true");
             UserDTO createdUser = service.register(user);
 
             if (createdUser != null) {
-                interestService.setUserInterests(interestArrayList);
+
+                for (String interest : selectedInterest) {
+                    Category category = getCategoriesService.getCategoryById(Integer.valueOf(interest));
+                    Interest userInterest1 = new Interest();
+                    userInterest1.setInterest(category);
+                    userInterest1.setUser(new UserMapper().toEntity(user));
+                    interestList.add(userInterest1);
+                }
+                System.out.println("interest list "+interestList);
+                interestService.setUserInterests(interestList);
                 HttpSession session = req.getSession(true);
                 session.setAttribute("userSession", createdUser);
                 resp.sendRedirect("home");

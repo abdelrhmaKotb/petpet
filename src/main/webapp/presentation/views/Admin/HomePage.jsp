@@ -31,7 +31,7 @@
                                                     </div>
                                                 </div>
                                                 <h6 class="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">Top Products</h6>
-                                                <div class="scroll-area-sm"style="height: auto;">
+                                                <div class="scroll-area-sm"style="max-height: 200px;">
                                                     <div class="scrollbar-container">
                                                         <ul class="rm-list-borders rm-list-borders-scroll list-group list-group-flush">
                                                             <c:forEach var="best" items="${requestScope.categoriesReport}">

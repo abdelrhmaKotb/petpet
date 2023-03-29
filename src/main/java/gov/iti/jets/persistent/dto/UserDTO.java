@@ -106,7 +106,6 @@ public class UserDTO {
         this.city = city;
         this.birthday = birthday;
         this.interestDtos = interest;
-        System.out.println("in constructor"+ interest);
     }
 
     public UserDTO(){}

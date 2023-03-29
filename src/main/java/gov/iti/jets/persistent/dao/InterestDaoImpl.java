@@ -10,7 +10,7 @@ public class InterestDaoImpl  extends RepositoryImpl<Interest,Integer> implement
     @Override
     public boolean setUserInterest(Interest interest) {
         _entityManager.getTransaction().begin();
-        _entityManager.persist(interest);
+        _entityManager.merge(interest);
         System.out.println("intrests added");
         _entityManager.getTransaction().commit();
         return true;

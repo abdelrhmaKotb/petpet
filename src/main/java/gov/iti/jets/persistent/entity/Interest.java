@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 @Table(name = "interests")
 public class Interest {
     @EmbeddedId
-    private InterestId id;
+    private InterestId id = new InterestId();
 
     @MapsId("userId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -55,6 +55,7 @@ public class Interest {
     public Interest( User user, Category interest) {
         this.user = user;
         this.interest = interest;
+        id.setUserId(user.getId());
     }
 
 }
