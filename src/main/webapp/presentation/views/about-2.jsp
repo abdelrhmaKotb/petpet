@@ -144,7 +144,7 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="member member-2 text-center">
                             <figure class="member-media">
-                                <img src="/petpet/presentation/assets/images/team/about-2/member-1.jpg"
+                                <img src="/petpet/presentation/assets/images/team/about-2/member-4.jpg"
                                      alt="member photo">
 
                                 <figcaption class="member-overlay">

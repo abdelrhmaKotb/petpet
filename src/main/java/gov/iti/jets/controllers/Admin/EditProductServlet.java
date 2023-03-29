@@ -28,7 +28,7 @@ public class EditProductServlet extends HttpServlet {
         GetCategoriesService categoriesService = new GetCategoriesService();
         List<CategoryDto> categories = categoriesService.getCategories();
         req.setAttribute("categories", categories);
-        req.setAttribute("action", "/petpet/edit-product");
+        req.setAttribute("action", "/petpet/admin/edit-product");
         req.setAttribute("product", productDto);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/presentation/views/Admin/addProduct.jsp");
         dispatcher.forward(req, resp);
@@ -54,7 +54,7 @@ public class EditProductServlet extends HttpServlet {
 
         EditProductService editProductService = new EditProductService();
         editProductService.edit(product);
-        resp.sendRedirect("/petpet/Products");
+        resp.sendRedirect("/petpet/admin/products");
 
     }
 }

@@ -3,7 +3,6 @@ package gov.iti.jets.persistent.dao;
 import java.util.List;
 
 import gov.iti.jets.persistent.dao.interfaces.CartDao;
-import gov.iti.jets.persistent.dto.CartDto;
 import gov.iti.jets.persistent.entity.Cart;
 import gov.iti.jets.persistent.entity.User;
 

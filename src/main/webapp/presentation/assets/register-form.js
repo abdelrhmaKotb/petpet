@@ -1,5 +1,7 @@
 var Firstname, username, password, phone, job, street, city, country, credit, d;
 
+let isValidForm = true;
+
 $(document).ready(function () {
 
     $('#submitBtn').prop('disabled' , true);
@@ -15,6 +17,7 @@ function checkName() {
     if (!Firstname) {
         $("#register-Name").removeClass("form-control is-valid").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     } else {
         $("#register-Name").removeClass("form-control is-invalid").addClass("form-control is-valid")
         $('#submitBtn').prop('disabled' , false);
@@ -29,6 +32,7 @@ function checkBD() {
         $("#register-birth-2").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
 
+        isValidForm = false;
     }
     else {
         $("#register-birth-2").removeClass("form-control is-invalid").addClass("form-control is-valid")
@@ -41,7 +45,7 @@ function checkBD() {
 function validateEmail(input) {
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     console.log(emailRegex.test(input) + " check")
-    return(emailRegex.test(input))
+    return (emailRegex.test(input))
 }
 
 function checkUsername() {
@@ -57,25 +61,26 @@ function checkUsername() {
     } else {
         $("#register-username").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
-
+        isValidForm = false;
     }
 }
 
 function callBack(data) {
 
     console.log("Data " + data);
-    if (validateEmail(username) && data.match("true")  ) {
+    if (validateEmail(username) && data.match("true")) {
+        console.log("here")
         $("#register-username").removeClass("form-control is-invalid").addClass("form-control is-valid")
-        $('#submitBtn').prop('disabled' , false);
-    } else if (!validateEmail(username) && data.match("invalid")){
+    } else if (!validateEmail(username) && data.match("invalid")) {
         $("#emailfeedback").text("Email is empty or invalid format")
         $("#register-username").addClass("form-control is-invalid")
-        $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     }
-    else if(data.match("false")) {
+    else if (data.match("false")) {
         $("#emailfeedback").text("Email already exists")
         $("#register-username").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
 
     }
 
@@ -86,10 +91,11 @@ function checkPassword() {
 
     if (!password) {
         $("#register-password-1").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        isValidForm = false;
         $('#submitBtn').prop('disabled' , true);
-
     } else if (password.length < 8 || password.length > 20) {
         $("#register-password-1").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        isValidForm = false;
         $('#submitBtn').prop('disabled' , true);
     } else {
         $("#register-password-1").removeClass("form-control is-invalid").addClass("form-control is-valid")
@@ -107,14 +113,16 @@ function checkMatchPassword() {
     if (!pass2) {
         $("#register-password-confirm").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     }
-    if ((pass2.length > 8 || pass2.length < 20) && (password == pass2) && pass2 ) {
+    if ((pass2.length > 8 || pass2.length < 20) && (password == pass2) && pass2) {
         $("#register-password-1").removeClass("form-control is-invalid").addClass("form-control is-valid")
         $("#register-password-confirm").removeClass("form-control is-invalid").addClass("form-control is-valid")
         $('#submitBtn').prop('disabled' , false);
     } else {
         $("#register-password-confirm").removeClass("form-control is-valid").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     }
 
 }
@@ -143,6 +151,7 @@ function checkPhone() {
     } else {
         $("#register-phone").removeClass("form-control is-valid").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     }
 }
 
@@ -151,6 +160,7 @@ function checkJob() {
     if (!job) {
         $("#register-job").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     } else {
         $("#register-job").removeClass("form-control is-invalid").addClass("form-control is-valid")
         $('#submitBtn').prop('disabled' , false);
@@ -163,6 +173,7 @@ function checkCredit() {
     if (!credit) {
         $("#register-credit").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     } else {
         $("#register-credit").removeClass("form-control is-invalid").addClass("form-control is-valid")
         $('#submitBtn').prop('disabled' , false);
@@ -176,6 +187,7 @@ function checkStreet() {
     if (!street) {
         $("#register-street").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     } else {
         $("#register-street").removeClass("form-control is-invalid").addClass("form-control is-valid")
         $('#submitBtn').prop('disabled' , false);
@@ -187,6 +199,7 @@ function checkCity() {
     if (!city) {
         $("#register-city").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     } else {
         $("#register-city").removeClass("form-control is-invalid").addClass("form-control is-valid")
         $('#submitBtn').prop('disabled' , false);
@@ -198,24 +211,26 @@ function checkCountry() {
     if (!country) {
         $("#register-country").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     } else {
         $.get("/petpet/checkcountry?country=" + country, callBackCountry)
 
     }
 }
-function callBackCountry(data){
-    if(data.match("true")){
+function callBackCountry(data) {
+    if (data.match("true")) {
         $("#register-country").removeClass("form-control is-invalid").addClass("form-control is-valid")
         $('#submitBtn').prop('disabled' , false);
     }
     else {
         $("#register-country").addClass("form-control is-invalid")
         $('#submitBtn').prop('disabled' , true);
+        isValidForm = false;
     }
 }
 
-function userInterests(){
-    var selectedElements  = $("#multiple-select-field").val();
+function userInterests() {
+    var selectedElements = $("#multiple-select-field").val();
     selectedElements.forEach(function (value) {
         console.log(value)
     })
@@ -256,4 +271,27 @@ function registerUser() {
 
 function callBackSucess() {
     console.log("sent success");
+}
+
+function validateForm(event) {
+    event.preventDefault();
+    checkName();
+    checkUsername();
+    checkPassword();
+    checkMatchPassword();
+    checkPhone();
+    checkJob();
+    checkCredit();
+    checkStreet();
+    checkCity();
+    checkCountry();
+    userInterests();
+
+
+    if (isValidForm) {
+        event.currentTarget.submit();
+    } else {
+        isValidForm = true;
+    }
+
 }

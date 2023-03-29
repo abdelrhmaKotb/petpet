@@ -28,37 +28,41 @@ public class AddHeaderFilter implements Filter {
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession(false);
+        if(session !=null)
+            System.out.println("session attrebute name "+session.getAttributeNames());
         int userId = -1;
 
         if (session != null) {
             UserDTO user = (UserDTO) session.getAttribute("userSession");
-            System.out.println("session is in filter  " + session);
-            System.out.println("user dto " + user);
-            System.out.println("session.getAttribute(userSession)" + session.getAttribute("userSession"));
+
             if (user != null) {
                 userId = user.getId();
+
+                AddToCartService addToCartService = new AddToCartService();
+                String cartJson = addToCartService.get(userId);
+                Gson gson = new Gson();
+                Type listType = new TypeToken<List<CartItem>>() {
+                }.getType();
+
+                List<CartItem> cart = gson.fromJson(cartJson, listType);
+                if (cart == null) {
+                    cart = new ArrayList<>();
+                }
+
+                Double total = cart.stream().mapToDouble(item -> item.getProductPrice() * item.getProductQty()).sum();
+
+                request.setAttribute("cart", cart);
+                request.setAttribute("total", total);
+                request.setAttribute("cartItemCount", cart.size());
+
+            }else{
+                request.setAttribute("total", 0);
+                request.setAttribute("cartItemCount", 0);
             }
 
         }
 
-        userId = 12;
-
-        AddToCartService addToCartService = new AddToCartService();
-        String cartJson = addToCartService.get(userId);
-        Gson gson = new Gson();
-        Type listType = new TypeToken<List<CartItem>>() {
-        }.getType();
-        List<CartItem> cart = gson.fromJson(cartJson, listType);
-        if (cart == null) {
-            cart = new ArrayList<>();
-        }
-        System.out.println(" cart " + cart);
-        request.setAttribute("cart", cart);
-        Double total = cart.stream().mapToDouble(item -> item.getProductPrice() * item.getProductQty()).sum();
-        request.setAttribute("total", total);
-        // request.getRequestDispatcher("presentation/views/header.jsp").include(request,
-        // response);
-        System.out.println("filter fired");
+        // userId = 12;
         chain.doFilter(request, response);
 
     }

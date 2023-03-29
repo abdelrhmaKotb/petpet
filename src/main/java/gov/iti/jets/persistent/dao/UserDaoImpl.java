@@ -3,7 +3,9 @@ package gov.iti.jets.persistent.dao;
 import java.util.List;
 
 import gov.iti.jets.persistent.dao.interfaces.UserDao;
+import gov.iti.jets.persistent.entity.Order;
 import gov.iti.jets.persistent.entity.User;
+import jakarta.persistence.Query;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
@@ -27,7 +29,6 @@ public class UserDaoImpl extends RepositoryImpl<User,Integer>  implements UserDa
 
     @Override
     public User find() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'find'");
     }
 
@@ -42,6 +43,31 @@ public class UserDaoImpl extends RepositoryImpl<User,Integer>  implements UserDa
         List<User> result = _entityManager.createQuery(q).getResultList();
         if (result.size()==0)return null;
         return result.get(0);
+    }
+
+    @Override
+    public List<User> findUserByPageNumber(Integer pageNumber) {
+
+        Integer firstResult = 5*pageNumber;
+
+        Query query = _entityManager.createQuery("From User ORDER BY id ASC");
+        query.setFirstResult(firstResult);
+        query.setMaxResults(5);
+        List<User> userList = query.getResultList();
+
+
+        return userList;
+    }
+
+    @Override
+    public Long totalUsers() {
+
+        String countQ = "Select COUNT(u) from User u ";
+        Query countQuery = _entityManager.createQuery(countQ);
+        long countResults = (long) countQuery.getSingleResult();
+        System.out.println("countOfOrders"+countQuery.getSingleResult());
+        return countResults;
+
     }
 
 }

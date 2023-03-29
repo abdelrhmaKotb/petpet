@@ -3,8 +3,6 @@ package gov.iti.jets.controllers.Admin;
 import gov.iti.jets.persistent.entity.Product;
 import gov.iti.jets.persistent.entity.ProductImage;
 import gov.iti.jets.services.DeleteProductService;
-import gov.iti.jets.services.GetProductsService;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;

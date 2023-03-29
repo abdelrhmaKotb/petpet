@@ -1,7 +1,6 @@
 package gov.iti.jets.controllers.Admin;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -29,7 +28,7 @@ public class AddProductServlet extends HttpServlet {
     GetCategoriesService categoriesService = new GetCategoriesService();
     List<CategoryDto> categories = categoriesService.getCategories();
     request.setAttribute("categories", categories);
-    request.setAttribute("action", "/petpet/add-product");
+    request.setAttribute("action", "/petpet/admin/add-product");
     RequestDispatcher dis = request.getRequestDispatcher("/presentation/views/Admin/addProduct.jsp");
 
     dis.forward(request, response);
@@ -83,7 +82,7 @@ public class AddProductServlet extends HttpServlet {
     AddProductService addProductService = new AddProductService();
 
     Integer productId = addProductService.addProduct(product);
-    response.sendRedirect("/petpet/Products");
+    response.sendRedirect("/petpet/admin/products");
 
   }
 

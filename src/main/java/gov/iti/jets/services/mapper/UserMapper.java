@@ -11,6 +11,7 @@ public class UserMapper implements Mapper<User, UserDTO> {
             return null;
         }
         User user = new User();
+        user.setId(userDTO.getId());
         user.setBirthday(userDTO.getBirthday());
         user.setCity(userDTO.getCity());
         user.setCountry(userDTO.getCity());
@@ -23,6 +24,7 @@ public class UserMapper implements Mapper<User, UserDTO> {
         user.setZip(userDTO.getZip());
         user.setStreet(userDTO.getStreet());
 //        user.setInterest(userDTO.getInterestDtos());
+        user.setAdmin(userDTO.isAdmin());
         return user;
 
     }
@@ -44,7 +46,9 @@ public class UserMapper implements Mapper<User, UserDTO> {
                 user.getStreet(),
                 user.getZip(),
                 user.getCity(),
-                user.getBirthday());
+                user.getBirthday(),
+                user.isAdmin()
+                );
 
     }
 

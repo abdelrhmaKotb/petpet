@@ -20,32 +20,54 @@ public class AllProduct extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String category = req.getParameter("category");
+        
+        if(category != null){
+            GetProductsService getProductsService = new GetProductsService();
+            List<ProductDto> dtos = null;
+            switch (category) {
+                case "trendy":
+                    dtos =getProductsService.trendyProducts();
+                    break;
+                case "accessories":
+                    dtos =getProductsService.getproductsByCategory(category);
+                    break;
+                default:
+                    break;
+            }
+            
+            req.setAttribute("productList", dtos);
+            
+            // dtos.forEach(System.out::println);
 
-        GetProductsService productsService =  new  GetProductsService();
+            req.getRequestDispatcher("/presentation/views/shop.jsp").forward(req, resp);
+        }else {  
+            GetProductsService productsService =  new  GetProductsService();
 
-        GetCategoriesService getCategoriesService = new GetCategoriesService();
+            GetCategoriesService getCategoriesService = new GetCategoriesService();
 
-        List<ProductDto> products =  productsService.getproductsByPage(0);
+            List<ProductDto> products =  productsService.getproductsByPage(0);
 
-        List<getCategoryAnditsQuantityDTO>categoryDtos = getCategoriesService.getCategoriesAndItsQuantity();
+            List<getCategoryAnditsQuantityDTO>categoryDtos = getCategoriesService.getCategoriesAndItsQuantity();
 
-        double highestPrise = productsService.getHighestPrise();
+            double highestPrise = productsService.getHighestPrise();
 
-        RequestDispatcher requestDis = req.getRequestDispatcher("/presentation/views/shop.jsp");
+            RequestDispatcher requestDis = req.getRequestDispatcher("/presentation/views/shop.jsp");
 
-        long totalPages = productsService.totalPages( );
+            long totalPages = productsService.totalPages( );
 
-        req.setAttribute("productList", products);
+            req.setAttribute("productList", products);
 
-        req.setAttribute("categoryList",categoryDtos);
+            req.setAttribute("categoryList",categoryDtos);
 
-        req.setAttribute("CurrentPage", 1);
+            req.setAttribute("CurrentPage", 1);
 
-        req.setAttribute("totalPages", Math.round(Math.ceil( (double)totalPages/10)));
+            req.setAttribute("totalPages", Math.round(Math.ceil( (double)totalPages/10)));
 
-        req.setAttribute("highestPrise",highestPrise);
+            req.setAttribute("highestPrise",highestPrise);
 
-        requestDis.forward(req, resp);
+            requestDis.forward(req, resp);
+        }
 
     }
 

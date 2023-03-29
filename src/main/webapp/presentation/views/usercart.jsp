@@ -4,17 +4,17 @@
     <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false" data-display="static">
         <i class="icon-shopping-cart"></i>
-        <span class="cart-count">2</span>
+        <span class="cart-count">${cartItemCount}</span>
     </a>
 
-    <div class="dropdown-menu dropdown-menu-right">
+    <div class="dropdown-menu dropdown-menu-right" style="max-height: 300px;overflow-y: auto;">
         <div class="dropdown-cart-products">
 
             <c:forEach var="item" items="${cart}">
                 <div class="product">
                     <div class="product-cart-details">
                         <h4 class="product-title">
-                            <a href="product.html">${item.getProductName()}</a>
+                            <a href="/petpet/product?id=${item.getProductId()}">${item.getProductName()}</a>
                         </h4>
 
                         <span class="cart-product-info">
@@ -24,7 +24,7 @@
                     </div><!-- End .product-cart-details -->
 
                     <figure class="product-image-container">
-                        <a href="product.html" class="product-image">
+                        <a href="/petpet/product?id=${item.getProductId()}" class="product-image">
                             <img src="/petpet/presentation/assets/images/products/cart/product-1.jpg"
                                 alt="product">
                         </a>
@@ -43,8 +43,8 @@
         </div><!-- End .dropdown-cart-total -->
 
         <div class="dropdown-cart-action">
-            <a href="cart.html" class="btn btn-primary">View Cart</a>
-            <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i
+            <a href="/petpet/cart" class="btn btn-primary">View Cart</a>
+            <a href="/petpet/checkout" class="btn btn-outline-primary-2"><span>Checkout</span><i
                     class="icon-long-arrow-right"></i></a>
         </div><!-- End .dropdown-cart-total -->
     </div><!-- End .dropdown-menu -->

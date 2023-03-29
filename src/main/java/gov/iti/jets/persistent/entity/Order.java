@@ -2,8 +2,6 @@ package gov.iti.jets.persistent.entity;
 
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,18 +17,61 @@ public class Order {
     @Column(name = "created_at")
     private Date createdAt;
 
-    @Column(name = "total_price", precision = 10)
-    private BigDecimal totalPrice;
+    
+    private String country;
+    
+    private String street;
+    
+    private String city;
+    
+    private String phone;
+    
+    private String ZIP;
 
-    @Column(name = "status", columnDefinition = "SMALLINT UNSIGNED")
-    private Integer status;
+
+    
+
+    @Column(name = "total_price", precision = 10)
+    private Double totalPrice;
+
+    @Column(name = "status")
+    private String status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order",cascade = { CascadeType.PERSIST,
+        CascadeType.MERGE })
     List<OrderDetail> orderDetails = new ArrayList<>();
+
+    String notes;
+
+    public Order() {
+    }
+
+    public Order(Integer id, Date createdAt, Double totalPrice, String status, User user) {
+        this.id = id;
+        this.createdAt = createdAt;
+        this.totalPrice = totalPrice;
+        this.status = status;
+        this.user = user;
+    }
+
+    public Order(Date createdAt, Double totalPrice, String status, User user) {
+        this.createdAt = createdAt;
+        this.totalPrice = totalPrice;
+        this.status = status;
+        this.user = user;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
 
     public List<OrderDetail> getOrderDetails() {
         return orderDetails;
@@ -56,19 +97,21 @@ public class Order {
         this.createdAt = createdAt;
     }
 
-    public BigDecimal getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(BigDecimal totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    
+
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -80,21 +123,52 @@ public class Order {
         this.user = user;
     }
 
-    public Order() {
+    public String getCountry() {
+        return country;
     }
 
-    public Order(Integer id, Date createdAt, BigDecimal totalPrice, Integer status, User user) {
-        this.id = id;
-        this.createdAt = createdAt;
-        this.totalPrice = totalPrice;
-        this.status = status;
-        this.user = user;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public Order(Date createdAt, BigDecimal totalPrice, Integer status, User user) {
-        this.createdAt = createdAt;
-        this.totalPrice = totalPrice;
-        this.status = status;
-        this.user = user;
+    public String getStreet() {
+        return street;
     }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getZIP() {
+        return ZIP;
+    }
+
+    public void setZIP(String zIP) {
+        ZIP = zIP;
+    }
+
+    @Override
+    public String toString() {
+        return "Order [id=" + id + ", createdAt=" + createdAt + ", country=" + country + ", street=" + street
+                + ", city=" + city + ", phone=" + phone + ", ZIP=" + ZIP + ", totalPrice=" + totalPrice + ", status="
+                + status + ", user=" + user + ", orderDetails=" + ", notes=" + notes + "]";
+    }
+
+    
 }

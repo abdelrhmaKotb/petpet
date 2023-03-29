@@ -65,7 +65,7 @@
                                         </div><!-- End .product-action -->
 
                                         <div class="product-action action-icon-top">
-                                            <a data-id="${products.getId()}" data-price="${products.getPrice()}"
+                                            <a href="javascript:void(0)" data-image="${products.getImagesUlrs().get(0)}" data-id="${products.getId()}" data-price="${products.getPrice()}"
                                                 data-name="${products.getName()}"
                                                 class="btn-product btn-cart addToCart"><span>add
                                                     to cart</span></a>
@@ -157,10 +157,6 @@
                             </div><!-- End .collapse -->
 
                         </div><!-- End .widget -->
-
-
-
-
                         <div class="widget widget-collapsible">
                             <h3 class="widget-title">
                                 <a data-toggle="collapse" href="#widget-5" role="button" aria-expanded="true"

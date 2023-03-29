@@ -21,7 +21,6 @@ public class CategoryDaoImpl extends RepositoryImpl<Category, Integer> implement
         CriteriaQuery<String> q = _criteriaBuilder.createQuery(String.class);
         Root<Category> category = q.from(Category.class);
         q.select(category.get("name"));
-
         List<String> result = _entityManager.createQuery(q).getResultList();
 
         return result;
@@ -70,17 +69,27 @@ public class CategoryDaoImpl extends RepositoryImpl<Category, Integer> implement
         });
         return countResults;
     }
+    @Override
+    public List<Category> getMainCategories() {
 
+        String countQ = """
+                            select od.product.category
+                            from OrderDetail od  
+                            group by od.product.category 
+                            having od.product.category.parentId = 0
+                            ORDER BY COUNT(od) DESC 
+                            """;
+        Query countQuery = _entityManager.createQuery(countQ, Category.class);
+        List<Category> countResults = countQuery.getResultList();
+        return countResults;
+    }
     @Override
     public void AddCategory(String cName, int parentId) {
         Category c = new Category();
         c.setName(cName);
         c.setParentId(parentId);
         _entityManager.getTransaction().begin();
-        System.out.println("malek");
         _entityManager.persist(c);
-        System.out.println("malek");
-
         _entityManager.getTransaction().commit();
 
     }
