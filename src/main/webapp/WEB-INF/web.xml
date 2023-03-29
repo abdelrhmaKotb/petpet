@@ -348,6 +348,16 @@
 	</servlet-mapping>
 
 
+	<servlet>
+		<servlet-name>saveupdateuser</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.saveUpdateuserServlet</servlet-class>
+		</servlet>
+		
+		<servlet-mapping>
+		<servlet-name>saveupdateuser</servlet-name>
+		<url-pattern>/saveupdateuser</url-pattern>
+		</servlet-mapping>
+
 	<!-- Welcome List-->
 
 	<filter>

@@ -2,7 +2,10 @@ package gov.iti.jets.persistent.dao;
 
 import java.util.List;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import gov.iti.jets.persistent.dao.interfaces.UserDao;
+import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.persistent.entity.Order;
 import gov.iti.jets.persistent.entity.User;
 import jakarta.persistence.Query;
@@ -69,5 +72,40 @@ public class UserDaoImpl extends RepositoryImpl<User,Integer>  implements UserDa
         return countResults;
 
     }
+    public User findUserById(int Id) {
+       
 
+        CriteriaQuery<User> q = _criteriaBuilder.createQuery(User.class);
+        Root<User> user = q.from(User.class);
+        q.select(user).where(_criteriaBuilder.equal(user.<Integer>get("Id"),Id));
+       
+        List<User> result = _entityManager.createQuery(q).getResultList();
+        if (result.size()==0)return null;
+        return result.get(0);
+    }
+    public void saveUpdateUser(UserDTO user,int userid){
+        User oldUser = findUserById(userid);
+        if (user.getPassword() != null) {
+            String hashedpass = Hash(user.getPassword() );
+            oldUser.setPassword(hashedpass);
+        }
+        oldUser.setName(user.getName());
+        oldUser.setPhone(user.getPhone());
+        oldUser.setBirthday(user.getBirthday());
+        oldUser.setJob(user.getJob());
+        oldUser.setCreditLimit(user.getCreditLimit());
+        oldUser.setStreet(user.getStreet());
+        oldUser.setCity(user.getCity());
+        oldUser.setCountry(user.getCountry());
+        _entityManager.getTransaction().begin();
+        _entityManager.merge(oldUser);
+        _entityManager.getTransaction().commit();
+        System.out.println("good jop");
+    }
+    private static String Hash(String password) {
+        String salt = BCrypt.gensalt(10); // generate a random salt
+        String hashedPassword = BCrypt.hashpw(password, salt); // hash the password
+        System.out.println("Hashed Password " + hashedPassword);
+        return hashedPassword;
+    }
 }
