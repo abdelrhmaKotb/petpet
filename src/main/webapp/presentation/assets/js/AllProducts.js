@@ -167,6 +167,9 @@ $(document).ready(function () {
           cache: false,
           success: (data) => {
             $(this).closest("tr").remove();
+            $.get('/petpet/presentation/views/usercart.jsp',function(params) {
+              $('#cartContainer').html(params);
+            })
           },
           error: function () {
             alert('error');
