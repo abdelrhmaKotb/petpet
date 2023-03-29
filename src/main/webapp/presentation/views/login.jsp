@@ -72,7 +72,7 @@
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="signin-2" role="tabpanel"
                                 aria-labelledby="signin-tab-2">
-                                <form action="/petpet/login_" method="post">
+                                <form action="/petpet/login" method="post">
                                     <div class="form-group">
                                         <label for="register-email-2">Your email address *</label>
                                         <input type="email" class="form-control" id="register-email-2"
