@@ -47,25 +47,19 @@ public class RegisterServlet extends HttpServlet {
 
 
         RegisterService service = new RegisterService();
-        if(Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone) && Validation.validConfirmPassword(password,conf_password))
-        {
+        if (Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone)) {
             System.out.println("All true");
-            service.register(user);
-            PrintWriter out = resp.getWriter();
-            out.print("""
-                    <div class='alert alert-success' role='alert'>
-                     Registered successfully
-                    </div>""");
-            req.getRequestDispatcher("login").forward(req,resp);
+            UserDTO createdUser = service.register(user);
+            if (createdUser != null) {
+                HttpSession session = req.getSession(true);
+                session.setAttribute("userSession", createdUser);
+                resp.sendRedirect("home");
+            } else {
+                resp.sendRedirect("login");
+            }
 
-        }
-        else {
+        } else {
             resp.sendRedirect("login");
-            resp.getWriter().print("<div class=\"alert alert-danger\" role=\"alert\">\n" +
-                    "  This is a danger alert—check it out!\n" +
-                    "</div>");
-            resp.sendRedirect("login");
-
         }
 
     }
