@@ -14,7 +14,7 @@ public class UserDTO {
     String phone;
     String password;
     String job;
-    BigDecimal creditLimit;
+    double creditLimit;
     String country;
     String street;
     String zip;
@@ -28,7 +28,7 @@ public class UserDTO {
 
 
     public UserDTO(int id, String firstName, String userName, String phone, String password, String job,
-                   BigDecimal creditLimit, String country, String street, String zip, String city, LocalDate birthday) {
+    double creditLimit, String country, String street, String zip, String city, LocalDate birthday) {
         this.id = id;
         this.firstName = firstName;
         this.userName = userName;
@@ -43,7 +43,7 @@ public class UserDTO {
         this.birthday = birthday;
     }
 
-    public UserDTO(String name, String userName, String phone, String password, String job, BigDecimal creditLimit,
+    public UserDTO(String name, String userName, String phone, String password, String job, double creditLimit,
                    String country, String street, String zip, String city, LocalDate birthday) {
         this.firstName = name;
         this.userName = userName;
@@ -95,10 +95,10 @@ public class UserDTO {
     public void setJob(String job) {
         this.job = job;
     }
-    public BigDecimal getCreditLimit() {
+    public double getCreditLimit() {
         return creditLimit;
     }
-    public void setCreditLimit(BigDecimal creditLimit) {
+    public void setCreditLimit(double creditLimit) {
         this.creditLimit = creditLimit;
     }
     public String getCountry() {

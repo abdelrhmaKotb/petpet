@@ -31,7 +31,7 @@ public class User {
     private String email;
 
     @Column(name = "credit_limit", precision = 10)
-    private BigDecimal creditLimit;
+    private double creditLimit;
 
     @Column(name = "country", length = 100)
     private String country;
@@ -107,11 +107,11 @@ public class User {
         this.email = email;
     }
 
-    public BigDecimal getCreditLimit() {
+    public double getCreditLimit() {
         return creditLimit;
     }
 
-    public void setCreditLimit(BigDecimal creditLimit) {
+    public void setCreditLimit(double creditLimit) {
         this.creditLimit = creditLimit;
     }
 

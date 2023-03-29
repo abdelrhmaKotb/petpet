@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.google.gson.JsonObject;
+
 import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.services.UpdateUserService;
 import jakarta.servlet.ServletException;
@@ -16,10 +18,11 @@ public class saveUpdateuserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("hla hal");
-        String fName = req.getParameter("update-Name");
+    
+        String fName = req.getParameter("firstName");
         //  String [] selectedInterest = req.getParameterValues("multiple-select-field");
         //  System.out.println(selectedInterest.length);
-        String userName = req.getParameter("update-username");
+        String userName = req.getParameter("userName");
         System.out.println("user email " + userName);
         String phone = req.getParameter("upd-phon");
         String password = req.getParameter("update-password-1");
@@ -29,7 +32,7 @@ public class saveUpdateuserServlet extends HttpServlet {
         String street = req.getParameter("update-street");
         String city = req.getParameter("update-city");
         String birthday = req.getParameter("update-birth");
-        BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
+        double cl = Double.parseDouble(creditLimit);
         LocalDate date = LocalDate.parse(birthday); // date formater
         String userid = req.getParameter("userId");
         UserDTO user = new UserDTO(fName, userName, phone, password, job, cl, country, street, null, city, date);

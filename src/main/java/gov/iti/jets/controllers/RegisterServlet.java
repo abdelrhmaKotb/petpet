@@ -36,7 +36,7 @@ public class RegisterServlet extends HttpServlet{
         String street  = req.getParameter("register-street");
         String city  = req.getParameter("register-city");
         String birthday  = req.getParameter("register-birth");
-        BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
+        double cl = Double.parseDouble(creditLimit);
         LocalDate date = LocalDate.parse(birthday); //date formater
         UserDTO user = new UserDTO(fName,userName,phone,hashedPassword,job,cl,country,street,null,city,date);
 

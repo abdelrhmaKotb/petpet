@@ -11,67 +11,67 @@ var country = document.getElementById('update-country');
 var pass = document.getElementById('update-password-1');
 var passconf = document.getElementById('update-password-confirm');
 var UpdateButton = document.getElementById("savebutton");
-UpdateButton.classList.add("hidden");
+// UpdateButton.classList.add("hidden");
 
 
-window.addEventListener('load', () => {
+// window.addEventListener('load', () => {
 
-    //     var userId = document.getElementById("userId").value;
-    var url = "/petpet/updateuser";
-    data = {
-        userId: 16
-    };
-    $.ajax({
-        url: url,
-        type: "POST",
+//     //     var userId = document.getElementById("userId").value;
+//     var url = "/petpet/updateuser";
+//     data = {
+//         userId: 16
+//     };
+//     $.ajax({
+//         url: url,
+//         type: "POST",
 
-        data: data,
-        dataType: 'json',
-        success: function (response) {
-            // Handle the user data here
-            console.log(response);
-            usernam.value = response.name;
-            usernam.readOnly = true;
-            console.log(response.name);
+//         data: data,
+//         dataType: 'json',
+//         success: function (response) {
+//             // Handle the user data here
+//             console.log(response);
+//             usernam.value = response.name;
+//             usernam.readOnly = true;
+//             console.log(response.name);
 
-            useremal.value = response.email;
-            useremal.readOnly = true;
+//             useremal.value = response.email;
+//             useremal.readOnly = true;
 
-            console.log(response.Phone);
-            userphon.value = response.Phone;
-            userphon.readOnly = true;
+//             console.log(response.Phone);
+//             userphon.value = response.Phone;
+//             userphon.readOnly = true;
 
-            birth.value = response.BirthDate;
-            birth.readOnly = true;
+//             birth.value = response.BirthDate;
+//             birth.readOnly = true;
 
-            job.value = response.job;
-            job.readOnly = true;
+//             job.value = response.job;
+//             job.readOnly = true;
 
-            credit.value = response.creditLimit;
-            credit.readOnly = true;
+//             credit.value = response.creditLimit;
+//             credit.readOnly = true;
 
-            street.value = response.Street;
-            street.readOnly = true;
+//             street.value = response.Street;
+//             street.readOnly = true;
 
-            city.value = response.city;
-            city.readOnly = true;
+//             city.value = response.city;
+//             city.readOnly = true;
 
-            country.value = response.County;
-            country.readOnly = true;
+//             country.value = response.County;
+//             country.readOnly = true;
 
-            pass.readOnly = true;
+//             pass.readOnly = true;
 
-            passconf.readOnly = true;
+//             passconf.readOnly = true;
 
 
-        },
-        error: function (xhr) {
+//         },
+//         error: function (xhr) {
 
-            console.log(xhr.statusText);
-        }
-    });
+//             console.log(xhr.statusText);
+//         }
+//     });
 
-});
+// });
 
 
 function toggleReadonlyname() {
@@ -309,8 +309,8 @@ function UpdateUser() {
         birthday: birth,
         userId: userId
     }
-
-    console.log(jsonUser);
+console.log("kotb")
+     console.log(jsonUser);
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "/petpet/saveupdateuser", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -321,8 +321,24 @@ function UpdateUser() {
         }
       };
       
-    xhttp.send(JSON.stringify(jsonUser));
+    
     }
+    xhttp.send(JSON.stringify(jsonUser));
+    // $.ajax({
+    //     url: "/petpet/saveupdateuser",
+    //     type: "POST",
+    //     data: jsonUser,
+    //     dataType: 'json',
+    //     success: function (response) {
+    //         console.log(response);
+    //     },
+    //     error: function (xhr) {
+
+    //         console.log(xhr.statusText);
+    //     }
+    // });
+
+
     // $.ajax({
     //     url: "/petpet/saveupdateuser",
     //     type: "POST",
@@ -331,7 +347,7 @@ function UpdateUser() {
     //     dataType: 'json',
     //     success: function (response) {
     //         // Handle the user data here
-    //         console.log(response);
+    //         console.log("success");
     //     },
     //     error: function (xhr) {
 

@@ -137,7 +137,7 @@
 										<div class="col-md-12">
 											<label for="update-username" class="form-label">Username </label>
 											<div class="input-group form-outline">
-												<input type="email" class="form-control" id="update-username"
+												<input type="email" class="form-control" id="update-username" value= "${sessionScope.userSession.getEmail()}"
 													name="update-username" aria-describedby="inputGroupPrepend"
 													onblur="checkUsername()" required />
 
@@ -146,7 +146,7 @@
 										</div>
 										<div id="name-div" class="col-sm-12">
 											<label for="update-Name">Name *</label>
-											<input type="text" class="form-control" id="update-Name"
+											<input type="text" class="form-control" id="update-Name" value= "${sessionScope.userSession.firstName}"
 												onblur="checkName()" name="update-Name" required="">
 											<button class="edit-button"  onclick="toggleReadonlyname()">Edit
 												<i class="icon-edit"> </i></button>
@@ -250,6 +250,7 @@
 											</div>
 
 										</div>
+										<br>
 										<button  class="btn btn-outline-primary-2" id="savebutton" onclick="UpdateUser()">
 											<span>SAVE CHANGES</span>
 											<i class="icon-long-arrow-right"></i>
