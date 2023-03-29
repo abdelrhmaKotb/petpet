@@ -29,7 +29,7 @@
 										aria-selected="true">Dashboard</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link orders" id="tab-orders-link" data-toggle="tab" href="#tab-orders"
+									<a class="nav-link " id="tab-orders-link" data-toggle="tab" href="#tab-orders"
 										role="tab" aria-controls="tab-orders" aria-selected="false">Orders</a>
 								</li>
 
@@ -42,7 +42,7 @@
 										role="tab" aria-controls="tab-account" aria-selected="false">Account Details</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">Sign Out</a>
+									<a class="nav-link" href="/petpet/logout">Sign Out</a>
 								</li>
 							</ul>
 						</aside><!-- End .col-lg-3 -->
@@ -72,11 +72,25 @@
 											<a href="/petpet/Shope" class="btn btn-outline-primary-2"><span>GO
 													SHOP</span><i class="icon-long-arrow-right"></i></a>
 										</c:when>
+
 										<c:otherwise>
-											<p>Your last 5 order.</p>
-											<table id="UserOrderTable" class="table">
+										<c:choose>
+										    <c:when  test="${requestScope.totalOrders < 1}">
+                                                <p>No order has been made yet </span><a href="/petpet/Shop">go shopping ?</a>.</p>
+										    </c:when>
+										    <c:otherwise>
+										    <c:choose>
+										    <c:when test="${requestScope.totalOrders < 5}">
+										    <p>Your last ${requestScope.totalOrders}  order.</p>
+										    </c:when>
+										    <c:otherwise>
+										     <p>Your last 5 order.</p>
+										    </c:otherwise>
+										    </c:choose>
+
+											    <table id="" class="table">
 												<thead>
-													<tr>
+													<tr class="text-center">
 														<th class="text-center">#</th>
 														<th>createdAt</th>
 														<th>totalPrice</th>
@@ -85,9 +99,24 @@
 													</tr>
 												</thead>
 												<tbody>
+													<c:forEach var="item" items="${requestScope.orders}">
 
+														<tr class="text-center">
+															<td>${item.getId()}</td>
+															<td>${item.getCreatedAt()}</td>
+															<td>${item.getTotalPrice()}</td>
+															<td class="in-stock">${item.getStatus()}</td>
+															<td class="action-col">
+                                                                <button class="btn btn-block btn-outline-primary-2">  <a href="/petpet/admin/order-details?id=${item.getId()}">View Details</a></button>
+                                                            </td>
+														</tr>
+
+													</c:forEach>
 												</tbody>
 											</table>
+
+										    </c:otherwise>
+										</c:choose>
 
 										</c:otherwise>
 									</c:choose>
@@ -111,7 +140,7 @@
 														New York, NY 10001<br>
 														1-234-987-6543<br>
 														yourmail@mail.com<br>
-														<a href="#">Edit <i class="icon-edit" onclick=""></i></a>
+														<a href="#">Edit <i class="icon-edit"></i></a>
 													</p>
 												</div><!-- End .card-body -->
 											</div><!-- End .card-dashboard -->

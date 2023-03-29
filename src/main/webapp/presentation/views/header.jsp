@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 
 <!-- molla/checkout.html  22 Nov 2019 09:55:06 GMT -->
 
@@ -27,6 +27,8 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Plugins CSS File -->
     <link rel="stylesheet" href="/petpet/presentation/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
     <!-- Main CSS File -->
     <link rel="stylesheet" href="/petpet/presentation/assets/css/style.css">
     <link rel="stylesheet" href="/petpet/presentation/assets/css/product.css">
@@ -49,8 +51,7 @@
                                 <a href="#">Links</a>
                                 <ul>
                                     <li><a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a></li>
-                                    <li><a href="/petpet/wishlist"><i class="icon-heart-o"></i>Wishlist
-                                            <span>(3)</span></a></li>
+
                                     <li><a href="/petpet/about">About Us</a></li>
                                     <li><a href="/petpet/contact">Contact Us</a></li>
                                     <li><a href="/petpet/login" data-toggle="modal"><i class="icon-user"></i>Login</a>
@@ -83,9 +84,29 @@
                                 <li>
                                     <a href="/petpet/Shop">Shop</a>
                                 </li>
-                                 <li>
-                                         <a href="/petpet/about">About</a>
-                                 </li>
+                                <li>
+                                    <a href="/petpet/about">About</a>
+                                </li>
+                                 <c:choose>
+                                    <c:when test="${empty sessionScope.userSession}">
+                                        <li><a href="/petpet/login">Sign In/Up</a></li>
+                                    </c:when>
+                                    <c:otherwise>
+                                      <li>  <span> Profile </span>
+                                       <div class="megamenu megamenu-md">
+                                          <div class="row no-gutters">
+                                              <div class="">
+                                                  <div class="menu-col">
+                                                      <div class="row">
+                                                          <div class="col-md-6">
+                                                              <div class="menu-title"><a href="/petpet/my-account">My Account</a></div>
+                                                              <div class="menu-title"><a href="/petpet/logout">Logout</a></div>
+                                                          </div><!-- End .col-md-6 -->
+                                                      </div><!-- End .row -->
+                                                  </div><!-- End .menu-col -->
+                                              </div><!-- End .col-md-8 -->
+                                    </c:otherwise>
+                                </c:choose>
                             </ul><!-- End .menu -->
                         </nav><!-- End .main-nav -->
                     </div><!-- End .header-left -->
@@ -102,12 +123,7 @@
                                 </div><!-- End .header-search-wrapper -->
                             </form>
                         </div><!-- End .header-search -->
-                        <div class="dropdown compare-dropdown">
-                            <a href="/petpet/wishlist" class="wishlist-link">
-                                <i class="icon-heart-o"></i>
-                            </a>
 
-                        </div><!-- End .compare-dropdown -->
 
                         <jsp:directive.include file="usercart.jsp" />
 

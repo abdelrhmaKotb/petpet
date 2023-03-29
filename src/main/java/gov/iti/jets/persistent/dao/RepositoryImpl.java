@@ -32,6 +32,7 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
         } catch (Exception ex) {
             _entityManager.getTransaction().rollback();
             System.out.println("erro : " + ex.getMessage());
+            return null;
             // throw ex;
         }
 
@@ -43,10 +44,17 @@ public class RepositoryImpl<E, K> implements Repository<E, K> {
         E ew = _entityManager.find(type, id);
         return ew;
     }
+
     @Override
     public E findFromContext(K id) {
-        E ew = _entityManager.getReference(type, id);
-        return ew;
+        try {
+            E ew = _entityManager.getReference(type, id);
+            return ew;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        // return ew;
     }
 
     @Override

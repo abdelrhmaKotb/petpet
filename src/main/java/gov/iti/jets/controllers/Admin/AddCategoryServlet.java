@@ -31,14 +31,14 @@ public class AddCategoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String category_name = req.getParameter("category_name");
         String parent = req.getParameter("mySelect");
-
-        if (new Categoryservices().addCategory(category_name, parent) ) {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("presentation/views/Admin/addCategory.jsp");
+        boolean resultOfAddingCategory =new Categoryservices().addCategory(category_name, parent);
+        if (resultOfAddingCategory) {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/admin/add-category-page");
             dispatcher.forward(req, resp);
         } else {
           
             req.setAttribute("errorMessagecategore","This Category  "+category_name+"  Already Exist Please Add Another Category");
-            RequestDispatcher dispatcher = req.getRequestDispatcher("presentation/views/Admin/addCategory.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/admin/add-category-page");
             dispatcher.forward(req, resp);
         }
 

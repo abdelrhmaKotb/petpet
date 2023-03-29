@@ -1,5 +1,7 @@
 var Firstname, username, password, phone, job, street, city, country, credit, d;
 
+let isValidForm = true;
+
 $(document).ready(function () {
 
 
@@ -14,6 +16,7 @@ function checkName() {
     Firstname = $("#register-Name").val()
     if (!Firstname) {
         $("#register-Name").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        isValidForm = false;
     } else {
         $("#register-Name").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
@@ -24,6 +27,7 @@ function checkBD() {
 
     if (!d) {
         $("#register-birth-2").addClass("form-control is-invalid")
+        isValidForm = false;
     }
     else {
         $("#register-birth-2").removeClass("form-control is-invalid").addClass("form-control is-valid")
@@ -34,7 +38,7 @@ function checkBD() {
 function validateEmail(input) {
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     console.log(emailRegex.test(input) + " check")
-    return(emailRegex.test(input))
+    return (emailRegex.test(input))
 }
 
 function checkUsername() {
@@ -48,23 +52,26 @@ function checkUsername() {
         console.log("My json " + emailJson);
         $.get("/petpet/register?email=" + username, callBack)
     } else {
-        $("#register-username").addClass("form-control is-invalid")
+        $("#register-username").addClass("form-control is-invalid");
+        isValidForm = false;
     }
 }
 
 function callBack(data) {
 
     console.log("Data " + data);
-    if (validateEmail(username) && data.match("true")  ) {
+    if (validateEmail(username) && data.match("true")) {
         console.log("here")
         $("#register-username").removeClass("form-control is-invalid").addClass("form-control is-valid")
-    } else if (!validateEmail(username) && data.match("invalid")){
+    } else if (!validateEmail(username) && data.match("invalid")) {
         $("#emailfeedback").text("Email is empty or invalid format")
         $("#register-username").addClass("form-control is-invalid")
+        isValidForm = false;
     }
-    else if(data.match("false")) {
+    else if (data.match("false")) {
         $("#emailfeedback").text("Email already exists")
         $("#register-username").addClass("form-control is-invalid")
+        isValidForm = false;
 
     }
 
@@ -75,8 +82,10 @@ function checkPassword() {
 
     if (!password) {
         $("#register-password-1").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        isValidForm = false;
     } else if (password.length < 8 || password.length > 20) {
         $("#register-password-1").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        isValidForm = false;
     } else {
 
         $("#register-password-1").removeClass("form-control is-invalid").addClass("form-control is-valid")
@@ -92,12 +101,14 @@ function checkMatchPassword() {
 
     if (!pass2) {
         $("#register-password-confirm").addClass("form-control is-invalid")
+        isValidForm = false;
     }
-    if ((pass2.length > 8 || pass2.length < 20) && (password == pass2) && pass2 ) {
+    if ((pass2.length > 8 || pass2.length < 20) && (password == pass2) && pass2) {
         $("#register-password-1").removeClass("form-control is-invalid").addClass("form-control is-valid")
         $("#register-password-confirm").removeClass("form-control is-invalid").addClass("form-control is-valid")
     } else {
         $("#register-password-confirm").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        isValidForm = false;
     }
 
 }
@@ -124,6 +135,7 @@ function checkPhone() {
         $("#register-phone").removeClass("form-control is-invalid").addClass("form-control is-valid")
     } else {
         $("#register-phone").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        isValidForm = false;
     }
 }
 
@@ -131,6 +143,7 @@ function checkJob() {
     job = $("#register-job").val()
     if (!job) {
         $("#register-job").addClass("form-control is-invalid")
+        isValidForm = false;
     } else {
         $("#register-job").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
@@ -141,6 +154,7 @@ function checkCredit() {
     credit = $("#register-credit").val()
     if (!credit) {
         $("#register-credit").addClass("form-control is-invalid")
+        isValidForm = false;
     } else {
         $("#register-credit").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
@@ -152,6 +166,7 @@ function checkStreet() {
     street = $("#register-street").val()
     if (!street) {
         $("#register-street").addClass("form-control is-invalid")
+        isValidForm = false;
     } else {
         $("#register-street").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
@@ -161,6 +176,7 @@ function checkCity() {
     city = $("#register-city").val()
     if (!city) {
         $("#register-city").addClass("form-control is-invalid")
+        isValidForm = false;
     } else {
         $("#register-city").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
@@ -170,22 +186,24 @@ function checkCountry() {
     country = $("#register-country").val()
     if (!country) {
         $("#register-country").addClass("form-control is-invalid")
+        isValidForm = false;
     } else {
         $.get("/petpet/checkcountry?country=" + country, callBackCountry)
 
     }
 }
-function callBackCountry(data){
-    if(data.match("true")){
+function callBackCountry(data) {
+    if (data.match("true")) {
         $("#register-country").removeClass("form-control is-invalid").addClass("form-control is-valid")
     }
     else {
         $("#register-country").addClass("form-control is-invalid")
+        isValidForm = false;
     }
 }
 
-function userInterests(){
-    var selectedElements  = $("#multiple-select-field").val();
+function userInterests() {
+    var selectedElements = $("#multiple-select-field").val();
     selectedElements.forEach(function (value) {
         console.log(value)
     })
@@ -226,4 +244,27 @@ function registerUser() {
 
 function callBackSucess() {
     console.log("sent success");
+}
+
+function validateForm(event) {
+    event.preventDefault();
+    checkName();
+    checkUsername();
+    checkPassword();
+    checkMatchPassword();
+    checkPhone();
+    checkJob();
+    checkCredit();
+    checkStreet();
+    checkCity();
+    checkCountry();
+    userInterests();
+
+
+    if (isValidForm) {
+        event.currentTarget.submit();
+    } else {
+        isValidForm = true;
+    }
+
 }

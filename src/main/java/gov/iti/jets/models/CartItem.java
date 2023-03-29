@@ -6,18 +6,33 @@ public class CartItem {
     private String productName;
     private int productQty;
     private Double productPrice;
+    private String productImage;
 
     public CartItem() {
     }
 
-    public CartItem(int productId, String productName, int productQty,Double productPrice) {
+    public CartItem(int productId, String productName, int productQty, Double productPrice) {
         this.productId = productId;
         this.productName = productName;
         this.productQty = productQty;
         this.productPrice = productPrice;
     }
 
-    
+    public CartItem(int productId, String productName, int productQty, Double productPrice, String productImage) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productQty = productQty;
+        this.productPrice = productPrice;
+        this.productImage = productImage;
+    }
+
+    public String getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(String productImage) {
+        this.productImage = productImage;
+    }
 
     public Double getProductPrice() {
         return productPrice;
@@ -26,8 +41,6 @@ public class CartItem {
     public void setProductPrice(Double productPrice) {
         this.productPrice = productPrice;
     }
-
-  
 
     public int getProductId() {
         return productId;
@@ -57,6 +70,5 @@ public class CartItem {
     public String toString() {
         return "CartItem [productId=" + productId + ", productName=" + productName + ", productQty=" + productQty + "]";
     }
-    
 
 }
