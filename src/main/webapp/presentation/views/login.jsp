@@ -55,7 +55,7 @@
         </nav><!-- End .breadcrumb-nav -->
 
         <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
-            style="background-image: url('/petpet/presentation/assets/images/backgrounds/login-bg.jpg') ">
+            style="background-image: url('/petpet/presentation/assets/images/backgrounds/bg-10.jpg') ">
             <div class="container">
                 <div class="form-box">
                     <div class="form-tab">
@@ -225,7 +225,7 @@
 
 
                                     <div class="form-footer">
-                                        <button type="submit" class="btn btn-outline-primary-2">
+                                        <button type="submit" class="btn btn-outline-primary-2" id="submitBtn">
                                             <span>SIGN UP</span>
                                             <i class="icon-long-arrow-right"></i>
                                         </button>

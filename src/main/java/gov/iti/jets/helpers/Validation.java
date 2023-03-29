@@ -46,7 +46,7 @@ public class Validation {
         return matcher.matches();
     }
     public static boolean validPassword(String password) {
-        if (password == null || password.equals("")) {
+        if (password == null || password.length() < 8) {
             System.out.println("bad password");
             return false;
         }

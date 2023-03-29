@@ -1,6 +1,7 @@
 package gov.iti.jets.controllers;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import com.google.gson.Gson;
@@ -20,10 +21,10 @@ public class RegisterServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        System.out.println("Hiii in post");
+        resp.setContentType("text/html");
         String fName =req.getParameter("register-Name");
         String [] selectedInterest = req.getParameterValues("multiple-select-field");
-        System.out.println(selectedInterest.length);
+
         String userName = req.getParameter("register-username");
         System.out.println("user email " + userName);
         String phone = req.getParameter("register-phone");
@@ -41,14 +42,25 @@ public class RegisterServlet extends HttpServlet{
         UserDTO user = new UserDTO(fName,userName,phone,hashedPassword,job,cl,country,street,null,city,date);
 
         RegisterService service = new RegisterService();
-        if(Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone))
+        if(Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone) && Validation.validConfirmPassword(password,conf_password))
         {
             System.out.println("All true");
             service.register(user);
-            req.getRequestDispatcher("home").forward(req,resp);
+            PrintWriter out = resp.getWriter();
+            out.print("""
+                    <div class='alert alert-success' role='alert'>
+                     Registered successfully
+                    </div>""");
+            req.getRequestDispatcher("login").forward(req,resp);
+
         }
         else {
             resp.sendRedirect("login");
+            resp.getWriter().print("<div class=\"alert alert-danger\" role=\"alert\">\n" +
+                    "  This is a danger alert—check it out!\n" +
+                    "</div>");
+            resp.sendRedirect("login");
+
         }
 
     }

@@ -2,7 +2,7 @@ var Firstname, username, password, phone, job, street, city, country, credit, d;
 
 $(document).ready(function () {
 
-
+    $('#submitBtn').prop('disabled' , true);
 })
 InputBody = {
     Name: Firstname,
@@ -14,19 +14,26 @@ function checkName() {
     Firstname = $("#register-Name").val()
     if (!Firstname) {
         $("#register-Name").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     } else {
         $("#register-Name").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
+
     }
-};
+}
 
 function checkBD() {
     d = $("#register-birth-2").val();
 
     if (!d) {
         $("#register-birth-2").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
+
     }
     else {
         $("#register-birth-2").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
+
     }
 
 }
@@ -49,6 +56,8 @@ function checkUsername() {
         $.get("/petpet/register?email=" + username, callBack)
     } else {
         $("#register-username").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
+
     }
 }
 
@@ -56,15 +65,17 @@ function callBack(data) {
 
     console.log("Data " + data);
     if (validateEmail(username) && data.match("true")  ) {
-        console.log("here")
         $("#register-username").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
     } else if (!validateEmail(username) && data.match("invalid")){
         $("#emailfeedback").text("Email is empty or invalid format")
         $("#register-username").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     }
     else if(data.match("false")) {
         $("#emailfeedback").text("Email already exists")
         $("#register-username").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
 
     }
 
@@ -75,11 +86,14 @@ function checkPassword() {
 
     if (!password) {
         $("#register-password-1").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
+
     } else if (password.length < 8 || password.length > 20) {
         $("#register-password-1").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     } else {
-
         $("#register-password-1").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
     }
 
 
@@ -92,12 +106,15 @@ function checkMatchPassword() {
 
     if (!pass2) {
         $("#register-password-confirm").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     }
     if ((pass2.length > 8 || pass2.length < 20) && (password == pass2) && pass2 ) {
         $("#register-password-1").removeClass("form-control is-invalid").addClass("form-control is-valid")
         $("#register-password-confirm").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
     } else {
         $("#register-password-confirm").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     }
 
 }
@@ -122,8 +139,10 @@ function checkPhone() {
     // phoneSeq(phone);
     if (validePhone(phone)) {
         $("#register-phone").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
     } else {
         $("#register-phone").removeClass("form-control is-valid").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     }
 }
 
@@ -131,8 +150,10 @@ function checkJob() {
     job = $("#register-job").val()
     if (!job) {
         $("#register-job").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     } else {
         $("#register-job").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
     }
 
 }
@@ -141,8 +162,10 @@ function checkCredit() {
     credit = $("#register-credit").val()
     if (!credit) {
         $("#register-credit").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     } else {
         $("#register-credit").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
     }
 
 }
@@ -152,8 +175,10 @@ function checkStreet() {
     street = $("#register-street").val()
     if (!street) {
         $("#register-street").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     } else {
         $("#register-street").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
     }
 }
 
@@ -161,8 +186,10 @@ function checkCity() {
     city = $("#register-city").val()
     if (!city) {
         $("#register-city").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     } else {
         $("#register-city").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
     }
 }
 
@@ -170,6 +197,7 @@ function checkCountry() {
     country = $("#register-country").val()
     if (!country) {
         $("#register-country").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     } else {
         $.get("/petpet/checkcountry?country=" + country, callBackCountry)
 
@@ -178,9 +206,11 @@ function checkCountry() {
 function callBackCountry(data){
     if(data.match("true")){
         $("#register-country").removeClass("form-control is-invalid").addClass("form-control is-valid")
+        $('#submitBtn').prop('disabled' , false);
     }
     else {
         $("#register-country").addClass("form-control is-invalid")
+        $('#submitBtn').prop('disabled' , true);
     }
 }
 
