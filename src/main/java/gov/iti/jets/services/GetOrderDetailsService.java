@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GetOrderDetailsService {
-    public static List<OrderDetailDto> getOrderDetailsByOrderId(Integer orderId) {
+    public  List<OrderDetailDto> getOrderDetailsByOrderId(Integer orderId) {
         OrderDetailsDaoImpl orderDetailsDoaDao = new OrderDetailsDaoImpl();
         List<OrderDetail> orderDetailList = orderDetailsDoaDao.getOrderDetailsByOrderId(orderId);
         List<OrderDetailDto> orderDetailDtos = new ArrayList<>();
@@ -20,14 +20,16 @@ public class GetOrderDetailsService {
         });
         return orderDetailDtos;
     }
-    public  List<BestSellingProductsDto> bestSelling(){
+
+    public List<BestSellingProductsDto> bestSelling() {
         OrderDetailsDaoImpl daoImpl = new OrderDetailsDaoImpl();
         List<BestSellingProductsDto> bestSellingProductsDtos = daoImpl.bestSelling();
 
         return bestSellingProductsDtos;
 
     }
-    public long getSoldProducts(){
+
+    public long getSoldProducts() {
         OrderDetailsDaoImpl daoImpl = new OrderDetailsDaoImpl();
         long bestSellingProductsDtos = daoImpl.soldProducts();
 
