@@ -2,10 +2,20 @@ package gov.iti.jets.controllers;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import gov.iti.jets.helpers.Validation;
+import gov.iti.jets.persistent.dto.CategoryDto;
+import gov.iti.jets.persistent.dto.InterestDto;
 import gov.iti.jets.persistent.dto.UserDTO;
+import gov.iti.jets.persistent.entity.Category;
+import gov.iti.jets.persistent.entity.Interest;
+import gov.iti.jets.services.GetCategoriesService;
+import gov.iti.jets.services.InterestService;
 import gov.iti.jets.services.RegisterService;
+import gov.iti.jets.services.mapper.CategoryMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,7 +33,6 @@ public class RegisterServlet extends HttpServlet {
 
         String fName = req.getParameter("register-Name");
         String[] selectedInterest = req.getParameterValues("multiple-select-field[]");
-        System.out.println(selectedInterest.length);
         String userName = req.getParameter("register-username");
         System.out.println("user email " + userName);
         String phone = req.getParameter("register-phone");
@@ -36,16 +45,37 @@ public class RegisterServlet extends HttpServlet {
         String street = req.getParameter("register-street");
         String city = req.getParameter("register-city");
         String birthday = req.getParameter("register-birth");
-        // BigDecimal cl = BigDecimal.valueOf(Long.parseLong(creditLimit));
+        List<Interest> interestList = new ArrayList<>();
+
+
         LocalDate date = LocalDate.parse(birthday); // date formater
+
+        GetCategoriesService getCategoriesService =  new GetCategoriesService();
+        InterestService interestService = new InterestService();
+        List<Interest> interestArrayList=new ArrayList<>();
+
+        for (String interest : selectedInterest) {
+            Category category = getCategoriesService.getCategoryById(Integer.valueOf(interest));
+            Interest userInterest1 = new Interest();
+            userInterest1.setInterest(category);
+            interestList.add(userInterest1);
+        }
+        System.out.println("interest list "+interestList);
         UserDTO user = new UserDTO(fName, userName, phone, hashedPassword, job, creditLimit, country, street, null,
                 city, java.sql.Date.valueOf(date));
 
+        System.out.println("user after interest "+user);
         RegisterService service = new RegisterService();
-        if (Validation.isValidName(fName) && Validation.validPassword(password) && Validation.validPhone(phone)) {
+        if (Validation.isValidName(fName) &&
+                Validation.validPassword(password) &&
+                Validation.validPhone(phone)&&
+                Validation.validConfirmPassword(password,conf_password)&&
+                Validation.validDate(date)) {
             System.out.println("All true");
             UserDTO createdUser = service.register(user);
+
             if (createdUser != null) {
+                interestService.setUserInterests(interestArrayList);
                 HttpSession session = req.getSession(true);
                 session.setAttribute("userSession", createdUser);
                 resp.sendRedirect("home");

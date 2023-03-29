@@ -51,4 +51,10 @@ public class GetCategoriesService {
       
         return categoryAndQuantity;
     }
+    public Category getCategoryById(Integer CategoryId){
+        CategoryDaoImpl categoryDao = new CategoryDaoImpl();
+        Category category = categoryDao.find(CategoryId);
+        return category;
+
+    }
 }

@@ -1,5 +1,6 @@
 package gov.iti.jets.persistent.entity;
 
+import gov.iti.jets.persistent.dto.InterestDto;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,6 +18,7 @@ public class Interest {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "interest_id", nullable = false)
     private Category interest;
+
 
     public InterestId getId() {
         return id;
@@ -39,6 +41,19 @@ public class Interest {
     }
 
     public void setInterest(Category interest) {
+        this.interest = interest;
+    }
+
+    public Interest() {
+    }
+
+    public Interest(InterestId id, User user, Category interest) {
+        this.id = id;
+        this.user = user;
+        this.interest = interest;
+    }
+    public Interest( User user, Category interest) {
+        this.user = user;
         this.interest = interest;
     }
 

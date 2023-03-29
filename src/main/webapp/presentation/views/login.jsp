@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -217,13 +218,9 @@
                                         <select class="js-example-basic-multiple" id="multiple-select-field"
                                             name="multiple-select-field[]" data-placeholder="Choose interests" multiple
                                             style="display: block;">
-                                            <option>Dogs</option>
-                                            <option>Cats</option>
-                                            <option>Birds</option>
-                                            <option>Watering Supplies</option>
-                                            <option>Pet Accessories</option>
-                                            <option>Dog Crates , Houses</option>
-                                            <option>Pet Feeding</option>
+                                            <c:forEach var="category" items="${requestScope.categories}">
+                                            <option value = "${category.getId()}">${category.getName()}</option>
+                                            </c:forEach>
                                         </select>
                                     </div>
 

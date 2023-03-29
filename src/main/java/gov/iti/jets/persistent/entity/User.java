@@ -52,15 +52,6 @@ public class User {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Order> orderList = new ArrayList<Order>();
 
-    public boolean isAdmin() {
-        return isAdmin;
-    }
-
-    public void setAdmin(boolean isAdmin) {
-        this.isAdmin = isAdmin;
-    }
-
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user" , cascade = CascadeType.ALL)
     private List<Interest> interest = new ArrayList<Interest>() ;
 
@@ -173,6 +164,15 @@ public class User {
     public void setZip(String zip) {
         this.zip = zip;
     }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
 
     @Override
     public String toString() {

@@ -17,8 +17,7 @@ public class Validation {
         regex = "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$";
         Pattern = Pattern.compile(regex);
         matcher = Pattern.matcher(email);
-        System.out.println("Checked email");
-        System.out.println(matcher.matches());
+
         return matcher.matches();
     }
     public static boolean isValidName(String name){
@@ -29,31 +28,28 @@ public class Validation {
         regex = "^[a-zA-Z\\s]{2,30}$";
         Pattern = Pattern.compile(regex);
         matcher = Pattern.matcher(name);
-        System.out.println("Checked name");
         return matcher.matches();
     }
 
     public static boolean validPhone(String phone) {
         if (phone == null|| phone.equals("")) {
-            System.out.println("bad phone");
+
             return false;
         }
         regex = "^01[0125][0-9]{8}$";
         Pattern = Pattern.compile(regex);
         matcher = Pattern.matcher(phone);
-        System.out.println("Checked phone");
-        System.out.println(matcher.matches());
+
         return matcher.matches();
     }
     public static boolean validPassword(String password) {
         if (password == null || password.equals("")) {
-            System.out.println("bad password");
+
             return false;
         }
         regex = "^\\d{8,20}";
         Pattern = Pattern.compile(regex);
         matcher = Pattern.matcher(password);
-        System.out.println("Checked password");
         return (matcher.matches());
     }
     public static boolean validConfirmPassword(String password, String confirmationPassword) {
@@ -74,7 +70,6 @@ public class Validation {
         String[] locales = Locale.getISOCountries();
         for (String countryCode : locales) {
             Locale obj = new Locale("", countryCode);
-            //System.out.println(obj.getDisplayCountry());
             crunchifyList.add(obj.getDisplayCountry());
         }
 
@@ -84,7 +79,6 @@ public class Validation {
         List<String> list = new ArrayList<String>();
 
         if (country == null) {
-            System.out.println("null");
             return false;
         }
         String[] locales = Locale.getISOCountries();
