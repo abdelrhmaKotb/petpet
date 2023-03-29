@@ -5,6 +5,7 @@ import java.util.List;
 
 import gov.iti.jets.persistent.dao.CategoryDaoImpl;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
+import gov.iti.jets.persistent.dto.CategoryAndItsSalies;
 import gov.iti.jets.persistent.dto.CategoryDto;
 import gov.iti.jets.persistent.dto.getCategoryAnditsQuantityDTO;
 import gov.iti.jets.persistent.entity.Category;
@@ -43,5 +44,11 @@ public class GetCategoriesService {
             categoryDtos.add(mapper.toDto(category));
         });
         return categoryDtos;
+    }
+    public List<CategoryAndItsSalies> getCategorySales(){
+        CategoryDaoImpl categoryDao =new CategoryDaoImpl();
+        List<CategoryAndItsSalies> categoryAndQuantity = categoryDao.categoryAndItsSalies();
+      
+        return categoryAndQuantity;
     }
 }

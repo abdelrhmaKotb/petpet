@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.mindrot.jbcrypt.BCrypt;
 
-// @WebServlet(urlPatterns = {"/register"} , name = "RegisterServlet")
+// @WebServlet(urlPatterns = {"/register"} , name = "")
 public class RegisterServlet extends HttpServlet {
 
     String username = null;

@@ -75,10 +75,7 @@
 		<servlet-name>Products-list</servlet-name>
 		<jsp-file>/presentation/views/Admin/productsList.jsp</jsp-file>
 	</servlet>
-	<servlet>
-		<servlet-name>Admin-Home</servlet-name>
-		<jsp-file>/presentation/views/Admin/HomePage.jsp</jsp-file>
-	</servlet>
+	
 	<!-- End Adim Part -->
 	<servlet>
 		<servlet-name>Users-List</servlet-name>
@@ -137,10 +134,7 @@
 		<servlet-name>Products-list</servlet-name>
 		<url-pattern>/admin/product-list</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Admin-Home</servlet-name>
-		<url-pattern>/admin</url-pattern>
-	</servlet-mapping>
+	
 	<!--end
 	of JSP mapping-->
 	<servlet-mapping>
@@ -341,6 +335,17 @@
 		<servlet-name>checkout</servlet-name>
 		<url-pattern>/checkout</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>adminHome</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.Admin.HomePageServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>adminHome</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+
 
 	<!-- Welcome List-->
 

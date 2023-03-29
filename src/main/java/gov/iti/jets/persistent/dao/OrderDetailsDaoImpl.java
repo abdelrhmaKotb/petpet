@@ -1,6 +1,7 @@
 package gov.iti.jets.persistent.dao;
 
 import gov.iti.jets.persistent.dao.interfaces.OrderDetailsDoa;
+import gov.iti.jets.persistent.dto.BestSellingProductsDto;
 import gov.iti.jets.persistent.entity.Order;
 import gov.iti.jets.persistent.entity.OrderDetail;
 import gov.iti.jets.persistent.entity.Product;
@@ -23,5 +24,23 @@ public class OrderDetailsDaoImpl extends  RepositoryImpl<OrderDetail,Integer>  i
         List<OrderDetail>orderDetailList =  orderDetails.getResultList();
         return orderDetailList;
 
+    }
+    @Override
+    public List<BestSellingProductsDto> bestSelling() {
+       
+        Query query = _entityManager.createQuery("SELECT new gov.iti.jets.persistent.dto.BestSellingProductsDto(od.product.id,od.product.name,SUM(od.quantity),od.productPrice ,SUM(od.quantity)*od.productPrice)From OrderDetail od GROUP BY od.product.id");
+        query.setMaxResults(5);
+        List<BestSellingProductsDto> orderList = query.getResultList();
+
+        return orderList;
+    }
+    @Override
+    public long soldProducts() {
+
+        Query query = _entityManager.createQuery("SELECT SUM(od.quantity) From OrderDetail od");
+       
+        long total = (long) query.getSingleResult();
+
+        return total;
     }
 }
