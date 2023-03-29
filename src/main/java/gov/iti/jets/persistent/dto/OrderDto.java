@@ -3,8 +3,6 @@ package gov.iti.jets.persistent.dto;
 import gov.iti.jets.persistent.entity.Order;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.Instant;
 import java.util.Date;
 import java.util.Objects;
 
@@ -14,10 +12,11 @@ import java.util.Objects;
 public class OrderDto implements Serializable {
     private final Integer id;
     private final Date createdAt;
-    private final BigDecimal totalPrice;
-    private final Integer status;
+    private final Double totalPrice;
+    private  String status = "new";
+    
 
-    public OrderDto(Integer id, Date createdAt, BigDecimal totalPrice, Integer status) {
+    public OrderDto(Integer id, Date createdAt, Double totalPrice, String status) {
         this.id = id;
         this.createdAt = createdAt;
         this.totalPrice = totalPrice;
@@ -32,11 +31,11 @@ public class OrderDto implements Serializable {
         return createdAt;
     }
 
-    public BigDecimal getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 

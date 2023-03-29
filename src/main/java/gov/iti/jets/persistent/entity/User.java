@@ -2,9 +2,8 @@ package gov.iti.jets.persistent.entity;
 
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -19,7 +18,7 @@ public class User {
     private String name;
 
     @Column(name = "birthday")
-    private LocalDate birthday;
+    private Date birthday;
 
     @Column(name = "password")
     private String password;
@@ -31,7 +30,11 @@ public class User {
     private String email;
 
     @Column(name = "credit_limit", precision = 10)
+<<<<<<< HEAD
     private double creditLimit;
+=======
+    private Double creditLimit;
+>>>>>>> 9c1a74b987afd95554be5d6306cbf5bb13a93fd2
 
     @Column(name = "country", length = 100)
     private String country;
@@ -48,8 +51,22 @@ public class User {
     @Column(name = "ZIP", length = 100)
     private String zip;
 
+    private boolean isAdmin;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    private List<Order> orderList=new ArrayList<Order>();
+    private List<Order> orderList = new ArrayList<Order>();
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user" , cascade = CascadeType.ALL)
+    private List<Interest> interest = new ArrayList<Interest>() ;
 
     public List<Order> getOrderList() {
         return orderList;
@@ -75,11 +92,17 @@ public class User {
         this.name = name;
     }
 
-    public LocalDate getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
+    public List<Interest> getInterest() {
+        return interest;
+    }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setInterest(List<Interest> interest) {
+        this.interest = interest;
+    }
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
@@ -107,11 +130,19 @@ public class User {
         this.email = email;
     }
 
+<<<<<<< HEAD
     public double getCreditLimit() {
         return creditLimit;
     }
 
     public void setCreditLimit(double creditLimit) {
+=======
+    public Double getCreditLimit() {
+        return creditLimit;
+    }
+
+    public void setCreditLimit(Double creditLimit) {
+>>>>>>> 9c1a74b987afd95554be5d6306cbf5bb13a93fd2
         this.creditLimit = creditLimit;
     }
 
@@ -161,7 +192,5 @@ public class User {
                 + job + ", email=" + email + ", creditLimit=" + creditLimit + ", country=" + country + ", street="
                 + street + ", city=" + city + ", phone=" + phone + ", zip=" + zip + "]";
     }
-
-    
 
 }

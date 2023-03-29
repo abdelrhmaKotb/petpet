@@ -1,8 +1,6 @@
 package gov.iti.jets.controllers.Admin;
 
 import gov.iti.jets.persistent.dto.OrderDto;
-import gov.iti.jets.persistent.dto.ProductDto;
-import gov.iti.jets.persistent.entity.User;
 import gov.iti.jets.services.GetOrdersServices;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -15,34 +13,41 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class ViewUserOrderServlet  extends HttpServlet {
+public class ViewUserOrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String UserId= req.getParameter("id");
+        String UserId = req.getParameter("id");
+        int id = 0;
+        try {
+            id = Integer.parseInt(UserId);
+        } catch (Exception e) {
+            resp.sendRedirect("/petpet/404");
+            return;
+        }
 
-        GetOrdersServices getOrdersServices =new GetOrdersServices();
-        List<OrderDto> orderDtoList =  getOrdersServices.getUserOrders( Integer.parseInt(UserId), 0);
-        long totalPages = getOrdersServices.totalOrders( Integer.parseInt(UserId));
+        GetOrdersServices getOrdersServices = new GetOrdersServices();
+        List<OrderDto> orderDtoList = getOrdersServices.getUserOrders(Integer.parseInt(UserId), 0);
+        long totalPages = getOrdersServices.totalOrders(id);
         RequestDispatcher requestDis = req.getRequestDispatcher("/presentation/views/Admin/UserOrderList.jsp");
 
         req.setAttribute("Orders", orderDtoList);
         req.setAttribute("UserId", UserId);
-        req.setAttribute("totalPages", Math.ceil( (double)totalPages/5));
+        req.setAttribute("totalPages", Math.ceil((double) totalPages / 5));
 
-        orderDtoList.forEach(e->System.out.println(e.getId()));
+        orderDtoList.forEach(e -> System.out.println(e.getId()));
         requestDis.forward(req, resp);
 
-
-
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String UserId= req.getParameter("userId");
-        String pageNumber= req.getParameter("pageNumber");
-        PrintWriter printWriter =resp.getWriter();
-        GetOrdersServices getOrdersServices =new GetOrdersServices();
-        List<OrderDto> orderDtoList =  getOrdersServices.getUserOrders( Integer.parseInt(UserId), Integer.valueOf(pageNumber)-1);
+        String UserId = req.getParameter("userId");
+        String pageNumber = req.getParameter("pageNumber");
+        PrintWriter printWriter = resp.getWriter();
+        GetOrdersServices getOrdersServices = new GetOrdersServices();
+        List<OrderDto> orderDtoList = getOrdersServices.getUserOrders(Integer.parseInt(UserId),
+                Integer.valueOf(pageNumber) - 1);
         printWriter.write(new Gson().toJson(orderDtoList));
 
     }

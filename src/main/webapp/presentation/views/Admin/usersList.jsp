@@ -1,29 +1,24 @@
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:directive.include file="AdminHeader.html" />
+
         <link rel="stylesheet" href="/petpet/presentation/assets/css/AdminProductsList.css">
     <div class="container" style="margin-top:5em">
         <div class="title row">
             <div class="col-sm-8">
                 <h3>Users List</h3>
             </div>
-<%--            <div class="col-sm-4" style="  padding: 1rem; ">--%>
-<%--                <a href = "/petpet/add-product"> <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">--%>
-<%--                    <span class="btn-text">Add Product</span>--%>
-<%--                    <span class="btn-hover-text">Add Product</span>--%>
-<%--                </button></a>--%>
-<%--            </div>--%>
+
         </div>
 
         <div class="col-lg-15 col-md-15 ml-auto mr-auto">
 
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" id="usersTable">
                     <thead>
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">Customer Name</th>
                         <th class="text-center">Email</th>
-                        <th class="text-center">Password</th>
                         <th class="text-center">CreditLimit</th>
                         <th class="text-center">Birthday</th>
                         <th class="text-center">Job</th>
@@ -32,13 +27,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <%--@elvariable id="AllUsers" type="java.util.List"--%>
-                    <c:forEach var="index" items="${AllUsers}">
+                    <c:forEach var="index" items="${requestScope.AllUsers}">
                         <tr>
                             <td class="text-center">${index.getId()}</td>
                             <td class="text-center">${index.getName()}</td>
                             <td class="text-center">${index.getEmail()}</td>
-                            <td class="text-center">${index.getPassword()}</td>
                             <td class="text-center">${index.getCreditLimit()}</td>
                             <td class="text-center">${index.getBirthday()}</td>
                             <td class="text-center">${index.getJob()}</td>
@@ -48,16 +41,9 @@
                                         class="btn btn-success btn-link
                                                     btn-just-icon btn-sm"
                                         data-original-title="" title="Edit">
-                                    <a href = "/petpet/View-Order?id=${index.getId()}">
-                                        <i class="icon-cart-arrow-down"></i></a>
+                                    <a href = "/petpet/admin/view-order?id=${index.getId()}">
+                                        <i class="icon-eye"></i></a>
 
-                                </button>
-                                <button type="button" rel="tooltip" data-id="${index.getId()}"
-                                        class="deleteProduct btn btn-danger btn-link
-                                                    btn-just-icon btn-sm"
-                                        data-original-title="" title="Delete">
-
-                                    <i class="icon-close"></i>
                                 </button>
                             </td>
                         </tr>
@@ -65,6 +51,26 @@
 
                     </tbody>
                 </table>
+                    <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                    </li>
+                      <c:forEach var = "i" begin = "1" end = "${requestScope.totalPages}">
+                        <li class="page-item"><a class="page-link next" href="#" data-id="${i}">${i}</a></li>
+                       </c:forEach>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </li>
+
+                  </ul>
+                </nav>
             </div>
         </div>
     </div>

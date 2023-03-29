@@ -21,12 +21,15 @@ public class ViewOrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String pageNumber= req.getParameter("pageNumber");
-        HttpSession userSession = req.getSession();
+        HttpSession userSession = req.getSession(false);
         UserDTO userDTO = (UserDTO) userSession.getAttribute("userSession");
 
-        PrintWriter printWriter =resp.getWriter();
-        GetOrdersServices getOrdersServices =new GetOrdersServices();
-        List<OrderDto> orderDtoList =  getOrdersServices.getUserOrders((userDTO.getId()), Integer.valueOf(pageNumber));
+        PrintWriter printWriter = resp.getWriter();
+        GetOrdersServices getOrdersServices = new GetOrdersServices();
+        List<OrderDto> orderDtoList = getOrdersServices.getUserOrders((userDTO.getId()), Integer.valueOf(pageNumber));
+
+        System.out.println(orderDtoList);
+
         printWriter.write(new Gson().toJson(orderDtoList));
 
     }

@@ -18,6 +18,10 @@ public class InterestDto {
         this.categoryDto = categoryDto;
     }
 
+    public InterestDto(UserDTO userDTO) {
+        this.userDTO = userDTO;
+    }
+
     public int getId() {
         return id;
     }
