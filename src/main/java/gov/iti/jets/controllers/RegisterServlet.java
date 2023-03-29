@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.mindrot.jbcrypt.BCrypt;
 
-// @WebServlet(urlPatterns = {"/register"} , name = "RegisterServlet")
+// @WebServlet(urlPatterns = {"/register"} , name = "")
 public class RegisterServlet extends HttpServlet {
 
     String username = null;
@@ -22,7 +22,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String fName = req.getParameter("register-Name");
-        String[] selectedInterest = req.getParameterValues("multiple-select-field");
+        String[] selectedInterest = req.getParameterValues("multiple-select-field[]");
         System.out.println(selectedInterest.length);
         String userName = req.getParameter("register-username");
         System.out.println("user email " + userName);
