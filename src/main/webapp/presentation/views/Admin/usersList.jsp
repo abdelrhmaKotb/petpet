@@ -42,11 +42,8 @@
                                                     btn-just-icon btn-sm"
                                         data-original-title="" title="Edit">
                                     <a href = "/petpet/admin/view-order?id=${index.getId()}">
-                                        <i class="icon-cart-arrow-down"></i></a>
+                                        <i class="icon-eye"></i></a>
 
-                                </button>
-
-                                    <i class="icon-close"></i>
                                 </button>
                             </td>
                         </tr>

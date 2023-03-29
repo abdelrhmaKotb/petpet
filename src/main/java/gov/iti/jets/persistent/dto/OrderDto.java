@@ -13,7 +13,7 @@ public class OrderDto implements Serializable {
     private final Integer id;
     private final Date createdAt;
     private final Double totalPrice;
-    private final String status;
+    private  String status = "new";
     
 
     public OrderDto(Integer id, Date createdAt, Double totalPrice, String status) {

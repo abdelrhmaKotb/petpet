@@ -39,8 +39,13 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <style>
-        .select2-container{
+        .select2-container {
             display: block;
+        }
+
+        .blur {
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
         }
     </style>
 
@@ -48,21 +53,14 @@
 
 </head>
 
-<body>
+<body style="
+    background: url('/petpet/presentation/assets/images/backgrounds/login-bg.jpg') no-repeat fixed center;
+">
 
     <main class="main">
-        <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
-            <div class="container">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/petpet/home">Home</a></li>
-                    <%-- <li class="breadcrumb-item"><a href="#">Pages</a></li>--%>
-                        <li class="breadcrumb-item active" aria-current="page">Login</li>
-                </ol>
-            </div><!-- End .container -->
-        </nav><!-- End .breadcrumb-nav -->
 
-        <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
-            style="background-image: url('/petpet/presentation/assets/images/backgrounds/login-bg.jpg') ">
+
+        <div class="login-page  text-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17">
             <div class="container">
                 <div class="form-box">
                     <div class="form-tab">
@@ -99,8 +97,8 @@
                                         </button>
 
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="register-policy-2">
-                                            <label class="custom-control-label" for="register-policy-2">remember
+                                            <input type="checkbox" name="remember" class="custom-control-input" id="register-policy-2">
+                                            <label  class="custom-control-label" for="register-policy-2">remember
                                                 me</label>
                                         </div><!-- End .custom-checkbox -->
                                     </div><!-- End .form-footer -->
@@ -108,11 +106,11 @@
                             </div><!-- .End .tab-pane -->
                             <div class="tab-pane fade show " id="register-2" role="tabpanel"
                                 aria-labelledby="register-tab-2">
-                                <form action="/petpet/register"  method="post" onsubmit="validateForm(event);">
+                                <form action="/petpet/register" method="post" onsubmit="validateForm(event);">
                                     <div id="name-div" class="col-sm-12">
                                         <label for="register-Name">Name *</label>
-                                        <input type="text" class="form-control" id="register-Name"
-                                            name="register-Name" required="">
+                                        <input type="text" class="form-control" id="register-Name" name="register-Name"
+                                            required="">
                                         <div class="invalid-feedback">Please provide your name
                                         </div>
                                     </div>
@@ -124,8 +122,8 @@
                                             <span class="input-group-text" style="font-size: 2rem;"
                                                 id="inputGroupPrepend">@</span>
                                             <input type="email" class="form-control" id="register-username"
-                                                name="register-username" aria-describedby="inputGroupPrepend"
-                                                required onblur="checkUsername()" />
+                                                name="register-username" aria-describedby="inputGroupPrepend" required
+                                                onblur="checkUsername()" />
 
                                             <div id="emailfeedback" class="invalid-feedback"></div>
                                         </div>
@@ -137,7 +135,7 @@
                                         <div class="col-sm-6">
                                             <label for="register-password-1">Password *</label>
                                             <input type="password" class="form-control" id="register-password-1"
-                                                name="register-password-1"  required>
+                                                name="register-password-1" required>
 
                                             <div class="invalid-feedback">Must be 8-20 characters long.</div>
                                             <!-- <div class="valid-feedback">Please provide a valid city.</div> -->
@@ -147,7 +145,7 @@
                                         <div class="col-sm-6">
                                             <label for="register-password-confirm">Confirm Password *</label>
                                             <input type="password" class="form-control" id="register-password-confirm"
-                                                name="register-password-confirm"  required>
+                                                name="register-password-confirm" required>
 
                                             <div class="invalid-feedback">Password doesn't match</div>
                                         </div><!-- End .form-group -->
@@ -160,7 +158,7 @@
                                         <div class="col-sm-6">
                                             <label for="register-phone">Phone *</label>
                                             <input type="tel" class="form-control" id="register-phone"
-                                                name="register-phone"  required>
+                                                name="register-phone" required>
                                             <div class="invalid-feedback">Invalid Phone Number</div>
                                         </div>
 
@@ -177,14 +175,13 @@
                                         <div class="col-sm-6">
                                             <label for="register-job">Job *</label>
                                             <input type="text" class="form-control" id="register-job"
-                                                name="register-job"  required="">
+                                                name="register-job" required="">
                                         </div>
 
                                         <div class="col-sm-6">
                                             <label for="register-credit">Credit Limit *</label>
                                             <input type="number" class="form-control" min="100" max="5000" step="10"
-                                                name="register-credit" id="register-credit" 
-                                                required>
+                                                name="register-credit" id="register-credit" required>
                                             <div class="invalid-feedback">Please enter a value</div>
                                         </div>
 
@@ -194,14 +191,14 @@
                                         <div class="col-sm-4">
                                             <label for="register-street">Street *</label>
                                             <input type="text" class="form-control" id="register-street"
-                                                name="register-street"  required="">
+                                                name="register-street" required="">
                                             <div class="invalid-feedback">Please enter a value</div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <label for="register-city">City *</label>
                                             <input type="text" class="form-control" id="register-city"
-                                                name="register-city"  required="">
+                                                name="register-city" required="">
                                             <div class="invalid-feedback">Please enter a value</div>
                                         </div>
 
@@ -209,7 +206,7 @@
                                             <label for="register-country">Country *</label>
                                             <!-- <select class="form-control" id="register-country" ></select> -->
                                             <input type="text" name="register-country" id="register-country"
-                                                class="form-control"  required>
+                                                class="form-control" required>
                                             <div id="inValidCountry" class="invalid-feedback">Invalid country</div>
 
                                         </div>
@@ -219,7 +216,7 @@
                                     <div class="col-sm-12">
                                         <select class="js-example-basic-multiple" id="multiple-select-field"
                                             name="multiple-select-field[]" data-placeholder="Choose interests" multiple
-                                             style="display: block;">
+                                            style="display: block;">
                                             <option>Dogs</option>
                                             <option>Cats</option>
                                             <option>Birds</option>

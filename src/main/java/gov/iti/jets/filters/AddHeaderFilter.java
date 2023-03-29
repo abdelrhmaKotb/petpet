@@ -28,8 +28,7 @@ public class AddHeaderFilter implements Filter {
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession(false);
-        if(session !=null)
-            System.out.println("session attrebute name "+session.getAttributeNames());
+
         int userId = -1;
 
         if (session != null) {
@@ -55,11 +54,14 @@ public class AddHeaderFilter implements Filter {
                 request.setAttribute("total", total);
                 request.setAttribute("cartItemCount", cart.size());
 
-            }else{
+            } else {
                 request.setAttribute("total", 0);
                 request.setAttribute("cartItemCount", 0);
             }
 
+        } else {
+            request.setAttribute("total", 0);
+            request.setAttribute("cartItemCount", 0);
         }
 
         // userId = 12;

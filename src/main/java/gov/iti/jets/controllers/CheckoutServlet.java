@@ -24,7 +24,20 @@ import java.util.List;
 public class CheckoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("presentation/views/checkout.jsp").forward(req, resp);
+        HttpSession session = req.getSession(false);
+
+        if (session == null) {
+            resp.sendRedirect("/petpet/login");
+        } else {
+            UserDTO user = (UserDTO) session.getAttribute("userSession");
+
+            if (user == null) {
+                resp.sendRedirect("/petpet/login");
+            } else {
+                req.getRequestDispatcher("presentation/views/checkout.jsp").forward(req, resp);
+            }
+        }
+
     }
 
     @Override
@@ -67,7 +80,14 @@ public class CheckoutServlet extends HttpServlet {
                 }.getType();
                 List<CartItem> cart = gson.fromJson(cartJson, listType);
                 if (cart == null) {
-                    cart = new ArrayList<>();
+                    // cart = new ArrayList<>();
+                    List<String> err = new ArrayList<>();
+                    err.add("cart is empty");
+                    req.setAttribute("errors", err);
+                    req.getRequestDispatcher("presentation/views/checkout.jsp").forward(req, resp);
+
+                    return;
+
                 }
 
                 CheckoutService checkoutService = new CheckoutService();
