@@ -125,7 +125,9 @@
                         </div><!-- End .header-search -->
 
 
-                        <jsp:directive.include file="usercart.jsp" />
+                        <div id="cartContainer">
+                            <jsp:directive.include file="usercart.jsp" />
+                        </div>
 
 
                     </div><!-- End .header-right -->

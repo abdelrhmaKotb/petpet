@@ -74,6 +74,10 @@ $(document).ready(function () {
               localStorage.setItem('cart', cartJSON);
               $(this).after(`<a href="/petpet/cart" class="btn-product btn-cart">view cart</a>`);
               $(this).remove()
+
+              $.get('/petpet/presentation/views/usercart.jsp',function(params) {
+                $('#cartContainer').html(params);
+              })
             }
 
 
@@ -100,8 +104,10 @@ $(document).ready(function () {
       let productPrice = $(this).find('td').eq(1).text().trim();
       let productName = $(this).find('a').text().trim();
       let productQty = $(this).find('input').val();
+      let productImage = $(this).find('img').attr('data-src');
+      // console.log(productImage)
 
-      table.push({ productId, productName, productQty, productPrice });
+      table.push({ productId, productName, productQty, productPrice,productImage });
     });
 
     console.log(table);

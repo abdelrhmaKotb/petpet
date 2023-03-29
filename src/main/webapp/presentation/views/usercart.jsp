@@ -25,7 +25,7 @@
 
                     <figure class="product-image-container">
                         <a href="/petpet/product?id=${item.getProductId()}" class="product-image">
-                            <img src="/petpet/presentation/assets/images/products/cart/product-1.jpg"
+                            <img src="/petpet/${item.getProductImage()}"
                                 alt="product">
                         </a>
                     </figure>
