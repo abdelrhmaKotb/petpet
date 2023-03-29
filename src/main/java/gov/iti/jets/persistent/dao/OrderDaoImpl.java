@@ -20,7 +20,7 @@ public class OrderDaoImpl extends  RepositoryImpl<Order,Integer> implements Orde
         RepositoryImpl<User,Integer> User  = new RepositoryImpl<>(User.class);
 
         User user = User.find(userId);
-        Query query = _entityManager.createQuery("From Order o where o.user = :id ORDER BY o.createdAt ASC")
+        Query query = _entityManager.createQuery("From Order o where o.user = :id ORDER BY o.createdAt DESC")
                                     .setParameter("id",user);
         query.setFirstResult(firstResult);
         query.setMaxResults(5);
