@@ -80,7 +80,7 @@
 										    </c:when>
 										    <c:otherwise>
 										    <c:choose>
-										    <c:when test="${requestScope.totalOrders >5}">
+										    <c:when test="${requestScope.totalOrders < 5}">
 										    <p>Your last ${requestScope.totalOrders}  order.</p>
 										    </c:when>
 										    <c:otherwise>
