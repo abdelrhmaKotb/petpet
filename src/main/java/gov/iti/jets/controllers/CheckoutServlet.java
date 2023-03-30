@@ -79,10 +79,11 @@ public class CheckoutServlet extends HttpServlet {
                 Type listType = new TypeToken<List<CartItem>>() {
                 }.getType();
                 List<CartItem> cart = gson.fromJson(cartJson, listType);
-                if (cart == null) {
+
+                if (cart == null || cart.size() == 0) {
                     // cart = new ArrayList<>();
                     List<String> err = new ArrayList<>();
-                    err.add("cart is empty");
+                    err.add("cart is empty <a href='/petpet/Shop'>go to shop</a>");
                     req.setAttribute("errors", err);
                     req.getRequestDispatcher("presentation/views/checkout.jsp").forward(req, resp);
 

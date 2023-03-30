@@ -16,14 +16,13 @@
             </nav><!-- End .breadcrumb-nav -->
 
             <div class="page-content">
-            	<div id="map" class="mb-5"></div><!-- End #map -->
                 <div class="container">
                 	<div class="row">
                 		<div class="col-md-4">
                 			<div class="contact-box text-center">
         						<h3>Office</h3>
 
-        						<address>1 New York Plaza, New York, <br>NY 10004, USA</address>
+        						<address>smart vilage , Giza, <br>NY 10004, USA</address>
         					</div><!-- End .contact-box -->
                 		</div><!-- End .col-md-4 -->
 
@@ -31,7 +30,7 @@
                 			<div class="contact-box text-center">
         						<h3>Start a Conversation</h3>
 
-        						<div><a href="mailto:#">info@Molla.com</a></div>
+        						<div><a href="mailto:#">info@petpet.com</a></div>
         						<div><a href="tel:#">+1 987-876-6543</a>, <a href="tel:#">+1 987-976-1234</a></div>
         					</div><!-- End .contact-box -->
                 		</div><!-- End .col-md-4 -->

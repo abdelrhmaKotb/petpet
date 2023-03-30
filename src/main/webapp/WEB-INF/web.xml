@@ -396,6 +396,15 @@
 		<url-pattern>/admin/order-details</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>editUser</servlet-name>
+		<servlet-class>gov.iti.jets.controllers.EditUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>editUser</servlet-name>
+		<url-pattern>/editUser</url-pattern>
+	</servlet-mapping>
+
 	<error-page>
 		<error-code>404</error-code>
 		<location>/presentation/views/404.jsp</location>

@@ -139,6 +139,7 @@ public class CheckoutService {
         RepositoryImpl<User, Integer> repo = new RepositoryImpl<>(User.class);
         User user = repo.find(userDto.getId());
         user.setCreditLimit(user.getCreditLimit() - total);
+        userDto.setCreditLimit(userDto.getCreditLimit() - total);
         repo.update(user);
     }
 

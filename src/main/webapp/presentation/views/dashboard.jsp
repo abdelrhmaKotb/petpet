@@ -74,49 +74,54 @@
 										</c:when>
 
 										<c:otherwise>
-										<c:choose>
-										    <c:when  test="${requestScope.totalOrders < 1}">
-                                                <p>No order has been made yet </span><a href="/petpet/Shop">go shopping ?</a>.</p>
-										    </c:when>
-										    <c:otherwise>
-										    <c:choose>
-										    <c:when test="${requestScope.totalOrders < 5}">
-										    <p>Your last ${requestScope.totalOrders}  order.</p>
-										    </c:when>
-										    <c:otherwise>
-										     <p>Your last 5 order.</p>
-										    </c:otherwise>
-										    </c:choose>
+											<c:choose>
+												<c:when test="${requestScope.totalOrders < 1}">
+													<p>No order has been made yet </span><a href="/petpet/Shop">go
+															shopping ?</a>.</p>
+												</c:when>
+												<c:otherwise>
+													<c:choose>
+														<c:when test="${requestScope.totalOrders < 5}">
+															<p>Your last ${requestScope.totalOrders} order.</p>
+														</c:when>
+														<c:otherwise>
+															<p>Your last 5 order.</p>
+														</c:otherwise>
+													</c:choose>
 
-											    <table id="" class="table">
-												<thead>
-													<tr class="text-center">
-														<th class="text-center">#</th>
-														<th>createdAt</th>
-														<th>totalPrice</th>
-														<th>Status</th>
-														<th class="text-right">Actions</th>
-													</tr>
-												</thead>
-												<tbody>
-													<c:forEach var="item" items="${requestScope.orders}">
+													<table id="" class="table">
+														<thead>
+															<tr class="text-center">
+																<th class="text-center">#</th>
+																<th>createdAt</th>
+																<th>totalPrice</th>
+																<th>Status</th>
+																<th class="text-right">Actions</th>
+															</tr>
+														</thead>
+														<tbody>
+															<c:forEach var="item" items="${requestScope.orders}">
 
-														<tr class="text-center">
-															<td>${item.getId()}</td>
-															<td>${item.getCreatedAt()}</td>
-															<td>${item.getTotalPrice()}</td>
-															<td class="in-stock">${item.getStatus()}</td>
-															<td class="action-col">
-                                                                <button class="btn btn-block btn-outline-primary-2">  <a href="/petpet/admin/order-details?id=${item.getId()}">View Details</a></button>
-                                                            </td>
-														</tr>
+																<tr class="text-center">
+																	<td>${item.getId()}</td>
+																	<td>${item.getCreatedAt()}</td>
+																	<td>${item.getTotalPrice()}</td>
+																	<td class="in-stock">${item.getStatus()}</td>
+																	<td class="action-col">
+																		<button
+																			class="btn btn-block btn-outline-primary-2">
+																			<a
+																				href="/petpet/admin/order-details?id=${item.getId()}">View
+																				Details</a></button>
+																	</td>
+																</tr>
 
-													</c:forEach>
-												</tbody>
-											</table>
+															</c:forEach>
+														</tbody>
+													</table>
 
-										    </c:otherwise>
-										</c:choose>
+												</c:otherwise>
+											</c:choose>
 
 										</c:otherwise>
 									</c:choose>
@@ -162,37 +167,84 @@
 
 								<div class="tab-pane fade" id="tab-account" role="tabpanel"
 									aria-labelledby="tab-account-link">
-									<form action="#">
+									<form action="/petpet/edit-user" id="edituser" method="post" >
 										<div class="row">
 											<div class="col-sm-6">
-												<label>First Name *</label>
-												<input type="text" class="form-control" required>
+												<label>Name *</label>
+												<input type="text" class="form-control"  id="firstName"
+													value="${userSession.getName()}" required>
+											</div><!-- End .col-sm-6 -->
+
+											<input type="hidden" id="id" value="${userSession.getId()}">
+											<div class="col-sm-6">
+												<label>Email address *</label>
+												<input type="email" class="form-control"
+													value="${userSession.getEmail()}" readonly disabled>
+											</div><!-- End .col-sm-6 -->
+
+										</div><!-- End .row -->
+
+										<label>credit limit *</label>
+										<input type="number" class="form-control" id="creditLimit"
+											value="${userSession.getCreditLimit()}" required>
+
+										<label>Current password (leave blank to leave unchanged)</label>
+										<input type="password" id="oldpassword" class="form-control">
+
+										<label>New password (leave blank to leave unchanged)</label>
+										<input type="password" id="pass1" class="form-control">
+
+										<label>Confirm new password</label>
+										<input type="password" id="pass2" class="form-control mb-2">
+
+
+										<div class="row">
+											<div class="col-sm-6">
+												<label>job</label>
+												<input type="text" class="form-control" id="job"
+													value="${userSession.getJob()}" required>
 											</div><!-- End .col-sm-6 -->
 
 											<div class="col-sm-6">
-												<label>Last Name *</label>
-												<input type="text" class="form-control" required>
+												<label>phone *</label>
+												<input type="text" value="${userSession.getPhone()}" id="phone"
+													class="form-control">
 											</div><!-- End .col-sm-6 -->
+
 										</div><!-- End .row -->
 
-										<label>Display Name *</label>
-										<input type="text" class="form-control" required>
-										<small class="form-text">This will be how your name will be displayed in the
-											account section and in reviews</small>
 
-										<label>Email address *</label>
-										<input type="email" class="form-control" required>
+										<div class="row">
+											<div class="col-sm-6">
+												<label>country</label>
+												<input type="text" class="form-control" id="country"
+													value="${userSession.getCountry()}" required>
+											</div><!-- End .col-sm-6 -->
 
-										<label>Current password (leave blank to leave unchanged)</label>
-										<input type="password" class="form-control">
+											<div class="col-sm-6">
+												<label>city</label>
+												<input type="text" id="city" value="${userSession.getCity()}"
+													class="form-control">
+											</div><!-- End .col-sm-6 -->
 
-										<label>New password (leave blank to leave unchanged)</label>
-										<input type="password" class="form-control">
+										</div><!-- End .row -->
 
-										<label>Confirm new password</label>
-										<input type="password" class="form-control mb-2">
+										<div class="row">
+											<div class="col-sm-6">
+												<label>street</label>
+												<input type="text" class="form-control" id="street"
+													value="${userSession.getStreet()}" required>
+											</div><!-- End .col-sm-6 -->
 
-										<button type="submit" class="btn btn-outline-primary-2">
+											<div class="col-sm-6">
+												<label>ZIP</label>
+												<input type="text" id="zip" value="${userSession.getZip()}"
+													class="form-control">
+											</div><!-- End .col-sm-6 -->
+
+										</div><!-- End .row -->
+
+										<button type="button" class="btn btn-outline-primary-2" onclick="editUser();">
 											<span>SAVE CHANGES</span>
 											<i class="icon-long-arrow-right"></i>
 										</button>

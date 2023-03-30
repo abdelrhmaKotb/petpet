@@ -40,6 +40,11 @@
         <!-- header style -->
         <link rel="stylesheet" href="/petpet/presentation/assets/css/skins/skin-demo-5.css">
         <link rel="stylesheet" href="/petpet/presentation/assets/css/demos/demo-5.css">
+        <style>
+            .menu .megamenu.megamenu-md {
+                left: 0px;
+            }
+        </style>
     </head>
 
     <body>
@@ -78,25 +83,25 @@
                                             <li><a href="/petpet/login">Sign In/Up</a></li>
                                         </c:when>
                                         <c:otherwise>
-                                            <li>  <a href="/petpet/my-account">Profile</a>
-                                             <div class="megamenu megamenu-md">
-                                                <div class="row no-gutters">
-                                                    <div class="">
-                                                        <div class="menu-col">
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="menu-title"><a href="/petpet/my-account">My Account</a></div>
-                                                                    <div class="menu-title"><a href="/petpet/logout">Logout</a></div>
-                                                                </div><!-- End .col-md-6 -->
-                                                            </div><!-- End .row -->
-                                                        </div><!-- End .menu-col -->
-                                                    </div><!-- End .col-md-8 -->
-
-
-                                                </div><!-- End .row -->
-                                            </div><!-- End .megamenu megamenu-md -->
+                                            <li> <a href="javascript:void(0)">Profile </a>
+                                                <div class="megamenu megamenu-md">
+                                                    <div class="row no-gutters">
+                                                        <div class="">
+                                                            <div class="menu-col">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="menu-title"><a
+                                                                                href="/petpet/my-account">My Account</a>
+                                                                        </div>
+                                                                        <div class="menu-title"><a
+                                                                                href="/petpet/logout">Logout</a></div>
+                                                                    </div><!-- End .col-md-6 -->
+                                                                </div><!-- End .row -->
+                                                            </div><!-- End .menu-col -->
+                                                        </div><!-- End .col-md-8 -->
+                                                    </div>
+                                                </div>
                                             </li>
-
                                         </c:otherwise>
                                     </c:choose>
 
@@ -231,8 +236,7 @@
                             <div class="col-md-6">
                                 <div class="banner banner-border">
                                     <a href="/petpet/Shop?category=trendy">
-                                        <img
-                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-5.jpg"
+                                        <img src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-5.jpg"
                                             alt="Banner">
                                     </a>
 
@@ -251,8 +255,7 @@
                             <div class="col-md-6">
                                 <div class="banner banner-border-hover">
                                     <a href="/petpet/Shop">
-                                        <img
-                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-8.jpg"
+                                        <img src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-8.jpg"
                                             alt="Banner">
                                     </a>
 
@@ -269,15 +272,16 @@
 
                                 <div class="banner banner-border-hover">
                                     <a href="/petpet/Shop?category=accessories">
-                                        <img
-                                            src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-7.jpg"
+                                        <img src="/petpet/presentation/assets/images/demos/demo-5/banners/banner-7.jpg"
                                             alt="Banner">
                                     </a>
 
                                     <div class="banner-content">
                                         <h4 class="banner-subtitle"><a href="/petpet/Shop?category=accessories">This
                                                 week we love...</a></h4><!-- End .banner-subtitle -->
-                                        <h3 class="banner-title"><a href="/petpet/Shop?category=accessories"><span>Accessories</span></a></h3><!-- End .banner-title -->
+                                        <h3 class="banner-title"><a
+                                                href="/petpet/Shop?category=accessories"><span>Accessories</span></a>
+                                        </h3><!-- End .banner-title -->
                                         <a href="/petpet/Shop?category=accessories" class="btn
                                             btn-outline-primary-2 banner-link">Discover
                                             Now<i class="icon-long-arrow-right"></i></a>
