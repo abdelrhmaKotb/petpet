@@ -201,16 +201,13 @@ function callBackCountry(data) {
         isValidForm = false;
     }
 }
+/*
+function checkUserBirthDay(){
+    checkUserBirthDay.BirthDay = $("#register-birth").val();
+    if()
+}*/
 
-function userInterests() {
-    var selectedElements = $("#multiple-select-field").val();
-    selectedElements.forEach(function (value) {
-        console.log(value)
-    })
-}
-
-
-function User(Firstname, username, phone, job, street, city, country, credit) {
+function User(Firstname, username, phone, job, street, city, country, credit,birthday) {
     this.Firstname = Firstname;
     this.username = username;
     this.phone = phone;
@@ -219,6 +216,7 @@ function User(Firstname, username, phone, job, street, city, country, credit) {
     this.city = city;
     this.country = country;
     this.credit = credit;
+    this.birthday= birthday;
 }
 
 
@@ -259,6 +257,7 @@ function validateForm(event) {
     checkCity();
     checkCountry();
     userInterests();
+    checkUserBirthDay();
 
 
     if (isValidForm) {
