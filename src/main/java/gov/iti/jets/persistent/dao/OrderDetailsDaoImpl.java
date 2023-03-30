@@ -38,8 +38,13 @@ public class OrderDetailsDaoImpl extends  RepositoryImpl<OrderDetail,Integer>  i
     public long soldProducts() {
 
         Query query = _entityManager.createQuery("SELECT SUM(od.quantity) From OrderDetail od");
-       
-        long total = (long) query.getSingleResult();
+        long total = 0L;
+        try {
+             total = (long) query.getSingleResult();
+
+        }catch (Exception e){
+            total = 0L;
+        }
 
         return total;
     }

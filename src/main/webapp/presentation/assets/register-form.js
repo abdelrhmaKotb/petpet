@@ -203,8 +203,15 @@ function callBackCountry(data) {
 }
 /*
 function checkUserBirthDay(){
-    checkUserBirthDay.BirthDay = $("#register-birth").val();
-    if()
+    let BirthDay = $("#register-birth").val();
+    console.log(BirthDay);
+    let  date = new Date("2010-01-01");
+    console.log(date);
+    console.log(data<BirthDay);
+    if(date<BirthDay){
+
+    }
+
 }*/
 
 function User(Firstname, username, phone, job, street, city, country, credit,birthday) {
@@ -256,8 +263,7 @@ function validateForm(event) {
     checkStreet();
     checkCity();
     checkCountry();
-    userInterests();
-    checkUserBirthDay();
+   // checkUserBirthDay();
 
 
     if (isValidForm) {

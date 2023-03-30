@@ -51,7 +51,7 @@
 								</div><!-- End .row -->
 
 								<label>Product Price <span>*</span></label>
-								<input type="text" class="form-control" id="productPrice" name="product_price"
+								<input type="text" class="form-control" id="productPrice" name="productPrice"
 									value="${requestScope.product.getPrice()}">
 								<p id="wrongPrice" style="color: red;" class="d-none"> </p>
 								<label>Product Quantity *</label>

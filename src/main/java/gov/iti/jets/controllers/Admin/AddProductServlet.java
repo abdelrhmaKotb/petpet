@@ -41,7 +41,9 @@ public class AddProductServlet extends HttpServlet {
     String productName = request.getParameter("product_name");
     String category = request.getParameter("category");
     String description = request.getParameter("product_description");
-    Double price = Double.parseDouble(request.getParameter("product_price"));
+
+    System.out.println("dfsf" + request.getParameter("productPrice"));
+    Double price = Double.parseDouble(request.getParameter("productPrice"));
     int qty = Integer.parseInt(request.getParameter("product_quantity"));
 
     List<String> images = new ArrayList<>();

@@ -56,7 +56,7 @@
 
                                         <a href="/petpet/product?id=${products.getId()}">
                                             <img src="/petpet${products.getImagesUlrs().get(0)}" alt="Product image"
-                                                class="product-image">
+                                                class="product-image" style="max-height: 12em;max-width: min-content;">
                                         </a>
 
                                         <div class="product-action-vertical">

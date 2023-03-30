@@ -55,7 +55,7 @@
 </head>
 
 <body style="
-    background: url('/petpet/presentation/assets/images/backgrounds/login-bg.jpg') no-repeat fixed center;
+    background: url('/petpet/presentation/assets/images/backgrounds/bg-10.jpg') no-repeat fixed center;
 ">
 
     <main class="main">
@@ -181,7 +181,7 @@
 
                                         <div class="col-sm-6">
                                             <label for="register-credit">Credit Limit *</label>
-                                            <input type="number" class="form-control" min="100" max="5000" step="10"
+                                            <input type="number" class="form-control" min="100"  step="10"
                                                 name="register-credit" id="register-credit" required>
                                             <div class="invalid-feedback">Please enter a value</div>
                                         </div>

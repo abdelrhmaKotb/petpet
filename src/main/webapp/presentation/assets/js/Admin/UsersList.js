@@ -23,7 +23,12 @@ document.querySelectorAll(".next").forEach(link => link.addEventListener('click'
           fillTable(obj);
         },
         error: function () {
-          alert('error');
+                 Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text:  "Something happened Wrong !",
+                  footer: ''
+                })
         }
       }
     );

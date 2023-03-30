@@ -64,16 +64,17 @@ public class RegisterServlet extends HttpServlet {
             UserDTO createdUser = service.register(user);
 
             if (createdUser != null) {
-
-                for (String interest : selectedInterest) {
-                    Category category = getCategoriesService.getCategoryById(Integer.valueOf(interest));
-                    Interest userInterest1 = new Interest();
-                    userInterest1.setInterest(category);
-                    userInterest1.setUser(new UserMapper().toEntity(user));
-                    interestList.add(userInterest1);
+                if(selectedInterest !=null){
+                    for (String interest : selectedInterest) {
+                        Category category = getCategoriesService.getCategoryById(Integer.valueOf(interest));
+                        Interest userInterest1 = new Interest();
+                        userInterest1.setInterest(category);
+                        userInterest1.setUser(new UserMapper().toEntity(user));
+                        interestList.add(userInterest1);
+                    }
+                    System.out.println("interest list " + interestList);
+                    interestService.setUserInterests(interestList);
                 }
-                System.out.println("interest list "+interestList);
-                interestService.setUserInterests(interestList);
                 HttpSession session = req.getSession(true);
                 session.setAttribute("userSession", createdUser);
                 resp.sendRedirect("home");
