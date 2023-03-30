@@ -62,7 +62,7 @@ public class AllProduct extends HttpServlet {
 
             req.setAttribute("CurrentPage", 1);
 
-            req.setAttribute("totalPages", Math.round(Math.ceil( (double)totalPages/10)));
+            req.setAttribute("totalPages", Math.round(Math.ceil( (double)totalPages/5)));
 
             req.setAttribute("highestPrise",highestPrise);
 

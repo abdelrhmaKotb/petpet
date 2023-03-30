@@ -41,7 +41,7 @@ let html =`
 
                         <a href="/petpet/product?id=${item.id}">
                             <img src="/petpet${item.imagesUlrs[0]}" alt="Product image"
-                                class="product-image">
+                                class="product-image" style="max-height: 12em;max-width: min-content;">
                         </a>
 
                         <div class="product-action-vertical">
