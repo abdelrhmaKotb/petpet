@@ -61,9 +61,6 @@
 
                                         <li><a href="/petpet/about">About Us</a></li>
                                         <li><a href="/petpet/contact">Contact Us</a></li>
-                                        <li><a href="/petpet/login" data-toggle="modal"><i
-                                                    class="icon-user"></i>Login</a>
-                                        </li>
                                     </ul>
                                 </li>
                             </ul><!-- End .top-menu -->
