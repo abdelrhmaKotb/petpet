@@ -5,13 +5,14 @@ import org.mindrot.jbcrypt.BCrypt;
 import gov.iti.jets.persistent.dao.RepositoryImpl;
 import gov.iti.jets.persistent.dto.UserDTO;
 import gov.iti.jets.persistent.entity.User;
+import gov.iti.jets.services.mapper.UserMapper;
 
 public class EditUserService {
 
-    public boolean save(UserDTO userDTO, String oldpass, String pass1, String pass2) {
+    public UserDTO save(UserDTO userDTO, String oldpass, String pass1, String pass2) {
 
         if(userDTO == null){
-            return false;
+            return null;
         }
 
         RepositoryImpl<User, Integer> repo = new RepositoryImpl<>(User.class);
@@ -37,9 +38,9 @@ public class EditUserService {
         try {
             repo.update(user);
         } catch (Exception e) {
-            return false;
+            return null;
         }
-
-        return true;
+        
+        return new UserMapper().toDto(user);
     }
 }

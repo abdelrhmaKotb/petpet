@@ -10,6 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class EditUserServlet extends HttpServlet {
 
@@ -25,8 +26,15 @@ public class EditUserServlet extends HttpServlet {
 
         EditUserService editUserService = new EditUserService();
 
-        boolean res = editUserService.save(user, oldpassword, pass1, pass2);
-        if (res) {
+        UserDTO res = editUserService.save(user, oldpassword, pass1, pass2);
+        if (res != null) {
+            HttpSession session = req.getSession(false);
+            if (session != null) {
+                UserDTO u = (UserDTO) session.getAttribute("userSession");
+                if (user != null) {
+                    session.setAttribute("userSession", res);
+                }
+            }
             resp.getWriter().println("ok");
         } else {
             resp.getWriter().println("ko");
