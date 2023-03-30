@@ -10,7 +10,7 @@ public class InterestService {
     public void setUserInterests(List<Interest> userInterests){
         InterestDaoImpl interestDao= new InterestDaoImpl();
         for (Interest interest: userInterests){
-            System.out.println("hello "+interest.getInterest());
+
             interestDao.setUserInterest(interest);
         }
 
