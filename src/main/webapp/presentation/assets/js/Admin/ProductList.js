@@ -122,10 +122,10 @@ function createRows(item, index, arr) {
       if(item.quantity==0){
            cell4.innerHTML = `<span class="out-of-stock">Out stock</span></td>`;
       }else {
-          cell4.innerHTML = `<span class="in-stock">Out stock</span></td>`;
+          cell4.innerHTML = `<span class="in-stock">In stock</span></td>`;
       }
       $(cell4).addClass("stock-col");
-      cell5.innerHTML = item.prise +"EGP";
+      cell5.innerHTML = item.price +"EGP";
       cell6.innerHTML = item.quantity;
       cell7.innerHTML = `<button type="button" rel="tooltip" class="btn btn-success btn-link
                                                           btn-just-icon btn-sm" data-original-title="" title="Edit">

@@ -10,22 +10,22 @@ import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
-public class CategoryDaoImpl extends RepositoryImpl<Category, Integer> implements CategoryDao {
+    public class CategoryDaoImpl extends RepositoryImpl<Category, Integer> implements CategoryDao {
     
     public CategoryDaoImpl() {
         super(Category.class);
     }
 
-    @Override
-    public List<String> AllCategoryName() {
+        @Override
+        public List<String> AllCategoryName() {
 
-        CriteriaQuery<String> q = _criteriaBuilder.createQuery(String.class);
-        Root<Category> category = q.from(Category.class);
-        q.select(category.get("name"));
-        List<String> result = _entityManager.createQuery(q).getResultList();
+            CriteriaQuery<String> q = _criteriaBuilder.createQuery(String.class);
+            Root<Category> category = q.from(Category.class);
+            q.select(category.get("name"));
+            List<String> result = _entityManager.createQuery(q).getResultList();
 
-        return result;
-    }
+            return result;
+        }
 
     @Override
     public int getCategoryId(String CategoryName) {
