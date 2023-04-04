@@ -28,7 +28,9 @@ public class OrderDetailsDaoImpl extends  RepositoryImpl<OrderDetail,Integer>  i
     @Override
     public List<BestSellingProductsDto> bestSelling() {
        
-        Query query = _entityManager.createQuery("SELECT new gov.iti.jets.persistent.dto.BestSellingProductsDto(od.product.id,od.product.name,SUM(od.quantity),od.productPrice ,SUM(od.quantity)*od.productPrice)From OrderDetail od GROUP BY od.product.id");
+        //Query query = _entityManager.createQuery(SELECT new gov.iti.jets.persistent.dto.BestSellingProductsDto(od.product.id,od.product.name,SUM(od.quantity),od.productPrice,SUM(od.quantity)*od.productPrice)From OrderDetail od GROUP BY od.product.id");
+        Query query = _entityManager.createQuery("SELECT new gov.iti.jets.persistent.dto.BestSellingProductsDto(od.product.id,od.product.name,SUM(od.quantity),od.productPrice,SUM(od.quantity)*od.productPrice)FROM OrderDetail od GROUP BY od.product.id, od.product.name, od.productPrice");
+
         query.setMaxResults(5);
         List<BestSellingProductsDto> orderList = query.getResultList();
 

@@ -210,7 +210,7 @@
                     </a>
 
                     <a href="#" class="brand">
-                        <img src="/petpet/presentation/assets/images/brands/3.png" alt="Brand Name">
+                        <img src="/petpet/presentation/assets/images/brands/11.png" alt="Brand Name">
                     </a>
 
                     <a href="#" class="brand">
@@ -225,9 +225,7 @@
                         <img src="/petpet/presentation/assets/images/brands/6.png" alt="Brand Name">
                     </a>
 
-                    <a href="#" class="brand">
-                        <img src="/petpet/presentation/assets/images/brands/7.png" alt="Brand Name">
-                    </a>
+                    
                 </div><!-- End .owl-carousel -->
 
                 <div class="container">
